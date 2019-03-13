@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeteorReaction : MonoBehaviour {
+public class ReactionOnContact : MonoBehaviour {
 
 	public GameObject playerExplosion;
 	public GameObject shotExplosion;
@@ -10,7 +10,8 @@ public class MeteorReaction : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		//Destroy on Contact (exclude the bound box):
-		if (other.gameObject.tag != "Boundary")
+		if (other.gameObject.tag != "Boundary" || 
+			other.gameObject.tag != "Meteor")
 		{
 			DestroyOnContact(other);
 		}
