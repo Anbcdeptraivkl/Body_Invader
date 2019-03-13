@@ -18,11 +18,11 @@ public class MeteorReaction : MonoBehaviour {
 
 	private void DestroyOnContact(Collider2D other)
 	{
-		//Destroy the colldiding objects:
+		//Destroy the effects after played:
 		if (other.gameObject.tag == "Player")
 		{
 			DestroyPlayerWithExplosion(other);
-			Destroy(playerExplosion, 1.0f);
+			Destroy(playerExplosion, 2.0f);
 		}
 		else //Destroy if get shot:
 			if (other.gameObject.tag == "Shot")
@@ -37,22 +37,9 @@ public class MeteorReaction : MonoBehaviour {
 	private void DestroyPlayerWithExplosion(Collider2D player)
 	{
 		ClonePlayerExplosion(player);
-		//Disable the player:
-		//player.gameObject.SetActive(false);
-		//Play the animation:
-		var explosionParticle = playerExplosion.GetComponent<ParticleSystem>();
-		//Destroy object and animation after played:
-		explosionParticle.Play();
+		//Destroy after played:
 		Destroy(player.gameObject);
 	}
-
-	private void DestroyOnShot(Collider2D shot)
-	{
-		CloneShotExplosion();
-		Destroy(shot.gameObject);
-	}
-
-	//Clone a copy of the Player Explosion
 	private void ClonePlayerExplosion (Collider2D player)
 	{
 		playerExplosion = Instantiate(
@@ -61,6 +48,11 @@ public class MeteorReaction : MonoBehaviour {
 			player.transform.rotation) as GameObject;
 	}
 
+	private void DestroyOnShot(Collider2D shot)
+	{
+		CloneShotExplosion();
+		Destroy(shot.gameObject);
+	}
 	private void CloneShotExplosion()
 	{
 		shotExplosion = Instantiate(
