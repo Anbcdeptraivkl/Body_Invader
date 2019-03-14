@@ -7,13 +7,32 @@ public class ReactionOnContact : MonoBehaviour {
 	public GameObject playerExplosion;
 	public GameObject shotExplosion;
 
+	//References:
+	private GameController gameController;
+
+	void Start()
+	{
+		GameObject gameControllerObject = GameObject.FindWithTag("GameController");
+		if (gameControllerObject != null) 
+		{
+			gameController = gameControllerObject.GetComponent<GameController>();
+		}
+			else
+			{
+				Debug.Log("Failed to load <GameController> script component.");
+			}
+	}
+
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		//Destroy on Contact (exclude the bound box):
-		if (other.gameObject.tag != "Boundary" || 
-			other.gameObject.tag != "Meteor")
+		//Destroy and adding point on Contact (exclude the bound box):
+		if (other.gameObject.tag != "Boundary" )
 		{
-			DestroyOnContact(other);
+			if (other.gameObject.tag != "Meteor")
+			{
+				DestroyOnContact(other);
+			}
+			
 		}
 	}
 
@@ -31,6 +50,7 @@ public class ReactionOnContact : MonoBehaviour {
 				DestroyOnShot(other);
 				Destroy(shotExplosion, 1.0f);
 			}
+		gameController.UpdateScore();
 		//Destroy meteor:
 		Destroy(gameObject);
 	}

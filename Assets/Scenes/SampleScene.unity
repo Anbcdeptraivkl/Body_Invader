@@ -323,7 +323,7 @@ GameObject:
   - component: {fileID: 1561851320}
   - component: {fileID: 1561851319}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -344,7 +344,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -571.6, y: 342.5}
+  m_AnchoredPosition: {x: -570, y: 342}
   m_SizeDelta: {x: 218, y: 66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1561851319
@@ -785,7 +785,7 @@ GameObject:
   - component: {fileID: 1896891608}
   m_Layer: 0
   m_Name: Game Controller
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -808,6 +808,7 @@ MonoBehaviour:
   startTimer: 1
   spawnTimer: 0.5
   waveBreak: 1.5
+  scoreText: {fileID: 1561851319}
 --- !u!4 &1896891609
 Transform:
   m_ObjectHideFlags: 0
