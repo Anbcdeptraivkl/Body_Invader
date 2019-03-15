@@ -7,7 +7,7 @@ public class ReactionOnContact : MonoBehaviour {
 	public GameObject playerExplosion;
 	public GameObject shotExplosion;
 
-	//References:
+	//Script References:
 	private GameController gameController;
 
 	void Start()
@@ -38,11 +38,12 @@ public class ReactionOnContact : MonoBehaviour {
 
 	private void DestroyOnContact(Collider2D other)
 	{
-		//Destroy the effects after played:
+		//Destroy the effects after exlplosions played:
 		if (other.gameObject.tag == "Player")
 		{
 			DestroyPlayerWithExplosion(other);
 			Destroy(playerExplosion, 2.0f);
+			//Game over if the player destroyed:
 			gameController.GameOver();
 		}
 		else //Destroy if get shot:
@@ -51,6 +52,7 @@ public class ReactionOnContact : MonoBehaviour {
 				DestroyOnShot(other);
 				Destroy(shotExplosion, 1.0f);
 			}
+		//Adding score:
 		gameController.UpdateScore();
 		//Destroy meteor:
 		Destroy(gameObject);

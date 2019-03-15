@@ -93,8 +93,8 @@ public class GameController : MonoBehaviour {
 		backgroundMusic.Stop();
 		gameOverMusic.Play();
 	}
-	void Restarting()
+	public bool CheckGameOver()
 	{
-
+		return gameOver;
 	}
 }
