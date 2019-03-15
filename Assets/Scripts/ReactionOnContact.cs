@@ -43,6 +43,7 @@ public class ReactionOnContact : MonoBehaviour {
 		{
 			DestroyPlayerWithExplosion(other);
 			Destroy(playerExplosion, 2.0f);
+			gameController.GameOver();
 		}
 		else //Destroy if get shot:
 			if (other.gameObject.tag == "Shot")

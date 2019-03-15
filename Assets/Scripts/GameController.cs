@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour {
 	public float startTimer;
 	public float spawnTimer;
 	public float waveBreak;
-	bool isSpawning;
+	bool gameOver;
 
 	//UI Properties:
 	public Text scoreText;
@@ -35,21 +35,26 @@ public class GameController : MonoBehaviour {
 	//Score:
 	ScoreManager scoreManager;
 
+	//Audio
+	public AudioSource backgroundMusic;
+	public AudioSource gameOverMusic;
+
+	//Initialize local properties:
 	public GameController()
-	{
-		KeepSpawningWaves(true);
-		scoreManager = new ScoreManager();
-	}
+	{}
 	// Use this for initialization
 	void Start () {
+		scoreManager = new ScoreManager();
+		gameOver = false;
 		PrintScore();
 		StartCoroutine(SpawnWaves());
 	}
+
 	//Co-routine to spawn endless waves:
 	IEnumerator SpawnWaves () {
 		yield return new WaitForSeconds(startTimer);
 		//Keep spawning from start to finish:
-		while (isSpawning)
+		while (!gameOver)
 		{
 			for (int i = hazardsPerWave; i > 0; --i)
 			{
@@ -69,9 +74,6 @@ public class GameController : MonoBehaviour {
 		Quaternion spawnRotation = Quaternion.identity;
 		Instantiate (hazardObject, spawnPosition, spawnRotation);
 	}
-	void KeepSpawningWaves(bool spawning) {
-		isSpawning = spawning;
-	}
 
 	public void UpdateScore()
 	{
@@ -82,5 +84,17 @@ public class GameController : MonoBehaviour {
 	{
 		int currentScore = scoreManager.GetScore();
 		scoreText.text = "Score: " + currentScore;
+	}
+
+	public void GameOver()
+	{
+		//Stop spawning and mute music:
+		gameOver = true;
+		backgroundMusic.Stop();
+		gameOverMusic.Play();
+	}
+	void Restarting()
+	{
+
 	}
 }
