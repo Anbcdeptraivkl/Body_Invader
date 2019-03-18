@@ -1158,7 +1158,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1342879338}
-        m_MethodName: PlayGame
+        m_MethodName: StartPlayingGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1759,7 +1759,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1342879334}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0ffe8988c773144d80d2b53f8b1ffbf, type: 3}
+  m_Script: {fileID: 11500000, guid: c53cde5068cb52846871c8df7f7e9dfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1384558941

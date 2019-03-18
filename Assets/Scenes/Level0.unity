@@ -222,7 +222,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1896891612}
-        m_MethodName: OnScenceRestart
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1300,7 +1300,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1896891613}
+      - m_Target: {fileID: 1896891612}
         m_MethodName: ReturnToMainMenu
         m_Mode: 1
         m_Arguments:
@@ -1363,7 +1363,6 @@ GameObject:
   - component: {fileID: 1896891610}
   - component: {fileID: 1896891611}
   - component: {fileID: 1896891612}
-  - component: {fileID: 1896891613}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: GameController
@@ -1608,19 +1607,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1896891607}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0de85af48a24fc04cb57c359986a32f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1896891613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1896891607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bc5dcea82b6fda49885a2714fd71212, type: 3}
+  m_Script: {fileID: 11500000, guid: c53cde5068cb52846871c8df7f7e9dfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2096512048

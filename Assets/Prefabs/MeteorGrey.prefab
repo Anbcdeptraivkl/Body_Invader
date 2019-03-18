@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4114551705690350}
   - component: {fileID: 212137646690435798}
   m_Layer: 0
-  m_Name: big_meteor
+  m_Name: big_meteor_grey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 233e3c06043237749b0a23a72ed3fd90, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 731c896f13c21864496ccc425e56bd46, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 114053498907209366}
   - component: {fileID: 114688351914099780}
   m_Layer: 0
-  m_Name: Meteor
+  m_Name: MeteorGrey
   m_TagString: Meteor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

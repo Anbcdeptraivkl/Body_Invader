@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/***Controller for Game over Text Animation State:***/
 public class ActivateOnGameOver : MonoBehaviour
 {
     //Script References:
