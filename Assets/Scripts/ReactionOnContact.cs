@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*Destroy Meteors and Enemies when contact with shot or player*/
+/*Adding point on contact*/
 public class ReactionOnContact : MonoBehaviour {
 
 	public GameObject playerExplosion;
@@ -28,11 +30,7 @@ public class ReactionOnContact : MonoBehaviour {
 		//Destroy and adding point on Contact (exclude the bound box):
 		if (other.gameObject.tag != "Boundary" )
 		{
-			if (other.gameObject.tag != "Meteor")
-			{
-				DestroyOnContact(other);
-			}
-			
+			DestroyOnContact(other);
 		}
 	}
 
@@ -51,6 +49,11 @@ public class ReactionOnContact : MonoBehaviour {
 			{
 				DestroyOnShot(other);
 				Destroy(shotExplosion, 1.0f);
+			}
+			else
+			{
+				//DO nothing if enemies or meteors colide with each others
+				return;
 			}
 		//Adding score:
 		gameController.UpdateScore();

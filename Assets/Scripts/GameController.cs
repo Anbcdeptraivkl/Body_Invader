@@ -21,7 +21,7 @@ class ScoreManager {
 
 public class GameController : MonoBehaviour {
 	//Hazardrous properties:
-	public GameObject hazardObject;
+	public GameObject[] hazardObjectsList;
 	public int hazardsPerWave;
 	public Vector3 spawnReference;
 	public float startTimer;
@@ -72,7 +72,10 @@ public class GameController : MonoBehaviour {
 					spawnReference.y,
 					spawnReference.z);
 		Quaternion spawnRotation = Quaternion.identity;
-		Instantiate (hazardObject, spawnPosition, spawnRotation);
+		Instantiate (
+			hazardObjectsList[Random.Range(0, hazardObjectsList.Length)], 
+			spawnPosition, 
+			spawnRotation);
 	}
 
 	public void UpdateScore()
