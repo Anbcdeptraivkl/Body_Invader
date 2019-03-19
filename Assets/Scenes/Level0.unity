@@ -112,6 +112,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &115746443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 115746444}
+  m_Layer: 0
+  m_Name: Shot Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &115746444
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115746443}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.044, y: -0.594, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1780292117}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &125316331
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,7 +722,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1edff14a40b0fa84c8c77d98fe6a2876, type: 3}
-  m_Color: {r: 0.8018868, g: 0.78297436, b: 0.78297436, a: 1}
+  m_Color: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1441,9 +1471,10 @@ GameObject:
   - component: {fileID: 1780292116}
   - component: {fileID: 1780292115}
   - component: {fileID: 1780292114}
+  - component: {fileID: 1780292118}
   m_Layer: 0
   m_Name: EnemyBlue
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1509,13 +1540,30 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780292113}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.48, y: 1.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1261580800}
+  - {fileID: 115746444}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1780292118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780292113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9933cfa446a8d34eb9f39c7a6f17331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyShot: {fileID: 1600620134327404, guid: f4bbde6c96218104c9174f84cda8de56, type: 3}
+  shotSpawn: {fileID: 115746444}
+  delayTime: 1
+  fireRate: 1.5
 --- !u!1 &1896891607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1551,11 +1599,11 @@ MonoBehaviour:
   hazardObjectsList:
   - {fileID: 1620122324061846, guid: 9ade915186a02fb4d93898cb696d4b93, type: 3}
   - {fileID: 1620122324061846, guid: de7e6bcdc55a1a54d917dcadff8be422, type: 3}
-  hazardsPerWave: 10
+  hazardsPerWave: 20
   spawnReference: {x: 8, y: 6, z: 0}
   startTimer: 1
-  spawnTimer: 0.5
-  waveBreak: 1.5
+  spawnTimer: 0.25
+  waveBreak: 1
   scoreText: {fileID: 1561851319}
   backgroundMusic: {fileID: 1896891610}
   gameOverMusic: {fileID: 1896891611}

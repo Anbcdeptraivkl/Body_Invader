@@ -8,6 +8,7 @@ TagManager:
   - Meteor
   - Shot
   - Background
+  - Enemy
   layers:
   - Default
   - TransparentFX
