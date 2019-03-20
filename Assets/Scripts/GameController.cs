@@ -78,9 +78,9 @@ public class GameController : MonoBehaviour {
 			spawnRotation);
 	}
 
-	public void UpdateScore()
+	public void UpdateScore(int scoreValue = 10)
 	{
-		scoreManager.AddScore();
+		scoreManager.AddScore(scoreValue);
 		PrintScore();
 	}
 	void PrintScore()

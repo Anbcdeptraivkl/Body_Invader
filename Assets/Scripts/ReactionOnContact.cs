@@ -8,6 +8,7 @@ public class ReactionOnContact : MonoBehaviour {
 
 	public GameObject playerExplosion;
 	public GameObject shotExplosion;
+	public int scoreValue;
 
 	//Script References:
 	private GameController gameController;
@@ -56,7 +57,7 @@ public class ReactionOnContact : MonoBehaviour {
 				return;
 			}
 		//Adding score:
-		gameController.UpdateScore();
+		gameController.UpdateScore(scoreValue);
 		//Destroy meteor:
 		Destroy(gameObject);
 	}

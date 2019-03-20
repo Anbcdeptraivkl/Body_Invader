@@ -9,6 +9,7 @@ TagManager:
   - Shot
   - Background
   - Enemy
+  - EnemyShot
   layers:
   - Default
   - TransparentFX

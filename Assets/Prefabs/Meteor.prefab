@@ -181,6 +181,7 @@ MonoBehaviour:
     type: 3}
   shotExplosion: {fileID: 1002706650342412, guid: 1276e6aa33f02144686adeac25290e13,
     type: 3}
+  scoreValue: 10
 --- !u!114 &114688351914099780
 MonoBehaviour:
   m_ObjectHideFlags: 0
