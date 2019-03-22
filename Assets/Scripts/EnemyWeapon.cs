@@ -17,6 +17,7 @@ public class EnemyWeapon : MonoBehaviour
 
     private void Fire()
     {
-        Instantiate(enemyShot, shotSpawn.position, shotSpawn.rotation);
+        //No rotation, only speed!
+        Instantiate(enemyShot, shotSpawn.position, Quaternion.identity);
     }
 }

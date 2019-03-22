@@ -38,6 +38,7 @@ public class EnemyMovement : MonoBehaviour
 
     IEnumerator EvasiveManeuver()
     {
+        //Every values got determined randomly.
         //Starting delay time:
         yield return new WaitForSeconds(Random.Range(startDelayRange.x, startDelayRange.y));
 
@@ -61,7 +62,7 @@ public class EnemyMovement : MonoBehaviour
         float maneuverSpeed = Mathf.MoveTowards(
             rg.velocity.x, 
             maneuverTargetSpeed, 
-            Time.deltaTime *maneuverSmoothLimit);
+            Time.deltaTime * maneuverSmoothLimit);
         //Apply to movement:
         rg.velocity = new Vector2(maneuverSpeed, currentVerticalSpeed);
         //Rotation tilt follow maneuvering directions:

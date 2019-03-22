@@ -179,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerExplosion: {fileID: 1646424309948482, guid: ec50a66abdc291c45bbb47081b7aabaa,
     type: 3}
-  shotExplosion: {fileID: 1002706650342412, guid: 1276e6aa33f02144686adeac25290e13,
+  shotExplosion: {fileID: 1002706650342412, guid: 73698900e2327514395931b734a419bc,
     type: 3}
   scoreValue: 10
 --- !u!114 &114688351914099780
@@ -194,4 +194,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc875d365cedfa4e9059443d99c01e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -7
+  speed: -6
