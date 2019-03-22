@@ -1,6 +1,0 @@
-1 Implemented Player's Sprites and Idle Animations;
-* Player COntroller:
-2 Implemented Player's Movement Input:
- - Axis Movements;
- - Rotation Tilt;
-3 Implementing SHots and Shooting Input (and maybe Animation);
