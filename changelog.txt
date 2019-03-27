@@ -3,6 +3,13 @@ All notable changes will be documented here.
 
 ## [Unreleased]
 
+## [0.3.0] - 2019-3-27
+### Added:
+- Highscore;
+- New Highscore Message with Animation (Layered on Game Over Animations) and Associated Sounds (Component and Script)
+- Highscore Icon and Menu on Main Menu UI.
+- Reset Highscore Button in the Highscore UI Panel.
+
 ## [0.2.0] - 2019-03-22
 ### Added:
 - Functional Pause Menu UI and Scripts.

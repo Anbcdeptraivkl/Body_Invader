@@ -26,4 +26,10 @@ public class OnClickHandler : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    //highscore reseter:
+    public void ResetHighScore()
+	{
+		PlayerPrefs.SetInt("highScore", 0);
+	}
 }

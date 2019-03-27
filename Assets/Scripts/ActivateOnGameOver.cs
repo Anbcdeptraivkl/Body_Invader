@@ -28,5 +28,6 @@ public class ActivateOnGameOver : MonoBehaviour
     {
         //Checking for update to Play animations:
         gameOverAnimator.SetBool("GameOver", gameController.CheckGameOver());
+        gameOverAnimator.SetBool("GotHighScore", gameController.CheckNewHighScore());
     }
 }

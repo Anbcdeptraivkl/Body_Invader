@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //Helper Class for Score Management:
-class ScoreManager {
+public class ScoreManager {
 	public ScoreManager()
 	{
 		score = 0;
@@ -16,7 +16,24 @@ class ScoreManager {
 		return score;
 	}
 
-	private static int score;
+	public int GetHighScore()
+	{
+		return PlayerPrefs.GetInt("highScore", 0);
+	}
+
+	//High Score Register with boolean check:
+	public bool SetHighScore()
+	{
+		if (score > PlayerPrefs.GetInt("highScore", 0))
+		{
+			PlayerPrefs.SetInt("highScore", score);
+			return true;
+		}
+		else 
+			return false;
+	}
+
+	private int score;
 }
 
 public class GameController : MonoBehaviour {
@@ -28,6 +45,7 @@ public class GameController : MonoBehaviour {
 	public float spawnTimer;
 	public float waveBreak;
 	bool gameOver;
+	bool newHighScoreAchieved;
 
 	//UI Properties:
 	public Text scoreText;
@@ -46,6 +64,7 @@ public class GameController : MonoBehaviour {
 	void Start () {
 		scoreManager = new ScoreManager();
 		gameOver = false;
+		newHighScoreAchieved = false;
 		PrintScore();
 		StartCoroutine(SpawnWaves());
 	}
@@ -91,13 +110,28 @@ public class GameController : MonoBehaviour {
 
 	public void GameOver()
 	{
+		HighScoreUpdate();
 		//Stop spawning and mute music:
 		gameOver = true;
 		backgroundMusic.Stop();
 		gameOverMusic.Play();
 	}
+
+	void HighScoreUpdate()
+	{
+		//Update the High score value
+		//Check boolean whether the player got high score:
+		newHighScoreAchieved = scoreManager.SetHighScore();
+		//Print high score to console:
+		Debug.Log(PlayerPrefs.GetInt("highScore"));
+	}
 	public bool CheckGameOver()
 	{
 		return gameOver;
+	}
+
+	public bool CheckNewHighScore()
+	{
+		return newHighScoreAchieved;
 	}
 }
