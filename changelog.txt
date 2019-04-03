@@ -5,7 +5,9 @@ All notable changes will be documented here.
 ### Added:
 - Master Volume Mixer.
 - Volume Slider in Option Menu.
+- Graphics Dropdown Picker.
 - Scripts for Option Settings.
+- Script for Graphic Setting.
 
 ## [0.3.0] - 2019-3-27
 ### Added:

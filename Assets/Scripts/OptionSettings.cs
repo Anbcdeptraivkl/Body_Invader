@@ -10,4 +10,8 @@ public class OptionSettings : MonoBehaviour
    public void VolumeSLiding (float volume) {
        audioMixer.SetFloat("masterVolume", volume);
    }
+
+   public void GraphicsPicking (int qualityIndex) {
+       QualitySettings.SetQualityLevel(qualityIndex);
+   }
 }
