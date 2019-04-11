@@ -1,16 +1,22 @@
 # Changelog
 All notable changes will be documented here.
 
+
 ## [Unreleased]
+
+
+## [0.4.0] - 11/04/2019
 ### Added:
 - Master Volume Mixer.
 - Volume Slider in Option Menu.
 - Graphics Dropdown Picker.
 - Scripts for Option Settings.
 - Script for Graphic Setting.
-
+### Changed:
+- Player and Enemy SPaceship sprites are now all OC self-made arts.
 ### Fixed:
 - Fixed the Buggy Graphic Dropdown list items.
+
 
 ## [0.3.0] - 2019-3-27
 ### Added:
@@ -19,20 +25,20 @@ All notable changes will be documented here.
 - Highscore Icon and Menu on Main Menu UI.
 - Reset Highscore Button in the Highscore UI Panel.
 
+
 ## [0.2.0] - 2019-03-22
 ### Added:
 - Functional Pause Menu UI and Scripts.
-
 ### Changed
 - Reduce the falling speed of meteors to -6.
 - Updated the explosion color for grey meteor.
+
 
 ## [0.1.0] - 2019-03-22
 ### Added
 - New enemy: spaceships that can shoot and maneuver randomly through coroutines.
 - New sfx for enemy ships's explosion.
 - Title screen music.
-
 ### Changed
 - Reduce the spawn rate to 10 hazard objects per wave.
 - Increase the falling speed of meteors to -7.
