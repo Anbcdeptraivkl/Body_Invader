@@ -3,6 +3,16 @@ All notable changes will be documented here.
 
 
 ## [Unreleased]
+### Added:
+- Custom TextMesh Fonts.
+- A UFO Enemy Sprite to replace meteor later.
+### Changed:
+- More OC Arts!
+- Changed UI colors and fonts for space theme feels.
+- Changed the Title to 'Spark Invader'
+### Fixed:
+- Fixed the bug where the game over animation plays twice.
+- Fixed the Alignments of Some UI Elements.
 
 
 ## [0.4.0] - 11/04/2019
