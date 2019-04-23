@@ -121,8 +121,8 @@ GameObject:
   - component: {fileID: 4017692940672940882}
   - component: {fileID: 4017692940672940885}
   - component: {fileID: 4017692940672940884}
-  - component: {fileID: 4017692940672940880}
   - component: {fileID: 4017692940672940881}
+  - component: {fileID: -7196767948756710461}
   m_Layer: 0
   m_Name: RedEnemy
   m_TagString: Enemy
@@ -195,27 +195,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf46fb4cc8fb3243b9dea549e04639b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerExplosion: {fileID: 1646424309948482, guid: ec50a66abdc291c45bbb47081b7aabaa,
+  playerExplosion: {fileID: 5903513841248052773, guid: f378928e77eb593418a8b059e959ad48,
     type: 3}
-  shotExplosion: {fileID: 92054731081338520, guid: 2c98b5e6b9a2edd42b31d01022f991a3,
+  shotExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
     type: 3}
   scoreValue: 20
---- !u!114 &4017692940672940880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4017692940672940887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9933cfa446a8d34eb9f39c7a6f17331, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyShot: {fileID: 1600620134327404, guid: f4bbde6c96218104c9174f84cda8de56, type: 3}
-  shotSpawn: {fileID: 4017692939267114954}
-  delayTime: 1
-  fireRate: 1.5
 --- !u!114 &4017692940672940881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,3 +219,19 @@ MonoBehaviour:
   startDelayRange: {x: 0.1, y: 0.25}
   maneuverTimeRange: {x: 0.5, y: 1}
   TimeTilNextManeuveringRange: {x: 0.25, y: 0.75}
+--- !u!114 &-7196767948756710461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4017692940672940887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5b2cf26eb541a84bb443c1f53cc9f4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shot: {fileID: 1600620134327404, guid: f4bbde6c96218104c9174f84cda8de56, type: 3}
+  shotSpawn: {fileID: 4017692939267114954}
+  delayTime: 0.25
+  fireRate: 1

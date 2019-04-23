@@ -2,20 +2,34 @@
 All notable changes will be documented here.
 
 
-## [Unreleased]
+## [0.5.0] - 23/04/2019
+
 ### Added:
 - Custom TextMesh Fonts.
 - A UFO Enemy Sprite to replace meteor later.
+- Auto Shooting for the Player and red enemies.
+- Stage Controller (child of the game controller) for upcoming Changes.
 ### Changed:
-- More OC Arts!
-- Changed UI colors and fonts for space theme feels.
+- More OC Arts for explosion particle effects!
+- Changed UI templates and fonts for space theme feels.
 - Changed the Title to 'Spark Invader'
+- Decrease Enemy Spawn Rates.
+- Split the player controller script into moving and shotting components.
+- Changed the spawn rate and shooting rate of enemies.
+### Update:
+- Update the TextmeshPro Packages.
+- Add sfx to the player's shot prefab.
 ### Fixed:
 - Fixed the bug where the game over animation plays twice.
 - Fixed the Alignments of Some UI Elements.
+- Fixed the bugs where the explosions won't play (because of 3D and 2D Particles incompatibility).
+### Remove:
+- Remove the Meteors.
+- Remove Enemy Weapon Script.
 
 
 ## [0.4.0] - 11/04/2019
+
 ### Added:
 - Master Volume Mixer.
 - Volume Slider in Option Menu.
@@ -23,7 +37,7 @@ All notable changes will be documented here.
 - Scripts for Option Settings.
 - Script for Graphic Setting.
 ### Changed:
-- Player and Enemy SPaceship sprites are now all OC self-made arts.
+- Player and Enemy SPaceship sprites are now all OC arts.
 ### Fixed:
 - Fixed the Buggy Graphic Dropdown list items.
 

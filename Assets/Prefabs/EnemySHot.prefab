@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be4c7297b367774ca154c11e7160475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerExplosion: {fileID: 1646424309948482, guid: ec50a66abdc291c45bbb47081b7aabaa,
+  playerExplosion: {fileID: 5903513841248052773, guid: f378928e77eb593418a8b059e959ad48,
     type: 3}
 --- !u!82 &6035697040517557580
 AudioSource:

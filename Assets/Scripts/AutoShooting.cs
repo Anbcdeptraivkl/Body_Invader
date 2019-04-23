@@ -1,11 +1,12 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/*Enemy SHooting projectiles overtime */
-public class EnemyWeapon : MonoBehaviour
-{
-    public GameObject Shot;
+[System.Serializable]
+
+public class AutoShooting: MonoBehaviour {
+    
+    public GameObject shot;
     public Transform shotSpawn;
     public float delayTime;
     public float fireRate;
@@ -18,6 +19,6 @@ public class EnemyWeapon : MonoBehaviour
     private void Fire()
     {
         //No rotation, only speed!
-        Instantiate(Shot, shotSpawn.position, Quaternion.identity);
+        Instantiate(shot, shotSpawn.position, Quaternion.identity);
     }
 }

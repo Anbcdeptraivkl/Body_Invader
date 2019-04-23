@@ -12,33 +12,14 @@ public class PlayerController : MonoBehaviour {
 	public float tiltRate;
 	public Boundary bounds;
 	//Sooting attributes:
-	public GameObject shot;
-	public Transform shotSpawnPoint;
-	public float fireRate = 0.5f;
-	
-	float timeTilNextFire = 0.0f;
-	// Use this for initialization
 	Rigidbody2D rgbd2D;
-	AudioSource sfx;
+
 	void Start () {
 		rgbd2D = gameObject.GetComponent<Rigidbody2D>();
-		sfx = GetComponent<AudioSource>();
 	}
 
-	
 	void Update()
 	{
-		ShootWithSound();
-	}
-	void ShootWithSound()
-	{
-		if (Input.GetButton("Fire1") && Time.time > timeTilNextFire)
-		{
-			timeTilNextFire = Time.time + fireRate;
-			Instantiate(shot, shotSpawnPoint.position, shotSpawnPoint.rotation);
-			//Play sfx:
-			sfx.Play();
-		}
 	}
 	
 	// Update is called once per frame
