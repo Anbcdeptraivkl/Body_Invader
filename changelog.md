@@ -1,6 +1,21 @@
 # Changelog
 All notable changes will be documented here.
 
+## [Unreleased]
+
+### Added:
+
+### Changed:
+- Reduce spanw rates for easier difficulty.
+- Break and Tweak the Controllers script into 3 smaller, fully referenced and intergrated modules:
+	+ the Spawn Manager.
+	+ The Score Manager.
+	+ The Game Over Manager.
+- Refactored the Code t be more flexible and reusable.
+### Fixed:
+- Fix the bugs where the enemies can be shot even before they spawned.
+### Removed:
+- The outdated GameCOntroller scripts.
 
 ## [0.5.0] - 23/04/2019
 

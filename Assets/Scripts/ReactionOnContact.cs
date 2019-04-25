@@ -11,14 +11,16 @@ public class ReactionOnContact : MonoBehaviour {
 	public int scoreValue;
 
 	//Script References:
-	private GameController gameController;
+	private ScoreManager scoreManager;
+	private GameOver gameOverController;
 
 	void Start()
 	{
 		GameObject gameControllerObject = GameObject.FindWithTag("GameController");
 		if (gameControllerObject != null) 
 		{
-			gameController = gameControllerObject.GetComponent<GameController>();
+			scoreManager = gameControllerObject.GetComponent<ScoreManager>();
+			gameOverController = gameControllerObject.GetComponent<GameOver>();
 		}
 			else
 			{
@@ -43,7 +45,7 @@ public class ReactionOnContact : MonoBehaviour {
 			DestroyPlayerWithExplosion(other);
 			Destroy(playerExplosion, 2.0f);
 			//Game over if the player destroyed:
-			gameController.GameOver();
+			gameOverController.Over();
 		}
 		else //Destroy if get shot:
 			if (other.gameObject.tag == "Shot")
@@ -57,7 +59,7 @@ public class ReactionOnContact : MonoBehaviour {
 				return;
 			}
 		//Adding score:
-		gameController.UpdateScore(scoreValue);
+		scoreManager.UpdateScore(scoreValue);
 		//Destroy meteor:
 		Destroy(gameObject);
 	}

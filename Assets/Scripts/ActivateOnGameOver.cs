@@ -6,7 +6,9 @@ using UnityEngine;
 public class ActivateOnGameOver : MonoBehaviour
 {
     //Script References:
-    public GameController gameController;
+    private GameOver gameOverController;
+
+    private ScoreManager scoreManager;
     Animator gameOverAnimator;
     // Start is called before the first frame update
     void Start()
@@ -14,7 +16,8 @@ public class ActivateOnGameOver : MonoBehaviour
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
         if (gameControllerObject != null)
         {
-            gameController = gameControllerObject.GetComponent<GameController>();
+            gameOverController = gameControllerObject.GetComponent<GameOver>();
+            scoreManager = gameControllerObject.GetComponent<ScoreManager>();
         }
         else
         {
@@ -27,7 +30,7 @@ public class ActivateOnGameOver : MonoBehaviour
     void Update()
     {
         //Checking for update to Play animations:
-        gameOverAnimator.SetBool("GameOver", gameController.CheckGameOver());
-        gameOverAnimator.SetBool("GotHighScore", gameController.CheckNewHighScore());
+        gameOverAnimator.SetBool("GameOver", gameOverController.CheckGameOver());
+        gameOverAnimator.SetBool("GotHighScore", scoreManager.CheckIfNewHighScore());
     }
 }

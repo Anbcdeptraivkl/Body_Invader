@@ -7,14 +7,14 @@ public class EnemyShotPlayer : MonoBehaviour
 {
     public GameObject playerExplosion;
     //Script References:
-	private GameController gameController;
+	private GameOver gameOverController;
 
 	void Start()
 	{
 		GameObject gameControllerObject = GameObject.FindWithTag("GameController");
 		if (gameControllerObject != null) 
 		{
-			gameController = gameControllerObject.GetComponent<GameController>();
+			gameOverController = gameControllerObject.GetComponent<GameOver>();
 		}
 			else
 			{
@@ -34,7 +34,7 @@ public class EnemyShotPlayer : MonoBehaviour
             Destroy(playerExplosion, 2.0f);
             Destroy(gameObject);
             //Game over since the player has been destroyed:
-            gameController.GameOver();
+            gameOverController.Over();
         }
     }
 }
