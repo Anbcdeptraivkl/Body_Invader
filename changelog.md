@@ -4,18 +4,25 @@ All notable changes will be documented here.
 ## [Unreleased]
 
 ### Added:
-
+- Red Enemies's HP Features and On-hit animations.
+- 
 ### Changed:
 - Reduce spanw rates for easier difficulty.
 - Break and Tweak the Controllers script into 3 smaller, fully referenced and intergrated modules:
 	+ the Spawn Manager.
 	+ The Score Manager.
 	+ The Game Over Manager.
+- Break and Reimplement the Enemy Controller into 3 Module (Script Components):
+	+ The Player Contact Processor: Player Destroying and Game Over Trigger.
+	+ The On-Shot Processor: Deal with HP, On-hit, and Destroyed Effects.
+	+ The HP Manager: This Modules Determine and Manipulate HP: Can be intergrated Modularily as Components for virtually any Objects in the Game.
 - Refactored the Code t be more flexible and reusable.
+- the Red Enemies's Movements: no Random values, they now maneuver in a consistent and similar patterns.
 ### Fixed:
 - Fix the bugs where the enemies can be shot even before they spawned.
 ### Removed:
 - The outdated GameCOntroller scripts.
+- The outdated Enemy Reaction Controller scripts.
 
 ## [0.5.0] - 23/04/2019
 

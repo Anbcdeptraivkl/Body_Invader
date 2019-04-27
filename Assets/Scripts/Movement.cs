@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement : MonoBehaviour {
-	public float speed;
+	public float xSpeed;
+	public float ySpeed;
 	Rigidbody2D rgbd;
 	// Use this for initialization
 	void Start () {
@@ -13,7 +14,7 @@ public class Movement : MonoBehaviour {
 
 	void setMovement ()
 	{
-		rgbd.velocity = Vector2.up * speed;
+		rgbd.velocity = new Vector2(xSpeed, ySpeed);
 	}
 	
 }

@@ -1956,9 +1956,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hazardObjectsList:
   - {fileID: 4017692940672940887, guid: c4fae79fbfecff74fb137e6bc2e99431, type: 3}
-  hazardsPerWave: 3
+  hazardsPerWave: 1
   spawnReference: {x: 8, y: 6.5, z: 0}
-  startTimer: 2
+  startTimer: 1
   spawnTimer: 1
   waveBreak: 2
 --- !u!4 &1896891609

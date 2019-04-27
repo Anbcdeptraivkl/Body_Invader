@@ -120,9 +120,12 @@ GameObject:
   - component: {fileID: 4017692940672940883}
   - component: {fileID: 4017692940672940882}
   - component: {fileID: 4017692940672940885}
-  - component: {fileID: 4017692940672940884}
   - component: {fileID: 4017692940672940881}
   - component: {fileID: -7196767948756710461}
+  - component: {fileID: 4795059687279436291}
+  - component: {fileID: 1453699630855095493}
+  - component: {fileID: 6565493977075081724}
+  - component: {fileID: 5668677574352171950}
   m_Layer: 0
   m_Name: RedEnemy
   m_TagString: Enemy
@@ -183,23 +186,6 @@ CircleCollider2D:
   m_Offset: {x: 0.041787207, y: -0.05467236}
   serializedVersion: 2
   m_Radius: 0.47334445
---- !u!114 &4017692940672940884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4017692940672940887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbf46fb4cc8fb3243b9dea549e04639b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerExplosion: {fileID: 5903513841248052773, guid: f378928e77eb593418a8b059e959ad48,
-    type: 3}
-  shotExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
-    type: 3}
-  scoreValue: 20
 --- !u!114 &4017692940672940881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,12 +199,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentVerticalSpeed: -3
-  maxManeuverSpeed: 7
+  maneuverSpeed: 2
   maneuverSmoothLimit: 10
   tiltRate: 5
-  startDelayRange: {x: 0.1, y: 0.25}
-  maneuverTimeRange: {x: 0.5, y: 1}
-  TimeTilNextManeuveringRange: {x: 0.25, y: 0.75}
+  startDelay: 1
+  maneuverTime: 1
+  timeTilNextMove: 2
 --- !u!114 &-7196767948756710461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,3 +221,65 @@ MonoBehaviour:
   shotSpawn: {fileID: 4017692939267114954}
   delayTime: 0.25
   fireRate: 1
+--- !u!114 &4795059687279436291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4017692940672940887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 467822184f7811a47946937aaf86f890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 20
+  onHitAnimation: {fileID: 5668677574352171950}
+  shotExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
+    type: 3}
+--- !u!114 &1453699630855095493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4017692940672940887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e9a2183ccb5d3244a324a9ed39ffe5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerExplosion: {fileID: 5903513841248052773, guid: f378928e77eb593418a8b059e959ad48,
+    type: 3}
+--- !u!114 &6565493977075081724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4017692940672940887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dccbd0291d996284bbd051b02663b8e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHP: 2
+--- !u!95 &5668677574352171950
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4017692940672940887}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 07b175f85d95fec42b54eff7625c3128, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
