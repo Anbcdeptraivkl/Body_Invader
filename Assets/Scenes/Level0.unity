@@ -1602,7 +1602,7 @@ MonoBehaviour:
   shot: {fileID: 1600620134327404, guid: 2fa8796c633ed734580b5a65cd172799, type: 3}
   shotSpawn: {fileID: 125316332}
   delayTime: 0.25
-  fireRate: 0.25
+  fireRate: 0.2
 --- !u!4 &1630630850
 Transform:
   m_ObjectHideFlags: 0
@@ -1611,7 +1611,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630630847}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4, z: 0}
+  m_LocalPosition: {x: 0, y: -3.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 125316332}
@@ -1935,6 +1935,7 @@ GameObject:
   - component: {fileID: 1896891613}
   - component: {fileID: 1896891614}
   - component: {fileID: 1896891608}
+  - component: {fileID: 1896891615}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -1954,13 +1955,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3a6c9229afee9a4bbdbbb8024bdf095, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hazardObjectsList:
-  - {fileID: 4017692940672940887, guid: c4fae79fbfecff74fb137e6bc2e99431, type: 3}
-  hazardsPerWave: 1
-  spawnReference: {x: 8, y: 6.5, z: 0}
-  startTimer: 1
-  spawnTimer: 1
-  waveBreak: 2
+  easyEnemy: {fileID: 0}
+  normalEnemy: {fileID: 0}
+  hardEnemy: {fileID: 0}
+  spawnPositionRange: {x: 8, y: 7, z: 0}
 --- !u!4 &1896891609
 Transform:
   m_ObjectHideFlags: 0
@@ -2208,6 +2206,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1561851319}
+--- !u!114 &1896891615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896891607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc29df610fb42804cbf9e98fb8a4be59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesPerWave: 3
+  spawnDelay: 2
+  waveStartDelay: 3
+  waveSpawnDelay: 4
 --- !u!1 &1961432646
 GameObject:
   m_ObjectHideFlags: 0

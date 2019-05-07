@@ -220,7 +220,7 @@ MonoBehaviour:
   shot: {fileID: 1600620134327404, guid: f4bbde6c96218104c9174f84cda8de56, type: 3}
   shotSpawn: {fileID: 4017692939267114954}
   delayTime: 0.25
-  fireRate: 1
+  fireRate: 2
 --- !u!114 &4795059687279436291
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,13 +1,47 @@
 # Changelog
 All notable changes will be documented here.
 
+
+
+## [Working On]
+
+### Adding:
+
+- UFO Enemies.
+
+- Hard Enemies:
+	+ Arts.
+	+ Behaviours.
+	
+- Intergrate and Implement the Spawn Manager with the new enemies.
+
+- Hit sound effects.
+
+- Player HP Manager.
+	+ UI and Effects.
+	+ Synergy with Upgrades.
+	
+- Upgrades!
+
+### Changing:
+
+
+
 ## [Unreleased]
 
 ### Added:
+
 - Red Enemies's HP Features and On-hit animations.
-- 
+
+- Modular and Dynamic Approach on Enemy Spawn Manager: the Spawn Manager was break down into 2 smaller components:
+	+ The Main Manager: storing Data for Enemies, enemies types and providing Spawning + utility methods.
+	+ Spawner where the real spawning routines will happen, the data will be recorded about the waves and difficulty (currently the Spawner is for endless Game Mode, and the spawning types + difficulty are determined randomly)
+- Added a "SpawnColumn() Function in the Spawn Manager to spawn enemies in column formation.
+	
 ### Changed:
+
 - Reduce spanw rates for easier difficulty.
+
 - Break and Tweak the Controllers script into 3 smaller, fully referenced and intergrated modules:
 	+ the Spawn Manager.
 	+ The Score Manager.
@@ -17,12 +51,19 @@ All notable changes will be documented here.
 	+ The On-Shot Processor: Deal with HP, On-hit, and Destroyed Effects.
 	+ The HP Manager: This Modules Determine and Manipulate HP: Can be intergrated Modularily as Components for virtually any Objects in the Game.
 - Refactored the Code t be more flexible and reusable.
+
 - the Red Enemies's Movements: no Random values, they now maneuver in a consistent and similar patterns.
+- Speed , Shot Rate and Spawn Rate of Red Enemies are tweaked for a more dynamic and relaxing beginning.
+
 ### Fixed:
+
 - Fix the bugs where the enemies can be shot even before they spawned.
+
 ### Removed:
+
 - The outdated GameCOntroller scripts.
 - The outdated Enemy Reaction Controller scripts.
+
 
 ## [0.5.0] - 23/04/2019
 

@@ -18,10 +18,6 @@ public class PlayerController : MonoBehaviour {
 		rgbd2D = gameObject.GetComponent<Rigidbody2D>();
 	}
 
-	void Update()
-	{
-	}
-	
 	// Update is called once per frame
 	void FixedUpdate () {
 		MovePlayer();
@@ -32,8 +28,7 @@ public class PlayerController : MonoBehaviour {
 	void MovePlayer()
 	{
 		float horiMove = Input.GetAxis("Horizontal");
-		float vertiMove = Input.GetAxis("Vertical");
-		Vector2 movementVector = new Vector2(horiMove, vertiMove);
+		Vector2 movementVector = new Vector2(horiMove, 0);
 		rgbd2D.velocity = movementVector * moveSpeed;
 	}
 	void ClampToBound()

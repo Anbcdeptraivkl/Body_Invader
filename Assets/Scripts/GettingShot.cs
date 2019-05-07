@@ -33,12 +33,6 @@ public class GettingShot : MonoBehaviour
         hpManager = gameObject.GetComponent<HPManager>();
     }
 
-    
-    void Update()
-    {
-        
-    }
-
     void OnTriggerEnter2D (Collider2D other)
 	{
 		

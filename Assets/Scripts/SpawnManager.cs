@@ -4,54 +4,118 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject[] hazardObjectsList;
-	public int hazardsPerWave;
-	public Vector3 spawnReference;
-	public float startTimer;
-	public float spawnTimer;
-	public float waveBreak;
+    public enum EnemyLevel {
+        Easy,
+        Normal,
+        Hard
+    }
 
+    //Enemies Prefabs (multiple Enemies per GameObjects)
+    public GameObject easyEnemy;
+    public GameObject normalEnemy;
+    public GameObject hardEnemy;
+    private Dictionary<EnemyLevel, GameObject> Enemies = new Dictionary<EnemyLevel, GameObject>(3);
+
+
+    //Enemies Data:
+    int spawnedEnemies;
+    int activingEnemies;
+
+
+    
+    public Vector3 spawnPositionRange;
+
+
+    //Control Operations:
     GameOver gameOverRef;
+    bool isSpawning;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject controllerObject = GameObject.FindGameObjectWithTag("GameController");
-        gameOverRef = controllerObject.GetComponent<GameOver>();
+        Enemies.Add(EnemyLevel.Easy, easyEnemy);
+        Enemies.Add(EnemyLevel.Normal, normalEnemy);
+        Enemies.Add(EnemyLevel.Hard, hardEnemy);
 
-		StartCoroutine("SpawnWaves");
+        GameObject gameControllerObj = GameObject.FindGameObjectWithTag("GameController");
+        gameOverRef = gameControllerObj.GetComponent<GameOver>();
+
+        spawnedEnemies = 0;
+        activingEnemies = 0;
+
+        isSpawning = true;
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+
+    public void SpawnSingle(EnemyLevel level) {
+
+        Vector3 spawnPosition =
+            spawnPosition = new Vector3(
+            Random.Range(-spawnPositionRange.x, spawnPositionRange.x),
+            spawnPositionRange.y,
+            spawnPositionRange.z
+            );
         
+        Quaternion spawnQuarternion = Quaternion.identity;
+
+        Instantiate(
+            Enemies[level],
+            spawnPosition,
+            spawnQuarternion);
+
+        spawnedEnemies++;
+        activingEnemies++;
     }
 
-    IEnumerator SpawnWaves () {
-		yield return new WaitForSeconds(startTimer);
-		//Keep spawning from start to finish:
-		while (!gameOverRef.CheckGameOver())
-		{
-			for (int i = hazardsPerWave; i > 0; --i)
-			{
-				SpawnSingle();
-				//Between Hazards:
-				yield return new WaitForSeconds(spawnTimer);
-			}
-			//Between waves:
-			yield return new WaitForSeconds(waveBreak);
-		}
-	}
-	void SpawnSingle() {
-		Vector3 spawnPosition = new Vector3 (
-					Random.Range(-spawnReference.x, spawnReference.x),
-					spawnReference.y,
-					spawnReference.z);
-		Quaternion spawnRotation = Quaternion.identity;
-		Instantiate (
-			hazardObjectsList[Random.Range(0, hazardObjectsList.Length)], 
-			spawnPosition, 
-			spawnRotation);
-	}
+    public void SpawnColumn(EnemyLevel level, int quantity) {
+
+        float xPos = Random.Range(-spawnPositionRange.x, spawnPositionRange.x);
+
+        for (int i = 0; i < quantity; ++i) {
+            //Calculate position y in the comlumns of enemies using game object size and iterator:
+            //The 1 number represent the space between enemies in the column:
+            float spaceBetween = 0.8f;
+            float yPos = spawnPositionRange.y + 
+                spaceBetween +
+                Enemies[level].GetComponent<Renderer>().bounds.size.y * i;
+
+            Vector3 spawnPosition =
+            spawnPosition = new Vector3(
+                xPos,
+                yPos,
+                spawnPositionRange.z);
+
+            Quaternion spawnQuarternion = Quaternion.identity;
+
+            Instantiate(
+                Enemies[level],
+                spawnPosition,
+                spawnQuarternion);
+
+            spawnedEnemies++;
+            activingEnemies++;
+        }
+    }
+
+
+    public void EnemyDestroyed() {
+
+        if (activingEnemies > 0) {
+            activingEnemies--;
+        }
+    }
+
+    public bool SpawningCheck() {
+
+        isSpawning = gameOverRef.CheckGameOver();
+        
+        return isSpawning;
+    }
+
+    public int GetActiveEnemiesNum() {
+        return activingEnemies;
+    }
 }
