@@ -120,8 +120,6 @@ GameObject:
   - component: {fileID: 4017692940672940883}
   - component: {fileID: 4017692940672940882}
   - component: {fileID: 4017692940672940885}
-  - component: {fileID: 4017692940672940881}
-  - component: {fileID: -7196767948756710461}
   - component: {fileID: 4795059687279436291}
   - component: {fileID: 1453699630855095493}
   - component: {fileID: 6565493977075081724}
@@ -142,7 +140,7 @@ Transform:
   m_GameObject: {fileID: 4017692940672940887}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.48, y: 4.47, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 4017692940117250886}
   - {fileID: 4017692939267114954}
@@ -186,41 +184,6 @@ CircleCollider2D:
   m_Offset: {x: 0.041787207, y: -0.05467236}
   serializedVersion: 2
   m_Radius: 0.47334445
---- !u!114 &4017692940672940881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4017692940672940887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4c865bb4346ef1459c8136c477342bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentVerticalSpeed: -3
-  maneuverSpeed: 2
-  maneuverSmoothLimit: 10
-  tiltRate: 5
-  startDelay: 1
-  maneuverTime: 1
-  timeTilNextMove: 2
---- !u!114 &-7196767948756710461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4017692940672940887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5b2cf26eb541a84bb443c1f53cc9f4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shot: {fileID: 1600620134327404, guid: f4bbde6c96218104c9174f84cda8de56, type: 3}
-  shotSpawn: {fileID: 4017692939267114954}
-  delayTime: 0.25
-  fireRate: 2
 --- !u!114 &4795059687279436291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,6 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 20
+  isOnhit: 1
   onHitAnimation: {fileID: 5668677574352171950}
   shotExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
     type: 3}

@@ -11,7 +11,6 @@ public class EnemyMovement : MonoBehaviour
     public float currentVerticalSpeed;
     public float maneuverSpeed;
     public float maneuverSmoothLimit;
-    public float tiltRate;
 
     //Range for random yielding:
     public float startDelay;
@@ -56,14 +55,22 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        SetManeuverSpeed();
+        //Rotation tilt follow maneuvering directions:
+    }
+
+    void SetManeuverSpeed() {
         //Slowly increase x maneuvering speed:
         float maneuver = Mathf.MoveTowards(
             rg.velocity.x, 
             maneuverTargetSpeed, 
             Time.deltaTime * maneuverSmoothLimit);
+
         //Apply to movement:
         rg.velocity = new Vector2(maneuver, currentVerticalSpeed);
-        //Rotation tilt follow maneuvering directions:
-        rg.rotation = -(rg.velocity.x * tiltRate);
+    }
+
+    void Tilt() {
+        //
     }
 }

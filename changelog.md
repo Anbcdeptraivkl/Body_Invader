@@ -7,21 +7,41 @@ All notable changes will be documented here.
 
 ### Adding:
 
-- UFO Enemies.
+- Red enemies are now Normal in difficulty, with the new behaviours as follow: /w
+  - When instantiated, move forward along the y axis for a random amount of time.
+  - Then turn toward the current player position and spawn shoot in that direction
+  - The rotations and shooting directions are updated and applied continously every set amount of time (depend on how hard you want the enemies to be)
 
-- Hard Enemies:
-	+ Arts.
-	+ Behaviours.
+- Brute Hard Enemies:
+	+ Arts @
+	+ Behaviours /w
+	
+- Strings of Easy Enemies. /w
 	
 - Intergrate and Implement the Spawn Manager with the new enemies.
 
 - Hit sound effects.
+
+- Enemies HP Manager.
 
 - Player HP Manager.
 	+ UI and Effects.
 	+ Synergy with Upgrades.
 	
 - Upgrades!
+	+ Upgrades UI.
+	+ Special Effects + Sounds and Music.
+	
+- Juiciness:
+	+ Colorful!
+	+ Special Effects with Particle Effects!
+	+ More Animations!
+	+ More Sound Effects!
+	+ Cam Effects:
+		+ Screen shake!
+		+ Slow Mo!
+		+ Zooming!
+		+ Flashing!
 
 ### Changing:
 
@@ -33,31 +53,41 @@ All notable changes will be documented here.
 
 - Red Enemies's HP Features and On-hit animations.
 
-- Modular and Dynamic Approach on Enemy Spawn Manager: the Spawn Manager was break down into 2 smaller components:
+- Modular (Flexible and Single-responsibility Components) and Dynamic Approach (Seperating Concerns: in this case Data and Behaviours, Properties and Methods) on Enemy Spawn Manager: the Spawn Manager was break down into 2 smaller components:
 	+ The Main Manager: storing Data for Enemies, enemies types and providing Spawning + utility methods.
-	+ Spawner where the real spawning routines will happen, the data will be recorded about the waves and difficulty (currently the Spawner is for endless Game Mode, and the spawning types + difficulty are determined randomly)
+	+ Spawner controlling the Behaviours where the real spawning routines will happen, (the data will be recorded about the waves and difficulty) (currently the Spawner is for endless Game Mode, and the spawning types + difficulty are determined randomly)
 - Added a "SpawnColumn() Function in the Spawn Manager to spawn enemies in column formation.
+
+- UFO Easy Enemies prefabs:
+  - SImilar Effects to the old Red Enemy.
+  - Behaviours:
+    - Move and Maneuver in a consistent manners (based on the old Red Enemy Prefab)
+    - Auto Self-rotating.
+
+- Add a bool control value for on hit Animation on Getting Shot Component Script: will not play on hit animatioons if set to false.
 	
 ### Changed:
 
-- Reduce spanw rates for easier difficulty.
+- Reduce spanw rates and enemies' speed for balanced difficulty.
 
 - Break and Tweak the Controllers script into 3 smaller, fully referenced and intergrated modules:
 	+ the Spawn Manager.
 	+ The Score Manager.
 	+ The Game Over Manager.
+  
 - Break and Reimplement the Enemy Controller into 3 Module (Script Components):
 	+ The Player Contact Processor: Player Destroying and Game Over Trigger.
 	+ The On-Shot Processor: Deal with HP, On-hit, and Destroyed Effects.
 	+ The HP Manager: This Modules Determine and Manipulate HP: Can be intergrated Modularily as Components for virtually any Objects in the Game.
+	
 - Refactored the Code t be more flexible and reusable.
 
-- the Red Enemies's Movements: no Random values, they now maneuver in a consistent and similar patterns.
-- Speed , Shot Rate and Spawn Rate of Red Enemies are tweaked for a more dynamic and relaxing beginning.
+- Enemies's Movements: no Random values, they now maneuver in a consistent and similar patterns.
 
 ### Fixed:
 
-- Fix the bugs where the enemies can be shot even before they spawned.
+- Fixed the bugs where the enemies can be shot even before they spawned.
+- Fixed the bugs where animations on hit will not play, and enemies become indestructible. 
 
 ### Removed:
 

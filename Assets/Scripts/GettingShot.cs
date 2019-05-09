@@ -12,6 +12,8 @@ using UnityEngine;
 public class GettingShot : MonoBehaviour
 {
     public int scoreValue;
+
+    public bool isOnhit;
     public Animator onHitAnimation;
     public GameObject shotExplosion;
     ScoreManager scoreManager;
@@ -39,11 +41,18 @@ public class GettingShot : MonoBehaviour
 		if (other.gameObject.tag != "Boundary" )
 		{
 			if (other.gameObject.tag == "Shot") {
-                onHitAnimation.Play("OnHit", -1, 0f);
+
+                if (isOnhit) {
+                    onHitAnimation.Play("OnHit", -1, 0f);
+                }
+
+                //Decrease Hp and Destroy the SHot:
                 hpManager.DecreaseHP();
-                 Destroy(other.gameObject);
-                //Destroy of dieing:
+                Destroy(other.gameObject);
+
+                //Dieing:
                 if (!hpManager.Alive()) {
+                    
                     shotExplosion = Instantiate(
                         shotExplosion, 
                         transform.position, 
