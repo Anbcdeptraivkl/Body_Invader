@@ -2,61 +2,19 @@
 All notable changes will be documented here.
 
 
-
-## [Working On]
-
-### Adding:
-
-- Red enemies are now Normal in difficulty, with the new behaviours as follow: /w
-  - When instantiated, move forward along the y axis for a random amount of time.
-  - Then turn toward the current player position and spawn shoot in that direction
-  - The rotations and shooting directions are updated and applied continously every set amount of time (depend on how hard you want the enemies to be)
-
-- Brute Hard Enemies:
-	+ Arts @
-	+ Behaviours /w
-	
-- Strings of Easy Enemies. /w
-	
-- Intergrate and Implement the Spawn Manager with the new enemies.
-
-- Hit sound effects.
-
-- Enemies HP Manager.
-
-- Player HP Manager.
-	+ UI and Effects.
-	+ Synergy with Upgrades.
-	
-- Upgrades!
-	+ Upgrades UI.
-	+ Special Effects + Sounds and Music.
-	
-- Juiciness:
-	+ Colorful!
-	+ Special Effects with Particle Effects!
-	+ More Animations!
-	+ More Sound Effects!
-	+ Cam Effects:
-		+ Screen shake!
-		+ Slow Mo!
-		+ Zooming!
-		+ Flashing!
-
-### Changing:
-
-
-
 ## [Unreleased]
 
 ### Added:
 
 - Red Enemies's HP Features and On-hit animations.
 
-- Modular (Flexible and Single-responsibility Components) and Dynamic Approach (Seperating Concerns: in this case Data and Behaviours, Properties and Methods) on Enemy Spawn Manager: the Spawn Manager was break down into 2 smaller components:
-	+ The Main Manager: storing Data for Enemies, enemies types and providing Spawning + utility methods.
-	+ Spawner controlling the Behaviours where the real spawning routines will happen, (the data will be recorded about the waves and difficulty) (currently the Spawner is for endless Game Mode, and the spawning types + difficulty are determined randomly)
-- Added a "SpawnColumn() Function in the Spawn Manager to spawn enemies in column formation.
+- Modular and Dynamic Approach on Enemy Spawn Manager: the Spawn Manager was break down into 2 smaller components:
+	+ The Main Manager: storing Data for Enemies, enemies types and providing Spawning + utility methods (the Base Data and Methods)
+	+ Spawners controlling the wave spawning schedule, random spawn rates and waves data (doing the real Spawning)
+    	+ Intergrate and Implement the Spawn Manager with the new enemies (currently having their own spawn ratios) in the Endless Spawner:
+          - Easy
+          - Normal
+          - 3 Easy
 
 - UFO Easy Enemies prefabs:
   - SImilar Effects to the old Red Enemy.
@@ -64,7 +22,18 @@ All notable changes will be documented here.
     - Move and Maneuver in a consistent manners (based on the old Red Enemy Prefab)
     - Auto Self-rotating.
 
+- UFO String prefab: consists of 3 UFO enemies in a column, spawning and moving simutaneously.
+
 - Add a bool control value for on hit Animation on Getting Shot Component Script: will not play on hit animatioons if set to false.
+  
+- Red enemies are now Normal in difficulty, with the new behaviours as follow: 
+  - When instantiated, move forward along the y axis for a random amount of time.
+  - Then turn toward the current player position (using Relative Quaternion) and spawn shoot in that direction.
+  - DOuble Auto-shooting follow the facing directions before every updated rotations.
+  - The rotations and shooting directions are updated and applied continously every set amount of time (depend on how hard you want the enemies to be)
+
+- After spawned, the enemies have a short invincible time so they won't be destroyed off-screen.
+
 	
 ### Changed:
 
@@ -84,15 +53,26 @@ All notable changes will be documented here.
 
 - Enemies's Movements: no Random values, they now maneuver in a consistent and similar patterns.
 
+- Smaller Sprites Scales for player and enemies in general.
+  
+- Bigger Bullets scales.
+  
+- Player ship:
+  - no longer rotate when moving.
+  - Move faster and shoot faster.
+
+- Change the player color palette for clearer views (white-green).
+
 ### Fixed:
 
 - Fixed the bugs where the enemies can be shot even before they spawned.
 - Fixed the bugs where animations on hit will not play, and enemies become indestructible. 
+- Fixed SPawning checking always return false.
 
 ### Removed:
 
-- The outdated GameCOntroller scripts.
-- The outdated Enemy Reaction Controller scripts.
+- Outdated scripts.
+- The old Spawning and Contact systems.
 
 
 ## [0.5.0] - 23/04/2019

@@ -8,8 +8,7 @@ public class EndlessSpawner : MonoBehaviour
         Easy,
         MultipleEasy,
 
-        Normal,
-        Hard
+        Normal
     }
 
     public int enemiesPerWave;
@@ -17,9 +16,6 @@ public class EndlessSpawner : MonoBehaviour
     public float spawnDelay;
     public float waveStartDelay;
     public float waveSpawnDelay;
-    
-    int difficulty;
-    int wavesNumber;
 
     SpawnManager spawnMng;
     // Start is called before the first frame update
@@ -27,20 +23,14 @@ public class EndlessSpawner : MonoBehaviour
     {
         spawnMng = GetComponent<SpawnManager>();
 
-        difficulty = 0;
-        wavesNumber = 0;
-
         StartCoroutine("SpawnWaves");
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     IEnumerator SpawnWaves() {
         while(spawnMng.SpawningCheck()) {
+
+            Debug.Log("Spawning");
 
             //Start Delay:
             yield return new WaitForSeconds(waveStartDelay);
@@ -52,40 +42,33 @@ public class EndlessSpawner : MonoBehaviour
                 switch (type)
                 {
                     case SpawnType.Easy: {
-                        spawnMng.SpawnSingle(SpawnManager.EnemyLevel.Easy);
+                        spawnMng.Spawn(SpawnManager.EnemyLevel.Easy);
                         break;
                     }
 
                     case SpawnType.MultipleEasy: {
-                        spawnMng.SpawnColumn(SpawnManager.EnemyLevel.Easy, 3);
+                        spawnMng.Spawn(SpawnManager.EnemyLevel.Multiple);
                         break;
                     }
 
                     case SpawnType.Normal: {
-                        spawnMng.SpawnSingle(SpawnManager.EnemyLevel.Normal);
+                        spawnMng.Spawn(SpawnManager.EnemyLevel.Normal);
                         break;
                     }
                     
-                    case SpawnType.Hard: {
-                        spawnMng.SpawnSingle(SpawnManager.EnemyLevel.Hard);
-                        break;
-                    }
                 }
 
                 //Delay between Spawn
                 yield return new WaitForSeconds(spawnDelay);
             }
 
-            // Increase waves Spawned number and Wait for new wave:
-            wavesNumber++;
             yield return new WaitForSeconds(waveSpawnDelay);
         }
     }
 
     SpawnType RandomizeSpawnType() {
-        float easyProb = 0.4f;
+        float easyProb = 0.5f;
         float multipleProb = 0.3f;
-        float normalProb = 0.2f;
 
         // float hardProb = 0.1f;
 
@@ -98,11 +81,8 @@ public class EndlessSpawner : MonoBehaviour
         else if (spawnChance < (easyProb + multipleProb)) {
             return SpawnType.MultipleEasy;
         } 
-        else if (spawnChance < (easyProb + multipleProb + normalProb)) {
+        else {
             return SpawnType.Normal;
         } 
-        else {
-            return SpawnType.Hard;
-        }
     }
 }

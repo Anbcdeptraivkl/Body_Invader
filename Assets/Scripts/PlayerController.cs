@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour {
 	void FixedUpdate () {
 		MovePlayer();
 		ClampToBound();
-		RotatePlayerOnMoving();
 	}
 
 	void MovePlayer()

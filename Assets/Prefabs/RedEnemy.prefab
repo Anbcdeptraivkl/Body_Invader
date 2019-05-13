@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4017692939267114957}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.04, y: -0.71, z: 0}
+  m_LocalPosition: {x: 0.01, y: -0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4017692940672940883}
@@ -119,11 +119,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4017692940672940883}
   - component: {fileID: 4017692940672940882}
-  - component: {fileID: 4017692940672940885}
+  - component: {fileID: 7161582973627609733}
   - component: {fileID: 4795059687279436291}
   - component: {fileID: 1453699630855095493}
   - component: {fileID: 6565493977075081724}
   - component: {fileID: 5668677574352171950}
+  - component: {fileID: -3211732807458308716}
+  - component: {fileID: -1741495002048444426}
+  - component: {fileID: 2953947179731942598}
   m_Layer: 0
   m_Name: RedEnemy
   m_TagString: Enemy
@@ -168,8 +171,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &4017692940672940885
-CircleCollider2D:
+--- !u!70 &7161582973627609733
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -178,12 +181,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.041787207, y: -0.05467236}
-  serializedVersion: 2
-  m_Radius: 0.47334445
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 1
 --- !u!114 &4795059687279436291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,3 +250,50 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-3211732807458308716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4017692940672940887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465ed9439ffbdb44eb21cbbfd34cb6aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startDelay: 0.25
+  moveSpeed: -3.5
+  timeRange: {x: 0.75, y: 1.25}
+--- !u!114 &-1741495002048444426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4017692940672940887}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872def01fa806f243b0abcf15b25f2b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateRate: 4
+  rotateDelay: 1
+  startDelay: 0.25
+  shot: {fileID: 1600620134327404, guid: f4bbde6c96218104c9174f84cda8de56, type: 3}
+  shotSpawn: {fileID: 4017692939267114954}
+  shotSpeed: 7
+  shootingDelay: 0.4
+--- !u!114 &2953947179731942598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4017692940672940887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba683ea23b91774fb01da539ef158d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 1
