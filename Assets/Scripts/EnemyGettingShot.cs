@@ -9,7 +9,7 @@ using UnityEngine;
 - Destroy if out of hp and:
     + Increase Score.
 */
-public class GettingShot : MonoBehaviour
+public class EnemyGettingShot : MonoBehaviour
 {
     public int scoreValue;
 
@@ -17,7 +17,7 @@ public class GettingShot : MonoBehaviour
     public Animator onHitAnimation;
     public GameObject shotExplosion;
     ScoreManager scoreManager;
-    HPManager hpManager;
+    EnemyHPManager hpManager;
     
     void Start()
     {
@@ -32,7 +32,7 @@ public class GettingShot : MonoBehaviour
 				Debug.Log("Failed to load <GameController> script component.");
 			}
         
-        hpManager = gameObject.GetComponent<HPManager>();
+        hpManager = gameObject.GetComponent<EnemyHPManager>();
     }
 
     void OnTriggerEnter2D (Collider2D other)

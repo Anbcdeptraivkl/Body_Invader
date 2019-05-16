@@ -6,7 +6,7 @@ using UnityEngine;
 /* The Enemy Object will slowly rotate toward player (including the shot spawns and direction vectors)*/
 /* After each rotating routine, the enemy will begin shooting */
 
-public class Tracking: MonoBehaviour 
+public class EnemyTracking: MonoBehaviour 
 {
 
     public float rotateRate;

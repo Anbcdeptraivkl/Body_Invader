@@ -120,13 +120,13 @@ GameObject:
   - component: {fileID: 4017692940672940883}
   - component: {fileID: 4017692940672940882}
   - component: {fileID: 7161582973627609733}
-  - component: {fileID: 4795059687279436291}
   - component: {fileID: 1453699630855095493}
-  - component: {fileID: 6565493977075081724}
   - component: {fileID: 5668677574352171950}
   - component: {fileID: -3211732807458308716}
-  - component: {fileID: -1741495002048444426}
   - component: {fileID: 2953947179731942598}
+  - component: {fileID: 1602814915813491525}
+  - component: {fileID: 8049858410425869102}
+  - component: {fileID: 7023459306296535175}
   m_Layer: 0
   m_Name: RedEnemy
   m_TagString: Enemy
@@ -187,23 +187,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.5, y: 1}
   m_Direction: 1
---- !u!114 &4795059687279436291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4017692940672940887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 467822184f7811a47946937aaf86f890, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreValue: 20
-  isOnhit: 1
-  onHitAnimation: {fileID: 5668677574352171950}
-  shotExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
-    type: 3}
 --- !u!114 &1453699630855095493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,19 +201,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerExplosion: {fileID: 5903513841248052773, guid: f378928e77eb593418a8b059e959ad48,
     type: 3}
---- !u!114 &6565493977075081724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4017692940672940887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dccbd0291d996284bbd051b02663b8e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseHP: 2
 --- !u!95 &5668677574352171950
 Animator:
   serializedVersion: 3
@@ -265,25 +235,6 @@ MonoBehaviour:
   startDelay: 0.25
   moveSpeed: -3.5
   timeRange: {x: 0.75, y: 1.25}
---- !u!114 &-1741495002048444426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4017692940672940887}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 872def01fa806f243b0abcf15b25f2b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateRate: 4
-  rotateDelay: 1
-  startDelay: 0.25
-  shot: {fileID: 1600620134327404, guid: f4bbde6c96218104c9174f84cda8de56, type: 3}
-  shotSpawn: {fileID: 4017692939267114954}
-  shotSpeed: 7
-  shootingDelay: 0.4
 --- !u!114 &2953947179731942598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,3 +248,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 1
+--- !u!114 &1602814915813491525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4017692940672940887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e78897178026a4c42811ccf3fddd0cb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHP: 2
+--- !u!114 &8049858410425869102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4017692940672940887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20adb52ac8c3e19489269c362911b715, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 20
+  isOnhit: 1
+  onHitAnimation: {fileID: 5668677574352171950}
+  shotExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
+    type: 3}
+--- !u!114 &7023459306296535175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4017692940672940887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b87bd35eada905542ace5c7d99346398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateRate: 5
+  rotateDelay: 0.75
+  startDelay: 1
+  shot: {fileID: 1600620134327404, guid: f4bbde6c96218104c9174f84cda8de56, type: 3}
+  shotSpawn: {fileID: 4017692939267114954}
+  shotSpeed: 7
+  shootingDelay: 0.5

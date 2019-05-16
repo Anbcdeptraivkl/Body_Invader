@@ -38,7 +38,7 @@ public class ShortMovement : MonoBehaviour
     }
 
     void StartTracking() {
-        gameObject.GetComponent<Tracking>().enabled = true;
+        gameObject.GetComponent<EnemyTracking>().enabled = true;
     }
     
 

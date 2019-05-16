@@ -34,6 +34,8 @@ All notable changes will be documented here.
 
 - After spawned, the enemies have a short invincible time so they won't be destroyed off-screen.
 
+- Enemies HP Manager for all enemies.
+  
 	
 ### Changed:
 

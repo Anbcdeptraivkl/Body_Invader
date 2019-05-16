@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HPManager : MonoBehaviour
+public class EnemyHPManager : MonoBehaviour
 {
     public int baseHP;
 
