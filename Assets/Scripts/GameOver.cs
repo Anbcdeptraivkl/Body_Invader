@@ -10,6 +10,8 @@ public class GameOver : MonoBehaviour
     public AudioSource backgroundMusic;
     public AudioSource gameOverMusic;
 
+    public GameObject playerStatus;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +42,9 @@ public class GameOver : MonoBehaviour
 		gameOver = true;
 		backgroundMusic.Stop();
 		gameOverMusic.Play();
+
+        // Hide the player status panel:
+        playerStatus.SetActive(false);
 	}
 
     public bool CheckGameOver () {

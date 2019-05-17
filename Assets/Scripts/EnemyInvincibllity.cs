@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyInvincibllity : MonoBehaviour
 {
-    public float timer = 0.4f;
+    public float timer = 0.25f;
     // Start is called before the first frame update
     void Start()
     {

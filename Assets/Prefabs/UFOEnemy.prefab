@@ -86,10 +86,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 885600167462576328}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e9a2183ccb5d3244a324a9ed39ffe5f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ff54bc747538bb45aa063dae30a9812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerExplosion: {fileID: 5903513841248052773, guid: f378928e77eb593418a8b059e959ad48,
+  selfExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
     type: 3}
 --- !u!114 &885600167462576324
 MonoBehaviour:

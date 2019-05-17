@@ -41,7 +41,16 @@ public class EnemyTracking: MonoBehaviour
            //Shoot after rotating! 
             yield return StartCoroutine("SpawnDoubleShot");
 
-            playerTransform = GameObject.FindWithTag("Player").transform;
+            GameObject playerObj = GameObject.FindWithTag("Player");
+
+            if (playerObj) {
+
+                playerTransform = playerObj.transform;
+            }
+            else {
+                Debug.Log("Player not found or destroyed");
+                yield return null;
+            }
 
             if (!playerTransform) {
                 yield return null;

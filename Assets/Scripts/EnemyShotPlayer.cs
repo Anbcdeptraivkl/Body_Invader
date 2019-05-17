@@ -2,39 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/*When the enemy's bolt hit the player, esplode */
+/*When the enemy's bolt hit the player, deplete HP (the deaths and explosions are calculatred in the Player HP Manager)*/
 public class EnemyShotPlayer : MonoBehaviour
 {
-    public GameObject playerExplosion;
-    //Script References:
-	private GameOver gameOverController;
+ 
+    
+
+    private PlayerHPManager playerHp;
 
 	void Start()
 	{
-		GameObject gameControllerObject = GameObject.FindWithTag("GameController");
-		if (gameControllerObject != null) 
-		{
-			gameOverController = gameControllerObject.GetComponent<GameOver>();
-		}
-			else
-			{
-				Debug.Log("Failed to load <GameController> script component.");
-			}
+        GameObject playerObj = GameObject.FindWithTag("Player");
+
+        if (playerObj) {
+
+            playerHp = playerObj.GetComponent<PlayerHPManager>();
+        }
+        else {
+            Debug.Log("Player not found or destroyed.");
+        }
 	}
     
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
-            playerExplosion = Instantiate(
-                playerExplosion, 
-                other.transform.position,
-                other.transform.rotation) as GameObject;
-            Destroy(other.gameObject);
-            Destroy(playerExplosion, 2.0f);
+            // Decreasing Player HP and Play effects:
+            playerHp.DecreaseHp();
+
             Destroy(gameObject);
-            //Game over since the player has been destroyed:
-            gameOverController.Over();
+
         }
     }
 }

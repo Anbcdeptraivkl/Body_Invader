@@ -4,66 +4,42 @@ All notable changes will be documented here.
 
 ## [Unreleased]
 
+
+## [0.6.0] - 17/05/2019
+
 ### Added:
 
-- Red Enemies's HP Features and On-hit animations.
+- Added new types of enemies replacing old enemies and hazards:
+	+ A UFO enemies floating and maneuvering toward the bottom of the screen.
+	+ A Red Battleship Tracking and SHooting at player's Direction in real-time.
 
-- Modular and Dynamic Approach on Enemy Spawn Manager: the Spawn Manager was break down into 2 smaller components:
-	+ The Main Manager: storing Data for Enemies, enemies types and providing Spawning + utility methods (the Base Data and Methods)
-	+ Spawners controlling the wave spawning schedule, random spawn rates and waves data (doing the real Spawning)
-    	+ Intergrate and Implement the Spawn Manager with the new enemies (currently having their own spawn ratios) in the Endless Spawner:
-          - Easy
-          - Normal
-          - 3 Easy
+- Added HP Manager for Enemies and Player.
 
-- UFO Easy Enemies prefabs:
-  - SImilar Effects to the old Red Enemy.
-  - Behaviours:
-    - Move and Maneuver in a consistent manners (based on the old Red Enemy Prefab)
-    - Auto Self-rotating.
+- Added UI and VFX for Player's HP.
 
-- UFO String prefab: consists of 3 UFO enemies in a column, spawning and moving simutaneously.
-
-- Add a bool control value for on hit Animation on Getting Shot Component Script: will not play on hit animatioons if set to false.
-  
-- Red enemies are now Normal in difficulty, with the new behaviours as follow: 
-  - When instantiated, move forward along the y axis for a random amount of time.
-  - Then turn toward the current player position (using Relative Quaternion) and spawn shoot in that direction.
-  - DOuble Auto-shooting follow the facing directions before every updated rotations.
-  - The rotations and shooting directions are updated and applied continously every set amount of time (depend on how hard you want the enemies to be)
-
-- After spawned, the enemies have a short invincible time so they won't be destroyed off-screen.
-
-- Enemies HP Manager for all enemies.
+- Added Invincible Time for enemies a short time at their spawns (so they won't be destroyed before entering the screen)
   
 	
 ### Changed:
 
 - Reduce spanw rates and enemies' speed for balanced difficulty.
 
-- Break and Tweak the Controllers script into 3 smaller, fully referenced and intergrated modules:
-	+ the Spawn Manager.
-	+ The Score Manager.
-	+ The Game Over Manager.
-  
-- Break and Reimplement the Enemy Controller into 3 Module (Script Components):
-	+ The Player Contact Processor: Player Destroying and Game Over Trigger.
-	+ The On-Shot Processor: Deal with HP, On-hit, and Destroyed Effects.
-	+ The HP Manager: This Modules Determine and Manipulate HP: Can be intergrated Modularily as Components for virtually any Objects in the Game.
+- Refactor the Code to be more Modular, Reusable and Single-responsible:
+	+ Every scripts now followed a naming convention depended on their targeted objects. E.g every enemy's behaviours scritps have 'Enemy-' as prefixes.
+	+ Break the Controller scripts into Smaller, more Focused and easy to understand Components.
+
+- Implemented the HP Mechanic into the Script Base:
+	+ Enemies Shooting and Contacting will deplete player's HP.
+	+ Game Over when out-of-HP.
 	
-- Refactored the Code t be more flexible and reusable.
+- UFO Enemies's Movements: no Random values, they now maneuver in a consistent and similar patterns.
 
-- Enemies's Movements: no Random values, they now maneuver in a consistent and similar patterns.
-
-- Smaller Sprites Scales for player and enemies in general.
-  
-- Bigger Bullets scales.
+- Smaller Sprites Scales for player and enemies in general. Bigger Bullet Scales for Clearer view
   
 - Player ship:
-  - no longer rotate when moving.
-  - Move faster and shoot faster.
-
-- Change the player color palette for clearer views (white-green).
+	- no longer move vertically and will not rotate when moving.
+	- Move faster and shoot faster.
+	- Change the player color palette for clearer views (white-green).
 
 ### Fixed:
 
@@ -73,7 +49,7 @@ All notable changes will be documented here.
 
 ### Removed:
 
-- Outdated scripts.
+- Outdated scripts and Prefabs.
 - The old Spawning and Contact systems.
 
 
