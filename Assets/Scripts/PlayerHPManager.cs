@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Control the HP data + Visual and audio effects on HP:
+//Control the HP data + Visual and audio effects responds on HP: (including invin frames and low-hp warnings)
 public class PlayerHPManager : MonoBehaviour
 {
     [SerializeField]
@@ -12,10 +12,12 @@ public class PlayerHPManager : MonoBehaviour
      UiHpController hpUi;
 
     public GameObject playerExplosion;
+
+    public float invinTime;
 	
     private GameOver gameOverController;
 
-    int currentHp;
+    protected int currentHp;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,9 @@ public class PlayerHPManager : MonoBehaviour
 
         // Check for Remaining HP, and respond accordingly every Depletion:
         DepletingEffect();
+        
+        // Undamagable time:
+        BeInvincible(invinTime);
     }
 
     public void IncreaseHp(int amount = 1) {
@@ -102,5 +107,15 @@ public class PlayerHPManager : MonoBehaviour
         //Destroy the Player and end the game:
         Destroy(gameObject);
             
+    }
+
+    void BeInvincible(float time) {
+        GetComponent<CapsuleCollider2D>().enabled = false;
+
+        Invoke("StopInvincible", time);
+    }
+
+    void StopInvincible() {
+        GetComponent<CapsuleCollider2D>().enabled = true;
     }
 }

@@ -13,7 +13,9 @@ All notable changes will be documented here.
 	+ A UFO enemies floating and maneuvering toward the bottom of the screen.
 	+ A Red Battleship Tracking and SHooting at player's Direction in real-time.
 
-- Added HP Manager for Enemies and Player.
+- Added HP Manager for Enemies and Player:
+  
+- Added Invincible Frames after damaged for Player.
 
 - Added UI and VFX for Player's HP.
 
@@ -41,11 +43,14 @@ All notable changes will be documented here.
 	- Move faster and shoot faster.
 	- Change the player color palette for clearer views (white-green).
 
+- Changed the Enemies's color palette to Main Red Palette!
+
 ### Fixed:
 
 - Fixed the bugs where the enemies can be shot even before they spawned.
 - Fixed the bugs where animations on hit will not play, and enemies become indestructible. 
 - Fixed SPawning checking always return false.
+- Fixed Buggy and Irresponsive HP UI Animations (caused by slow Trigger values).
 
 ### Removed:
 

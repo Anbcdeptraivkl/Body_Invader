@@ -17,14 +17,18 @@ public class UiHpController: MonoBehaviour {
 
     //Lose HP Effects: Depleting, changing colors, and finally disable the Hp segments:
     public void Lose1() {
+        hp1.GetComponent<Animator>().enabled = true;
+        
         hp1.GetComponent<Animator>().SetTrigger("Hit1");
     }
 
     public void Lose2() {
         // Deplete HP2, then play HP3 Danger animation:
+        hp2.GetComponent<Animator>().enabled = true;
+
         hp2.GetComponent<Animator>().SetTrigger("Hit2");
         
-        Invoke("Flashing3", 0.5f);
+        Invoke("Flashing3", 1.0f);
     }
 
     public void Flashing3() {
