@@ -13,11 +13,17 @@ public class PlayerHPManager : MonoBehaviour
 
     public GameObject playerExplosion;
 
-    public float invinTime;
+    public float invinTime = 0.75f;
 	
     private GameOver gameOverController;
 
+    private Collider2D playerCollider;
+
+
     protected int currentHp;
+
+    //Invincible checker: will affect enemy's shots and contacts behaviours:
+    protected bool isInvin;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +39,20 @@ public class PlayerHPManager : MonoBehaviour
 			{
 				Debug.Log("Failed to load <GameController> script component.");
 			}
+
+        playerCollider = GetComponent<CapsuleCollider2D>();
+
+        isInvin = false;
+    }
+
+    void Update() {
+
+        // //Updating Invincibility frames:
+        // if (isInvin) {
+        //     Invincible();
+
+        //     Invoke("StopInvin", invinTime);
+        // }
     }
 
     public void DecreaseHp(int amount = 1) {
@@ -41,9 +61,9 @@ public class PlayerHPManager : MonoBehaviour
 
         // Check for Remaining HP, and respond accordingly every Depletion:
         DepletingEffect();
-        
-        // Undamagable time:
-        BeInvincible(invinTime);
+
+        StartCoroutine("Invincible");
+
     }
 
     public void IncreaseHp(int amount = 1) {
@@ -57,6 +77,10 @@ public class PlayerHPManager : MonoBehaviour
 
     public int CurrentHp() {
         return currentHp;
+    }
+
+    public bool CheckInvin() {
+        return isInvin;
     }
 
     public bool CheckAlive() {
@@ -109,13 +133,13 @@ public class PlayerHPManager : MonoBehaviour
             
     }
 
-    void BeInvincible(float time) {
-        GetComponent<CapsuleCollider2D>().enabled = false;
+    IEnumerator Invincible() {
+        
+        isInvin = true;
 
-        Invoke("StopInvincible", time);
+        yield return new WaitForSeconds(invinTime);
+
+        isInvin = false;
     }
 
-    void StopInvincible() {
-        GetComponent<CapsuleCollider2D>().enabled = true;
-    }
 }

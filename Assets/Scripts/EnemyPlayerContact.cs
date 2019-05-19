@@ -14,7 +14,12 @@ public class EnemyPlayerContact : MonoBehaviour
     void Start()
 	{
 		GameObject playerObj = GameObject.FindWithTag("Player");
-		playerHp = playerObj.GetComponent<PlayerHPManager>();
+
+		if (playerObj) {	
+			playerHp = playerObj.GetComponent<PlayerHPManager>();
+		} else {
+			Debug.Log("Player not found");
+		}
 	}
 
     void OnTriggerEnter2D (Collider2D other)
@@ -24,8 +29,13 @@ public class EnemyPlayerContact : MonoBehaviour
 		{
 			if (other.gameObject.tag == "Player")
             {
+				//Deplete player HP if isn't currently in Invincible frames:
+				if (!playerHp.CheckInvin()) {
+
+					playerHp.DecreaseHp();
+
+				}
 				// Deplete Player HP:
-				playerHp.DecreaseHp();
 
 				// Play the explosion:
                 selfExplosion = Instantiate(

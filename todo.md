@@ -3,7 +3,8 @@
 - Player HP Manager. /w
 	+ UI and Effects:
     	+ Effects for HP Segment Depleting: 1 @ 2 @ 3 @
-	+ SOme Invincible frames when got hit (about 0.75 s)
+    	+ Fade the UI when Paused. /w
+	+ SOme Invincible frames when got hit (about 0.75 s), couples with vfx and sfx juicy responds @
 	+ Scripts to Control the Interface and Effects:
     	+ The PlayerHPManager.
         	+ The UiHpController for Depleting Special Effects. @
@@ -27,23 +28,23 @@
 
 - Juiciness: /w
 	+ Colorful, but Consistent:
-		+ Color Palettes!
+		+ Color Palettes! /w
 		+ Same Main Colors for Enemies. @
 		+ Smae Color Schemes for Upgrades and Players Positive / Negative Effects: Player Blue, Enemy Red, etc. @
 	+ Exclusive Special Effects with **Particle Effects**!
 	+ More Robust and Impactful Animations (still subtle and won't affect gameplay):
 		+ Moving and Flashing vfx when starting the games for player ship.
-		+ Lighting when shooting and Animations + Special VFX when getting hit.
+		+ Lighting when shooting and Animations + Special VFX when getting hit, both player and enemies. /w
 	+ More Sound Effects!
-    	+ Hovering + Buttons Pressed.
+    	+ Hovering + Buttons Pressed sounds. /w
     	+ Navigating sounds:
 			+ Low Hp sfx. /w
-			+ Enemies Spawning Warning sounds.
+			+ Enemies Spawning Warning sounds. /w
 			+ Getting Upgrade SOunds.
-			+ Distinct sounds for reach types of Enemies, on moving, attacking and destroyed (sfx for the explosions, etc)
+			+ Distinct sounds for reach types of Enemies, on moving, attacking and destroyed (sfx for the explosions, etc) /w
     	+ Action sounds:
-			+ Enemies moving.
-			+ Player got shot or got in contact /w
+			+ Enemies moving. /w
+			+ Player got shot (and invulnerable frame indicators) or got in contact /w
     	+ Achievement sounds.
 	+ Cam Effects:
 		+ Screen shake!

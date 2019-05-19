@@ -27,8 +27,13 @@ public class EnemyShotPlayer : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            //Check for player Invincible frames before acting:
+            if (!playerHp.CheckInvin()) {
+
+                playerHp.DecreaseHp();
+
+            }
             // Decreasing Player HP and Play effects:
-            playerHp.DecreaseHp();
 
             Destroy(gameObject);
 

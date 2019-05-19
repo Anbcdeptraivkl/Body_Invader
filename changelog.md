@@ -1,8 +1,21 @@
 # Changelog
-All notable changes will be documented here.
+All notable changes will be documented here. Made by Anbcdeptrai all rights reserved.
 
 
 ## [Unreleased]
+
+
+## [0.6.1] - 19/05/2019
+
+### Added:
+- Added Invincible Frames after damaged for Player (about 0.75s).
+
+- Added UI and VFX for Player's HP.
+
+### Fixed:
+
+- Fixed the bug where player object got destroyed on Invincibility frames.
+  
 
 
 ## [0.6.0] - 17/05/2019
@@ -15,11 +28,7 @@ All notable changes will be documented here.
 
 - Added HP Manager for Enemies and Player:
   
-- Added Invincible Frames after damaged for Player.
-
-- Added UI and VFX for Player's HP.
-
-- Added Invincible Time for enemies a short time at their spawns (so they won't be destroyed before entering the screen)
+- Added Invincible Time for enemies a short time (0.5s) at their spawns (so they won't be destroyed before entering the screen)
   
 	
 ### Changed:

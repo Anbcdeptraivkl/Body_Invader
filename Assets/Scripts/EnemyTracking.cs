@@ -49,11 +49,11 @@ public class EnemyTracking: MonoBehaviour
             }
             else {
                 Debug.Log("Player not found or destroyed");
-                yield return null;
+                yield break;
             }
 
             if (!playerTransform) {
-                yield return null;
+                yield break;
             }
 
             //Rotate around the z as upward axis:
