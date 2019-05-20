@@ -295,5 +295,5 @@ MonoBehaviour:
   startDelay: 1
   shot: {fileID: 1600620134327404, guid: f4bbde6c96218104c9174f84cda8de56, type: 3}
   shotSpawn: {fileID: 4017692939267114954}
-  shotSpeed: 7
+  shotSpeed: 10
   shootingDelay: 0.5

@@ -2,13 +2,19 @@
 All notable changes will be documented here. Made by Anbcdeptrai all rights reserved.
 
 
+
 ## [Unreleased]
+
+### Fixed:
+
+- Fixed where Player Status doesn't fade when pause (by sorting canvas).
+- 
 
 
 ## [0.6.1] - 19/05/2019
 
 ### Added:
-- Added Invincible Frames after damaged for Player (about 0.75s).
+- Added Invincible Frames after damaged for Player (about 0.75s) (by stop Collision checkings on Conditions).
 
 - Added UI and VFX for Player's HP.
 

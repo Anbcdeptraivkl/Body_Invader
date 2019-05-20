@@ -1,22 +1,13 @@
 # May:
   
-- Player HP Manager. /w
-	+ UI and Effects:
-    	+ Effects for HP Segment Depleting: 1 @ 2 @ 3 @
-    	+ Fade the UI when Paused. /w
-	+ SOme Invincible frames when got hit (about 0.75 s), couples with vfx and sfx juicy responds @
-	+ Scripts to Control the Interface and Effects:
-    	+ The PlayerHPManager.
-        	+ The UiHpController for Depleting Special Effects. @
-    		+ Game Over and Destruction of Player on Out-of-HP. @
-    	+ EnemyContactPlayer and EnemyShotPlayer only deplete player's HP and no longer cause Explosions: The Explosions, Destruction of Player and Game Over Controller are now managed with PlayerHPManager. @
-
 - Upgrades! /w
 	- Types:
 		- Strong Shot: powerful, but slower. /w
 		- Shield: Electric Field Protect yourself for a few secs.
 		- Spread SHot: 3 Spreaded Shots.
 		- Missiles: Wipe the Screen out, limited uses.
+
+	+ The Templated Approach: make one, then using the functional one as framework for the others.
 	+ Behaviours and Controllers.
 	+ Dropper (For Enemies)
 	+ Arts and Designs.
@@ -75,3 +66,13 @@
 + Follow naming conventions: Related Objects will be the prefixes for every scripts (e.g All enemy related scritps will start with 'Enemy-') @
   + Remember to Update the Script Components and References after renaming to avoid errors @
   
+- Player HP Manager. /w
+	+ UI and Effects:
+    	+ Effects for HP Segment Depleting: 1 @ 2 @ 3 @
+    	+ Fade the UI when Paused. @
+	+ SOme Invincible frames when got hit (about 0.75 s), couples with vfx and sfx juicy responds @
+	+ Scripts to Control the Interface and Effects:
+    	+ The PlayerHPManager.
+        	+ The UiHpController for Depleting Special Effects. @
+    		+ Game Over and Destruction of Player on Out-of-HP. @
+    	+ EnemyContactPlayer and EnemyShotPlayer only deplete player's HP and no longer cause Explosions: The Explosions, Destruction of Player and Game Over Controller are now managed with PlayerHPManager. @
