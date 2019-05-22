@@ -5,10 +5,27 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
 
 ## [Unreleased]
 
+
+
+## [0.6.2] - 22/05/2019
+
+### Added:
+
+- Implemented the Enemy Upgrade Dropper with Dynamic Collections and Random values:
+  - Will activated on Destroyed by getting shot.
+- Implemented the Strong shot mechanic:
+  - Strong shots prefab and Player's ability to shoot Strong shot (for a time).
+  - Strong shot upgrade orb.
+  - Dropper.
+
+### Changed:
+
+- Every Player related behaviour scripts now have the prefix 'Player-'
+
 ### Fixed:
 
 - Fixed where Player Status doesn't fade when pause (by sorting canvas).
-- 
+
 
 
 ## [0.6.1] - 19/05/2019

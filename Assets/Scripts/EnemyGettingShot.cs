@@ -16,8 +16,10 @@ public class EnemyGettingShot : MonoBehaviour
     public bool isOnhit;
     public Animator onHitAnimation;
     public GameObject shotExplosion;
+
     ScoreManager scoreManager;
     EnemyHPManager hpManager;
+    EnemyUpgDropper upgDropper;
     
     void Start()
     {
@@ -33,13 +35,13 @@ public class EnemyGettingShot : MonoBehaviour
 			}
         
         hpManager = gameObject.GetComponent<EnemyHPManager>();
+        upgDropper = gameObject.GetComponent<EnemyUpgDropper>();
     }
 
-    void OnTriggerEnter2D (Collider2D other)
-	{
+    void OnTriggerEnter2D (Collider2D other) {
 		
-		if (other.gameObject.tag != "Boundary" )
-		{
+		if (other.gameObject.tag != "Boundary" ) {
+
 			if (other.gameObject.tag == "Shot") {
 
                 if (isOnhit) {
@@ -59,6 +61,8 @@ public class EnemyGettingShot : MonoBehaviour
                         transform.rotation) as GameObject;
                    
                     Destroy(shotExplosion, 1.0f);
+
+                    upgDropper.CalculateDrop();
 
                     scoreManager.UpdateScore(scoreValue);		            
 		            Destroy(gameObject);

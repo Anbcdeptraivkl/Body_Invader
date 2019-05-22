@@ -2039,6 +2039,7 @@ GameObject:
   - component: {fileID: 1630630849}
   - component: {fileID: 1630630848}
   - component: {fileID: 1630630851}
+  - component: {fileID: 1630630854}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2074,10 +2075,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1630630847}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5b2cf26eb541a84bb443c1f53cc9f4e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e2a5f50e330190418bcdec5ea54064a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shot: {fileID: 1600620134327404, guid: 2fa8796c633ed734580b5a65cd172799, type: 3}
+  strongShot: {fileID: 3597524010674319727, guid: 800f011f1db9d5d42a842d3eef5041f2,
+    type: 3}
   shotSpawn: {fileID: 125316332}
   delayTime: 0.25
   fireRate: 0.2
@@ -2151,6 +2154,18 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0031043887, y: -0.052444607}
   m_Size: {x: 0.3622538, y: 0.5298906}
   m_Direction: 0
+--- !u!114 &1630630854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630630847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06be77c772b2028409e5104a0ce4cc15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1686676710
 GameObject:
   m_ObjectHideFlags: 0

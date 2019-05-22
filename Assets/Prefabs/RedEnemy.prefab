@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 1602814915813491525}
   - component: {fileID: 8049858410425869102}
   - component: {fileID: 7023459306296535175}
+  - component: {fileID: -1149157413703216389}
   m_Layer: 0
   m_Name: RedEnemy
   m_TagString: Enemy
@@ -297,3 +298,21 @@ MonoBehaviour:
   shotSpawn: {fileID: 4017692939267114954}
   shotSpeed: 10
   shootingDelay: 0.5
+--- !u!114 &-1149157413703216389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4017692940672940887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb5bf45d640911049a9fd796d9cfbf7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeList:
+  - name: Strong Shot
+    upgradeObj: {fileID: 202285736377170216, guid: cc8f423a879000144bbf885af45209c9,
+      type: 3}
+    rarity: 50
+  dropChance: 15

@@ -3,18 +3,31 @@
 - Upgrades! /w
 	- Types:
 		- Strong Shot: powerful, but slower. /w
-		- Shield: Electric Field Protect yourself for a few secs.
+		- Shield: Electric Field Protect yourself for a few secs. /w
 		- Spread SHot: 3 Spreaded Shots.
 		- Missiles: Wipe the Screen out, limited uses.
 
-	+ The Templated Approach: make one, then using the functional one as framework for the others.
-	+ Behaviours and Controllers.
-	+ Dropper (For Enemies)
-	+ Arts and Designs.
-	+ Upgrades UI.
-	+ Special Effects + Sounds and Music.	
+	+ The Templated Approach: make one, then using the functional one as framework for the others. /w
+	+ Behaviours and Controllers: /w
+		+ The Random Dropper (for Enemies): Usiong Collections to dynamically allocate and call Objects, wiht some random values. @
+		+ Player Receiving Upgrades, and Update Upgrade Scripts to activate features. /w
+		+ Update The Auto Shooting Mechanic to include Shooting Strong shots. @	
+	+ Arts and Designs. /w
+	+ Prefabs and Templates:
+    	+ Strong. @
+    	+ Shield. /w
+	+ Upgrades UI:
+    	+ Strong shoot timer.
+    	+ Shield Timer.
+    	+ Spread shot timer.
+    	+ Num. of Missiles.
+	+ Special Effects + Visual effects + Sounds and Music:
+    	+ Animations and Particles.
+    	+ SFX feedbacks.
+    	+ Screen and Object special motion tricks.	
   
 + Follow the Single Responsibility and Component-based approaches: Every scripts do only one specific tasks, affecting related Objects Only and Can be passed around Related Objects as Components or Script References! /w
+  + Refactor the Player Getting SHot Mechanics: Add and move the script components to the player object. @
   
 
 - Juiciness: /w
@@ -55,6 +68,9 @@
   - The percentages will now determine the waves - the set pieces of enemies to spawn, cycle endlessly
   - About 5 set pieces, increasing in difficulty would be enough.
   - The higher the difficulty, the faster the enemies move.
+
+- Code Refactoring:
+  - Players COntacts and Collision Checking will be all implemented in a single script as Part of player components and will be controled by the player objects instead of the colliding objects: Object Oriented Encapsulation + SImple Relationship (KISS) + Focused Single Responsibility Design.
 	
 - Brute Hard Enemies Prefabs: /w
 	+ Arts @

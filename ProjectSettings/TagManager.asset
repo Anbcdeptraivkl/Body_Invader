@@ -10,6 +10,7 @@ TagManager:
   - Background
   - Enemy
   - EnemyShot
+  - Upgrade
   layers:
   - Default
   - TransparentFX
