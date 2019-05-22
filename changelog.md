@@ -7,12 +7,37 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
 
 
 
+## [0.6.3] - 23/05/2019
+
+### Added:
+
+- Player Upgrades Script Component: Checking for contact, the types of Upgrades, then apply them to player's features.
+- Added a Shot Damage Component for Shot-type Objects:
+  - HP Calculatioors and Damage Calculators now will use the Shot Damage COmponent to determine the HP damage received. 
+
+### Changed: 
+
+- Decreased Upgrade Drop Chances.
+- Strong Shots now deal 2 damage to enemies (EnemyGettingShot).
+- Strong shots will have a timer, balancing their OP powers.
+- Increase enemies's HP: 
+  - UFO: 2
+  - Tracker: 4;
+
+### Fixed:
+
+- Fixed the bug where Upgrades don't spawn at where enemies get destroyed.
+- Fixed the bug where strong shot deals only 1 dmg (fixing the HP Managers).
+- Fixed the bugs where Strong Shot won't get Applied (can't recognized the tags)
+
+
+
 ## [0.6.2] - 22/05/2019
 
 ### Added:
 
 - Implemented the Enemy Upgrade Dropper with Dynamic Collections and Random values:
-  - Will activated on Destroyed by getting shot.
+  - Will activated on Destroyed by getting shot, has a chance to drop a random Upgrades (determined by the rarities of Upgrades).
 - Implemented the Strong shot mechanic:
   - Strong shots prefab and Player's ability to shoot Strong shot (for a time).
   - Strong shot upgrade orb.

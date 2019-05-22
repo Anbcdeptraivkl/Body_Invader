@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 70895377114828638}
   - component: {fileID: 114113529201588406}
   - component: {fileID: 1517141243535169882}
+  - component: {fileID: -759257482354269564}
   m_Layer: 0
   m_Name: Shot
   m_TagString: Shot
@@ -164,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xSpeed: 0
-  ySpeed: 10
+  ySpeed: 12
 --- !u!82 &1517141243535169882
 AudioSource:
   m_ObjectHideFlags: 0
@@ -261,3 +262,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-759257482354269564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600620134327404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24b0386b857e28f4cb16a08fbbcb6d69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1

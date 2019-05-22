@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e78897178026a4c42811ccf3fddd0cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHP: 2
+  baseHP: 4
 --- !u!114 &8049858410425869102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeList:
   - name: Strong Shot
-    upgradeObj: {fileID: 202285736377170216, guid: cc8f423a879000144bbf885af45209c9,
+    upgradeObj: {fileID: 2148248754928969093, guid: cc8f423a879000144bbf885af45209c9,
       type: 3}
     rarity: 50
-  dropChance: 15
+  dropChance: 20

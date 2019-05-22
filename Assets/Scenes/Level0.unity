@@ -2040,6 +2040,7 @@ GameObject:
   - component: {fileID: 1630630848}
   - component: {fileID: 1630630851}
   - component: {fileID: 1630630854}
+  - component: {fileID: 1630630855}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2166,6 +2167,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06be77c772b2028409e5104a0ce4cc15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1630630855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630630847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01919c4ab93074c40b1f78bd08edc212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strongShootTime: 5
 --- !u!1 &1686676710
 GameObject:
   m_ObjectHideFlags: 0
@@ -2733,9 +2747,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesPerWave: 3
-  spawnDelay: 0.75
+  spawnDelay: 1
   waveStartDelay: 1.2
-  waveSpawnDelay: 1.2
+  waveSpawnDelay: 3
 --- !u!1 &1961432646
 GameObject:
   m_ObjectHideFlags: 0

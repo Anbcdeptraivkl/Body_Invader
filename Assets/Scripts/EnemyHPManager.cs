@@ -14,11 +14,11 @@ public class EnemyHPManager : MonoBehaviour
     }
 
     public void DecreaseHP(int value = 1) {
-        currentHP--;
+        currentHP -= value;
     }
 
     public void IncreaseHP(int value = 1) {
-        currentHP++;
+        currentHP += value;
     }
 
     public int GetCurrentHP() {

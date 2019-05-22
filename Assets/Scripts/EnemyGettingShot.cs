@@ -44,12 +44,17 @@ public class EnemyGettingShot : MonoBehaviour
 
 			if (other.gameObject.tag == "Shot") {
 
+                // Play On-hit Animation (if)
                 if (isOnhit) {
                     onHitAnimation.Play("OnHit", -1, 0f);
                 }
 
-                //Decrease Hp and Destroy the SHot:
-                hpManager.DecreaseHP();
+                // Check the Shot Damage,then Decrease Hp and Destroy the SHot:
+                int shotDmg = other.gameObject.GetComponent<ShotDamage>().GetDamage();
+               
+                hpManager.DecreaseHP(shotDmg);
+                
+
                 Destroy(other.gameObject);
 
                 //Dieing:

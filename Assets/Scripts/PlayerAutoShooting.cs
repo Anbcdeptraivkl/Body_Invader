@@ -20,22 +20,25 @@ public class PlayerAutoShooting: MonoBehaviour {
 
     void Start()
     {
-        if (strongShooting) {
-                    
-            InvokeRepeating("FireStrong", delayTime, fireRate);
-
-        }
-        else {
+                 
 
             InvokeRepeating("Fire", delayTime, fireRate);
 
-        }
     }
 
     private void Fire()
     {
-        //No rotation, only speed!
-        Instantiate(shot, shotSpawn.position, Quaternion.identity);
+        //Check if yu have shooting Upgrades:
+        if (strongShooting) {
+
+            FireStrong();
+
+        } else {
+            // Normal shooting:
+            //No rotation, only speed!
+            Instantiate(shot, shotSpawn.position, Quaternion.identity);
+
+        }
     }
 
     private void FireStrong() {
