@@ -12,6 +12,7 @@ TagManager:
   - EnemyShot
   - Upgrade
   - StrongShot
+  - Graphic
   layers:
   - Default
   - TransparentFX

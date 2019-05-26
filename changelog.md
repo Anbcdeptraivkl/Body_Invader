@@ -5,6 +5,20 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
 
 ## [Unreleased]
 
+### Added:
+
+- Upgrades now give scores.
+- Added Blinking on-hit animations to enemies, both UFO and Trackers:
+  - Coupled with Shaking animations and Impact Spark SHockwave Sprite Particles.
+
+- Built a Cam Shake Function (not yet implemented) for when Player getting hit.
+
+### Changed:
+
+- Balanced the Game Controller's Wave Spawning rate.
+- Upgrades of the same types won't stack and have to be fully went out before getting new.
+- Increased the size of Enemy's Shot to be more intimidating.
+
 
 
 ## [0.6.3] - 23/05/2019

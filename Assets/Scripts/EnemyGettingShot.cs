@@ -5,7 +5,7 @@ using UnityEngine;
 /* 
 ** ON GETTING HIT BY SHOTS **
 - Decrease HP, 
-- Play on-hit animations.
+- Play on-hit animations: Blinking animations, Hit-schock Particles, Shaking effects.
 - Destroy if out of hp and:
     + Increase Score.
 */
@@ -14,15 +14,19 @@ public class EnemyGettingShot : MonoBehaviour
     public int scoreValue;
 
     public bool isOnhit;
-    public Animator onHitAnimation;
+
+    Animator objAnimator;
+
+    public GameObject hitShockParticle;
     public GameObject shotExplosion;
 
     ScoreManager scoreManager;
     EnemyHPManager hpManager;
     EnemyUpgDropper upgDropper;
+
     
-    void Start()
-    {
+    void Start() {
+
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
 		if (gameControllerObject != null) 
 		{
@@ -35,7 +39,11 @@ public class EnemyGettingShot : MonoBehaviour
 			}
         
         hpManager = gameObject.GetComponent<EnemyHPManager>();
+
         upgDropper = gameObject.GetComponent<EnemyUpgDropper>();
+
+        objAnimator = gameObject.GetComponent<Animator>();
+
     }
 
     void OnTriggerEnter2D (Collider2D other) {
@@ -44,35 +52,53 @@ public class EnemyGettingShot : MonoBehaviour
 
 			if (other.gameObject.tag == "Shot") {
 
-                // Play On-hit Animation (if)
-                if (isOnhit) {
-                    onHitAnimation.Play("OnHit", -1, 0f);
-                }
-
                 // Check the Shot Damage,then Decrease Hp and Destroy the SHot:
                 int shotDmg = other.gameObject.GetComponent<ShotDamage>().GetDamage();
                
                 hpManager.DecreaseHP(shotDmg);
-                
 
-                Destroy(other.gameObject);
+                // If not dead yet:
+                // Play On-hit Animation + Particle Effects (then reset for cycling animations)
+                if (hpManager.Alive() && isOnhit) {
 
-                //Dieing:
-                if (!hpManager.Alive()) {
-                    
-                    shotExplosion = Instantiate(
-                        shotExplosion, 
-                        transform.position, 
-                        transform.rotation) as GameObject;
-                   
-                    Destroy(shotExplosion, 1.0f);
+                    // BLinking animations:
+                    objAnimator.SetTrigger("Hit");
 
-                    upgDropper.CalculateDrop();
+                    // Impact Particles instantiating and destruction:
+                    GameObject hitParticle = Instantiate(
+                        hitShockParticle,
+                        other.gameObject.transform.position,
+                        other.gameObject.transform.rotation
+                    ) as GameObject;
 
-                    scoreManager.UpdateScore(scoreValue);		            
-		            Destroy(gameObject);
+                    Destroy(hitParticle, 1.0f);
+
+                } else {
+                    if (!hpManager.Alive()) {
+                        Dying();
+                    }
                 }
+
+                // Destroy the shot objects after colliding:
+                Destroy(other.gameObject);
             }
 		}
 	}
+
+    void Dying() {
+
+        shotExplosion = Instantiate(
+            shotExplosion, 
+            transform.position, 
+            transform.rotation) as GameObject;
+        
+        Destroy(shotExplosion, 1.0f);
+
+        upgDropper.CalculateDrop();
+
+        scoreManager.UpdateScore(scoreValue);	
+
+        Destroy(gameObject);
+
+    }
 }

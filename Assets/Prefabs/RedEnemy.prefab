@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 4017692940117250887}
   m_Layer: 0
   m_Name: VFX
-  m_TagString: Untagged
+  m_TagString: Graphic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -215,7 +215,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 07b175f85d95fec42b54eff7625c3128, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -276,7 +276,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreValue: 20
   isOnhit: 1
-  onHitAnimation: {fileID: 5668677574352171950}
+  hitShockParticle: {fileID: 883286522887097951, guid: 9901e584df4fc4945b542090b1049ffb,
+    type: 3}
   shotExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
     type: 3}
 --- !u!114 &7023459306296535175
@@ -315,4 +316,4 @@ MonoBehaviour:
     upgradeObj: {fileID: 2148248754928969093, guid: cc8f423a879000144bbf885af45209c9,
       type: 3}
     rarity: 50
-  dropChance: 20
+  dropChance: 50

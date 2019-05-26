@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1306380933330150551}
   - component: {fileID: 4764120768570197965}
   - component: {fileID: 588153392697517812}
+  - component: {fileID: 2899953151613281364}
   m_Layer: 0
   m_Name: UFOEnemy
   m_TagString: Enemy
@@ -74,8 +75,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 10
-  isOnhit: 0
-  onHitAnimation: {fileID: 0}
+  isOnhit: 1
+  hitShockParticle: {fileID: 1713355028149410088, guid: 77deca45be6d3d144aa89be336f31b26,
+    type: 3}
   shotExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
     type: 3}
 --- !u!114 &885600167462576325
@@ -184,6 +186,25 @@ MonoBehaviour:
       type: 3}
     rarity: 50
   dropChance: 10
+--- !u!95 &2899953151613281364
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885600167462576328}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d450113dd1eb8ac4f96567dfe618df59, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &885600168907314352
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,8 +216,8 @@ GameObject:
   - component: {fileID: 885600168907314353}
   - component: {fileID: 885600168907314318}
   m_Layer: 0
-  m_Name: UFOSprite
-  m_TagString: Untagged
+  m_Name: VFX
+  m_TagString: Graphic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

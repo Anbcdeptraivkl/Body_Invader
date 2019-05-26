@@ -16,7 +16,7 @@ public class ScoreManager : MonoBehaviour
 		PrintScore();
     }
     
-	public void AddScore(int incremental = 10) {
+	void AddScore(int incremental = 10) {
 		score += incremental;
 	}
 	public int GetScore() {
