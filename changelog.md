@@ -5,13 +5,23 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
 
 ## [Unreleased]
 
+
+
+## [0.7.0] - 27/05/2019
+
 ### Added:
 
 - Upgrades now give scores.
+  
 - Added Blinking on-hit animations to enemies, both UFO and Trackers:
-  - Coupled with Shaking animations and Impact Spark SHockwave Sprite Particles.
+  - Coupled with Shaking animations and Impact SHockwave Sprite Particles for each of them.
 
-- Built a Cam Shake Function (not yet implemented) for when Player getting hit.
+- Implemented Player getting hit effects (when HP depleted):
+  - Blinking and Shaking animations.
+  - Cam Shake.
+  - Hit SFX.
+  
+ - Added more sfx for shots and impacts (and explosions in between)
 
 ### Changed:
 

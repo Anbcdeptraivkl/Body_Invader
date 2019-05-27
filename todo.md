@@ -2,32 +2,35 @@
 
 ## VFX: /w
 
-### Particle Animations: /w
+### Particle Animations: 
 - Enemies OnHit by normal shot (shockwave and sparks) (in **Particle** form) 
-	+ Then by Strong Shot. /w
+	+ NEw Effects by Strong Shot. /w
 	+ UFO effects. @
 	+ Tracker effects. @
+  
+- Tracker new Explosion Particle Effects. /w
 	
 - Player:
   -  got Hit Visual (Spark and Shock Sprite Particles). /w
 
-### Animations: /w
+### Animations: 
 - OnHit Animations for Enemies: UFO and Red Tracker (Blinking!) @
   - Shaking! @
-- Onhit animations for player: red Blinking. /w
+- Onhit animations for player: red Blinking and Shaking. @
 
 ### Special:
-- Cam SHake when player got hit. /w
+- Cam SHake when player got hit. @
 
-## SFX: /w
+## SFX: 
 - More Music! /w
 
 - Hit sound effects: /w
-  - Enemies (varied with shot types) /w
-  - Players. /w
+  - Enemies (varied with shot types) @
+  - Players. @
+  - IMplement into logic and scripts. /w
 
 - SHot Sounds:
-  - Strong Shots. /w
+  - Strong Shots. @
 
 - Enemies Flying sounds. /w 
 	+ Disticnct Appearing sounds. /w
@@ -42,7 +45,7 @@
   + The Random Dropper (for Enemies): Usiong Collections to dynamically allocate and call Objects, wiht some random values. @
   + Player Receiving Upgrades by checking Collision with tags, and Update Upgrade Scripts to activate features. @
 
-### Strong Shot:
+### Strong Shot: /w
 + Update The Auto Shooting Mechanic to include Shooting Strong shots. @
   
 + Arts and Designs: @
@@ -50,16 +53,23 @@
   + Featured Objects. @
    
 + Effects:
-  + Visual Effects: Animations and Particles + On COntact Effect on Enemies. /w
-  + SFX: Shooting sounds + Hitting sounds. /w
+  + Visual Effects: Animations and Particles + On COntact Effect on Enemies. @
+  + SFX: Shooting sounds + Hitting sounds. @
   
 + UI: 
-  + Strong shoot timer. /w
-  + Shot Type Indicators. /w
+  + Strong shoot timer. 
+  + Shot Type Indicators. 
 
-### Shield:
+### Shield: /w
+- Shield Functionality: /w
+  - Be Invincible by being covered in a round ET field for some seconds: avoid on Damage by normal enemies (not bosses).
 
-+ Shield Timer.
+- Shield Appearances: /w
+  - Visuals and ANimations.
+  - Sound Effects.
+  
+- UI:
+  + Shield Timer.
   
 ### Missle:
 

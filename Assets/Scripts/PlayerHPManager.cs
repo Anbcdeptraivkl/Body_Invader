@@ -13,11 +13,20 @@ public class PlayerHPManager : MonoBehaviour
 
     public GameObject playerExplosion;
 
+    public AudioSource hitSound;
+
     public float invinTime = 0.75f;
+
 	
     private GameOver gameOverController;
 
     private Collider2D playerCollider;
+
+    private CamShake camShaker;
+
+    private Animator playerAnimator;
+
+    
 
 
     protected int currentHp;
@@ -30,7 +39,9 @@ public class PlayerHPManager : MonoBehaviour
     {
         currentHp = baseHp;
 
+        // Getting Game COntroller reference and components:
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
+
 		if (gameControllerObject != null) 
 		{
 			gameOverController = gameControllerObject.GetComponent<GameOver>();
@@ -40,8 +51,21 @@ public class PlayerHPManager : MonoBehaviour
 				Debug.Log("Failed to load <GameController> script component.");
 			}
 
+        // Getting camera components:
+        GameObject mainCam = GameObject.FindWithTag("MainCamera");
+
+        if (mainCam != null) {
+            camShaker = mainCam.GetComponent<CamShake>();
+        } else {
+            Debug.Log("No camera found.");
+        }
+
+        // Host components:
         playerCollider = GetComponent<CapsuleCollider2D>();
 
+        playerAnimator = GetComponent<Animator>();
+
+        //initiate Values:
         isInvin = false;
     }
 
@@ -55,13 +79,18 @@ public class PlayerHPManager : MonoBehaviour
         // }
     }
 
+    // Deplete HP, then Update UI, then Play effects and start invincible frames for player:
     public void DecreaseHp(int amount = 1) {
 
         currentHp -= amount;
 
-        // Check for Remaining HP, and respond accordingly every Depletion:
-        DepletingEffect();
+        // Check for Remaining HP, and respond accordingly every Depletion to UI:
+        UIDepletingEffect();
 
+        // To visual and sound effects:
+        PlayImmersiveEffects();
+
+        // INvincible frames:
         StartCoroutine("Invincible");
 
     }
@@ -87,7 +116,7 @@ public class PlayerHPManager : MonoBehaviour
         return currentHp > 0 ? true : false;
     }
 
-    void DepletingEffect() {
+    void UIDepletingEffect() {
        
        switch (currentHp) {
 
@@ -111,6 +140,16 @@ public class PlayerHPManager : MonoBehaviour
            }
            break;
        }
+    }
+
+    void PlayImmersiveEffects() {
+
+        camShaker.StartShaking();
+        
+        playerAnimator.SetTrigger("Hit");
+
+        hitSound.Play();
+
     }
 
     // PLayer destroyed when hp depleted:

@@ -276,7 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreValue: 20
   isOnhit: 1
-  hitShockParticle: {fileID: 883286522887097951, guid: 9901e584df4fc4945b542090b1049ffb,
+  hitShockParticle: {fileID: 6421501278146835262, guid: 1e321729e17282346ae072d1b19c6ca9,
     type: 3}
   shotExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
     type: 3}
@@ -316,4 +316,4 @@ MonoBehaviour:
     upgradeObj: {fileID: 2148248754928969093, guid: cc8f423a879000144bbf885af45209c9,
       type: 3}
     rarity: 50
-  dropChance: 50
+  dropChance: 20
