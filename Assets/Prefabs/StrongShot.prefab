@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 2658426888840186969}
   - component: {fileID: 3864813037128849793}
   - component: {fileID: 1454125573901015260}
+  - component: {fileID: 3039628555906143824}
   m_Layer: 0
   m_Name: StrongShot
   m_TagString: Shot
@@ -161,7 +162,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 82e2bcb2142265443aae7b20ff359713, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 284744c9792e88145b4513f2916f9cec, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -293,3 +294,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
+--- !u!114 &3039628555906143824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3597524010674319727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a59505fe98f4cb846be52676f20f337a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strongShockParticle: {fileID: 4711391095153939179, guid: e4307dd2c95a30541925449fa6bf4eb4,
+    type: 3}

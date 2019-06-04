@@ -64,12 +64,21 @@ public class EnemyGettingShot : MonoBehaviour
                     // BLinking animations:
                     objAnimator.SetTrigger("Hit");
 
-                    // Impact Particles instantiating and destruction:
-                    GameObject hitParticle = Instantiate(
-                        hitShockParticle,
-                        other.gameObject.transform.position,
-                        other.gameObject.transform.rotation
-                    ) as GameObject;
+                    // CHecking for the Colliding shot types, and instantiate the effects as followed:
+                    StrongShotEffect strongShootEffect = other.GetComponent<StrongShotEffect>();
+                    GameObject hitParticle;
+
+                    if (strongShootEffect) {
+                        // Strong Impact:
+                        hitParticle = strongShootEffect.HitShock();
+                    } else {
+                        // Normal Impact Particles instantiating and destruction:
+                        hitParticle = Instantiate(
+                            hitShockParticle,
+                            other.gameObject.transform.position,
+                            other.gameObject.transform.rotation
+                        ) as GameObject;
+                    }
 
                     Destroy(hitParticle, 1.0f);
 

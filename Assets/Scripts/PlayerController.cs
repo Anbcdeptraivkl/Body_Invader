@@ -19,7 +19,8 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void FixedUpdate () {
+	// Update after all the Updates and Animations has finished:
+	void LateUpdate () {
 		MovePlayer();
 		ClampToBound();
 	}

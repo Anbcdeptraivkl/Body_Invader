@@ -1,3 +1,26 @@
+# Currently Working:
+1. 
+2. 
+3. Shield Upgrade Implementations:
+   1. 
+   2. Shield Particles and Visual Effects to go along with Functional Effects and Physics.
+   3. Sound Effects (when activating - defending and vanishing)
+   
+4. Dynamic Spawning Manager and SPawning Modules:
+   1. Enemies Collection with Names, Prefabs and Spawn rates + Spawn Point Collections (pre-made and Placed Manually in the Scene as Specific Points)
+   2. Spawn using Table-based collections and Weighing Formulas (the same as Random Loot Tables Implementations)
+   3. Endless Random Spawners for Endless Modes
+   
+5. 4 Beginning Levels with Hard-coded, pre-Designed and pre-Determined Spawn Patterns and Spawn Routines: still using Weight Formulas, but now the Enemies Types and Waves Structures are pre-Design, not fully random anymore) 
+   1. The Level Spawners follow Difficulty Progression Spawning Patterns: the Enemies become more and more difficult as Player's Points and Play-time Increase and:
+   2. Clearance  Spawn Rates: new Enemies will spawn only when the old ones are all destroyed from the current scenes, not follow the time-based rates anmore. 
+   
+6. New Enemies and Enemy Types:
+   1. Enemies with Curves Movement (in Group when spawned) using Bezier Curves Formula and Auto-shooting in Star patterns.
+
+7. Bosses!
+8. 
+
 # Ongoing:
 
 ## VFX: /w

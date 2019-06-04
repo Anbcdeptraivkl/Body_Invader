@@ -7,6 +7,43 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
 
 
 
+## [0.8.0] - 04/06/2019
+
+### Added:
+- Player Booster Particle Effects.
+- Player Appearing Animation (at the beginning)
+- Strong Shots Impact Particle (with sounds) Effects (trigger on checking whether the enemy had collided with a strong shot or not) with distinct shooting and hitting sound effects.
+- PlayerShield Upgrade:
+  - Activating and Deactivating on receiving Upgrade Orbs (by Collision and Instantiating) through Player Scripts.
+  - Functionality: Block off Enemies Shots and Contacts with Blocking COmponents.
+  - Persist for a short time, then deactivate.
+  - Visual Effects: change Player Renderer's Material Color to purple-ish and Particles effects on contact.
+  - Sound Effects: on contacts.
+
+- Endless Random Spawner that use the Spawn Manager interfaces to IMplement Routines for Spawning Enemies Randomly and Continously at Specific time rates, time ranges and Delays.
+
+
+### Changed:
+- Increase the HP of enemies.
+- Added more Categorized Tags to Game objects.
+- Player now chnage colors on Shielding to produce 3D-ish effects.
+- Upgrade the Spawner to a Dynamic Random Spawning Manager using weights (the same mechanics as Random Loot Dropper):
+  - An Enemy Collection: Comprised of Names, Object Prefabs for Pooling and Spawn Rates for Spawning Calculations.
+  - Weight-Table Random Spawning System (follow the Weight Formula)
+  - Spawn Functions that find Enemy entities using names and Instantiate them in specific, pre-built positions and rotations.
+
+- Balanced the Upgrades Drop-rates and Enemy Spawn Rates.
+
+### Fixed:
+- The bugs where player colors won't changed on Shielding.
+- The bugs where the Shield prefabs got destroyed on toggle (by Replacing Enabling with Instantiating)
+- The bugs where only the Enemies with lowest spawn-rate are spawned (wrong condition checkings)
+
+### Removed:
+- The 3-UFO Strings Enemies Types.
+
+
+
 ## [0.7.0] - 27/05/2019
 
 ### Added:

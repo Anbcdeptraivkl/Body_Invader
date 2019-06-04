@@ -2,36 +2,47 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Dynamic Abstracted Spawn System with both Random Spawning and pre-Designed ones:
 public class SpawnManager : MonoBehaviour
 {
-    public enum EnemyLevel {
+    public enum Difficulty {
         Easy,
         Normal,
-        Multiple
+        Hard,
+        Heroic
     }
 
-    //Enemies Prefabs (multiple Enemies per GameObjects)
-    public GameObject easyEnemy;
-    public GameObject normalEnemy;
-    public GameObject easyString;
-    private Dictionary<EnemyLevel, GameObject> Enemies = new Dictionary<EnemyLevel, GameObject>(3);
+    [System.Serializable]
+    public struct Enemy {
+        public string name;
 
-    
-    public Vector3 spawnPositionRange;
+        public GameObject prefab;
+
+        public float spawnRate;
+
+    }
+
+    public List<Enemy> enemyList = new List<Enemy>();
+
+
+    [SerializeField]
+    public Transform[] spawnPositionRange;
 
 
     //Control Operations:
     GameOver gameOverRef;
     bool isSpawning;
 
+    // Total weight for caluculating Spawn Chances:
+    float totalWeight;
+
+    int spawnedNum = 0;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Enemies.Add(EnemyLevel.Easy, easyEnemy);
-        Enemies.Add(EnemyLevel.Normal, normalEnemy);
-        Enemies.Add(EnemyLevel.Multiple, easyString);
 
         GameObject gameControllerObj = GameObject.FindGameObjectWithTag("GameController");
         gameOverRef = gameControllerObj.GetComponent<GameOver>();
@@ -40,23 +51,52 @@ public class SpawnManager : MonoBehaviour
 
     }
 
+    public void RandomSpawn() {
 
-    public void Spawn(EnemyLevel level) {
+        CalculateTotalWeight();
 
-        Vector3 spawnPosition =
-            spawnPosition = new Vector3(
-            Random.Range(-spawnPositionRange.x, spawnPositionRange.x),
-            spawnPositionRange.y,
-            spawnPositionRange.z
-            );
-        
-        Quaternion spawnQuarternion = Quaternion.identity;
+        //Calculate the weight,items by items and substracting the weight until, the rate lower than the random value generated will be the one spawned:
+
+        // Random Rate and Transform Position points:
+        float randomRate = Random.Range(0, totalWeight);
+
+        Transform randomPoint = spawnPositionRange[(int)Random.Range(0, spawnPositionRange.Length -1)];
+
+        foreach (Enemy enemy in enemyList) {
+
+            if (enemy.spawnRate >= randomRate) {
+                SpawnSingle(enemy.name, randomPoint);
+
+                Debug.Log("Spawned: " + (++spawnedNum));
+
+                return;
+
+            } else {
+                randomRate -= enemy.spawnRate;
+            }
+
+        }
+
+    }
+
+    void CalculateTotalWeight() {
+        // Calculate total Spawn Weight:
+        totalWeight = 0;
+
+        foreach (Enemy enemy in enemyList) {
+            totalWeight += enemy.spawnRate;
+        }
+    }
+
+    void SpawnSingle(string name, Transform spawnPoint) {
+        // Find the right enemy, and then instantiate them using the position of the transform point:
+        Enemy spawningEnemy = enemyList.Find(x => x.name == name);
 
         Instantiate(
-            Enemies[level],
-            spawnPosition,
-            spawnQuarternion);
-
+            spawningEnemy.prefab,
+            spawnPoint.position,
+            Quaternion.identity
+        );
     }
 
     public bool SpawningCheck() {

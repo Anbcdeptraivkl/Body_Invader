@@ -13,6 +13,11 @@ TagManager:
   - Upgrade
   - StrongShot
   - Graphic
+  - StrongShotUpg
+  - ShieldUpg
+  - PlayerShield
+  - PlayerStatus
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

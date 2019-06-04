@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e78897178026a4c42811ccf3fddd0cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHP: 4
+  baseHP: 5
 --- !u!114 &8049858410425869102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,4 +316,8 @@ MonoBehaviour:
     upgradeObj: {fileID: 2148248754928969093, guid: cc8f423a879000144bbf885af45209c9,
       type: 3}
     rarity: 50
-  dropChance: 20
+  - name: Shield
+    upgradeObj: {fileID: 2148248754928969093, guid: c433cca19f1e879449776bd66b63a59f,
+      type: 3}
+    rarity: 40
+  dropChance: 25

@@ -8,8 +8,7 @@ public class PlayerHPManager : MonoBehaviour
     [SerializeField]
     private int baseHp = 3;
 
-    [SerializeField]
-     UiHpController hpUi;
+    UiHpController hpUi;
 
     public GameObject playerExplosion;
 
@@ -58,6 +57,14 @@ public class PlayerHPManager : MonoBehaviour
             camShaker = mainCam.GetComponent<CamShake>();
         } else {
             Debug.Log("No camera found.");
+        }
+
+        GameObject status = GameObject.FindWithTag("PlayerStatus");
+
+        if (status) {
+            hpUi = status.GetComponent<UiHpController>();
+        } else {
+            Debug.Log("No Player UI found");
         }
 
         // Host components:
