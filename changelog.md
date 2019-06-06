@@ -7,6 +7,18 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
 
 
 
+### [0.8.1] - 06/06/2019
+
+### Added:
+- Particle Visual and Sound effects when blocking for Shield.
+- Added sfx for receivving Upgrades: Power up sounds.
+
+### Changed:
+- Increased Player shoot rate.
+- Lower Enemies Numbers but increase normal Spawn rates.
+
+
+
 ## [0.8.0] - 04/06/2019
 
 ### Added:

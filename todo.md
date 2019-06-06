@@ -3,23 +3,37 @@
 2. 
 3. Shield Upgrade Implementations:
    1. 
-   2. Shield Particles and Visual Effects to go along with Functional Effects and Physics.
-   3. Sound Effects (when activating - defending and vanishing)
+   2. 
+   3. Sound Effects (when activating (receiving Upgrades sounds) @ - defending @ and vanishing)
    
 4. Dynamic Spawning Manager and SPawning Modules:
-   1. Enemies Collection with Names, Prefabs and Spawn rates + Spawn Point Collections (pre-made and Placed Manually in the Scene as Specific Points)
+   1. 
    2. Spawn using Table-based collections and Weighing Formulas (the same as Random Loot Tables Implementations)
-   3. Endless Random Spawners for Endless Modes
+   3. New Side-way Spawn points for Enemies with sideway movements (both random and in-level progression)
    
 5. 4 Beginning Levels with Hard-coded, pre-Designed and pre-Determined Spawn Patterns and Spawn Routines: still using Weight Formulas, but now the Enemies Types and Waves Structures are pre-Design, not fully random anymore) 
    1. The Level Spawners follow Difficulty Progression Spawning Patterns: the Enemies become more and more difficult as Player's Points and Play-time Increase and:
-   2. Clearance  Spawn Rates: new Enemies will spawn only when the old ones are all destroyed from the current scenes, not follow the time-based rates anmore. 
+   2. Clearance  Spawn Rates: new Enemies will spawn only when the old ones are all destroyed from the current scenes, not follow the time-based rates anmore.
+6. 
+7. Red Enemies continous y-axis Movements (with velocity)   
    
-6. New Enemies and Enemy Types:
-   1. Enemies with Curves Movement (in Group when spawned) using Bezier Curves Formula and Auto-shooting in Star patterns.
+8. New Enemies, New Spawning Points and Enemy Types:
+   1. With their own Arts + Animations and Sfx (apearring, moving and attacking).
+   2. Enemies with Curves Movement (in Group when spawned) using Bezier Curves Formula and Auto-shooting in Star patterns.
+   3. Sideline Spawning Points with their own Spawning Mechanic to spawn groups of side-moving enemies.
 
-7. Bosses!
-8. 
+9.  Bosses!
+    
+10. PLayer appear flashing light effects.
+    
+11. More Music!
+    1.  Better BGM for Menu and Normal Rounds.
+    2.  Different BGMs for each levels.
+    3.  Boss BGMs.
+
+12. More Background arts: Varied Scrolling backgrounds for different stages.
+
+
 
 # Ongoing:
 

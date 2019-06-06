@@ -255,7 +255,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 167743152}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 8, z: 0}
+  m_LocalPosition: {x: 3, y: 7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 951943961}
@@ -942,7 +942,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604866584}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7, y: 8, z: 0}
+  m_LocalPosition: {x: -7, y: 7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 951943961}
@@ -7211,6 +7211,7 @@ GameObject:
   - component: {fileID: 1630630855}
   - component: {fileID: 1630630857}
   - component: {fileID: 1630630856}
+  - component: {fileID: 1630630858}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -7254,7 +7255,7 @@ MonoBehaviour:
     type: 3}
   shotSpawn: {fileID: 125316332}
   delayTime: 0.25
-  fireRate: 0.2
+  fireRate: 0.15
 --- !u!4 &1630630850
 Transform:
   m_ObjectHideFlags: 0
@@ -7354,6 +7355,7 @@ MonoBehaviour:
   upScore: 30
   shield_Prefab: {fileID: 3897869899714722263, guid: 863e6e701e37cce4286dcbbfcea97f74,
     type: 3}
+  upgReceivingSfx: {fileID: 1630630858}
 --- !u!95 &1630630856
 Animator:
   serializedVersion: 3
@@ -7386,6 +7388,102 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 6b6280616a07c224baa2095bd3ba42e2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &1630630858
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630630847}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 20e607108122fe64e8d2d9961c336dd8, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7772,10 +7870,10 @@ MonoBehaviour:
   - name: RedEnemy
     prefab: {fileID: 4017692940672940887, guid: c4fae79fbfecff74fb137e6bc2e99431,
       type: 3}
-    spawnRate: 40
+    spawnRate: 30
   - name: UFO
     prefab: {fileID: 885600167462576328, guid: df0fdcaa61225554689aa96f9c4e1299, type: 3}
-    spawnRate: 60
+    spawnRate: 70
   spawnPositionRange:
   - {fileID: 604866585}
   - {fileID: 1918790601}
@@ -8041,10 +8139,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc29df610fb42804cbf9e98fb8a4be59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemiesPerWave: 3
+  enemiesPerWave: 2
   spawnDelay: 1
   waveStartDelay: 1.5
-  waveSpawnDelay: 2
+  waveSpawnDelay: 1.5
 --- !u!1 &1918790600
 GameObject:
   m_ObjectHideFlags: 0
@@ -8069,7 +8167,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918790600}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: 8, z: 0}
+  m_LocalPosition: {x: -3, y: 7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 951943961}
@@ -8178,7 +8276,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1978995724}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7, y: 8, z: 0}
+  m_LocalPosition: {x: 7, y: 7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 951943961}

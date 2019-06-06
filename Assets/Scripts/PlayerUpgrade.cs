@@ -13,6 +13,8 @@ public class PlayerUpgrade: MonoBehaviour {
 
     public GameObject shield_Prefab;
 
+    public AudioSource upgReceivingSfx;
+
 
     PlayerAutoShooting autoShooter;
 
@@ -60,6 +62,9 @@ public class PlayerUpgrade: MonoBehaviour {
 
             // Increase Score for getting upgrades:
             scoreMng.UpdateScore(upScore);
+
+            //Play Power up Sound!
+            upgReceivingSfx.Play();
 
             // Checking for Upgrade types (using the hierachy tags system), then start activating features:
             string upType = other.gameObject.transform.GetChild(0).gameObject.tag;
