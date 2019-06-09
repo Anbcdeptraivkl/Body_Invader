@@ -1,5 +1,11 @@
 # Currently Working:
-1. 
+1. New Enemies, New Spawning Points and Enemy Types:
+   1. With their own Arts @ + Animations and Sfx (apearring, moving and attacking).
+   2. Enemies with Curves Movement (in Group when spawned):
+      1.  using Bezier Curves Formula and Interpolating Movement (with Lerpings) @
+      2.  Smooth the Movement with Support Functions.
+   3. Auto-shooting in Star patterns.
+   4. Sideline Spawning Points with their own Spawning Mechanic to spawn groups of side-moving enemies.
 2. 
 3. Shield Upgrade Implementations:
    1. 
@@ -17,10 +23,7 @@
 6. 
 7. Red Enemies continous y-axis Movements (with velocity)   
    
-8. New Enemies, New Spawning Points and Enemy Types:
-   1. With their own Arts + Animations and Sfx (apearring, moving and attacking).
-   2. Enemies with Curves Movement (in Group when spawned) using Bezier Curves Formula and Auto-shooting in Star patterns.
-   3. Sideline Spawning Points with their own Spawning Mechanic to spawn groups of side-moving enemies.
+8. 
 
 9.  Bosses!
     
@@ -32,6 +35,9 @@
     3.  Boss BGMs.
 
 12. More Background arts: Varied Scrolling backgrounds for different stages.
+13. SPread Shots Upgrade: Arts and Functionality.
+14. Missiles: Arts, UI and Functionality.
+15. Normal Shot Upgrades: Arts, UI and Functionality.
 
 
 

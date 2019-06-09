@@ -5,6 +5,15 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
 
 ## [Unreleased]
 
+### Added:
+- Bezier Curves Component:
+  - Quadratic Curves Algorithms Supported: 3-points Curves.
+  - Curved Line renderer.
+  - Interpolative Steps Movement (Interpolant increasing and approaching 1 every steps (loops)) Coroutines (time and steps based): Calculate the Position on the Curves and Override the current position, step by step (interpolant increases a little every loop depended on the number of steps) each iterations - the more steps in the loop, the smoother the movements. 
+
+- Brute Enemies Prefabs with Curved Movements and Visual Appearances.
+- Side Spawn Points (with Collections of turning Coordinates for Curved Movements)
+
 
 
 ### [0.8.1] - 06/06/2019
