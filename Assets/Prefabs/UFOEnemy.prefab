@@ -189,7 +189,7 @@ MonoBehaviour:
     upgradeObj: {fileID: 2148248754928969093, guid: c433cca19f1e879449776bd66b63a59f,
       type: 3}
     rarity: 40
-  dropChance: 15
+  dropChance: 20
 --- !u!95 &2899953151613281364
 Animator:
   serializedVersion: 3

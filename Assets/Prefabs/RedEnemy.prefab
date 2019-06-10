@@ -320,4 +320,4 @@ MonoBehaviour:
     upgradeObj: {fileID: 2148248754928969093, guid: c433cca19f1e879449776bd66b63a59f,
       type: 3}
     rarity: 40
-  dropChance: 25
+  dropChance: 30

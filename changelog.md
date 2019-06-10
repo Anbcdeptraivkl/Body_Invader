@@ -5,6 +5,10 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
 
 ## [Unreleased]
 
+
+
+## [0.8.2] - 10/06/2019
+
 ### Added:
 - Bezier Curves Component:
   - Quadratic Curves Algorithms Supported: 3-points Curves.
@@ -13,6 +17,12 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
 
 - Brute Enemies Prefabs with Curved Movements and Visual Appearances.
 - Side Spawn Points (with Collections of turning Coordinates for Curved Movements)
+
+### Changed:
+- Increased Upgrade Drop Rates of Enemies.
+
+### Fixed:
+- Fixed the laggy movement of the Bezier component (by increasing the number of move points and steps)
 
 
 
