@@ -7,6 +7,37 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
 
 
 
+## [0.9.0] - 11/06/2019
+
+### Added:
+- UFO Trio prefab: with Movement and Auto-rotating behaviours.
+  
+- Dynamic Spawning Upgrades:
+  - Now enemies can spawn in 3 directions and move accordingly: Straight and Left / Right.
+  - Added a Function for spawning multi enemies continously.
+  - Added a Function for determining spawning locations based on SPawn Direction (defined in Enemy base structure)
+  - More spawn Points for each Directions.
+  
+- New Data properties for Enemy Units (defined in Data Structures): Difficulty and Direction.
+  
+- New Enemy: Brute Flyer: 
+  - Movement: Fly in smooth curve from one edge of the screen to another.
+  - Fragile: 1 - 2 Hp.
+  - Fast.
+
+- Bezier Drawer for testing Bezier Routes before applying.
+
+### Changed:
+- Changed the Prefab of Brute enemies to included the Bezier Movement curve landmarks, nested for easier Instantiating and Modifying in run-time.
+- Slower Brute enemies's flying speed.
+- Reduce Enemies HP and Spawn Rates in the beginning for Easier and Faster start.
+- Changed the Curves of Brute Movement to a much smoother and longer routes.
+
+### Removed:
+- Old Brute Enemies prefabs.
+
+
+
 ## [0.8.2] - 10/06/2019
 
 ### Added:

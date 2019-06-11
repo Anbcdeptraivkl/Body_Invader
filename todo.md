@@ -3,29 +3,49 @@
    1. With their own Arts @ + Animations and Sfx (apearring, moving and attacking).
    2. Enemies with Curves Movement (in Group when spawned):
       1.  using Bezier Curves Formula and Interpolating Movement (with Lerpings) @
-      2.  Smooth the Movement with Support Functions.
-   3. Auto-shooting in Star patterns.
+      2.  Smooth the Movement with Support Functions. @
+   3. Auto-shooting in flying directions \i
    4. Sideline Spawning Points with their own Spawning Mechanic to spawn groups of side-moving enemies.
-2. 
+   5. Tagging and Tweaks \i
+   
+2. Trio - UFO (UFO Formation):
+   1. Moving and Spinning @.
+   
 3. Shield Upgrade Implementations:
    1. 
    2. 
-   3. Sound Effects (when activating (receiving Upgrades sounds) @ - defending @ and vanishing)
+   3. Sound Effects: when Vanishing 
    
-4. Dynamic Spawning Manager and SPawning Modules:
-   1. 
-   2. Spawn using Table-based collections and Weighing Formulas (the same as Random Loot Tables Implementations)
-   3. New Side-way Spawn points for Enemies with sideway movements (both random and in-level progression)
+4. Trio - Brute (Brute Formation):
    
-5. 4 Beginning Levels with Hard-coded, pre-Designed and pre-Determined Spawn Patterns and Spawn Routines: still using Weight Formulas, but now the Enemies Types and Waves Structures are pre-Design, not fully random anymore) 
-   1. The Level Spawners follow Difficulty Progression Spawning Patterns: the Enemies become more and more difficult as Player's Points and Play-time Increase and:
-   2. Clearance  Spawn Rates: new Enemies will spawn only when the old ones are all destroyed from the current scenes, not follow the time-based rates anmore.
-6. 
-7. Red Enemies continous y-axis Movements (with velocity)   
+5. 4 Beginning Levels with Hard-scripted, pre-Designed and pre-Determined Spawn Patterns and Spawn Routines: still using Weight Formulas, but now the Enemies Types and Waves Structures are pre-Design, not fully random anymore) 
+   1. Follow the same Difficulty and Progression rules, but now the Difficulty are scripted for each level instead of gradually increasing with play-time and scores.
+   2. Set-pieces: premade Formation of Enemies (stored in Script and Data form, or generated as complete Prefabs)
+   3. Enemies and Waves, Times and Upgrades are spawned are manually designed and crafted for the whole level (less random factors, only in loot drops)
+   
+6. Difficulty and Progressions for better Enjoyment in Players: \i
+   1. Enemies (Typed) HP and Spawn rates will be gradually increased with play times and player's score (Difficulty)
+   2. Checking for Difficulty and Time when Spawn and Calculating.
+   3. INcreased in difficulty = more Points.
+   4. Player Progress:
+      1. Higher Difficulty = more Points.
+      2. Permanent Shoot Upgrade that can be collected by destroying enemies (last for a round, or infinitely in Endless)
+      3. HP Recovery Drop (Score and Restore lost HP) (USeful for player to restore before Bosses)
+
+
+7. Harder Enemies for higher Difficulty Progresses.   
    
 8. 
 
 9.  Bosses!
+    1.  At Each Arc-ending Levels.
+    2.  Big, Sturdy (Hundreds of HP)
+    3.  Summon Enemies and Have Signature Attack / Defense Moves.
+    4.  Before Each Bosses, player received a random Permanent Upgrades (last for the whole battles):
+        1.  New Weapon (s) and Shot Upgrade Levels.
+        2.  HP Recovery.
+        3.  Missiles.
+        4.  
     
 10. PLayer appear flashing light effects.
     
@@ -38,6 +58,7 @@
 13. SPread Shots Upgrade: Arts and Functionality.
 14. Missiles: Arts, UI and Functionality.
 15. Normal Shot Upgrades: Arts, UI and Functionality.
+16. Changed the Enemies Explosion visual effects to something more suitable and impactful.
 
 
 

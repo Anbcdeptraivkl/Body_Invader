@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Dynamic Abstracted Spawn System with both Random Spawning and pre-Designed ones:
+// SPawning in: Straight - Left - Right and Difficulty: Easy to Super Hard:
 public class SpawnManager : MonoBehaviour
 {
     public enum Difficulty {
@@ -10,6 +11,12 @@ public class SpawnManager : MonoBehaviour
         Normal,
         Hard,
         Heroic
+    }
+
+    public enum SpawnDirection {
+        Straight,
+        Left,
+        Right
     }
 
     [System.Serializable]
@@ -20,13 +27,28 @@ public class SpawnManager : MonoBehaviour
 
         public float spawnRate;
 
+        public Difficulty difficulty;
+
+        public SpawnDirection direction;
+
     }
 
-    public List<Enemy> enemyList = new List<Enemy>();
+    
+
+    public List<Enemy> EnemyList = new List<Enemy>();
 
 
     [SerializeField]
     public Transform[] spawnPositionRange;
+
+    [SerializeField]
+    public Transform[] leftSpawnPoints;
+
+    [SerializeField]
+    public Transform[] rightSpawnPoints;
+
+    public float multiSpawnDelay;
+
 
 
     //Control Operations:
@@ -49,48 +71,80 @@ public class SpawnManager : MonoBehaviour
 
         isSpawning = true;
 
+        // Construct total weight for Spawning:
+        CalculateTotalWeight();
+
     }
 
     public void RandomSpawn() {
 
-        CalculateTotalWeight();
-
         //Calculate the weight,items by items and substracting the weight until, the rate lower than the random value generated will be the one spawned:
 
-        // Random Rate and Transform Position points:
+        // Random Rate:
         float randomRate = Random.Range(0, totalWeight);
 
-        Transform randomPoint = spawnPositionRange[(int)Random.Range(0, spawnPositionRange.Length -1)];
+        foreach (Enemy Enemy in EnemyList) {
 
-        foreach (Enemy enemy in enemyList) {
+            if (Enemy.spawnRate >= randomRate) {
+                // Check for spawn direction, and consequently the spawn positions:
+                Transform spawnPoint = DetermineSpawnDirection(Enemy);
 
-            if (enemy.spawnRate >= randomRate) {
-                SpawnSingle(enemy.name, randomPoint);
+                SpawnSingle(Enemy.name, spawnPoint);
 
                 Debug.Log("Spawned: " + (++spawnedNum));
 
                 return;
 
             } else {
-                randomRate -= enemy.spawnRate;
+                randomRate -= Enemy.spawnRate;
             }
 
         }
 
     }
 
+    Transform DetermineSpawnDirection(Enemy enemy) {
+        // Check for spawn direction, and consequently the spawn positions:
+        // Random position from the Spawn Points Cllections:
+        Transform randomStraightPoint = spawnPositionRange[(int)Random.Range(0, spawnPositionRange.Length -1)];
+        Transform randomLeftPoint = leftSpawnPoints[(int)Random.Range(0, leftSpawnPoints.Length - 1)];
+        Transform randomRightPoint = rightSpawnPoints[(int)Random.Range(0, rightSpawnPoints.Length - 1)];
+
+        // Checking and Assigning:
+        Transform spawnPoint;
+
+        switch (enemy.direction) {
+            case SpawnDirection.Left: {
+                spawnPoint = randomLeftPoint;
+            }
+            break;
+
+            case SpawnDirection.Right: {
+                spawnPoint = randomRightPoint;
+            }
+            break;
+
+            default: {
+                spawnPoint = randomStraightPoint;
+            }
+            break;
+        }
+
+        return spawnPoint;
+    }
+
     void CalculateTotalWeight() {
-        // Calculate total Spawn Weight:
+        // Calculate total Spawn Weight of all element in collections:
         totalWeight = 0;
 
-        foreach (Enemy enemy in enemyList) {
-            totalWeight += enemy.spawnRate;
+        foreach (Enemy Enemy in EnemyList) {
+            totalWeight += Enemy.spawnRate;
         }
     }
 
     void SpawnSingle(string name, Transform spawnPoint) {
-        // Find the right enemy, and then instantiate them using the position of the transform point:
-        Enemy spawningEnemy = enemyList.Find(x => x.name == name);
+        // Find the right Enemy, and then instantiate them using the position of the transform point:
+        Enemy spawningEnemy = EnemyList.Find(x => x.name == name);
 
         Instantiate(
             spawningEnemy.prefab,
@@ -99,9 +153,18 @@ public class SpawnManager : MonoBehaviour
         );
     }
 
-    public bool SpawningCheck() {
+    IEnumerator SpawnMulti(string name, Transform spawnPoint, int amount) {
+        // Spawn multiple enemies of the same kind in the row (in the same position and direction)
+        for (int i = 0; i < amount; i++) {
+            SpawnSingle(name, spawnPoint);
 
-        // Check if Game over or not:
+            yield return new WaitForSeconds(multiSpawnDelay);
+        }
+        yield break;
+    }
+
+    public bool SpawningCheck() {
+        // Check if Game over or not, and stop spawning if over:
         isSpawning = !gameOverRef.CheckGameOver();
         
         return isSpawning;

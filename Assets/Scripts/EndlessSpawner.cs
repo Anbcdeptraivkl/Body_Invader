@@ -44,5 +44,7 @@ public class EndlessSpawner : MonoBehaviour
         }
     }
 
+    void Spawn() {
 
+    }
 }

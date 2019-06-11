@@ -17,7 +17,7 @@ public class Bezier : MonoBehaviour
     [SerializeField]
     private Transform p0, p1, p2;
 
-    private Vector3[] pointPositions = new Vector3[40];
+    private Vector3[] pointPositions = new Vector3[200];
 
     float timeStep;
 
