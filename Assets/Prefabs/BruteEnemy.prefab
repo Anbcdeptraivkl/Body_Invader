@@ -96,6 +96,8 @@ GameObject:
   - component: {fileID: 8514724015647638869}
   - component: {fileID: 371507722883702679}
   - component: {fileID: 4643949035738963619}
+  - component: {fileID: -1695933692683471988}
+  - component: {fileID: -8423083724016412579}
   m_Layer: 0
   m_Name: BruteEnemy
   m_TagString: Enemy
@@ -115,6 +117,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2544080164060803989}
+  - {fileID: 5245007753579397065}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -187,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 15
-  isOnhit: 0
+  isOnhit: 1
   hitShockParticle: {fileID: 1713355028149410088, guid: 77deca45be6d3d144aa89be336f31b26,
     type: 3}
   shotExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
@@ -218,7 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e78897178026a4c42811ccf3fddd0cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHP: 1
+  baseHP: 2
 --- !u!114 &371507722883702679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,12 +248,75 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeList:
-  - name: StrongShot
-    upgradeObj: {fileID: 2148248754928969093, guid: cc8f423a879000144bbf885af45209c9,
-      type: 3}
-    rarity: 20
   - name: Shield
     upgradeObj: {fileID: 2148248754928969093, guid: c433cca19f1e879449776bd66b63a59f,
       type: 3}
-    rarity: 20
-  dropChance: 20
+    rarity: 1
+  dropChance: 8
+--- !u!95 &-1695933692683471988
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2544080164171688899}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 42d86691c238dbc4e9bb09187994f8f6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-8423083724016412579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2544080164171688899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a45a613480deab4ea4120aeed63f41e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shot: {fileID: 1600620134327404, guid: f4bbde6c96218104c9174f84cda8de56, type: 3}
+  xSpeed: 3
+  ySpeed: -5
+  shotSpawn: {fileID: 5245007753579397065}
+  fireDelay: 0.2
+  fireRate: 0.5
+--- !u!1 &6985242557159952536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5245007753579397065}
+  m_Layer: 0
+  m_Name: ShotSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5245007753579397065
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6985242557159952536}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2544080164171688897}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

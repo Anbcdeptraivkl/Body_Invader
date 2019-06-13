@@ -181,15 +181,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeList:
-  - name: Strong Shot
-    upgradeObj: {fileID: 2148248754928969093, guid: cc8f423a879000144bbf885af45209c9,
-      type: 3}
-    rarity: 50
   - name: Shield
     upgradeObj: {fileID: 2148248754928969093, guid: c433cca19f1e879449776bd66b63a59f,
       type: 3}
-    rarity: 40
-  dropChance: 20
+    rarity: 10
+  dropChance: 8
 --- !u!95 &2899953151613281364
 Animator:
   serializedVersion: 3

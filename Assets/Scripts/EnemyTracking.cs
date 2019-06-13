@@ -13,7 +13,7 @@ public class EnemyTracking: MonoBehaviour
     public float rotateDelay;
     public float startDelay;
 
-    public GameObject shot;
+    public GameObject trackShot;
     public Transform shotSpawn;
     public float shotSpeed;
     public float shootingDelay;
@@ -86,7 +86,7 @@ public class EnemyTracking: MonoBehaviour
         // Instantiate with adopted position and rotation + velocity:
         for (int i = 0; i < 2; ++i) {
             GameObject spawnedShot = Instantiate(
-                shot,
+                trackShot,
                 shotSpawn.position,
                 transform.rotation
             ) as GameObject;

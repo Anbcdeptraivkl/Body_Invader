@@ -9,49 +9,58 @@ using UnityEngine;
 
 public class PlayerAutoShooting: MonoBehaviour {
     
-    public GameObject shot;
-    public GameObject strongShot;
+    // Shot and Upgrades Collections:
+    // Utilize Prefabs, nested Prefabs and Linking Prefabs for the most effective methods:
+    [System.Serializable]
+    public struct Shot {
+        public GameObject shotObj;
+        public int upgradeLevel;
+    }
+
+    public List<Shot> shotList = new List<Shot>();
 
     public Transform shotSpawn;
     public float delayTime;
     public float fireRate;
 
-    bool strongShooting = false;
+    GameObject shot;
+
+    int shotLevel;
+
 
     void Start()
     {
-                 
+            // Initiate the Starting weapons:
+            shotLevel = 0;
+            shot = shotList[shotLevel].shotObj;
 
             InvokeRepeating("Fire", delayTime, fireRate);
 
     }
 
-    private void Fire()
-    {
-        //Check if yu have shooting Upgrades:
-        if (strongShooting) {
-
-            FireStrong();
-
-        } else {
-            // Normal shooting:
-            //No rotation, only speed!
-            Instantiate(shot, shotSpawn.position, Quaternion.identity);
-
+    public void ShotUpgrade() {
+        // Increase shot level and re-assign the weapons when receiving upgrades:
+        if (shotLevel + 1 < shotList.Count) {
+            shotLevel++;
+            shot = shotList[shotLevel].shotObj;
         }
     }
 
-    private void FireStrong() {
-
-        Instantiate(strongShot, shotSpawn.position, Quaternion.identity);
-
+    public void ShotDowngrade() {
+        // Decrease Shot Levels on Negative Effects of Enemies:
+        shotLevel--;
+        shot = shotList[shotLevel].shotObj;
     }
 
-    public void StartStrongShooting() {
-        strongShooting = true;
+    public int GetWeaponLevel() {
+        return shotLevel;
     }
 
-    public void StopStrongShooting() {
-        strongShooting = false;
+    private void Fire()
+    {
+        // Normal shooting:
+        //No rotation, only speed!
+        Instantiate(shot, shotSpawn.position, Quaternion.identity);
     }
+
 }

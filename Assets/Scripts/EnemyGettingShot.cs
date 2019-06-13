@@ -53,7 +53,7 @@ public class EnemyGettingShot : MonoBehaviour
 			if (other.gameObject.tag == "Shot") {
 
                 // Check the Shot Damage,then Decrease Hp and Destroy the SHot:
-                int shotDmg = other.gameObject.GetComponent<ShotDamage>().GetDamage();
+                float shotDmg = other.gameObject.GetComponent<ShotDamage>().GetDamage();
                
                 hpManager.DecreaseHP(shotDmg);
 

@@ -89,7 +89,12 @@ public class SpawnManager : MonoBehaviour
                 // Check for spawn direction, and consequently the spawn positions:
                 Transform spawnPoint = DetermineSpawnDirection(Enemy);
 
-                SpawnSingle(Enemy.name, spawnPoint);
+                // For LEft and right Brute: Spawn multiple (3) in a row:
+                if (Enemy.name == "BruteL" || Enemy.name == "BruteR") {
+                    StartCoroutine(SpawnMulti(Enemy.name, spawnPoint, 3));
+                } else {
+                    SpawnSingle(Enemy.name, spawnPoint);
+                }
 
                 Debug.Log("Spawned: " + (++spawnedNum));
 

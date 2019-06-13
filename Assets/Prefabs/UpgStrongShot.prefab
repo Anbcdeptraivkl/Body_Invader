@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2148248753835325652}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.36045334, y: 0.106015675, z: -10.102978}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3389870253005090520}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 2148248754455383298}
   - component: {fileID: 2148248754455383299}
   m_Layer: 0
-  m_Name: Upgrades_0
+  m_Name: VFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,8 +57,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2148248754455383309}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.36945334, y: -0.061015673, z: 10.102978}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.25, y: 1.2125, z: 1}
   m_Children: []
   m_Father: {fileID: 2148248753835325653}
   m_RootOrder: 1
@@ -99,10 +99,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 2890409509781067523, guid: 20c9aa6c3459db74fa28b64c298bae97,
-    type: 3}
-  m_Color: {r: 0.9261812, g: 1, b: 0, a: 1}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 00d3725f301a39a43a7b41f770ae6038, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -212,17 +211,17 @@ PrefabInstance:
     - target: {fileID: 3664559920501470401, guid: ad0d330564edae5408177a47c43a5431,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.36045334
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3664559920501470401, guid: ad0d330564edae5408177a47c43a5431,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.106015675
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3664559920501470401, guid: ad0d330564edae5408177a47c43a5431,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.102978
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3664559920501470401, guid: ad0d330564edae5408177a47c43a5431,
         type: 3}

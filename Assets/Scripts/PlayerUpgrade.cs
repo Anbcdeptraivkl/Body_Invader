@@ -70,7 +70,7 @@ public class PlayerUpgrade: MonoBehaviour {
             string upType = other.gameObject.transform.GetChild(0).gameObject.tag;
 
             if (upType == "StrongShotUpg") {
-                StartCoroutine("StrongShotUpg");
+                autoShooter.ShotUpgrade();
             } else {
                 if (upType == "ShieldUpg") {
                     StartCoroutine("ShieldUpg");
@@ -82,18 +82,6 @@ public class PlayerUpgrade: MonoBehaviour {
             // Destroy the Upgrade orbs after collisions:
             Destroy(other.gameObject);
         }
-    }
-
-    // Strong Shooting Upgrade: by invoking strong shoot functionality in the auto shooter component:
-    IEnumerator StrongShotUpg() {
-
-        Debug.Log("Start Strong Shooting");
-
-        autoShooter.StartStrongShooting();
-
-        yield return new WaitForSeconds(strongShootTime);
-
-        autoShooter.StopStrongShooting();
     }
 
     // Toggling Shield using instantiating methods:

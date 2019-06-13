@@ -7,6 +7,32 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
 
 
 
+## [0.9.1] - 13/06/2019
+
+### Added:
+- Brute Enemies
+  - NOw Brute enemies (both left and right) Spawn in formations of 3.
+  - Brute Enemeis on-getting-hit animations and effects.
+  - Now has Shooting Functions (Spawned shots at consistent speed and rotations), but currently not working.
+  
+- Upgrade SHots System: with many Permanent upgrades in Fire power:
+  - Normal Shots.
+  - Strong Shots.
+  - Double SHots.
+  - Spread Shots.
+  - Strong Waves.
+
+### Changed:
+- Lower the enemies upgrade drop rates.
+- Lower Shield's active time.
+  
+### Removed:
+- The old Strong shot mechanics now replaced with shot upgrades.
+- The old Upgrades mechanics.
+
+
+
+
 ## [0.9.0] - 11/06/2019
 
 ### Added:

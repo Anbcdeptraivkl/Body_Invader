@@ -8,15 +8,22 @@
    4. Sideline Spawning Points with their own Spawning Mechanic to spawn groups of side-moving enemies.
    5. Tagging and Tweaks \i
    
-2. Trio - UFO (UFO Formation):
-   1. Moving and Spinning @.
+2. Weapon Upgrades Permanent: \i
+   1. SHots
+   2. Double shots and Trouble Shots.
+   3. Green SHots.
+   4. Remove the Temp Strong Shots (unnecessary)
    
 3. Shield Upgrade Implementations:
    1. 
    2. 
-   3. Sound Effects: when Vanishing 
+   3. Sound Effects: when Vanishing \i
    
-4. Trio - Brute (Brute Formation):
+4. Change the Player Status UI to a simple Flat grids just like in the Game's Model:
+   1. HP Bar.
+   2. Missiles Count.
+   3. Ship Upgrades and Energy Armor Bar.
+   4. Ammo Upgrades Bar.
    
 5. 4 Beginning Levels with Hard-scripted, pre-Designed and pre-Determined Spawn Patterns and Spawn Routines: still using Weight Formulas, but now the Enemies Types and Waves Structures are pre-Design, not fully random anymore) 
    1. Follow the same Difficulty and Progression rules, but now the Difficulty are scripted for each level instead of gradually increasing with play-time and scores.
@@ -35,7 +42,7 @@
 
 7. Harder Enemies for higher Difficulty Progresses.   
    
-8. 
+8. Enemies Shots can now rotate with velocity (tracking, etc.);
 
 9.  Bosses!
     1.  At Each Arc-ending Levels.
@@ -55,10 +62,14 @@
     3.  Boss BGMs.
 
 12. More Background arts: Varied Scrolling backgrounds for different stages.
-13. SPread Shots Upgrade: Arts and Functionality.
-14. Missiles: Arts, UI and Functionality.
-15. Normal Shot Upgrades: Arts, UI and Functionality.
-16. Changed the Enemies Explosion visual effects to something more suitable and impactful.
+13. MOre Upgrades:
+    1.  Ship Armor Upgrades: More HP and Damage Resists (represent by an energy armor bar that deplete with damage received).
+    2.  Missiles: Stackable High Damage Bomb with Arts, UI and Functionality.
+    3.  HP Recovery Batteries.
+    4.  Max HP Upgrades
+    5.  >> Need to change the whole mechanics around HP Managing and Upgrades: Refactor and Modify!
+
+14. Changed the Enemies Explosion visual effects to something more suitable and impactful.
 
 
 

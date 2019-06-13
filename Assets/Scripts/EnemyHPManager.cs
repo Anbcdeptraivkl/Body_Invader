@@ -6,22 +6,22 @@ public class EnemyHPManager : MonoBehaviour
 {
     public int baseHP;
 
-    int currentHP;
+    float currentHP;
     // Start is called before the first frame update
     void Start()
     {
         currentHP = Mathf.Abs(baseHP);
     }
 
-    public void DecreaseHP(int value = 1) {
+    public void DecreaseHP(float value = 1) {
         currentHP -= value;
     }
 
-    public void IncreaseHP(int value = 1) {
+    public void IncreaseHP(float value = 1) {
         currentHP += value;
     }
 
-    public int GetCurrentHP() {
+    public float GetCurrentHP() {
         return currentHP;
     }
 

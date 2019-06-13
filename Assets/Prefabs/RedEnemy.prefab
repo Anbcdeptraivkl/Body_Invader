@@ -295,7 +295,7 @@ MonoBehaviour:
   rotateRate: 5
   rotateDelay: 0.75
   startDelay: 1
-  shot: {fileID: 1600620134327404, guid: f4bbde6c96218104c9174f84cda8de56, type: 3}
+  trackShot: {fileID: 1600620134327404, guid: f4bbde6c96218104c9174f84cda8de56, type: 3}
   shotSpawn: {fileID: 4017692939267114954}
   shotSpeed: 7
   shootingDelay: 0.25
@@ -320,4 +320,4 @@ MonoBehaviour:
     upgradeObj: {fileID: 2148248754928969093, guid: c433cca19f1e879449776bd66b63a59f,
       type: 3}
     rarity: 40
-  dropChance: 30
+  dropChance: 15

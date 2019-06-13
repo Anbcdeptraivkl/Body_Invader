@@ -6,9 +6,9 @@ using UnityEngine;
 public class ShotDamage: MonoBehaviour {
 
     [SerializeField]
-    int damage = 1;
+    float damage = 1;
 
-    public int GetDamage() {
+    public float GetDamage() {
         return damage;
     }
 }
