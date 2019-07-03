@@ -8,14 +8,20 @@ public struct Boundary{
 }
 public class PlayerController : MonoBehaviour {
 	//Movement attributes:
-	public float moveSpeed;
+	public float moveSpeed = 2.0f;
+	public float moveRate = 0.5f;
+
 	public float tiltRate;
 	public Boundary bounds;
-	//Sooting attributes:
+
 	Rigidbody2D rgbd2D;
+
+
 
 	void Start () {
 		rgbd2D = gameObject.GetComponent<Rigidbody2D>();
+
+		
 	}
 
 	// Update is called once per frame
@@ -25,12 +31,17 @@ public class PlayerController : MonoBehaviour {
 		ClampToBound();
 	}
 
+	// Move the player with Axis Movement:
 	void MovePlayer()
 	{
-		float horiMove = Input.GetAxis("Horizontal");
-		Vector2 movementVector = new Vector2(horiMove, 0);
-		rgbd2D.velocity = movementVector * moveSpeed;
+		float horiMove = rgbd2D.position.x + Input.GetAxis("Horizontal") * moveSpeed;
+		float vertiMove = rgbd2D.position.y + Input.GetAxis("Vertical") * moveSpeed;
+
+		Vector2 destination = new Vector2(horiMove, vertiMove);
+
+		rgbd2D.position = Vector2.Lerp(rgbd2D.position, destination, moveRate * Time.deltaTime);
 	}
+
 	void ClampToBound()
 	{
 		rgbd2D.position = new Vector2(
@@ -38,6 +49,7 @@ public class PlayerController : MonoBehaviour {
 			Mathf.Clamp(rgbd2D.position.y, bounds.yMin, bounds.yMax)
 		);
 	}
+	
 	void RotatePlayerOnMoving()
 	{
 		rgbd2D.rotation = rgbd2D.velocity.x * tiltRate;

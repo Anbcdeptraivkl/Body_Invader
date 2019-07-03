@@ -4,37 +4,37 @@ using UnityEngine;
 
 // Dynamic Abstracted Spawn System with both Random Spawning and pre-Designed ones:
 // SPawning in: Straight - Left - Right and Difficulty: Easy to Super Hard:
+public enum Difficulty {
+    Easy,
+    Normal,
+    Hard,
+    Heroic
+}
+
+public enum SpawnDirection {
+    Straight,
+    Left,
+    Right
+}
+
+
+ [System.Serializable]
+public struct Enemy {
+    public string name;
+
+    public GameObject prefab;
+
+    public float spawnRate;
+
+    public Difficulty difficulty;
+
+    public SpawnDirection direction;
+
+}
+
+
 public class SpawnManager : MonoBehaviour
 {
-    public enum Difficulty {
-        Easy,
-        Normal,
-        Hard,
-        Heroic
-    }
-
-    public enum SpawnDirection {
-        Straight,
-        Left,
-        Right
-    }
-
-    [System.Serializable]
-    public struct Enemy {
-        public string name;
-
-        public GameObject prefab;
-
-        public float spawnRate;
-
-        public Difficulty difficulty;
-
-        public SpawnDirection direction;
-
-    }
-
-    
-
     public List<Enemy> EnemyList = new List<Enemy>();
 
 
@@ -95,8 +95,6 @@ public class SpawnManager : MonoBehaviour
                 } else {
                     SpawnSingle(Enemy.name, spawnPoint);
                 }
-
-                Debug.Log("Spawned: " + (++spawnedNum));
 
                 return;
 

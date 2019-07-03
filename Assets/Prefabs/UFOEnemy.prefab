@@ -12,13 +12,12 @@ GameObject:
   - component: {fileID: 885600167462576326}
   - component: {fileID: 885600167462576322}
   - component: {fileID: 885600167462576325}
-  - component: {fileID: 885600167462576324}
-  - component: {fileID: 885600167462576320}
   - component: {fileID: 353055130489487859}
   - component: {fileID: 1306380933330150551}
   - component: {fileID: 4764120768570197965}
   - component: {fileID: 588153392697517812}
   - component: {fileID: 2899953151613281364}
+  - component: {fileID: 9098204942630932264}
   m_Layer: 0
   m_Name: UFOEnemy
   m_TagString: Enemy
@@ -38,6 +37,7 @@ Transform:
   m_LocalScale: {x: 0.7175, y: 0.7, z: 1}
   m_Children:
   - {fileID: 885600168907314353}
+  - {fileID: 7474255779110777213}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -94,38 +94,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selfExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
     type: 3}
---- !u!114 &885600167462576324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 885600167462576328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4c865bb4346ef1459c8136c477342bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentVerticalSpeed: -3
-  maneuverSpeed: 3
-  maneuverSmoothLimit: 5
-  startDelay: 0.5
-  maneuverTime: 0.5
-  timeTilNextMove: 1
---- !u!114 &885600167462576320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 885600167462576328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 180898aa97326ce459ab535ab5a3a7fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationRate: 5
-  rotationPerMin: 10
 --- !u!70 &353055130489487859
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -184,8 +152,8 @@ MonoBehaviour:
   - name: Shield
     upgradeObj: {fileID: 2148248754928969093, guid: c433cca19f1e879449776bd66b63a59f,
       type: 3}
-    rarity: 10
-  dropChance: 8
+    rarity: 15
+  dropChance: 15
 --- !u!95 &2899953151613281364
 Animator:
   serializedVersion: 3
@@ -205,6 +173,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &9098204942630932264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885600167462576328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b091f5d17698cda42af4f57bb3620677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyShot: {fileID: 1600620134327404, guid: f397d1a3f912a6143a17a99ec20d044c, type: 3}
+  localRoot: {fileID: 0}
+  shotSpawn: {fileID: 7474255779110777213}
+  shotXSpeed: 5
+  shotYSpeed: 8
+  timeShoot: 0.75
 --- !u!1 &885600168907314352
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,3 +270,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &7752828752048267958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7474255779110777213}
+  m_Layer: 0
+  m_Name: ShotSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7474255779110777213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7752828752048267958}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.015, y: -0.762, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 885600167462576327}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

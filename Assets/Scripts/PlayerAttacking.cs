@@ -7,7 +7,7 @@ using UnityEngine;
 
 [System.Serializable]
 
-public class PlayerAutoShooting: MonoBehaviour {
+public class PlayerAttacking: MonoBehaviour {
     
     // Shot and Upgrades Collections:
     // Utilize Prefabs, nested Prefabs and Linking Prefabs for the most effective methods:
@@ -20,22 +20,30 @@ public class PlayerAutoShooting: MonoBehaviour {
     public List<Shot> shotList = new List<Shot>();
 
     public Transform shotSpawn;
-    public float delayTime;
-    public float fireRate;
+    public float fireRate = 0.5f;
+
+    float shootDelayTime = 0.0f;
 
     GameObject shot;
 
     int shotLevel;
 
 
-    void Start()
-    {
-            // Initiate the Starting weapons:
-            shotLevel = 0;
-            shot = shotList[shotLevel].shotObj;
+    void Start() {
+        // Initiate the Starting weapons:
+        shotLevel = 0;
+        shot = shotList[shotLevel].shotObj;
+    }
 
-            InvokeRepeating("Fire", delayTime, fireRate);
-
+    // Hold Space to fire:
+    public void Update() {
+        // Fixed time Step Mechanics: Delay and Frie Rate contribute to the overall firing speed:
+        shootDelayTime += Time.deltaTime;
+        if (Input.GetKey(KeyCode.Space) && shootDelayTime > fireRate) {
+            Fire();
+            // Reset the time step and start the new iteration:
+            shootDelayTime = 0.0f;
+        }
     }
 
     public void ShotUpgrade() {

@@ -16,7 +16,7 @@ public class PlayerUpgrade: MonoBehaviour {
     public AudioSource upgReceivingSfx;
 
 
-    PlayerAutoShooting autoShooter;
+    PlayerAttacking autoShooter;
 
     GameObject shieldInstance;
 
@@ -30,7 +30,7 @@ public class PlayerUpgrade: MonoBehaviour {
 
     void Start() {
 
-        autoShooter = gameObject.GetComponent<PlayerAutoShooting>();
+        autoShooter = gameObject.GetComponent<PlayerAttacking>();
 
         sprite_Component = gameObject.transform.Find("VFX").gameObject.GetComponent<Renderer>();
        

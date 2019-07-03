@@ -20,8 +20,7 @@ public class ShieldBlocking : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other) {
         
-        if ( other.gameObject.tag == "EnemyShot" || 
-            other.gameObject.tag == "Enemy") {
+        if ( other.gameObject.tag == "EnemyShot") {
                 //Instantiate the Exploding Effects (with audios)
                 GameObject blockEffect = Instantiate(
                     blockParticle,

@@ -1,48 +1,56 @@
 # Currently Working:
-1. New Enemies, New Spawning Points and Enemy Types:
-   1. With their own Arts @ + Animations and Sfx (apearring, moving and attacking).
-   2. Enemies with Curves Movement (in Group when spawned):
-      1.  using Bezier Curves Formula and Interpolating Movement (with Lerpings) @
-      2.  Smooth the Movement with Support Functions. @
-   3. Auto-shooting in flying directions \i
-   4. Sideline Spawning Points with their own Spawning Mechanic to spawn groups of side-moving enemies.
-   5. Tagging and Tweaks \i
+1. New Enemy - The Titan: @
+   1. Big + High HP
+   2. Behaviours: Spawn -> Move down the screen then start floating side by side, left to right and attack player in the mean time.
+   3. Shoot Burst Shots
+   4. Special Attack: Laser Burst
    
-2. Weapon Upgrades Permanent: \i
-   1. SHots
-   2. Double shots and Trouble Shots.
-   3. Green SHots.
-   4. Remove the Temp Strong Shots (unnecessary)
+
+2. Enemies Types - based on difficulty:  More and More Enemies too!!! @
+   1. Easy: Small and Light, no attack (e.g UFO)
+   2. Normal: Specialize Movements and Attacking Patterns (some are harder than other) (e.g Brutes and Trackers)
+   3. Hard: Big, Bulky and Many Attacking Patterns (e.g Titan and Surfer)
+   4. Ultimate: Formations of multiple enemy Types that are extremely hard to deal with;
+   5. Boss: nuff said - The Most Powerful Enemies in the game, only show up at the last stages of the levels and can spawn Minions: Special Units that only spawned in Boss fight
+      1. Crabber
+      2. Quez
+      3. Big Brain
+      4. 
    
-3. Shield Upgrade Implementations:
+
+3. Heart Gift: @
+   1. Restore 1 Lost health bar;
+   2. Only drop by 
+   
+4. Shield Upgrade Implementations:
    1. 
    2. 
    3. Sound Effects: when Vanishing \i
    
-4. Change the Player Status UI to a simple Flat grids just like in the Game's Model:
-   1. HP Bar.
-   2. Missiles Count.
-   3. Ship Upgrades and Energy Armor Bar.
-   4. Ammo Upgrades Bar.
+5. Change the Player Status UI to a simple Flat grids just like in the Game's Model: \i
+   1. HP Bar. @
+   2. Missiles Count. \i
+   3. Ship Upgrades and Energy Bar (will be use for Spark Skills).
+   4. Coin Counter;
+   5. Ammo Upgrades Bar.
    
-5. 4 Beginning Levels with Hard-scripted, pre-Designed and pre-Determined Spawn Patterns and Spawn Routines: still using Weight Formulas, but now the Enemies Types and Waves Structures are pre-Design, not fully random anymore) 
-   1. Follow the same Difficulty and Progression rules, but now the Difficulty are scripted for each level instead of gradually increasing with play-time and scores.
-   2. Set-pieces: premade Formation of Enemies (stored in Script and Data form, or generated as complete Prefabs)
-   3. Enemies and Waves, Times and Upgrades are spawned are manually designed and crafted for the whole level (less random factors, only in loot drops)
-   
-6. Difficulty and Progressions for better Enjoyment in Players: \i
-   1. Enemies (Typed) HP and Spawn rates will be gradually increased with play times and player's score (Difficulty)
-   2. Checking for Difficulty and Time when Spawn and Calculating.
-   3. INcreased in difficulty = more Points.
-   4. Player Progress:
-      1. Higher Difficulty = more Points.
-      2. Permanent Shoot Upgrade that can be collected by destroying enemies (last for a round, or infinitely in Endless)
-      3. HP Recovery Drop (Score and Restore lost HP) (USeful for player to restore before Bosses)
+6. 4 Beginning Levels with Hard-scripted, pre-Designed and pre-Determined Spawn Patterns and Spawn Routines: 
+   1. Each Levels will have their own Spawner (can be called Spawn Managers): Waves's Order and Structures will be Designed, Calculated and Scripted into Each Level: no Random factors, only Patterns and Challenges!!! @
+      1. Co-routines and the likes (with Yieldings and Intervals are extremely suitable for these kind of Spawning Scripts)
+   2. The Campaign Levels won't have score system, but instead the player can collect coins to buy supplies and upgrades. @
+   3. Each waves will be more difficult than the last.
+   4. Set-pieces: premade Formation of Enemies (stored in Script and Data form, or generated as complete Prefabs): These will be called SEF: Special Enemy Formations;
+   5. Enemies and Waves, Times and Upgrades are spawned are manually designed and crafted for the whole level (less random factors, only in loot drops): their timings, structures and Positionings.
+   6. The Levels will spawn more and more Difficult enemies so that the players have to utilize their skills and upgrades to the maximum: Challenging
+   7. Some Levels will have Bosses and uique Hazard (Meteors, Turrets, etc.)
 
 
-7. Harder Enemies for higher Difficulty Progresses.   
+7. Harder Enemies for higher Difficulty Progresses:
+	+ Bigger and Bulkier
+	+ Harder Attack Pattern 
+	+ Trickier Maneuvering
    
-8. Enemies Shots can now rotate with velocity (tracking, etc.);
+8. Enemies Shots can now rotate with velocity (tracking, etc.) @
 
 9.  Bosses!
     1.  At Each Arc-ending Levels.
@@ -62,14 +70,30 @@
     3.  Boss BGMs.
 
 12. More Background arts: Varied Scrolling backgrounds for different stages.
+
 13. MOre Upgrades:
     1.  Ship Armor Upgrades: More HP and Damage Resists (represent by an energy armor bar that deplete with damage received).
     2.  Missiles: Stackable High Damage Bomb with Arts, UI and Functionality.
     3.  HP Recovery Batteries.
-    4.  Max HP Upgrades
+    4.  Armor Upgrades: Change the Appearances and Provide the Player with an Armor Bar that will absorb Dmgs for them.
     5.  >> Need to change the whole mechanics around HP Managing and Upgrades: Refactor and Modify!
 
-14. Changed the Enemies Explosion visual effects to something more suitable and impactful.
+14. Spark Skills: will get each as the players progress and can be equip one-per-level every level (including Endless Mode)
+    1.  A Movement Dash (Cuphead styles): USe Energy per Dash.
+    2.  Beam Weapon: Constant fire-rates but less damages.
+    3.  Bomb Shots: Slow Shot Rates but High AOE dmg.
+    4.  A Charge Shield: can be used Infinitely but consumes a lot of Energy per Uses.
+    5.  Energy are provided infinitely but won't recharge by itself (need to get Enery Filler upgrades) to regain.
+    6.  Max HP: Start the Level with 1 more HP bar.
+	7. Quick start: Start the Levels with one of the provided random Upgrades including:
+		- 5 Missiles.
+		- Tier 1 Armor
+		- Tier 1 Weapon
+	8. Supporting Homming Sparks: Frequently Shoot at enemies 2 Electric Sparks.
+    
+15. New Enemies, New Spawning Points and Enemy Types:
+
+16. Fix the Bugs where Enemies will drop 2 upgs at once.
 
 
 

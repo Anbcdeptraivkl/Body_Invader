@@ -5,6 +5,47 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
 
 ## [Unreleased]
 
+### Added:
+- Implemented Level Selection UI and Functionality (the Appearance and Juiciness will be upgraded and improved later)
+- The Old Play Scene now becomes Endless mode.
+- Implemented 2 more Scenes: Level 1 and Level 2, each with their own Spawner scripts (functioning basically the same as Endless Spawner):
+  - Spawn in fixed orders and Enemy sets (structures that will be declared for the Level Spawners to use Dynamically, the Data-driven way)
+
+### Changed:
+- Size changes:
+  - Increase Trackers size and all Bullet sizes.
+  - Reduce Player sizes.
+
+- Increase Player's Speed and Fire rate.
+  
+- Tri-UFO behaviours:
+  - Now can fire shots at facing directions over time.
+  - Moving down in the beginning, then over time slowly move up (Using time-based Coroutines and Lerping techniques)
+
+### Fixed:
+- Fixed the bugs where the HP Reducing Particle Effects won't play at the right time.
+
+
+
+## [0.10.0] - 25/06/2019
+
+### Added:
+- Shooting Patterns and Orb Shots for the Brutes.
+- More arts for weapons
+- New Flash Explosion Animation sheets: Bigger and more Impactful.
+- Added new HP UI: with its own MEchanics (implemented into the PlayerHpManager) and Special Effects (Glass-breaking)
+
+### Changed:
+- Increased Spawn rates for more challenges.
+- Strong Wave Shots now Spread.
+- UFO and Brute no longer spawn Shot Upgrades.
+- Increased Enemy's Shooting Rate and SHot speeds
+
+### Fixed:
+- Fixed the bugs where the Brute enemies turn the wrong diretions.
+- FIxed the bugs where the Brute enemies can't shoot, but there is still shooting sfx.
+- Fixed the bugs where the HP UI will always display 4 healths (lacking enabling)
+
 
 
 ## [0.9.1] - 13/06/2019

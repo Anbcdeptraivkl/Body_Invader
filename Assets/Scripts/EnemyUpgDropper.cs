@@ -53,7 +53,7 @@ public class EnemyUpgDropper: MonoBehaviour {
                     Quaternion.identity
                 );
 
-                return;
+                break;
             }
 
             rate -= upgradeList[j].rarity;

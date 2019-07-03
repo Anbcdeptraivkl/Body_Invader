@@ -7,22 +7,22 @@ using UnityEngine;
 public class EnemyShooting: MonoBehaviour {
     public GameObject shot;
 
-    [Tooltip("Base x speed, values greater than 0 only")]
     public float xSpeed;
 
     public float ySpeed;
 
     public Transform shotSpawn;
 
-    public float fireDelay = 0.5f;
+    public float fireDelay;
 
-    public float fireRate = 0.5f;
+    public float fireRate;
 
-    Vector3 velocity;
+    Vector2 velocity2D;
 
     void Start() {
-        float relativeXSpeed = (transform.position.x < 0) ? xSpeed : -xSpeed;
-        velocity = new Vector3(relativeXSpeed, ySpeed, 0);
+        xSpeed = transform.position.x >= 0 ? -xSpeed : xSpeed;
+        
+        velocity2D = new Vector2(xSpeed, ySpeed);
 
         InvokeRepeating("Shoot", fireDelay, fireRate);
     }
@@ -35,7 +35,10 @@ public class EnemyShooting: MonoBehaviour {
             Quaternion.identity
         ) as GameObject;
 
-        spawnedShot.gameObject.GetComponent<Rigidbody2D>().velocity = velocity;
-        spawnedShot.gameObject.transform.rotation = Quaternion.LookRotation(velocity);
+        spawnedShot.gameObject.GetComponent<Rigidbody2D>().velocity = velocity2D;
+
+        // Set the sprite rotation toward the velocity direction:
+        float angle = Mathf.Atan2(xSpeed, ySpeed) * Mathf.Rad2Deg;
+        // spawnedShot.gameObject.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 }
