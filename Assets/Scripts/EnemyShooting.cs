@@ -33,7 +33,7 @@ public class EnemyShooting: MonoBehaviour {
             shot,
             shotSpawn.position,
             Quaternion.identity
-        ) as GameObject;
+        );
 
         spawnedShot.gameObject.GetComponent<Rigidbody2D>().velocity = velocity2D;
 

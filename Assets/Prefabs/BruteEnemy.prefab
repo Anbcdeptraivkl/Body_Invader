@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 4643949035738963619}
   - component: {fileID: -1695933692683471988}
   - component: {fileID: -8423083724016412579}
+  - component: {fileID: 1506118634222365573}
   m_Layer: 0
   m_Name: BruteEnemy
   m_TagString: Enemy
@@ -171,7 +172,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 4.971844e-10, y: -0.0029409528}
@@ -290,6 +291,18 @@ MonoBehaviour:
   shotSpawn: {fileID: 5245007753579397065}
   fireDelay: 0.5
   fireRate: 1.3
+--- !u!114 &1506118634222365573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2544080164171688899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5982fdac306456a43b033fb2d825add8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6985242557159952536
 GameObject:
   m_ObjectHideFlags: 0

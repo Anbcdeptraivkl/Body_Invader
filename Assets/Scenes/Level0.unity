@@ -3074,8 +3074,8 @@ GameObject:
   - component: {fileID: 1896891612}
   - component: {fileID: 1896891613}
   - component: {fileID: 1896891614}
-  - component: {fileID: 1896891608}
   - component: {fileID: 1896891615}
+  - component: {fileID: 1896891608}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -3099,27 +3099,27 @@ MonoBehaviour:
   - name: TriUFO
     prefab: {fileID: 6242509671218584744, guid: 363561fb480602148bf9c0b3737a2309,
       type: 3}
-    spawnRate: 50
+    spawnRate: 20
     difficulty: 0
-    direction: 0
-  - name: Tracker
-    prefab: {fileID: 4017692940672940887, guid: c4fae79fbfecff74fb137e6bc2e99431,
-      type: 3}
-    spawnRate: 30
-    difficulty: 1
     direction: 0
   - name: BruteL
     prefab: {fileID: 7909967575302924381, guid: c75f430a05de2294281e326f3f5bd6b2,
       type: 3}
-    spawnRate: 40
+    spawnRate: 20
     difficulty: 0
     direction: 1
   - name: BruteR
     prefab: {fileID: 3851197245323869600, guid: 1e095465fde5846428461dcb0179ba3e,
       type: 3}
-    spawnRate: 40
+    spawnRate: 20
     difficulty: 0
     direction: 2
+  - name: Tracker
+    prefab: {fileID: 4017692940672940887, guid: c4fae79fbfecff74fb137e6bc2e99431,
+      type: 3}
+    spawnRate: 10
+    difficulty: 1
+    direction: 0
   spawnPositionRange:
   - {fileID: 604866585}
   - {fileID: 1918790601}
@@ -3129,7 +3129,7 @@ MonoBehaviour:
   - {fileID: 1610820199}
   rightSpawnPoints:
   - {fileID: 1361173170}
-  multiSpawnDelay: 0.4
+  multiSpawnDelay: 0.2
 --- !u!4 &1896891609
 Transform:
   m_ObjectHideFlags: 0
@@ -3390,7 +3390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc29df610fb42804cbf9e98fb8a4be59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemiesPerWave: 4
+  enemiesPerWave: 3
   spawnDelay: 1.5
   waveStartDelay: 1.5
   waveSpawnDelay: 1.5

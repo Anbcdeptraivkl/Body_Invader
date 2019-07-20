@@ -8,13 +8,16 @@ public enum Difficulty {
     Easy,
     Normal,
     Hard,
-    Heroic
+    Heroic,
+    Boss
 }
 
+// The Direction that will be access when reading data to determine sawn positions:
 public enum SpawnDirection {
-    Straight,
+    Top,
     Left,
-    Right
+    Right,
+    Bottom
 }
 
 
@@ -24,8 +27,11 @@ public struct Enemy {
 
     public GameObject prefab;
 
+    // Spawn Rates for Random Spawning
     public float spawnRate;
 
+    // Only for Endless Random Spawning:
+    // Level Formation are designed in Data files:
     public Difficulty difficulty;
 
     public SpawnDirection direction;
@@ -51,12 +57,11 @@ public class SpawnManager : MonoBehaviour
 
 
 
-    //Control Operations:
+    //Control Operations to stop or continue spawning:
     GameOver gameOverRef;
     bool isSpawning;
 
-    // Total weight for caluculating Spawn Chances:
-    float totalWeight;
+    
 
     int spawnedNum = 0;
 
@@ -70,82 +75,9 @@ public class SpawnManager : MonoBehaviour
         gameOverRef = gameControllerObj.GetComponent<GameOver>();
 
         isSpawning = true;
-
-        // Construct total weight for Spawning:
-        CalculateTotalWeight();
-
     }
 
-    public void RandomSpawn() {
-
-        //Calculate the weight,items by items and substracting the weight until, the rate lower than the random value generated will be the one spawned:
-
-        // Random Rate:
-        float randomRate = Random.Range(0, totalWeight);
-
-        foreach (Enemy Enemy in EnemyList) {
-
-            if (Enemy.spawnRate >= randomRate) {
-                // Check for spawn direction, and consequently the spawn positions:
-                Transform spawnPoint = DetermineSpawnDirection(Enemy);
-
-                // For LEft and right Brute: Spawn multiple (3) in a row:
-                if (Enemy.name == "BruteL" || Enemy.name == "BruteR") {
-                    StartCoroutine(SpawnMulti(Enemy.name, spawnPoint, 3));
-                } else {
-                    SpawnSingle(Enemy.name, spawnPoint);
-                }
-
-                return;
-
-            } else {
-                randomRate -= Enemy.spawnRate;
-            }
-
-        }
-
-    }
-
-    Transform DetermineSpawnDirection(Enemy enemy) {
-        // Check for spawn direction, and consequently the spawn positions:
-        // Random position from the Spawn Points Cllections:
-        Transform randomStraightPoint = spawnPositionRange[(int)Random.Range(0, spawnPositionRange.Length -1)];
-        Transform randomLeftPoint = leftSpawnPoints[(int)Random.Range(0, leftSpawnPoints.Length - 1)];
-        Transform randomRightPoint = rightSpawnPoints[(int)Random.Range(0, rightSpawnPoints.Length - 1)];
-
-        // Checking and Assigning:
-        Transform spawnPoint;
-
-        switch (enemy.direction) {
-            case SpawnDirection.Left: {
-                spawnPoint = randomLeftPoint;
-            }
-            break;
-
-            case SpawnDirection.Right: {
-                spawnPoint = randomRightPoint;
-            }
-            break;
-
-            default: {
-                spawnPoint = randomStraightPoint;
-            }
-            break;
-        }
-
-        return spawnPoint;
-    }
-
-    void CalculateTotalWeight() {
-        // Calculate total Spawn Weight of all element in collections:
-        totalWeight = 0;
-
-        foreach (Enemy Enemy in EnemyList) {
-            totalWeight += Enemy.spawnRate;
-        }
-    }
-
-    void SpawnSingle(string name, Transform spawnPoint) {
+    public void SpawnSingle(string name, Transform spawnPoint) {
         // Find the right Enemy, and then instantiate them using the position of the transform point:
         Enemy spawningEnemy = EnemyList.Find(x => x.name == name);
 
@@ -156,7 +88,7 @@ public class SpawnManager : MonoBehaviour
         );
     }
 
-    IEnumerator SpawnMulti(string name, Transform spawnPoint, int amount) {
+    public IEnumerator SpawnMulti(string name, Transform spawnPoint, int amount) {
         // Spawn multiple enemies of the same kind in the row (in the same position and direction)
         for (int i = 0; i < amount; i++) {
             SpawnSingle(name, spawnPoint);

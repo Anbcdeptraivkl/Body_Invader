@@ -1,0 +1,13 @@
+<Food>
+
+    <Healthy>
+        <Fruit type="red">Apple</Fruit>
+        <Fruit type="yellow">Mango</Fruit>
+    </Healthy>
+
+    <Junk>
+        <Snack type="salty">Chips</Snack>
+        <Snack type="sweet">Lolipop</Snack>
+    </Junk>
+
+</Food>

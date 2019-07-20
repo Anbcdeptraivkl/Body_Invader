@@ -5,11 +5,30 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
 
 ## [Unreleased]
 
+
+
+## [0.11.0] - 20/07/2019
+
 ### Added:
 - Implemented Level Selection UI and Functionality (the Appearance and Juiciness will be upgraded and improved later)
 - The Old Play Scene now becomes Endless mode.
+- Add a small interface for accessing enemy's common data.
 - Implemented 2 more Scenes: Level 1 and Level 2, each with their own Spawner scripts (functioning basically the same as Endless Spawner):
-  - Spawn in fixed orders and Enemy sets (structures that will be declared for the Level Spawners to use Dynamically, the Data-driven way)
+  - Spawn in Waves: fixed orders of Enemies sets + Spawn Positions - in the form of XML Data file: LevelData.xml.
+
+- Fully Working Level Spawner: (tested for Level 1)
+  - Stored in XML Format with many Levels
+  - Wave Class: Contain List of all Info of the Enemies in that Waves with some more Control variables:
+    - Restriction (the enemies in the waves need to be wiped out before moving to the next)
+  - Enemy Element:
+    - Name (identical to the names Registered in the Spawn Manager Data)
+    - Position index (based on directions, will pick out the indexed position in the list)
+    - Amount (num per spawn, with delay)
+  - The XML Data will be read by Level index: Waves by Waves, Enemies by Enemies (each will be stored in their respective collections)
+  - Coroutines to Spawn Waves with Delay between Waves (or Enemy ALive Checks for Restricted Waves)
+
+- Added Enemy Count Component to check if the enemies are still alive or not.
+- Added Arts for the Titan Hard Enemies.
 
 ### Changed:
 - Size changes:
@@ -22,8 +41,13 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
   - Now can fire shots at facing directions over time.
   - Moving down in the beginning, then over time slowly move up (Using time-based Coroutines and Lerping techniques)
 
+- Increase the Delay at the start of Spawning, and between Waves
+- Changed the Tags of some Enemies and Shot types
+
 ### Fixed:
 - Fixed the bugs where the HP Reducing Particle Effects won't play at the right time.
+- Shield no longer destroy enemies (too Over-powered!)
+- Fixed the Bound Box bug where the parent's objects won't be cleared out
 
 
 

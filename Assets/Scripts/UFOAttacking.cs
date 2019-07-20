@@ -12,6 +12,7 @@ public class UFOAttacking: MonoBehaviour {
     public float shotXSpeed = 5;
     public float shotYSpeed = 8;
 
+    public float startDelay = 0.5f;
     public float timeShoot  = 1.2f;
 
     void Start() {
@@ -19,6 +20,8 @@ public class UFOAttacking: MonoBehaviour {
     }
 
     IEnumerator AutoShoot() {
+        yield return new WaitForSeconds(startDelay);
+        
         while (true) {
             GenerateShot();
 
@@ -28,7 +31,7 @@ public class UFOAttacking: MonoBehaviour {
 
     void GenerateShot() {
         // Instantiate and set Velocity:
-        GameObject shot = Instantiate(enemyShot, shotSpawn.position, Quaternion.identity) as GameObject;
+        GameObject shot = Instantiate(enemyShot, shotSpawn.position, Quaternion.identity);
 
         // Velocitu:
         Vector2 headingVector = shotSpawn.position - localRoot.position;

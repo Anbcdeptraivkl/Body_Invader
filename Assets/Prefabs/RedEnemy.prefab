@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 8049858410425869102}
   - component: {fileID: 7023459306296535175}
   - component: {fileID: -1149157413703216389}
+  - component: {fileID: 7764155732593774758}
   m_Layer: 0
   m_Name: RedEnemy
   m_TagString: Enemy
@@ -182,7 +183,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -321,3 +322,15 @@ MonoBehaviour:
       type: 3}
     rarity: 20
   dropChance: 30
+--- !u!114 &7764155732593774758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4017692940672940887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5982fdac306456a43b033fb2d825add8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

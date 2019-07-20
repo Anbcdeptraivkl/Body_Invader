@@ -1,0 +1,73 @@
+<Formation>
+    <Level index="1">
+        <!--In each Waves, the Enemies will be spawned at the same time (remember: to not overlapping positions between enemies because of this nature!), if there are delays between the spawning, then the enemies will be put into later waves-->
+        
+         <!--Waves can have single enemy, or as many enemies as you want spawning simutaneously-->
+        <Wave rest="false">
+            <Enemy>
+                <Name>TriUFO</Name>
+                <!--Start from zero:-->
+                <!--0   1   2-->
+                <!--L   Mid   R-->
+                <PositionIndex>1</PositionIndex>
+                <Amount>1</Amount>
+            </Enemy>
+    
+            <Enemy>
+                <Name>TriUFO</Name>
+                <!--Start from zero-->
+                <PositionIndex>2</PositionIndex>
+                <Amount>1</Amount>
+            </Enemy>
+        </Wave>
+
+        <Wave rest="true">
+            <Enemy>
+                <Name>BruteL</Name>
+                <PositionIndex>0</PositionIndex>
+                <Amount>3</Amount>
+            </Enemy>
+
+            <Enemy>
+                <Name>BruteR</Name>
+                <PositionIndex>0</PositionIndex>
+                <Amount>3</Amount>
+            </Enemy>
+        </Wave>
+
+        <Wave rest="true">
+            <Enemy>
+                <Name>Tracker</Name>
+                <PositionIndex>0</PositionIndex>
+                <Amount>1</Amount>
+            </Enemy>
+
+            <Enemy>
+                <Name>Tracker</Name>
+                <PositionIndex>2</PositionIndex>
+                <Amount>1</Amount>
+            </Enemy>
+        </Wave>
+        
+       
+
+        <Wave rest="true">
+            <Enemy>
+                <Name>Tracker</Name>
+                <PositionIndex>0</PositionIndex>
+                <Amount>1</Amount>
+            </Enemy>
+    
+            <Enemy>
+                <Name>BruteR</Name>
+                <PositionIndex>0</PositionIndex>
+                <Amount>3</Amount>
+            </Enemy>
+        </Wave>
+    </Level>
+
+
+    <Level index="2">
+       
+    </Level>
+</Formation>
