@@ -5,6 +5,14 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
 
 ## [Unreleased]
 
+### Added:
+- Frameworks for Titan: Hard Enemies with High HP and Tricky Movement.
+- Added Cam Shake Effects when enemies are hit.
+
+### Changed:
+- Enemies no longer immediately die on player contacting.
+- Tweak the Upgrade Drop Rates to be more fast-paced.
+
 
 
 ## [0.11.0] - 20/07/2019
@@ -47,7 +55,8 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
 ### Fixed:
 - Fixed the bugs where the HP Reducing Particle Effects won't play at the right time.
 - Shield no longer destroy enemies (too Over-powered!)
-- Fixed the Bound Box bug where the parent's objects won't be cleared out
+- Fixed the Bound Box bug where the parent's objects won't be cleared out: now the whole hierachy wil be removed all contact
+- 
 
 
 

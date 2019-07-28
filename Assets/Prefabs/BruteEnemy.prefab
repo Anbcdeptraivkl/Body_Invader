@@ -253,6 +253,10 @@ MonoBehaviour:
     upgradeObj: {fileID: 2148248754928969093, guid: c433cca19f1e879449776bd66b63a59f,
       type: 3}
     rarity: 10
+  - name: StrongShot
+    upgradeObj: {fileID: 2148248754928969093, guid: cc8f423a879000144bbf885af45209c9,
+      type: 3}
+    rarity: 10
   dropChance: 15
 --- !u!95 &-1695933692683471988
 Animator:

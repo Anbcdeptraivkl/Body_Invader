@@ -61,10 +61,6 @@ public class SpawnManager : MonoBehaviour
     GameOver gameOverRef;
     bool isSpawning;
 
-    
-
-    int spawnedNum = 0;
-
 
 
     // Start is called before the first frame update
@@ -95,6 +91,7 @@ public class SpawnManager : MonoBehaviour
 
             yield return new WaitForSeconds(multiSpawnDelay);
         }
+        
         yield break;
     }
 

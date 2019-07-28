@@ -16,6 +16,7 @@ public class EnemyMovement : MonoBehaviour
     public float startDelay;
     public float maneuverTime;
     public float timeTilNextMove;
+    
     private float maneuverTargetSpeed;
 
     //Private References:

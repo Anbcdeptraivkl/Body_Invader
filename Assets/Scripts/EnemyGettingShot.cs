@@ -24,6 +24,8 @@ public class EnemyGettingShot : MonoBehaviour
     EnemyHPManager hpManager;
     EnemyUpgDropper upgDropper;
 
+    CamShake camShaker;
+
     
     void Start() {
 
@@ -44,6 +46,15 @@ public class EnemyGettingShot : MonoBehaviour
 
         objAnimator = gameObject.GetComponent<Animator>();
 
+        // Getting camera components:
+        GameObject mainCam = GameObject.FindWithTag("MainCamera");
+
+        if (mainCam != null) {
+            camShaker = mainCam.GetComponent<CamShake>();
+        } else {
+            Debug.Log("No camera found.");
+        }
+
     }
 
     void OnTriggerEnter2D (Collider2D other) {
@@ -57,42 +68,36 @@ public class EnemyGettingShot : MonoBehaviour
                
                 hpManager.DecreaseHP(shotDmg);
 
-                // If not dead yet:
-                // Play On-hit Animation + Particle Effects (then reset for cycling animations)
-                if (hpManager.Alive() && isOnhit) {
-
-                    // BLinking animations:
-                    objAnimator.SetTrigger("Hit");
-
-                    // CHecking for the Colliding shot types, and instantiate the effects as followed:
-                    StrongShotEffect strongShootEffect = other.GetComponent<StrongShotEffect>();
-                    GameObject hitParticle;
-
-                    if (strongShootEffect) {
-                        // Strong Impact:
-                        hitParticle = strongShootEffect.HitShock();
-                    } else {
-                        // Normal Impact Particles instantiating and destruction:
-                        hitParticle = Instantiate(
-                            hitShockParticle,
-                            other.gameObject.transform.position,
-                            other.gameObject.transform.rotation
-                        ) as GameObject;
-                    }
-
-                    Destroy(hitParticle, 1.0f);
-
-                } else {
-                    if (!hpManager.Alive()) {
-                        Dying();
-                    }
-                }
+                // On hit Animations and Effects:
+                PlayOnHitEffects(other);
 
                 // Destroy the shot objects after colliding:
                 Destroy(other.gameObject);
             }
 		}
 	}
+
+    void PlayOnHitEffects(Collider2D other) {
+        if (hpManager.Alive() && isOnhit) {
+            // Cam Shake:
+            camShaker.StartShaking();
+            // BLinking animations:
+            objAnimator.SetTrigger("Hit");
+            // CHecking for the Colliding shot types, and instantiate the effects as followed:
+            GameObject hitParticle;
+            hitParticle = Instantiate(
+                hitShockParticle,
+                other.gameObject.transform.position,
+                other.gameObject.transform.rotation
+            ) as GameObject;
+            
+            Destroy(hitParticle, 1.0f);
+        } else {
+            if (!hpManager.Alive()) {
+                Dying();
+            }
+        }
+    }
 
     void Dying() {
 

@@ -108,6 +108,7 @@ public class LevelSpawner: MonoBehaviour {
 
             // Enemies:
             foreach (XmlElement enemy in wave.ChildNodes) {
+                // Getting the CHildren elements Data:
                 string enemyName = enemy["Name"].InnerText;
                 int positionIndex = int.Parse(enemy["PositionIndex"].InnerText);
                 int amount = int.Parse(enemy["Amount"].InnerText);
@@ -143,8 +144,12 @@ public class LevelSpawner: MonoBehaviour {
 
     // Lv Spawn: The Father Spawn Fuction that call all other Functions to spawn the whole Level, waves by waves:
     IEnumerator SpawnWaves() {
-
         foreach (Wave wave in waveDataList) {
+            // Check if Game Over:
+            if(!s.SpawningCheck()) {
+                break;
+            }
+
             // Delay, then continue to iterate through the next Waves:
             yield return new WaitForSeconds(delayBetweenWaves);
             
@@ -169,6 +174,7 @@ public class LevelSpawner: MonoBehaviour {
         Debug.Log("Level Ended");
         
         yield break;
+        
     }
 
     // Determine the Spawn Direction based on Enemy's name using the EnemyList collection:

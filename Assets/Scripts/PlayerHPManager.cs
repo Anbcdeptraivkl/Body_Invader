@@ -99,22 +99,6 @@ public class PlayerHPManager : MonoBehaviour
         isInvin = false;
     }
 
-    void OnLosingHpUi() {
-        // Update the Player and UI state based on the current HP:
-        for (int i = 0; i < PlayerHpUi.HeartsCollection.Length; i++) {
-            
-            // Swapping Sprite and Playing Effects:
-            if (i < currentHp) {
-                PlayerHpUi.HeartsCollection[i].sprite = PlayerHpUi.fullHPSprite;
-            } else {
-                PlayerHpUi.HeartsCollection[i].sprite = PlayerHpUi.lostHPSprite;
-                HpBreak();
-            }
-        }
-    }
-
-    
-
     public void SetHpUpgrade(bool value) {
         hpUpgraded = value;
     }
@@ -137,6 +121,22 @@ public class PlayerHPManager : MonoBehaviour
         StartCoroutine("Invincible");
 
     }
+
+    
+    void OnLosingHpUi() {
+        // Update the Player and UI state based on the current HP:
+        for (int i = 0; i < PlayerHpUi.HeartsCollection.Length; i++) {
+            
+            // Swapping Sprite and Playing Effects:
+            if (i < currentHp) {
+                PlayerHpUi.HeartsCollection[i].sprite = PlayerHpUi.fullHPSprite;
+            } else {
+                PlayerHpUi.HeartsCollection[i].sprite = PlayerHpUi.lostHPSprite;
+                HpBreak();
+            }
+        }
+    }
+
 
     public void IncreaseHp(int amount = 1) {
 

@@ -24,29 +24,15 @@ public class EnemyPlayerContact : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D other)
 	{
-		//Destroy Player:
 		if (other.gameObject.tag != "Boundary" )
 		{
 			if (other.gameObject.tag == "Player")
             {
-				//Deplete player HP if isn't currently in Invincible frames:
 				if (!playerHp.CheckInvin()) {
 
 					playerHp.DecreaseHp();
 
 				}
-				// Deplete Player HP:
-
-				// Play the explosion:
-                selfExplosion = Instantiate(
-                    selfExplosion, 
-                    transform.position, 
-                    transform.rotation) as GameObject;
-
-                Destroy(selfExplosion, 2.0f);
-
-				//Destroy the enemiy contacting with player:
-                Destroy(gameObject);
             }
 		}
 	}

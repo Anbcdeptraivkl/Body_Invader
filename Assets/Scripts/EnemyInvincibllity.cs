@@ -14,12 +14,12 @@ public class EnemyInvincibllity : MonoBehaviour
 
     void Invincible() {
         //Disable the Collider == no damage taken:
-        GetComponent<CapsuleCollider2D>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
     }
 
     void StopInvin() {
         //Stop being invin:
-        GetComponent<CapsuleCollider2D>().enabled = true;
+        GetComponent<Collider2D>().enabled = true;
 
     }
 }
