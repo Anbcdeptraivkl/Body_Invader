@@ -61,6 +61,7 @@ public class LevelSpawner: MonoBehaviour {
 
     // Wave Clearing status (for the Restricted);
     bool waveCleared;
+    bool completed;
 
     // Base Spawner Components:
     SpawnManager s;
@@ -171,10 +172,15 @@ public class LevelSpawner: MonoBehaviour {
         }
         
         // End of level:
-        Debug.Log("Level Ended");
+        completed = true;
+        Debug.Log("Level Complete");
         
         yield break;
         
+    }
+
+    public bool LevelCompleteCheck() {
+        return completed;
     }
 
     // Determine the Spawn Direction based on Enemy's name using the EnemyList collection:

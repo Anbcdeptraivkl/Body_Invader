@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// Movement of the Titan Enemy, from start to loop:
 public class TitanMovement: MonoBehaviour {
     // Speed Values:
     public float ySpeed;

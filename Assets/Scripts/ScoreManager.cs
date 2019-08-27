@@ -35,6 +35,7 @@ public class ScoreManager : MonoBehaviour
 		AddScore(scoreValue);
 		PrintScore();
 	}
+	
 	public bool SetHighScore()
 	{
 		if (score > PlayerPrefs.GetInt("highScore", 0))
@@ -45,22 +46,25 @@ public class ScoreManager : MonoBehaviour
 		else 
 			return false;
 	}
+
 	public bool CheckIfNewHighScore()
 	{
 		return newHighScoreAchieved;
 	}
+
+	// Update (if) High Score:
     public void HighScoreUpdate()
 	{
 		//Update the High score value
 		//Check boolean whether the player got high score:
 		newHighScoreAchieved = SetHighScore();
 		//Print high score to console:
-		Debug.Log(PlayerPrefs.GetInt("highScore"));
+		Debug.Log("High Score: " + PlayerPrefs.GetInt("highScore"));
 	}
 
     void PrintScore()
 	{
-		scoreText.text = "Score: " + score;
+		scoreText.text = score.ToString();
 	}
     // **Working on Breaking the GameController into Components:
     //  - Now building the score manager and Game Over classes.

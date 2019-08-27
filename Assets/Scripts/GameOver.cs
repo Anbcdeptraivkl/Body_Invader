@@ -7,6 +7,8 @@ public class GameOver : MonoBehaviour
     bool gameOver;
 
     ScoreManager scoreManager;
+    MoneyManager moneyManager;
+
     public AudioSource backgroundMusic;
     public AudioSource gameOverMusic;
 
@@ -21,7 +23,7 @@ public class GameOver : MonoBehaviour
         if (gameControllerObject != null) 
 		{
 			scoreManager = gameControllerObject.GetComponent<ScoreManager>();
-			
+            moneyManager = gameControllerObject.GetComponent<MoneyManager>();	
 		}
         else
         {
@@ -29,19 +31,16 @@ public class GameOver : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Over()
 	{
 		//Stop spawning and mute music:
-        scoreManager.HighScoreUpdate();
 		gameOver = true;
 		backgroundMusic.Stop();
 		gameOverMusic.Play();
+
+        // Update Player Prefs:
+        scoreManager.HighScoreUpdate();
+        moneyManager.UpdateMoney();
 
         // Hide the player status panel:
         playerStatus.SetActive(false);

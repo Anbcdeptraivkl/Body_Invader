@@ -56,6 +56,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -95,10 +96,10 @@ GameObject:
   - component: {fileID: 8402703027354957720}
   - component: {fileID: 8514724015647638869}
   - component: {fileID: 371507722883702679}
-  - component: {fileID: 4643949035738963619}
   - component: {fileID: -1695933692683471988}
   - component: {fileID: -8423083724016412579}
   - component: {fileID: 1506118634222365573}
+  - component: {fileID: -3444367341913782471}
   m_Layer: 0
   m_Name: BruteEnemy
   m_TagString: Enemy
@@ -236,28 +237,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0.25
---- !u!114 &4643949035738963619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2544080164171688899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb5bf45d640911049a9fd796d9cfbf7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  upgradeList:
-  - name: Shield
-    upgradeObj: {fileID: 2148248754928969093, guid: c433cca19f1e879449776bd66b63a59f,
-      type: 3}
-    rarity: 10
-  - name: StrongShot
-    upgradeObj: {fileID: 2148248754928969093, guid: cc8f423a879000144bbf885af45209c9,
-      type: 3}
-    rarity: 10
-  dropChance: 15
 --- !u!95 &-1695933692683471988
 Animator:
   serializedVersion: 3
@@ -290,7 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shot: {fileID: 1600620134327404, guid: f397d1a3f912a6143a17a99ec20d044c, type: 3}
-  xSpeed: 4
+  xSpeed: 3
   ySpeed: -8
   shotSpawn: {fileID: 5245007753579397065}
   fireDelay: 0.5
@@ -307,6 +286,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5982fdac306456a43b033fb2d825add8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3444367341913782471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2544080164171688899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f71eb514ca9aa94c8aca2a18e9482a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomDropList: []
+  persistentDropList:
+  - name: Coin
+    obj: {fileID: 2590032200894953485, guid: 40287ae6dc4966145b1fff12eec5573c, type: 3}
+    rarity: 100
+    amount: 1
+  dropChance: 0
 --- !u!1 &6985242557159952536
 GameObject:
   m_ObjectHideFlags: 0

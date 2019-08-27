@@ -100,12 +100,6 @@ MonoBehaviour:
     upgradeLevel: 1
   - shotObj: {fileID: 1600620134327404, guid: bde9185cfaa05b44ba7c6eb18af98b6c, type: 3}
     upgradeLevel: 2
-  - shotObj: {fileID: 1790427980264754900, guid: e8b1cb2197a788747ba819ffd32c6edb,
-      type: 3}
-    upgradeLevel: 3
-  - shotObj: {fileID: 8408553201613255492, guid: 0ca4bb49665a8234eaf7ae20454561bc,
-      type: 3}
-    upgradeLevel: 4
   shotSpawn: {fileID: 7715268367458214765}
   fireRate: 0.1
 --- !u!114 &7715268365818723393

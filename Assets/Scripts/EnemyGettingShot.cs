@@ -22,7 +22,7 @@ public class EnemyGettingShot : MonoBehaviour
 
     ScoreManager scoreManager;
     EnemyHPManager hpManager;
-    EnemyUpgDropper upgDropper;
+    EnemyItemDropper dropper;
 
     CamShake camShaker;
 
@@ -42,7 +42,7 @@ public class EnemyGettingShot : MonoBehaviour
         
         hpManager = gameObject.GetComponent<EnemyHPManager>();
 
-        upgDropper = gameObject.GetComponent<EnemyUpgDropper>();
+        dropper = gameObject.GetComponent<EnemyItemDropper>();
 
         objAnimator = gameObject.GetComponent<Animator>();
 
@@ -108,7 +108,10 @@ public class EnemyGettingShot : MonoBehaviour
         
         Destroy(shotExplosion, 1.0f);
 
-        upgDropper.CalculateDrop();
+        // Item Drop:
+        dropper.CalculateRandomDrop();
+        // Loot Drop:
+        dropper.DropPersistences();
 
         scoreManager.UpdateScore(scoreValue);	
 

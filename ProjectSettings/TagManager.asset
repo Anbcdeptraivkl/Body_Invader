@@ -18,6 +18,7 @@ TagManager:
   - PlayerShield
   - PlayerStatus
   - SpawnPoint
+  - Coin
   layers:
   - Default
   - TransparentFX

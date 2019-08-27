@@ -1,33 +1,109 @@
+
+# Checking and Teesting Each Components!
+
+
+# Prototype and Make things Work! The Arts and Effects will be saved for later!!!
+
+## Fun to Play and Enjoy before Fun on the Surface
+
+## Engaging and Stylist Arts
+
+## Juicy and Responsive Effects (Both Sounds and Visual)
+
+## Dynamic and Smooth Animations
+
+## Immersive and Bumbping Sounds + Musics
+
+## Intuitive and Easy UI + Display (HUB, etc.)
+
+
 # Currently Working:
-   
-8. 4 Beginning Levels with Hard-scripted, pre-Designed and pre-Determined Spawn Patterns and Spawn Routines: ~
-   <!-- 1. Each Levels will have their own Spawner (can be called Spawn Managers): Waves's Order and Structures will be Designed, Calculated and Scripted into Each Level: no Random factors, only Patterns and Challenges!!! @
-      1. Co-routines and the likes (with Yieldings and Intervals are extremely suitable for these kind of Spawning Scripts) @
-      2. Spawn multiple enemies in arow iwth delay (using amount="" Attributes) @
-         1. Fixing the Bound Bugs @
-         2. Fixing the Wave clearing Bugs @
-            - Some Waves will need the enemy to be wiped all out before moving to the next waves: A Restricted (rest) Wave @
-      3. Using pre-designed Data >> Read >> Parse >> Use! @ -->
-   2. Some Levels will have Bosses and uique Hazard (Meteors, Turrets, etc.) ~
-   
-9.  New Enemy - The Titan: ~
-   <!-- 4. Big + High HP @
-   5. Behaviours: Spawn -> Move down the screen then start floating side by side, left to right and attack player in the mean time: @
-      + MOve down for a fixed amount of time, then randomly move right or left.
-      + The position is clamped, and if the Titan reaches the Bounds the velocity will change directions. -->
-   6.  Shoot Tripple Burst Shots ~
-   7.  Special Attack: Laser Burst
-   8.  Drops: ~
-       1.  10 coins
-       2.  Shot Upgrades.
-       3.  1 missile.
-   
 
-10. Coins: ~
-   9.  Drop Randomly by Enemies, in addition to set amounts when killing harder enemies (>= Normal)
-   10. Use to Buy SHips, Cosmetics, Upgrades and Skills (both permanent and one-use)
-   11. Only Drop in Campaign, but what you buy will carried over to Endless Mode! Buy one time, use for lifetime!
+* HEART:
+- Drop randomly by all enemies (low to high drop rates, based on Enemy Power Level)
 
+- Restore 1 health bar
+  - +20 score
+  
+- Act as an Upgrades (with similar Components)
+
+
+* MISSILES:
+- Drop random 
+  - All enemies
+  - Drop rates and Amounts varies with Enemies Power
+
+- Upgrade Components
+- Can be stored (til stage-end)
+  
+- Use with Button
+  - Shoot a Missile (Animated)
+  - Emit an Explosion and Smoke
+    - Effects
+    - Particles
+  - Deal 10 Dmgs to all enemies on Screen
+
+
+* UX:
+- Warning Messages:
+  - Quitting
+  - Reseting
+
+
+
+
+* COINS:
+1.  Drop Randomly by Enemies, in addition to set amounts when killing harder enemies (>= Normal)
+2.  Use to Buy SHips, Cosmetics, Upgrades and Skills (both permanent and one-use)
+3.  Only Drop in Campaign, but what you buy will carried over to Endless Mode! Buy one time, use for lifetime!
+   - The Shop Mechanics will be implemented later
+
+- Coin Arts: 
+  - Visual
+  - Special Effects
+  - Sounds
+  - Coin Dropping Effects  
+  - Coin Receiving Effects
+  - Audio Effects: SFXs
+
+- Test if the MOney are Updated and Saved in-out of the App: @: Fully Functional 
+  - Now worked on Game Over and Level Completed, too!
+
+
+* SHOP SYSTEM:
+   - To Buy: with Money (in-game, stored as Preferene on Gameplay)
+     - Upgrades
+     - Supplies
+
+
+* LEVEL COMPLETION MECHANIC: 
+ - Prototype with Placeholders and templates first: Finished @
+   - Level Complete UI Screen (UI/UX) @
+   - Next Level 
+   - Return to Menu @
+     - Return to Level Select Screen
+
+ - Arts
+ - Effects
+
+
+
+=====================================
+
+
+
+- 4 Beginning Levels with Hard-scripted, pre-Designed and pre-Determined Spawn Patterns and Spawn Routines: ~
+   + Some Levels will have Bosses 
+   + And uique Hazard (Meteors, Turrets, etc.) ~
+   + Unique backgrounds, too!
+
+
+- New Enemy - The Titan:
+   1.  Drops:
+       1.  10 coins @
+       2.  Shot Upgrades @
+       3.  1 missile ~
+   
 
 - Implement a Shop system to use COin currency!
    + New Ships!
@@ -36,7 +112,7 @@
    + Cosmetic!
    
 
-12. Heart Gift: ~
+- Heart Gift: ~
    12. Restore 1 Lost health bar;
    13. Only drop by Normal-up Enemies.
 
@@ -45,8 +121,11 @@
    + Quickly Fly forward to group of enemies and explode - dealing high damages (about 5)
    + Gain more Damage with Equipments, and Ammunition with in-battle Upgrades (drop by all kind of enemies)
 
+
+- Laser Attack for Enemies: AOE and Straight Damaging (will be researched more later on)
+
    
-13. Remove the Shield Upgrades to a Permanent Shield Skills ~
+- Permanent Shield Skills: Buy in Shop and Use (consume high amount of Energy) in Game for a short-lived, invincible Cover ~
 
 
 - SFX Tweaks:

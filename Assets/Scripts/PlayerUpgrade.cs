@@ -7,32 +7,19 @@ public class PlayerUpgrade: MonoBehaviour {
 
     public float strongShootTime = 5.0f;
 
-    public float shieldTime = 5.0f;
-
-    public int upScore = 30;
-
-    public GameObject shield_Prefab;
+    public int upScore = 20;
 
     public AudioSource upgReceivingSfx;
 
 
     PlayerAttacking autoShooter;
 
-    GameObject shieldInstance;
-
-    Renderer sprite_Component;
-
-    Color oldColor, currentColor;
-
     ScoreManager scoreMng;
 
-    bool activeShield;
 
     void Start() {
 
         autoShooter = gameObject.GetComponent<PlayerAttacking>();
-
-        sprite_Component = gameObject.transform.Find("VFX").gameObject.GetComponent<Renderer>();
        
 
         GameObject controller = GameObject.FindWithTag("GameController");
@@ -42,13 +29,6 @@ public class PlayerUpgrade: MonoBehaviour {
         } else {
             Debug.Log("No game controller found");
         }
-
-        oldColor = sprite_Component.material.color;
-
-        Debug.Log(oldColor);
-
-        activeShield = false;
-
     }
 
     // After checking and triggering events, the real behaviours and actions will be performed in the Update functions (and their complements):
@@ -67,61 +47,22 @@ public class PlayerUpgrade: MonoBehaviour {
             upgReceivingSfx.Play();
 
             // Checking for Upgrade types (using the hierachy tags system), then start activating features:
-            string upType = other.gameObject.transform.GetChild(0).gameObject.tag;
+            UpgradeIdentifier identifier = other.gameObject.GetComponent<UpgradeIdentifier>();
 
-            if (upType == "StrongShotUpg") {
-                autoShooter.ShotUpgrade();
-            } else {
-                if (upType == "ShieldUpg") {
-                    StartCoroutine("ShieldUpg");
+            if (identifier) {
+                switch (identifier.GetUpgradeType()) {
+                    case UpgradeType.StrongShot:
+                    {
+                        autoShooter.ShotUpgrade();
+                    }
+                    break;
                 }
-            }
 
             Debug.Log("Applied Upgrade!");
 
             // Destroy the Upgrade orbs after collisions:
             Destroy(other.gameObject);
+            }
         }
-    }
-
-    // Toggling Shield using instantiating methods:
-    IEnumerator ShieldUpg() {
-
-        // Toggle activation on Shield Player's Child object (no using referene, but call directly):
-        if (!activeShield) {
-            shieldInstance = Instantiate(shield_Prefab, transform);
-
-            activeShield = true;
-
-            ChangeToNewColor();
-        }
-
-
-        yield return new WaitForSeconds(shieldTime);
-
-
-        // Then Disable until receiving more upgrades:
-        if (activeShield) {
-            Destroy(shieldInstance, shieldTime);
-
-            activeShield = false;
-
-            ReturnToOldColor();
-        }
-
-        yield break;
-        
-    }
-
-    void ChangeToNewColor() {
-
-        sprite_Component.material.color = new Color(0.9f, 0.3f, 1.0f, 1.0f);
-
-    }
-
-    void ReturnToOldColor() {
-
-        sprite_Component.material.color = oldColor;
-
     }
 }

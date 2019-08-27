@@ -15,10 +15,10 @@ GameObject:
   - component: {fileID: 353055130489487859}
   - component: {fileID: 1306380933330150551}
   - component: {fileID: 4764120768570197965}
-  - component: {fileID: 588153392697517812}
   - component: {fileID: 2899953151613281364}
   - component: {fileID: 9098204942630932264}
   - component: {fileID: 6113130403148686373}
+  - component: {fileID: 1484384885684188948}
   m_Layer: 0
   m_Name: UFOEnemy
   m_TagString: Enemy
@@ -105,7 +105,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -137,28 +137,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHP: 2
---- !u!114 &588153392697517812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 885600167462576328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb5bf45d640911049a9fd796d9cfbf7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  upgradeList:
-  - name: Shield
-    upgradeObj: {fileID: 2148248754928969093, guid: c433cca19f1e879449776bd66b63a59f,
-      type: 3}
-    rarity: 15
-  - name: StrongShot
-    upgradeObj: {fileID: 2148248754928969093, guid: cc8f423a879000144bbf885af45209c9,
-      type: 3}
-    rarity: 15
-  dropChance: 15
 --- !u!95 &2899953151613281364
 Animator:
   serializedVersion: 3
@@ -194,7 +172,7 @@ MonoBehaviour:
   localRoot: {fileID: 0}
   shotSpawn: {fileID: 7474255779110777213}
   shotXSpeed: 5
-  shotYSpeed: 8
+  shotYSpeed: 5
   startDelay: 0.5
   timeShoot: 0.75
 --- !u!114 &6113130403148686373
@@ -209,6 +187,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5982fdac306456a43b033fb2d825add8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1484384885684188948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885600167462576328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f71eb514ca9aa94c8aca2a18e9482a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomDropList: []
+  persistentDropList:
+  - name: Coin
+    obj: {fileID: 2590032200894953485, guid: 40287ae6dc4966145b1fff12eec5573c, type: 3}
+    rarity: 100
+    amount: 1
+  dropChance: 0
 --- !u!1 &885600168907314352
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,6 +262,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

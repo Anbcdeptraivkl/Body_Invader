@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-/* All the Button On click Functions can be found here */
+/* All the Button On click Functions that work in the Main Menu can be found here */
 public class OnClickHandler : MonoBehaviour
 {
     public void StartPlayingGame()
@@ -32,4 +32,12 @@ public class OnClickHandler : MonoBehaviour
 	{
 		PlayerPrefs.SetInt("highScore", 0);
 	}
+
+    public void MenuMoneyReset() {
+        MoneyManager.ResetMoney();
+    }
+
+    public void MenuLogMoneyTotal() {
+        Debug.Log(MoneyManager.GetTotalMoney());
+    }
 }

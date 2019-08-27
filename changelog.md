@@ -5,13 +5,45 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
 
 ## [Unreleased]
 
+
+
+
+## [0.12.0] - 27/08/2019
+
 ### Added:
-- Frameworks for Titan: Hard Enemies with High HP and Tricky Movement.
-- Added Cam Shake Effects when enemies are hit.
+- Finished the Frameworks for Titan: Hard Enemies with High HP and Tricky Movement:
+  + Big and Bulky with high HP
+  + Spread Shots Attacking Pattern
+  + Circling, Back and Forth Movement
+
+- Added Cam Shake Effects when enemies are hit
+
+- Added Coins and Money System:
+  - Drop on Enemy defeated as Persistent Drops (customizable amount)
+  - Coin amount will be updated and store as Money preferences
+  - Coin Text Display in-game
+  - Coin Movement Behaviours
+  - Coin Piicking and Money Mechanics
+  - Added a Prototype for Coin (the Arts and Effects will be Added Later in the Production process)
+  - Added Update Calls for when Game Over and Completing Levels (Money and Score will not be updated when you quit in the middle (with warning messages))
+
+- Added Level Completion Panels (Prototype) with Return to Menu function (the Coins and Score will be Updated on Completion Screen)
+- Added some test buttons (hidden on Play)
+
 
 ### Changed:
 - Enemies no longer immediately die on player contacting.
-- Tweak the Upgrade Drop Rates to be more fast-paced.
+- Tweak the Upgrade Mechanics
+- Reduced the Drop Rate on Enemies
+- Tweaked the Score Text and Coin Count Display: more spaces and clearer
+
+### Removed:
+- Removed the Shield Upgrade (will soon be replaced with Missiles, Healths and Energy Drops)
+
+### Fixed:
+- Fixed the issue where coins won't be updated when you finish the levels
+- Fixed Coin Infinitely Updating Loop on Level Complete
+- Fixed when the Level Complete panel show up too soon, neglect the last coins dropped
 
 
 
