@@ -5,6 +5,30 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
 
 ## [Unreleased]
 
+### Added:
+- Added Heart Upgrade Prototype:
+  - Heal 1 hP (re-draw and re-display the Hearts)
+  - Upgrade-class Components
+
+- Added Missile Upgrade Drops
+- Added Missile Scripting Behaviours:
+  - Missiles now drop persistently with Strong Enemies and randomly with Small Enemies 
+
+- Added Coin's Sprites and Animations
+
+### Changed:
+- Refactor the Dropping Mechanics to include Delays
+- The Other Upgrades, like Money, will Burst out in the Beginning (Co-effects)
+  - Implement in the Drop's Behaviour
+- Straight Movements are now Treated as Seperated Script Component for Drop Items
+  - Shots's special movement is Break into an individual Component
+
+### Fixed:
+- Fixed the bug where the player Canvas wouldn't hide fully on Game Over
+
+### Removed:
+- Removed and Replaced some Unnecessary Scripts with Smaller, more Specific Components 
+- 
 
 
 

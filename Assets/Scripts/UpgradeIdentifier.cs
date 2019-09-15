@@ -6,8 +6,10 @@ using UnityEngine;
 // Component for Upgrade Prefabs: (Upgrades are different from Support Items)
 
 // The Types:
-public enum UpgradeType{
-    StrongShot
+public enum UpgradeType {
+    StrongShot,
+    Heart,
+    Missile
 }
 
 public class UpgradeIdentifier : MonoBehaviour

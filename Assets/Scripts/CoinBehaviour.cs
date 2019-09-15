@@ -5,28 +5,16 @@ using UnityEngine;
 // The Coins's 2D Movement and On player contact effects Behaviours after spawning (droped!):
 public class CoinBehaviour : MonoBehaviour
 {
-    // The absolute for the random velocity at the beginning:
-    public Vector2 burstSpeed;
-
-    // Burst-out time:
-    public float burstTime;
-
-    // Standing still time:
-    public float stillTime;
+    public uint coinValue = 1;
 
     // Movement amplifying rate:
     public float movingRate;
 
-    public uint coinValue = 1;
-
-
     // References:
+    DropBehaviour dropAct;
     MoneyManager moneyManager;
-
-    // Holder Properties:
-    Vector2 currentSetSpeed;
-
     Rigidbody2D rgbd;
+    Vector2 currentSpeed;
 
     // Control boolean:
     bool movingTowardPlayer;
@@ -34,6 +22,8 @@ public class CoinBehaviour : MonoBehaviour
 
     void Start() {
         rgbd = gameObject.GetComponent<Rigidbody2D>();
+        dropAct = gameObject.GetComponent<DropBehaviour>();
+
         movingTowardPlayer = false;
 
         GameObject gameControllerObj = GameObject.FindWithTag("GameController");
@@ -43,17 +33,14 @@ public class CoinBehaviour : MonoBehaviour
         } else {
             Debug.Log("Game Controller not found");
         }
-
-        StartCoroutine("StepByStepMove");
     }
 
     void Update() {
         // Update the Movements and changes in Behaviours over time:
+        movingTowardPlayer = dropAct.DoneBursting();
         // Burst > Still > Homing!
         if (movingTowardPlayer) {
             MoveTowardPlayer();
-        } else {
-            rgbd.velocity = new Vector2(currentSetSpeed.x, currentSetSpeed.y);
         }
     }
 
@@ -64,22 +51,6 @@ public class CoinBehaviour : MonoBehaviour
 
             Destroy(gameObject);
         }
-    }
-
-    IEnumerator StepByStepMove() {
-        // The Coin bursts out:
-        float burstX = Random.Range(-burstSpeed.x, burstSpeed.x);
-        float burstY = Random.Range(-burstSpeed.y, burstSpeed.y);
-
-        currentSetSpeed = new Vector2(burstX, burstY);
-        yield return new WaitForSeconds(burstTime);
-
-        // Stay still for a short amount of time:
-        currentSetSpeed = Vector2.zero;
-        yield return new WaitForSeconds(stillTime);
-
-        // After that, start the state where the coins move toward the player (Move to Pick-up):
-        movingTowardPlayer = true;
     }
 
     void MoveTowardPlayer() {

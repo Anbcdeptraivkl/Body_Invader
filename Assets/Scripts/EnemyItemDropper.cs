@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class EnemyItemDropper: MonoBehaviour {
 
-    //Strcut storing Upgrade Prefabs data:
+    //Struct storing Upgrade Prefabs data:
     [System.Serializable]
     public struct DropItem {
         public string name;
@@ -17,10 +17,15 @@ public class EnemyItemDropper: MonoBehaviour {
         public int amount;
     }
 
-    public List<DropItem> randomDropList= new List<DropItem>();
+    // Collections:
+    public List<DropItem> randomDropList = new List<DropItem>();
     public List<DropItem> persistentDropList = new List<DropItem>();
 
+    // Properties:
     public float dropChance;
+    public float delayBtwItems;
+    public float delayBtwnPieces = 0.1f;
+
 
     // Drop by chances:
     public void CalculateRandomDrop() {
@@ -34,15 +39,27 @@ public class EnemyItemDropper: MonoBehaviour {
 
     // Drop evertyime (custom amounts):
     public void DropPersistences() {
+        StartCoroutine("DropPersistenceRoutine");
+    }
+
+    IEnumerator DropPersistenceRoutine() {
         // Checking if the List is empty:
         if (persistentDropList.Count <= 0) {
             Debug.Log("No persistent Drops from this object");
-            return;
+            yield break;
         }
 
-        foreach (DropItem drop in persistentDropList) {
+        Debug.Log("Drop Size: " + persistentDropList.Count);
+
+        for (int i = 0; i < persistentDropList.Count; i++) {
+            // Get each Drop Items:
+            DropItem drop = persistentDropList[i];
+
+            Debug.Log("Drop: " + drop.name);
+
             // Dropping!
-            for (int i = 0; i < drop.amount; i++) {
+            // many Different Kinds:
+            for (int j = 0; j < drop.amount; j++) {
                 Instantiate(
                     drop.obj,
                     transform.position,
@@ -78,7 +95,4 @@ public class EnemyItemDropper: MonoBehaviour {
             rate -= randomDropList[j].rarity;
         }
     }
-
-
-
 }

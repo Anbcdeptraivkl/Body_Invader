@@ -12,14 +12,19 @@ public class PlayerUpgrade: MonoBehaviour {
     public AudioSource upgReceivingSfx;
 
 
-    PlayerAttacking autoShooter;
+    // References:
+    PlayerAttacking playerWeapon;
+    PlayerMissileLauncher playerMissile;
+    PlayerHPManager hpManager;
 
     ScoreManager scoreMng;
 
 
     void Start() {
 
-        autoShooter = gameObject.GetComponent<PlayerAttacking>();
+        playerWeapon = gameObject.GetComponent<PlayerAttacking>();
+        playerMissile = gameObject.GetComponent<PlayerMissileLauncher>();
+        hpManager = gameObject.GetComponent<PlayerHPManager>();
        
 
         GameObject controller = GameObject.FindWithTag("GameController");
@@ -33,7 +38,7 @@ public class PlayerUpgrade: MonoBehaviour {
 
     // After checking and triggering events, the real behaviours and actions will be performed in the Update functions (and their complements):
     void Update() {
-
+        
     }
 
     void OnTriggerEnter2D(Collider2D other) {
@@ -53,7 +58,19 @@ public class PlayerUpgrade: MonoBehaviour {
                 switch (identifier.GetUpgradeType()) {
                     case UpgradeType.StrongShot:
                     {
-                        autoShooter.ShotUpgrade();
+                        playerWeapon.ShotUpgrade();
+                    }
+                    break;
+
+                    case UpgradeType.Heart:
+                    {
+                        hpManager.IncreaseHp();
+                    }
+                    break;
+
+                    case UpgradeType.Missile:
+                    {
+                        playerMissile.IncreaseMissile();
                     }
                     break;
                 }

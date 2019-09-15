@@ -390,11 +390,21 @@ MonoBehaviour:
   randomDropList:
   - name: Shot
     obj: {fileID: 2148248754928969093, guid: cc8f423a879000144bbf885af45209c9, type: 3}
-    rarity: 50
+    rarity: 100
     amount: 1
   persistentDropList:
   - name: Coin
     obj: {fileID: 2590032200894953485, guid: 40287ae6dc4966145b1fff12eec5573c, type: 3}
     rarity: 100
     amount: 10
+  - name: Heart
+    obj: {fileID: 2509610958581847553, guid: 9eaa4f66409158446a9099f982613a7c, type: 3}
+    rarity: 100
+    amount: 1
+  - name: Missile
+    obj: {fileID: 2350566152220825622, guid: 7b47f37ce62541d418a48c2b0c75b77c, type: 3}
+    rarity: 100
+    amount: 2
   dropChance: 100
+  delayBtwItems: 0.5
+  delayBtwnPieces: 0.1

@@ -17,31 +17,38 @@
 ## Intuitive and Easy UI + Display (HUB, etc.)
 
 
-# Currently Working:
+# MECHANICS:
+* MISSILES: 
+<!-- - Drop random:
+	+ Done: Fixing the Dropping so that the Persistent Upgrades can all Drop together
+	+ Done:
+		+ Replace Scrpts with Smaller Components 
+		+ Behaviours for All Drop pieces: Burst out -> stand still -> Move  -->
 
-* HEART:
-- Drop randomly by all enemies (low to high drop rates, based on Enemy Power Level)
-
-- Restore 1 health bar
-  - +20 score
++ Ongoing:  - Gain 1 every 200 points!
   
-- Act as an Upgrades (with similar Components)
++ Ongoing: Making the Missile Launcher Script:
+  + Press button to Shoot == Spawn Missile
+  + Deplete amounts
+  
++ Making the Missile Behaviour to control each individual missiles:
+  + After Spawned
+  + Missile flies to middle of the screen -> Wait for amount of time -> Explode
+  + Deal Dmg to all enemies on screen (~ 10)
+  + Play Sounds and Explosion Effects
+  + Shake the Screen Dramatically
 
-
-* MISSILES:
-- Drop random 
-  - All enemies
-  - Drop rates and Amounts varies with Enemies Power
-
-- Upgrade Components
-- Can be stored (til stage-end)
+- Act as Upgrade Components
+- Can be stored (til stage-end):
+  - Display on Screen UI (just like HP and Enery!)
   
 - Use with Button
-  - Shoot a Missile (Animated)
-  - Emit an Explosion and Smoke
+  - Shoot a Missile (Animated) (from Player)
+    - Move to the Middle >> Explode
+    - Emit an Explosion and Smoke
     - Effects
     - Particles
-  - Deal 10 Dmgs to all enemies on Screen
+  - Deal 10 Dmgs to all enemies on Screen (usually Wiping them All-out!)
 
 
 * UX:
@@ -50,30 +57,15 @@
   - Reseting
 
 
-
-
-* COINS:
-1.  Drop Randomly by Enemies, in addition to set amounts when killing harder enemies (>= Normal)
-2.  Use to Buy SHips, Cosmetics, Upgrades and Skills (both permanent and one-use)
-3.  Only Drop in Campaign, but what you buy will carried over to Endless Mode! Buy one time, use for lifetime!
-   - The Shop Mechanics will be implemented later
-
-- Coin Arts: 
-  - Visual
-  - Special Effects
-  - Sounds
-  - Coin Dropping Effects  
-  - Coin Receiving Effects
-  - Audio Effects: SFXs
-
-- Test if the MOney are Updated and Saved in-out of the App: @: Fully Functional 
-  - Now worked on Game Over and Level Completed, too!
-
-
 * SHOP SYSTEM:
-   - To Buy: with Money (in-game, stored as Preferene on Gameplay)
+	- To Buy: with Money (in-game, stored as Preferene on Gameplay)
      - Upgrades
      - Supplies
+	 - Cosmetics
+	- Unlocking:
+		+ Ship
+		+ Weapons
+		+ Skills
 
 
 * LEVEL COMPLETION MECHANIC: 
@@ -87,22 +79,105 @@
  - Effects
 
 
-
 =====================================
 
 
+# ARTs - What to Designs and Intergrate:
+
+* COINS: 
++ Model
++ Spinning and Turning rounds (around the Y axis)
+	+ Sheet Animations!
++ Dropping Effects
+	+ Sparkling Particles 
+	+ Shining Effects 
++ Collecting:
+	+ Particles Visual
+	+ Sound Effects:
+		+ Dropping
+		+ Homing
+		+ Receiving
+		
+		
+* HEARTS:
++ Sparking Light Particles
++ Collecting SFXs: Healing
+	
+* Enemy - Titan:
++ Hit Effects:
+	+ Blinking Red - White
+	+ Hit Sounds
++ Explode when Destroyed:
+	+ Small Explosion Particle
+		+ Randomly generated among a frame
+		+ Collaborative sounds
+	+ Big Explosion:
+		+ Big Sound
+		+ White out the screen for a little
+		+ Dramatic Explosion Particles
+
+* Level Selection UI:
++ Layout
++ Art Template
++ Hover Effects:
+	+ SFX
+	+ Change Brightness
++ Lock Effects:
+	+ Level Unlocking Mechanics
++ Click Effects:
+	+ Change Color
+	+ Click sounds
+
+* Level Completion UI:
++ Same as above 
+	+ WIth more Images represent Coin + Score
+
+* More Background Arts
++ Themed:
+	+ Space
+	+ Space Station
+	+ On The Moon
+	+ Mars
+	+ ... and many more
++ Parallax Scrolling
++ Infinite Scrolling
+	
+* More Music:
++ Based on cool SOngs collected
++ Background:
+	+ Menu
+	+ Stage
++ Boss Musics
++ Level COmplete Music
++ Game Over Music
+
+
+=======================================
+
+
+# IN QUEUE:
 
 - 4 Beginning Levels with Hard-scripted, pre-Designed and pre-Determined Spawn Patterns and Spawn Routines: ~
-   + Some Levels will have Bosses 
+   + Some Levels will have Bosses ~
    + And uique Hazard (Meteors, Turrets, etc.) ~
-   + Unique backgrounds, too!
+   + Unique backgrounds, too! ~
 
 
-- New Enemy - The Titan:
+* New Enemy:
+- The Titan:
    1.  Drops:
-       1.  10 coins @
-       2.  Shot Upgrades @
-       3.  1 missile ~
+       1.  1 missile ~
+       2.  Energy
+
+- The Stingray: 
+  - Fast, but Fragile
+  - Fly Down the Screen
+  - Shoot Side way in Cross Patterns (4 shots)
+  - Drop:
+    - Coins
+    - Hearts
+    - Energy
+    - Missiles
    
 
 - Implement a Shop system to use COin currency!
@@ -113,8 +188,8 @@
    
 
 - Heart Gift: ~
-   12. Restore 1 Lost health bar;
-   13. Only drop by Normal-up Enemies.
+   1.  Restore 1 Lost health bar;
+   2.  Only drop by Normal-up Enemies.
 
 
 - Homing Missiles:

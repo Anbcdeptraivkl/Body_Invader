@@ -10,6 +10,8 @@ public class LevelComplete : MonoBehaviour
     // Properties:
     public GameObject completePanel;
 
+    public GameObject playerCanvas;
+
     [SerializeField]
     Text scoreText;
 
@@ -40,6 +42,7 @@ public class LevelComplete : MonoBehaviour
 
     void FinishLevel() {
         completePanel.SetActive(true);
+        playerCanvas.SetActive(false);
 
         // Intuitive Effects:
         PlayEffects();

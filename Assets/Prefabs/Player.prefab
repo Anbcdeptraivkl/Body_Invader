@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 7715268365818723401}
   - component: {fileID: 7715268365818723403}
   - component: {fileID: 7715268365818723402}
+  - component: {fileID: 7715268367411548035}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -179,10 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strongShootTime: 5
-  shieldTime: 3
   upScore: 30
-  shield_Prefab: {fileID: 3897869899714722263, guid: 863e6e701e37cce4286dcbbfcea97f74,
-    type: 3}
   upgReceivingSfx: {fileID: 7715268365818723403}
 --- !u!82 &7715268365818723400
 AudioSource:
@@ -491,6 +489,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7715268367411548035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7715268365818723390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12da8f25cfa02ec4e9b2419d690e7d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missileCount: {fileID: 0}
 --- !u!1 &7715268366580100956
 GameObject:
   m_ObjectHideFlags: 0
@@ -5269,6 +5280,7 @@ ParticleSystemRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -5361,6 +5373,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

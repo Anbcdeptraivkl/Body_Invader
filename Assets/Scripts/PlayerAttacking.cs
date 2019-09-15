@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-// Control the Player attacking behaviours and upgrades:
+// Control the Player Basic Weapon attacking behaviours and upgrades:
 
 [System.Serializable]
 
@@ -32,11 +32,18 @@ public class PlayerAttacking: MonoBehaviour {
     void Start() {
         // Initiate the Starting weapons:
         shotLevel = 0;
+
         shot = shotList[shotLevel].shotObj;
     }
 
-    // Hold Space to fire:
+    // Checking Events and Inputs:
+    // Input: 
+    //  - Hold Space to fire
     public void Update() {
+        ShootingUpdate();
+    }
+
+    void ShootingUpdate() {
         // Fixed time Step Mechanics: Delay and Frie Rate contribute to the overall firing speed:
         shootDelayTime += Time.deltaTime;
         if (Input.GetKey(KeyCode.Space) && shootDelayTime > fireRate) {
@@ -45,6 +52,8 @@ public class PlayerAttacking: MonoBehaviour {
             shootDelayTime = 0.0f;
         }
     }
+
+   
 
     public void ShotUpgrade() {
         // Increase shot level and re-assign the weapons when receiving upgrades:

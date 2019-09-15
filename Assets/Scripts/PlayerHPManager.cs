@@ -42,6 +42,8 @@ public class PlayerHPManager : MonoBehaviour
     public Transform hpLocation;
     public AudioSource hitSound;
     public AudioSource hpUpSound;
+
+    // References:
     private GameOver gameOverController;
     private Collider2D playerCollider;
     private CamShake camShaker;
@@ -60,14 +62,10 @@ public class PlayerHPManager : MonoBehaviour
         // Initiate the Max Hp and Current Hp:
         maxHp = (hpUpgraded) ? 4 : 3;
         currentHp = maxHp;
-        // Draw the Hp Sprites:
-        for (int i = 0; i < PlayerHpUi.HeartsCollection.Length; i++) {
-            if (i < currentHp) {
-                PlayerHpUi.HeartsCollection[i].gameObject.SetActive(true);
-            } else {
-                PlayerHpUi.HeartsCollection[i].gameObject.SetActive(false);
-            }
-        }
+
+        // Display Hearts:
+        DrawHearts();
+        
 
         // Getting Game COntroller reference and components:
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
@@ -97,6 +95,17 @@ public class PlayerHPManager : MonoBehaviour
 
         //Invin initiate Values:
         isInvin = false;
+    }
+
+    void DrawHearts() {
+        // Draw the Hp Sprites:
+        for (int i = 0; i < PlayerHpUi.HeartsCollection.Length; i++) {
+            if (i < currentHp) {
+                PlayerHpUi.HeartsCollection[i].gameObject.SetActive(true);
+            } else {
+                PlayerHpUi.HeartsCollection[i].gameObject.SetActive(false);
+            }
+        }
     }
 
     public void SetHpUpgrade(bool value) {
@@ -138,6 +147,7 @@ public class PlayerHPManager : MonoBehaviour
     }
 
 
+    // heal when getting Hearts:
     public void IncreaseHp(int amount = 1) {
 
         if (currentHp < maxHp) {
@@ -148,6 +158,22 @@ public class PlayerHPManager : MonoBehaviour
 
         // Safe-proof range:
         if (currentHp > maxHp) { currentHp = maxHp;}
+
+        // Re-Draw the Hp Sprites after Healing:
+        OnHealingHpUi();
+    }
+
+    void OnHealingHpUi() {
+        // Update the Player and UI state based on the current HP:
+        for (int i = 0; i < PlayerHpUi.HeartsCollection.Length; i++) {
+            
+            // Swapping Sprite and Playing Effects:
+            if (i < currentHp) {
+                PlayerHpUi.HeartsCollection[i].sprite = PlayerHpUi.fullHPSprite;
+            } else {
+                PlayerHpUi.HeartsCollection[i].sprite = PlayerHpUi.lostHPSprite;
+            }
+        }
     }
 
     public int CurrentHp() {
@@ -204,6 +230,7 @@ public class PlayerHPManager : MonoBehaviour
             
     }
 
+    // Invincible for fixed amount of frames:
     IEnumerator Invincible() {
         
         isInvin = true;

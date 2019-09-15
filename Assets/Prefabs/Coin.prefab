@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7729330212669014800}
   - component: {fileID: 4213617000021701497}
+  - component: {fileID: 5242411090900090767}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -69,7 +70,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fde0d056e842f4c4e9c086cc2bf09e03, type: 3}
+  m_Sprite: {fileID: -2689188995945475364, guid: 14f99c246568d914a9e15bf80f5569b9,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -80,6 +82,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5242411090900090767
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282180926099990335}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a395a0d1adef5ad41ab64e68a3644240, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2590032200894953485
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +113,8 @@ GameObject:
   - component: {fileID: 7866825339320296494}
   - component: {fileID: 2945300113121393042}
   - component: {fileID: -6829302321202006278}
+  - component: {fileID: -8289466599931025915}
+  - component: {fileID: 1268026357202880459}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Coin
@@ -108,7 +131,7 @@ Transform:
   m_GameObject: {fileID: 2590032200894953485}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.13, y: 0.13, z: 1}
   m_Children:
   - {fileID: 7729330212669014800}
   m_Father: {fileID: 0}
@@ -142,11 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75944aa70314f834f879928aacd2a49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burstSpeed: {x: 3, y: 3}
-  burstTime: 0.5
-  stillTime: 0.5
-  movingRate: 5
   coinValue: 1
+  movingRate: 5
 --- !u!50 &-6829302321202006278
 Rigidbody2D:
   serializedVersion: 4
@@ -168,3 +188,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-8289466599931025915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2590032200894953485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 730b878467750ab429e69b3c863c0cd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burstSpeed: {x: 3, y: 3}
+  burstTime: 0.5
+  stillTime: 0.25
+--- !u!114 &1268026357202880459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2590032200894953485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75944aa70314f834f879928aacd2a49b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinValue: 1
+  movingRate: 1.2

@@ -56,6 +56,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -90,9 +91,9 @@ GameObject:
   - component: {fileID: 4345370791455558}
   - component: {fileID: 50804245738253476}
   - component: {fileID: 70895377114828638}
-  - component: {fileID: 114113529201588406}
   - component: {fileID: 1517141243535169882}
   - component: {fileID: -759257482354269564}
+  - component: {fileID: 6317430942765346748}
   m_Layer: 0
   m_Name: Shot
   m_TagString: Shot
@@ -152,20 +153,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.075, y: 0.3}
   m_Direction: 0
---- !u!114 &114113529201588406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600620134327404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dc875d365cedfa4e9059443d99c01e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xSpeed: 0
-  ySpeed: 12
 --- !u!82 &1517141243535169882
 AudioSource:
   m_ObjectHideFlags: 0
@@ -275,3 +262,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+--- !u!114 &6317430942765346748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600620134327404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdcef05fa9e30374db9e7ee398945e00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSpeed: 0
+  ySpeed: 10
