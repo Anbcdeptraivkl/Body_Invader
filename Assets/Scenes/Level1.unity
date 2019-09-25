@@ -1039,8 +1039,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca8fb94e4380d4e95486e5536e7735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeMagnitude: 0.5
-  duration: 0.1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -4064,7 +4062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d989531b8c25344fa3894ffc782e552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBetweenWaves: 2
+  delayBetweenWaves: 1.3
   delayPerEnemy: 0.3
   levelIndex: 1
 --- !u!114 &1896891616
@@ -4092,8 +4090,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ea12458d6eb7e548be42565757b0699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  completePanel: {fileID: 1509226780}
-  playerCanvas: {fileID: 0}
+  completePanel: {fileID: 1215953193}
+  playerCanvas: {fileID: 1509226780}
   scoreText: {fileID: 1259690907}
   coinText: {fileID: 1613467949}
 --- !u!1 &1918790600

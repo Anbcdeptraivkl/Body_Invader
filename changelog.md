@@ -1,44 +1,65 @@
 # Changelog
+
 All notable changes will be documented here. Made by Anbcdeptrai all rights reserved.
-
-
 
 ## [Unreleased]
 
-### Added:
+## [0.13.0] - 25/09/2019
+
+### Added
+
 - Added Heart Upgrade Prototype:
   - Heal 1 hP (re-draw and re-display the Hearts)
   - Upgrade-class Components
 
-- Added Missile Upgrade Drops
-- Added Missile Scripting Behaviours:
-  - Missiles now drop persistently with Strong Enemies and randomly with Small Enemies 
+- Added Default values to some Private Serializable Variables
+
+- Added Missile Upgrade Drops and Missile Weapon with Behaviours
+  - Missiles now drop persistently with Strong Enemies and randomly with Small Enemies
+  - Press Ctrl to Fire: Will Fly to the center then Explode and Deal Dmgs
+    - Rotate toward Center before Moving
+  - Added Explosion Particle Animation and SFXs
+    - The Exploding Sounds of Missile will bybass other Explosions (calculated based on damages received)
+    - Followed by Cam Shaking Effect
+  - Player will get one Missile every 300 points earned
 
 - Added Coin's Sprites and Animations
 
-### Changed:
-- Refactor the Dropping Mechanics to include Delays
+### Changed
+
+- Refactored the Code Base
+  - Dropping Mechanics now included Delays
+  - Enemy HP Managing Mechanics: Now enemies can be damaged and die by all kind of Dmg-dealing methods (The Alive-Dying Checks are perform everytime dmg is dealed, not just when getting shot)
+
 - The Other Upgrades, like Money, will Burst out in the Beginning (Co-effects)
-  - Implement in the Drop's Behaviour
+  - Implement in the Drop's Behaviour Component
+
 - Straight Movements are now Treated as Seperated Script Component for Drop Items
-  - Shots's special movement is Break into an individual Component
+  - Shots's special movement is Break into an individual Component: SHot Simple Straight Movement
 
-### Fixed:
-- Fixed the bug where the player Canvas wouldn't hide fully on Game Over
+- Reduced Spawn time between Enemy Waves
+- Reduced Priority of Shooting and Enemy Exploding Sounds
 
-### Removed:
-- Removed and Replaced some Unnecessary Scripts with Smaller, more Specific Components 
-- 
+- Reduced the Drop rate of Missiles and Hearts
 
+- Cam Shaking Effects now have varying magnitude and duration depend on the Triggering Events
 
+### Fixed
+
+- Fixed the bug where the player Canvas wouldn't hide fully on Game Over (Added Hide-when-Game-Over Function)
+
+### Removed
+
+- Removed and Replaced some Unnecessary Scripts with Smaller, more Specific Components
 
 ## [0.12.0] - 27/08/2019
 
-### Added:
+### Added
+
 - Finished the Frameworks for Titan: Hard Enemies with High HP and Tricky Movement:
-  + Big and Bulky with high HP
-  + Spread Shots Attacking Pattern
-  + Circling, Back and Forth Movement
+  - Big and Bulky with high HP
+  - Spread Shots Attacking Pattern
+  - Circling, Back and Forth Movement
 
 - Added Cam Shake Effects when enemies are hit
 
@@ -46,7 +67,7 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
   - Drop on Enemy defeated as Persistent Drops (customizable amount)
   - Coin amount will be updated and store as Money preferences
   - Coin Text Display in-game
-  - Coin Movement Behaviours
+  - Coin Movement Behaviours: Dropping, Turning and then Home toward Player
   - Coin Piicking and Money Mechanics
   - Added a Prototype for Coin (the Arts and Effects will be Added Later in the Production process)
   - Added Update Calls for when Game Over and Completing Levels (Money and Score will not be updated when you quit in the middle (with warning messages))
@@ -54,17 +75,19 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
 - Added Level Completion Panels (Prototype) with Return to Menu function (the Coins and Score will be Updated on Completion Screen)
 - Added some test buttons (hidden on Play)
 
+### Changed
 
-### Changed:
 - Enemies no longer immediately die on player contacting.
 - Tweak the Upgrade Mechanics
 - Reduced the Drop Rate on Enemies
 - Tweaked the Score Text and Coin Count Display: more spaces and clearer
 
-### Removed:
+### Removed
+
 - Removed the Shield Upgrade (will soon be replaced with Missiles, Healths and Energy Drops)
 
-### Fixed:
+### Fixed
+
 - Fixed the issue where coins won't be updated when you finish the levels
 - Fixed Coin Infinitely Updating Loop on Level Complete
 - Fixed when the Level Complete panel show up too soon, neglect the last coins dropped

@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class CamShake : MonoBehaviour
 {
-    public float shakeMagnitude = 0.4f, duration = 0.25f;
-
-   public void StartShaking() {
-       StartCoroutine("Shake");
+   public void StartShaking(float shakeMagnitude = 0.5f, float shakeDuration = 0.1f) {
+       StartCoroutine(Shake(shakeMagnitude, shakeDuration));
    }
 
-   IEnumerator Shake() {
+   IEnumerator Shake(float magnitude, float duration) {
 
         Vector3 originalPos = transform.position;
 
@@ -19,8 +17,8 @@ public class CamShake : MonoBehaviour
 
         while (elaspedTime <= duration) {
             
-            float newX = Random.Range(-1, 1) * shakeMagnitude;
-            float newY = Random.Range(-1, 1) * shakeMagnitude;
+            float newX = Random.Range(-1, 1) * magnitude;
+            float newY = Random.Range(-1, 1) * magnitude;
 
             transform.localPosition = new Vector3(newX, newY, originalPos.z);
 

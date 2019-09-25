@@ -19,6 +19,9 @@ TagManager:
   - PlayerStatus
   - SpawnPoint
   - Coin
+  - Missile
+  - EnemyGroup
+  - ShotGroup
   layers:
   - Default
   - TransparentFX

@@ -11,40 +11,23 @@ using UnityEngine;
 */
 public class EnemyGettingShot : MonoBehaviour
 {
-    public int scoreValue;
-
-    public bool isOnhit;
-
     Animator objAnimator;
 
     public GameObject hitShockParticle;
-    public GameObject shotExplosion;
-
-    ScoreManager scoreManager;
-    EnemyHPManager hpManager;
-    EnemyItemDropper dropper;
-
+    
     CamShake camShaker;
+    
+    EnemyHPManager hpManager;
+
+    bool stillLiving;
 
     
     void Start() {
 
-        GameObject gameControllerObject = GameObject.FindWithTag("GameController");
-		if (gameControllerObject != null) 
-		{
-			
-			scoreManager = gameControllerObject.GetComponent<ScoreManager>();
-		}
-			else
-			{
-				Debug.Log("Failed to load <GameController> script component.");
-			}
         
-        hpManager = gameObject.GetComponent<EnemyHPManager>();
-
-        dropper = gameObject.GetComponent<EnemyItemDropper>();
 
         objAnimator = gameObject.GetComponent<Animator>();
+        hpManager = gameObject.GetComponent<EnemyHPManager>();
 
         // Getting camera components:
         GameObject mainCam = GameObject.FindWithTag("MainCamera");
@@ -55,6 +38,7 @@ public class EnemyGettingShot : MonoBehaviour
             Debug.Log("No camera found.");
         }
 
+        stillLiving = true;
     }
 
     void OnTriggerEnter2D (Collider2D other) {
@@ -66,7 +50,7 @@ public class EnemyGettingShot : MonoBehaviour
                 // Check the Shot Damage,then Decrease Hp and Destroy the SHot:
                 float shotDmg = other.gameObject.GetComponent<ShotDamage>().GetDamage();
                
-                hpManager.DecreaseHP(shotDmg);
+                stillLiving = hpManager.DecreaseHP(shotDmg);
 
                 // On hit Animations and Effects:
                 PlayOnHitEffects(other);
@@ -78,11 +62,17 @@ public class EnemyGettingShot : MonoBehaviour
 	}
 
     void PlayOnHitEffects(Collider2D other) {
-        if (hpManager.Alive() && isOnhit) {
+        // If still alive: Hit Shock:
+        if (stillLiving) {
             // Cam Shake:
-            camShaker.StartShaking();
+            camShaker.StartShaking(0.15f, 0.05f);
+
             // BLinking animations:
-            objAnimator.SetTrigger("Hit");
+            if (objAnimator)
+                objAnimator.SetTrigger("Hit");
+            else
+                Debug.Log("No animator found");
+                
             // CHecking for the Colliding shot types, and instantiate the effects as followed:
             GameObject hitParticle;
             hitParticle = Instantiate(
@@ -92,30 +82,7 @@ public class EnemyGettingShot : MonoBehaviour
             ) as GameObject;
             
             Destroy(hitParticle, 1.0f);
-        } else {
-            if (!hpManager.Alive()) {
-                Dying();
-            }
         }
     }
 
-    void Dying() {
-
-        shotExplosion = Instantiate(
-            shotExplosion, 
-            transform.position, 
-            transform.rotation) as GameObject;
-        
-        Destroy(shotExplosion, 1.0f);
-
-        // Item Drop:
-        dropper.CalculateRandomDrop();
-        // Loot Drop:
-        dropper.DropPersistences();
-
-        scoreManager.UpdateScore(scoreValue);	
-
-        Destroy(gameObject);
-
-    }
 }

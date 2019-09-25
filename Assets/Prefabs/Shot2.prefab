@@ -56,6 +56,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -161,11 +162,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1600620134327404}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dc875d365cedfa4e9059443d99c01e0, type: 3}
+  m_Script: {fileID: 11500000, guid: fdcef05fa9e30374db9e7ee398945e00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   xSpeed: 0
-  ySpeed: 12
+  ySpeed: 10
 --- !u!82 &1517141243535169882
 AudioSource:
   m_ObjectHideFlags: 0

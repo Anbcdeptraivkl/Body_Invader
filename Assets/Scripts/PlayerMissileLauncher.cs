@@ -8,18 +8,43 @@ public class PlayerMissileLauncher: MonoBehaviour {
     public Text missileCount;
     public GameObject missileObj;
 
+    ScoreManager scoreMng;
+
     static int missileAmount;
+    private int pointThreshold;
 
 
     void Start() {
+        GameObject controller = GameObject.FindWithTag("GameController");
+
+        if (controller) {
+            scoreMng = controller.GetComponent<ScoreManager>();
+        } else {
+            Debug.Log("No Game Controller Object found");
+        }
+
         missileAmount = 0;
+
+        pointThreshold = 300;
     }
 
     void Update() {
+        // Get 1 Missile everytime the player reached a certain point
+        IncreaseWithScore();
+
         missileCount.text = missileAmount.ToString();
 
         // Handling Missile Launching Events:
         LaunchingUpdate();
+    }
+
+    // Getting new Missiles: (by Points - every 150 points)
+    void IncreaseWithScore() {
+        if (scoreMng.GetScore() > pointThreshold) {
+            IncreaseMissile();
+
+            pointThreshold += pointThreshold;
+        }
     }
 
     public int GetMissileCount() {
@@ -28,6 +53,8 @@ public class PlayerMissileLauncher: MonoBehaviour {
 
     public void IncreaseMissile(int amount = 1) {
         missileAmount += amount;
+
+        PlayGettingSound();
     }
 
     void LaunchingUpdate() {
@@ -36,7 +63,7 @@ public class PlayerMissileLauncher: MonoBehaviour {
             missileAmount > 0) 
         {
             Launch();
-            Debug.Log("Shoot a Missile");
+            Debug.Log("Shot a Missile!");
         }
     }
 
@@ -46,9 +73,20 @@ public class PlayerMissileLauncher: MonoBehaviour {
             missileObj,
             gameObject.transform.position,
             Quaternion.identity);
+
+        PlayLaunchingEffects();
         
         // Deplete Missile Count (unsigned!):
-        if (missileAmount > 0)
-            missileAmount--;
+        missileAmount--;
+    }
+
+    //Effects for Getting New Missiles: Sound and Flashing Visuals
+    void PlayGettingSound() {
+
+    }
+
+    // Immersive Shooting Effects:
+    void PlayLaunchingEffects() {
+
     }
 }

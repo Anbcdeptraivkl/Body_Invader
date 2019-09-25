@@ -502,6 +502,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missileCount: {fileID: 0}
+  missileObj: {fileID: 8316452839832698599, guid: c462de378e4ac774c8c012d02305693e,
+    type: 3}
 --- !u!1 &7715268366580100956
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,7 +559,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 0
+    scalar: 0.1
     minScalar: 0
     maxCurve:
       serializedVersion: 2

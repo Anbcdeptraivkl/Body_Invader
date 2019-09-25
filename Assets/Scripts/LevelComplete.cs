@@ -12,11 +12,10 @@ public class LevelComplete : MonoBehaviour
 
     public GameObject playerCanvas;
 
-    [SerializeField]
-    Text scoreText;
+    
+    public Text scoreText;
 
-    [SerializeField]
-    Text coinText;
+    public Text coinText;
 
     // References:
     LevelSpawner levelSpawner;

@@ -5,13 +5,13 @@ using UnityEngine;
 // Straight Movement for Dropped Loots:
 public class DropStraightMovement: MonoBehaviour {
     [SerializeField]
-    float xSpeed;
+    float xSpeed = 0;
 
     [SerializeField]
-    float ySpeed;
+    float ySpeed = 0;
 
     [SerializeField]
-    float delayFirst;
+    float delayFirst = 1;
 
     Rigidbody2D rgbd;
 

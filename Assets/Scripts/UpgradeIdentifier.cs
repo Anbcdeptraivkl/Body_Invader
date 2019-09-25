@@ -9,13 +9,14 @@ using UnityEngine;
 public enum UpgradeType {
     StrongShot,
     Heart,
-    Missile
+    Missile,
+    None
 }
 
 public class UpgradeIdentifier : MonoBehaviour
 {
     [SerializeField]
-    UpgradeType upgradeType;
+    UpgradeType upgradeType = UpgradeType.None;
 
     public UpgradeType GetUpgradeType() {
         return upgradeType;

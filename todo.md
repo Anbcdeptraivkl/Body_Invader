@@ -1,10 +1,18 @@
 
-# Checking and Teesting Each Components!
+# Checking and Teesting Each Components
 
 
-# Prototype and Make things Work! The Arts and Effects will be saved for later!!!
+# Modular Design
 
-## Fun to Play and Enjoy before Fun on the Surface
+
+# Prototype and Make things Work! Seperate Mechanics and Appearances! The Arts and Effects will be saved for later
+
+
+# DESIGNS
+
+## Fun and Varied Mechanics
+
+## Challenges
 
 ## Engaging and Stylist Arts
 
@@ -17,139 +25,134 @@
 ## Intuitive and Easy UI + Display (HUB, etc.)
 
 
-# MECHANICS:
-* MISSILES: 
-<!-- - Drop random:
-	+ Done: Fixing the Dropping so that the Persistent Upgrades can all Drop together
-	+ Done:
-		+ Replace Scrpts with Smaller Components 
-		+ Behaviours for All Drop pieces: Burst out -> stand still -> Move  -->
-
-+ Ongoing:  - Gain 1 every 200 points!
-  
-+ Ongoing: Making the Missile Launcher Script:
-  + Press button to Shoot == Spawn Missile
-  + Deplete amounts
-  
-+ Making the Missile Behaviour to control each individual missiles:
-  + After Spawned
-  + Missile flies to middle of the screen -> Wait for amount of time -> Explode
-  + Deal Dmg to all enemies on screen (~ 10)
-  + Play Sounds and Explosion Effects
-  + Shake the Screen Dramatically
-
-- Act as Upgrade Components
-- Can be stored (til stage-end):
-  - Display on Screen UI (just like HP and Enery!)
-  
-- Use with Button
-  - Shoot a Missile (Animated) (from Player)
-    - Move to the Middle >> Explode
-    - Emit an Explosion and Smoke
-    - Effects
-    - Particles
-  - Deal 10 Dmgs to all enemies on Screen (usually Wiping them All-out!)
-
-
-* UX:
-- Warning Messages:
-  - Quitting
-  - Reseting
-
-
-* SHOP SYSTEM:
-	- To Buy: with Money (in-game, stored as Preferene on Gameplay)
-     - Upgrades
-     - Supplies
-	 - Cosmetics
-	- Unlocking:
-		+ Ship
-		+ Weapons
-		+ Skills
-
-
-* LEVEL COMPLETION MECHANIC: 
- - Prototype with Placeholders and templates first: Finished @
-   - Level Complete UI Screen (UI/UX) @
-   - Next Level 
-   - Return to Menu @
-     - Return to Level Select Screen
-
- - Arts
- - Effects
-
-
 =====================================
 
 
-# ARTs - What to Designs and Intergrate:
 
-* COINS: 
-+ Model
-+ Spinning and Turning rounds (around the Y axis)
-	+ Sheet Animations!
-+ Dropping Effects
-	+ Sparkling Particles 
-	+ Shining Effects 
-+ Collecting:
-	+ Particles Visual
-	+ Sound Effects:
-		+ Dropping
-		+ Homing
-		+ Receiving
-		
-		
-* HEARTS:
-+ Sparking Light Particles
-+ Collecting SFXs: Healing
+# REFACTORING
+
+
+======================================
+
+
+# DEvELOPING FEATURES
+
+## UX
+
+- Warning Messages: When
+  - Quitting
+  - Reseting
+
+## SHOP SYSTEM
+
+- To Buy: with Money (in-game, stored as Preferene on Gameplay)
+   - Upgrades
+   - Supplies
+ - Cosmetics
+
+- Unlocking
+	+ Ships
+	+ Weapons and Equipments
+	+ Skills
+
+
+## LEVEL SYSTEM 
+
+- Level Completion Screen
+  - UI Futuristic Styles
+    - Fonts
+    - Buttons
+    - Layout
+    - Icons
+      - Money
+      - Score
+  - Return to Level Select Screen
+    - Go to Next Level
+    - Main Menu
+
+- Picking Skills and Equipment Screen
+  - Open when going into Level
+  - Player Art Preview
+
+- Level Selection Screen
+  - Unlocking New Levels Mechanic
+  - UI
+    - Shop Button
+    - Quit Button
+    - Layouts
+    - Art Style Templates
+  - Effects
+    - Sounds
+    - Hover Effects
+      - Tick
+      - Change Brightness
+    - Click Effects: SFXs and Change Colors
+
+## COINS
+
+- Dropping Effects
+	- Sparkling Particles 
+	- Shining SFX (Coin Dropping Sound)
+
+- Collecting:
+	- Sprakles Particles Visual
 	
-* Enemy - Titan:
-+ Hit Effects:
-	+ Blinking Red - White
-	+ Hit Sounds
-+ Explode when Destroyed:
-	+ Small Explosion Particle
-		+ Randomly generated among a frame
-		+ Collaborative sounds
-	+ Big Explosion:
-		+ Big Sound
+- Sound Effects
+	- Homing
+	- Receiving
+
+## HEARTS
+
+- Collecting SFXs: Healing
+  
+## MISSILES
+
+- Gain 1 every 350 points!
+  - Couple with SFX ~
+
+## Enemy - Titan
+
+- Animator and Animations
+  - Hit Effects
+    - Blinking Red - White
+    - Hit Sounds
+    - Hit Explosion Particles 
+      - Spawn Randomly on the Model
+  - Explode when Destroyed
+    - Small Explosion Particle
+      - Randomly generated among a frame
+      - Collaborative sounds
+
+	+ Big Explosion
+		+ Exploding Sound
 		+ White out the screen for a little
 		+ Dramatic Explosion Particles
 
-* Level Selection UI:
-+ Layout
-+ Art Template
-+ Hover Effects:
-	+ SFX
-	+ Change Brightness
-+ Lock Effects:
-	+ Level Unlocking Mechanics
-+ Click Effects:
-	+ Change Color
-	+ Click sounds
+## Graphics
+- Whiter and more Opaque Enemy Shot 
 
-* Level Completion UI:
-+ Same as above 
-	+ WIth more Images represent Coin + Score
+## Background Arts
 
-* More Background Arts
-+ Themed:
-	+ Space
-	+ Space Station
-	+ On The Moon
-	+ Mars
-	+ ... and many more
-+ Parallax Scrolling
-+ Infinite Scrolling
+- Themed:
+	- Space
+	- Space Station
+	- On The Moon
+	- Mars
+	- ... and many more
+
+- Parallax Scrolling
+- Infinite Scrolling
 	
-* More Music:
-+ Based on cool SOngs collected
-+ Background:
-	+ Menu
-	+ Stage
-+ Boss Musics
-+ Level COmplete Music
-+ Game Over Music
+## More Music
+
+- Self-composed Based on cool SOngs collected
+
+- Background OST:
+	- Menu
+	- Stages
+
+- Boss Musics
+- Level COmplete Music
 
 
 =======================================
