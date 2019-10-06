@@ -6,38 +6,34 @@ using UnityEngine.SceneManagement;
 /* All the Button On click Functions that work in the Main Menu can be found here */
 public class OnClickHandler : MonoBehaviour
 {
-    public void StartPlayingGame()
-    {
+    public void StartPlayingGame() {
         SceneManager.LoadScene("Level0");
     }
 
-    public void QuitGame()
-    {
+    public void QuitGame() {
         Debug.Log("Quitting");
         Application.Quit();
     }
 
-    public void ReturnToMainMenu()
-    {
+    public void ReturnToMainMenu() {
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void Restart()
-    {
+    public void Restart() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     //highscore reseter:
-    public void ResetHighScore()
-	{
+    public void ResetHighScore() {
 		PlayerPrefs.SetInt("highScore", 0);
 	}
 
     public void MenuMoneyReset() {
         MoneyManager.ResetMoney();
+        Debug.Log("Money Reset!");
     }
 
     public void MenuLogMoneyTotal() {
-        Debug.Log(MoneyManager.GetTotalMoney());
+        Debug.Log("Money: " + MoneyManager.GetTotalMoney());
     }
 }

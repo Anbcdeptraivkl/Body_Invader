@@ -24,39 +24,108 @@
 
 ## Intuitive and Easy UI + Display (HUB, etc.)
 
-
 =====================================
-
-
 
 # REFACTORING
 
+======================================
+
+# DEBUGGING
+
+- Shop
+  - Reset Buying
+  - Deplete Money to Test UI
+  - Test Panels and Tabs
 
 ======================================
 
+# POLISHING
+
+======================================
 
 # DEvELOPING FEATURES
 
-## UX
-
-- Warning Messages: When
-  - Quitting
-  - Reseting
-
 ## SHOP SYSTEM
 
-- To Buy: with Money (in-game, stored as Preferene on Gameplay)
-   - Upgrades
-   - Supplies
- - Cosmetics
+- Shop Scene
+  - GUI: Themed
+    - Text displaying the amount of Money remain ~
+      - Couple with Increasing / Decreasing value Running Animation ~
 
-- Unlocking
-	+ Ships
-	+ Weapons and Equipments
-	+ Skills
+    - Panels and Objects for For Sale Targets
+      - Images and Animation for each Items Thumbnails
+      - Description
+        - Name
+        - Effects / Powers
+        - Prices
 
+      - Buy Button
+        - Select Items (Marked in Script Data and Highlight on UI) -> Click Buy -> Sold then Update Coins and Preferences
+          - Bought Items will be Greyed out + Labeled SOLD (will become Unclickable)
+        - Items bought will be Recorded and will be Checked on Level Entering UI and In-game Innitialization
 
-## LEVEL SYSTEM 
+- Unlocking (with other Currencies and Conditions, usually collectibles)
+  - New Ships
+  - Cosmetics
+  - Special and Upgraded Skills
+
+## ENERGY SYSTEM
+
+- For using skills
+  - Deplete when activate Skills / Ship Abilities
+
+- Refill slowly with Time
+  - and Energy Pots Dropped by Enemies!
+
+- Display in Player HUB
+    - Yellow Colored Theme
+    - Fill Bar Appearance
+
+## DASH Skill
+
+- Dash and Blink A Short Distance
+    - Fast (almost Instantly)
+        - but still Damagable
+    - Coupled with Visual Particle Effects
+        - and Dash Sound
+
+- Deplete Lots of Energy (a full bar of energy can use Dash 3 consecutive Times)
+
+- Has Cooldown (about 2.5s between each Dashes)
+
+## SHIELD Skill
+
+- A Temporary Sphere that Absorb All Damages Coming
+    - for a short amount of time (about 1s)
+
+- Use little energy
+    - but long cooldown (about 15s)
+
+## UPGRADES SYSTEM
+
+- Equipments
+  - New Weapons
+    - Flamethrower
+    - Laser Beam
+    - Spread shots
+    - Homing Shots
+  - Weapon Upgrades
+  - Drones
+    - Attacking
+    - Supporting 
+
+- Consumables
+  - HP
+  - MIssile Packs
+  - Energy
+
+## SPECIAL PLAYER SHIPS
+
+- Special Abilities
+
+- Special Attributes
+
+## LEVEL SYSTEM  
 
 - Level Completion Screen
   - UI Futuristic Styles
@@ -91,15 +160,15 @@
 ## COINS
 
 - Dropping Effects
-	- Sparkling Particles 
-	- Shining SFX (Coin Dropping Sound)
+  - Sparkling Particles 
+  - Shining SFX (Coin Dropping Sound)
 
-- Collecting:
-	- Sprakles Particles Visual
-	
+- Collecting
+  - Sprakles Particles Visual
+
 - Sound Effects
-	- Homing
-	- Receiving
+  - Homing
+  - Receiving
 
 ## HEARTS
 
@@ -107,8 +176,7 @@
   
 ## MISSILES
 
-- Gain 1 every 350 points!
-  - Couple with SFX ~
+- SFX when gained new ones
 
 ## Enemy - Titan
 
@@ -123,56 +191,65 @@
       - Randomly generated among a frame
       - Collaborative sounds
 
-	+ Big Explosion
-		+ Exploding Sound
-		+ White out the screen for a little
-		+ Dramatic Explosion Particles
+- Big Explosion
+  - Exploding Sound
+  - White out the screen for a little
+  - Dramatic Explosion Particles
 
 ## Graphics
-- Whiter and more Opaque Enemy Shot 
+
+- Whiter and more Opaque Enemy Shot
+
+## UX
+
+- Design Futuristic theme GUI
+  - Elements
+    - Buttons
+    - Panels
+    - Icons
+  - Layout
 
 ## Background Arts
 
-- Themed:
-	- Space
-	- Space Station
-	- On The Moon
-	- Mars
-	- ... and many more
+- Themed
+  - Space
+  - Space Station
+  - On The Moon
+  - Mars
+  - ... and many more
 
 - Parallax Scrolling
 - Infinite Scrolling
-	
+
 ## More Music
 
 - Self-composed Based on cool SOngs collected
 
 - Background OST:
-	- Menu
-	- Stages
+  - Menu
+  - Stages
 
 - Boss Musics
 - Level COmplete Music
 
+## STAR RANKING System
+
+- 1 - 2 - 3 Stars Rating when Level Complete
+  - Based on Player's Score and Health in-game (Mostly Score)
+    - Completing the level with Perfect health and defeat a considerate amount of enemies for highest ranks
 
 =======================================
 
+# IN QUEUE
 
-# IN QUEUE:
+- 4 Beginning Levels with Hard-scripted, pre-Designed and pre-Determined Spawn Patterns and Spawn Routines:
+  - Some Levels will have Bosses
+  - And uique Hazard (Meteors, Turrets, etc.)
+  - Unique backgrounds, too!
 
-- 4 Beginning Levels with Hard-scripted, pre-Designed and pre-Determined Spawn Patterns and Spawn Routines: ~
-   + Some Levels will have Bosses ~
-   + And uique Hazard (Meteors, Turrets, etc.) ~
-   + Unique backgrounds, too! ~
+## New Enemy
 
-
-* New Enemy:
-- The Titan:
-   1.  Drops:
-       1.  1 missile ~
-       2.  Energy
-
-- The Stingray: 
+- The Stingray
   - Fast, but Fragile
   - Fly Down the Screen
   - Shoot Side way in Cross Patterns (4 shots)
@@ -181,56 +258,39 @@
     - Hearts
     - Energy
     - Missiles
-   
 
 - Implement a Shop system to use COin currency!
-   + New Ships!
-   + Equipments!
-   + Skills!
-   + Cosmetic!
-   
-
-- Heart Gift: ~
-   1.  Restore 1 Lost health bar;
-   2.  Only drop by Normal-up Enemies.
-
-
-- Homing Missiles:
-   + Quickly Fly forward to group of enemies and explode - dealing high damages (about 5)
-   + Gain more Damage with Equipments, and Ammunition with in-battle Upgrades (drop by all kind of enemies)
-
+  - New Ships!
+  - Equipments!
+  - Skills!
+  - Cosmetic!
 
 - Laser Attack for Enemies: AOE and Straight Damaging (will be researched more later on)
 
-   
 - Permanent Shield Skills: Buy in Shop and Use (consume high amount of Energy) in Game for a short-lived, invincible Cover ~
 
+- SFX Tweaks
+  - Lower the volume and pitch so the SFXs sound less irritating.
+  - Add SFX for enemies's appearance and movement.
 
-- SFX Tweaks:
-   + Lower the volume and pitch so the SFXs sound less irritating.
-   + Add SFX for enemies's appearance and movement.
+- Change the Player Status UI to a simple Flat grids just like in the Game's Model: ~
+    1. HP Bar. /f
+    2. Missiles Count. /f
+    3. Ship Equipment and Upgrades ~
+    4. Coin Counter; /f
+    5. Energy Bar  (will be use for Spark / Skills) ~
 
-   
-14. Change the Player Status UI to a simple Flat grids just like in the Game's Model: ~
-   14. HP Bar. @
-   15. Missiles Count. ~
-   16. Ship Equipment and Upgrades.
-   17. Coin Counter; ~
-   18. Energy Bar  (will be use for Spark Skills)
-
-
-
-15. Enemies Types - based on difficulty:  More and More Enemies too!!! ~
-   19. Easy: Small and Light, simple attacks (e.g UFO, Brute)
-   20. Normal: Specialize Movements and Attacking Patterns (some are harder than other) (e.g Trackers)
+1.  Enemies Types - based on difficulty:  More and More Enemies too!!! ~
+   1.  Easy: Small and Light, simple attacks (e.g UFO, Brute)
+   2.  Normal: Specialize Movements and Attacking Patterns (some are harder than other) (e.g Trackers)
        1.  Enemies >= Normal will always Drop Coins and Upgrades (defined in their own Dropping Components) 
-   21. Hard: Big, Bulky and Many Attacking Patterns (e.g Titan and Surfer)
-   22. Ultimate: Formations of multiple enemy Types that are extremely hard to deal with;
-   23. Boss: nuff said - The Most Powerful Enemies in the game, only show up at the last stages of the levels and can spawn Minions: Special Units that only spawned in Boss fight
+   3.  Hard: Big, Bulky and Many Attacking Patterns (e.g Titan and Surfer)
+   4.  Ultimate: Formations of multiple enemy Types that are extremely hard to deal with;
+   5.  Boss: nuff said - The Most Powerful Enemies in the game, only show up at the last stages of the levels and can spawn Minions: Special Units that only spawned in Boss fight
       1. Crabber
       2. Quez
       3. Big Brain
-   24. Harder Enemies for higher Difficulty Progresses:
+   6.  Harder Enemies for higher Difficulty Progresses:
 	+ Bigger and Bulkier
 	+ Harder Attack Pattern 
 	+ Trickier Maneuvering

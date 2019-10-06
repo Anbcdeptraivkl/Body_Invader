@@ -172,9 +172,9 @@ MonoBehaviour:
   enemyShot: {fileID: 1600620134327404, guid: f397d1a3f912a6143a17a99ec20d044c, type: 3}
   localRoot: {fileID: 0}
   shotSpawn: {fileID: 7474255779110777213}
-  shotXSpeed: 5
-  shotYSpeed: 5
-  startDelay: 0.5
+  shotXSpeed: 6
+  shotYSpeed: 6
+  startDelay: 0.75
   timeShoot: 0.75
 --- !u!114 &6113130403148686373
 MonoBehaviour:

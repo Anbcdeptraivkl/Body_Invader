@@ -9,6 +9,8 @@ public class Pausing : MonoBehaviour
     public static bool isPausing;
     public GameObject pauseMenu;
 
+    public GameObject confirmMessage;
+
     //Reference:
     private PlayerController playerController;
 
@@ -56,5 +58,13 @@ public class Pausing : MonoBehaviour
         Time.timeScale = 1f;
         playerController.enabled = true;
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Alert() {
+        confirmMessage.SetActive(true);
+    }
+
+    public void ReturnAlert() {
+        confirmMessage.SetActive(false);
     }
 }

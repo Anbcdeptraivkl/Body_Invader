@@ -14,4 +14,9 @@ public class LevelSelection : MonoBehaviour
     public void LoadLevel2() {
         SceneManager.LoadScene("Level2");
     }
+
+    // Go to Shop Scene Additively
+    public void AddLoadShopScene() {
+        SceneManager.LoadScene("Shop", LoadSceneMode.Additive);
+    }
 }

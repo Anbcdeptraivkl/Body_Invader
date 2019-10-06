@@ -4,6 +4,30 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
 
 ## [Unreleased]
 
+### Added
+
+- Added Warning Message Panel when return to Menu from Pausing for Confirming that the player is sure to quit and lose the current progress)(scripted in the Pausing component)
+
+- Added some Debug Functions to the Main Menu
+  - Reset Money
+  - Log Total Money
+
+- Implementing Shop System: Buy Abilities and Upgrades with Coins
+
+- Shop UI: Added Grid Panel Populations to the Selling Items Content UI
+  - Added a Auto-Grid-Populating Script to Fill the Grid with Grid Item Prefabs (going to be changed soon into manual Prefab Management individually for each Items) with Custom Sizes and Colors
+  - Horizontal Grid with Scroll View
+  - Currently with 3 Categories Tabbed: Skills, Gears and Consumables
+
+- Added Buttons to Go to Shop (change Scene addictively while still retains the Main Menu scene) in the Level Selection UI and Return to MainMenu from Shop (unloading the Shop Scene) in the Shop Menu
+
+### Changed
+
+- Increased the Moving speed and Shot Rate of UFOs
+- Increased the Enemy Spawn time and Spawn Rate
+
+========================================
+
 ## [0.13.0] - 25/09/2019
 
 ### Added
