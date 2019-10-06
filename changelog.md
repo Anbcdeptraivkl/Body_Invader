@@ -18,6 +18,11 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
   - Added a Auto-Grid-Populating Script to Fill the Grid with Grid Item Prefabs (going to be changed soon into manual Prefab Management individually for each Items) with Custom Sizes and Colors
   - Horizontal Grid with Scroll View
   - Currently with 3 Categories Tabbed: Skills, Gears and Consumables
+  - Shop Debug Functionalities
+    - Increase Money by 1000
+    - Deplete money by 10 - 50 - 100
+    - Reset Purchase Data (all Bought Items are reset)
+  - Added Coin Counter (with Incremental Update)
 
 - Added Buttons to Go to Shop (change Scene addictively while still retains the Main Menu scene) in the Level Selection UI and Return to MainMenu from Shop (unloading the Shop Scene) in the Shop Menu
 

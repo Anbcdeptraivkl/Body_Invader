@@ -65,21 +65,6 @@ public class MoneyManager : MonoBehaviour
         return total;
     }
 
-    public void SpendMoney(int amount) {
-        // Only use in Shop, still available in other scenes, though:
-        int currentMoney = PlayerPrefs.GetInt("Money", 0);
-
-        // Valid amount:
-        if (currentMoney > amount) {
-            currentMoney -= amount;
-            // Re-set the Money Bank:
-            PlayerPrefs.SetInt("Money", currentMoney);
-            Debug.Log("Spent " + amount + " Coins!");
-        } else {
-            Debug.Log("Insufficient amount of money");
-        }
-    }
-
     // Call on Stage over + Game Over (won't save preemptively):
     public void UpdateMoney() {
         // Update:
