@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ShopMenuController: MonoBehaviour {
-    public GameObject[] panels;
+    public GameObject[] tabs;
 
     public Text shopCoinText;
 
@@ -15,7 +15,7 @@ public class ShopMenuController: MonoBehaviour {
     int currentMoney;
 
     void Start() {
-        ActivatePanel();
+        ActivateTab();
 
         // Only use in Shop, still available in other scenes, though:
         currentMoney = PlayerPrefs.GetInt("Money", 0);
@@ -25,13 +25,13 @@ public class ShopMenuController: MonoBehaviour {
         shopCoinText.text = currentMoney.ToString();
     }
 
-    public void ActivatePanel(int index = 0) {
+    public void ActivateTab(int index = 0) {
         // Disable all, then re-activate only the current one
-        foreach( GameObject panel in panels) {
-            panel.SetActive(false);
+        foreach( GameObject tab in tabs) {
+            tab.SetActive(false);
         }
 
-        panels[index].SetActive(true);
+        tabs[index].SetActive(true);
     }
 
     // Return to Menu after Unloading the Additive Shop Scene

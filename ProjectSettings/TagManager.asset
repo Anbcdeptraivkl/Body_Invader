@@ -5,23 +5,20 @@ TagManager:
   serializedVersion: 2
   tags:
   - Boundary
-  - Meteor
   - Shot
   - Background
   - Enemy
   - EnemyShot
   - Upgrade
-  - StrongShot
   - Graphic
   - StrongShotUpg
-  - ShieldUpg
-  - PlayerShield
   - PlayerStatus
   - SpawnPoint
   - Coin
   - Missile
   - EnemyGroup
   - ShotGroup
+  - ItemPanel
   layers:
   - Default
   - TransparentFX

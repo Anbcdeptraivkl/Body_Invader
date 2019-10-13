@@ -47,22 +47,32 @@
 
 ## SHOP SYSTEM
 
-- Shop Scene
-  - GUI: Themed
-    - Text displaying the amount of Money remain ~
-      - Couple with Increasing / Decreasing value Running Animation ~
+- Shop Scene GUI: Space Electronic Themed
 
-    - Panels and Objects for For Sale Targets
-      - Images and Animation for each Items Thumbnails
-      - Description
-        - Name
-        - Effects / Powers
-        - Prices
+- Panels and Objects for Selling Targets
+  - Images and Animation for each Items Thumbnails
+  - Properties
+    - (string) Name
+    - (string) Descriptions: Effects and Powers
+    - public (int) Prices
+  - Behaviours
+    <!-- - Highlight when Select  -->
+    - Greyed out + SOLD when bought (Behaviours)
 
-      - Buy Button
-        - Select Items (Marked in Script Data and Highlight on UI) -> Click Buy -> Sold then Update Coins and Preferences
-          - Bought Items will be Greyed out + Labeled SOLD (will become Unclickable)
-        - Items bought will be Recorded and will be Checked on Level Entering UI and In-game Innitialization
+- Tab Items Controller
+  <!-- - Selecting -->
+  - Buying
+    - Deplete Money by Item's Price
+    - Set Bought Prefs from 0 to 1 (use Enum and Table Access for more versatility)
+
+- Buy Button
+  - Select Items (Marked in Script Data and Highlight on UI) -> Click Buy -> Sold then Update Coins and Preferences
+    - Bought Items's Panel color will be Greyed out + Labeled SOLD (will become Unclickable)
+  - Items bought will be Recorded and will be Checked on Level Entering UI and In-game Innitialization
+  - Debugging: Reseting Purchases Button (when exiting the Shop, or after testing game skill Done!)
+
+- After Buying -> Exit the Shop: Storing Individual Purchase Data into PlayerPrefs: (int)Money, (int)DashBought, etc.
+  - The Prefs will be used in other Game Scene to check Bought status for activating / deacivating Bought features
 
 - Unlocking (with other Currencies and Conditions, usually collectibles)
   - New Ships
