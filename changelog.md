@@ -25,23 +25,39 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
   - Deplete money by 10 - 50 - 100
   - Reset Purchase Data (all Bought Items are reset)
 
-- Shop Items Prefabs
+- Shop Items Prefabs: with ItemPanel Components
   - Tagged: ItemPanel
+  - Properties: Name and Price for each items
   - Selectable with mouse Click (will Highlighted and Referenced in ItemsController when Clicked using EventSystem's RaycastAll() and PointerEventData) to Buy
     - Single Selection at time
-    - Scripts: Selection Mechanics Implemented in TabItemsController, while the Panels's Responds are in ItemPanelsBehaviours
+    - Implemented in Shop Controller, while the Panels's Responds are in Item Panel Component
+
+- Buy Functions
+  - Select Items > Click Buy (using EventSystem's RayCasting and static Object) > Update Players Prefs and Item Panel's State
+  - Added related Debug Functions (usable only in Shop)
+    - Get Bought Status
+    - Reset Purchases (All)
 
 - Added Buttons to Go to Shop (change Scene addictively while still retains the Main Menu scene) in the Level Selection UI and Return to MainMenu from Shop (unloading the Shop Scene) in the Shop Menu
+
+- Added Debug Functions to Main Menu: Getting Bought Preferences
 
 ### Changed
 
 - Increased the Moving speed and Shot Rate of UFOs
 - Increased the Enemy Spawn time and Spawn Rate
 - Updated Unity Version and Default Assets
+- Increased the Changing Speed of the Shop's Money Coin Text
+
+### Fixed
+
+- Fixed the bug where the item still can be bought even if the money amount is insufficient (no pre-check)
 
 ### Removed
 
 - Removed the Auto Grid Populating: Item Panels are made and set manually
+- Removed and Merged the Tabs COntroller into the SHop Controller
+- Removed the Scripts from the Main COntainer Child (the Controler script is moved into Shop Canvas)
 
 ========================================
 

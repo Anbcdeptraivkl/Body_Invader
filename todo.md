@@ -45,40 +45,6 @@
 
 # DEvELOPING FEATURES
 
-## SHOP SYSTEM
-
-- Shop Scene GUI: Space Electronic Themed
-
-- Panels and Objects for Selling Targets
-  - Images and Animation for each Items Thumbnails
-  - Properties
-    - (string) Name
-    - (string) Descriptions: Effects and Powers
-    - public (int) Prices
-  - Behaviours
-    <!-- - Highlight when Select  -->
-    - Greyed out + SOLD when bought (Behaviours)
-
-- Tab Items Controller
-  <!-- - Selecting -->
-  - Buying
-    - Deplete Money by Item's Price
-    - Set Bought Prefs from 0 to 1 (use Enum and Table Access for more versatility)
-
-- Buy Button
-  - Select Items (Marked in Script Data and Highlight on UI) -> Click Buy -> Sold then Update Coins and Preferences
-    - Bought Items's Panel color will be Greyed out + Labeled SOLD (will become Unclickable)
-  - Items bought will be Recorded and will be Checked on Level Entering UI and In-game Innitialization
-  - Debugging: Reseting Purchases Button (when exiting the Shop, or after testing game skill Done!)
-
-- After Buying -> Exit the Shop: Storing Individual Purchase Data into PlayerPrefs: (int)Money, (int)DashBought, etc.
-  - The Prefs will be used in other Game Scene to check Bought status for activating / deacivating Bought features
-
-- Unlocking (with other Currencies and Conditions, usually collectibles)
-  - New Ships
-  - Cosmetics
-  - Special and Upgraded Skills
-
 ## ENERGY SYSTEM
 
 - For using skills
@@ -166,6 +132,23 @@
       - Tick
       - Change Brightness
     - Click Effects: SFXs and Change Colors
+
+## SHOP SYSTEM
+
+### Sub-optimal Tasks
+
+- The Shop Data and Prefs will later be refactored and stored in external Files (XML, JSON, etc.) for more versatility
+  - Only after all the basic functions are laid out and working perfectly
+
+- Unlocking (with other Currencies and Conditions, usually collectibles)
+  - New Ships
+  - Cosmetics
+  - Special and Upgraded Skills
+  
+- Shop Scene GUI: Space Electronic Themed
+
+- Panels and Objects for Selling Targets
+  - Images and Animation for each Items Thumbnails
 
 ## COINS
 
