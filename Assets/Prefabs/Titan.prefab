@@ -351,6 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseHP: 50
   scoreValue: 100
+  energyReward: 20
   shotExplosion: {fileID: 5903513841248052773, guid: f378928e77eb593418a8b059e959ad48,
     type: 3}
   explodingSound: {fileID: -1947527847756643652}

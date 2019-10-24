@@ -4,6 +4,8 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
 
 ## [Unreleased]
 
+## [0.14.0] - 24/10/2019
+
 ### Added
 
 - Added Warning Message Panel when return to Menu from Pausing for Confirming that the player is sure to quit and lose the current progress)(scripted in the Pausing component)
@@ -42,16 +44,33 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
 
 - Added Debug Functions to Main Menu: Getting Bought Preferences
 
+- Added Player Energy system
+  - Represents by UI (Blue-themed with Cover Frames, Back Bar and Fill Image): Displaying the percentage of Energy left updated constantly
+  - Can be Deplete and Refill with Input Events
+  - Refill by killing Enemies
+
+- Added Dash Movement Mechanics
+  - Manipulating Rigidbody position to get the destination and direction - acting like a short Teleport, but with Continous Collision detections
+  - Overload-Lerping a fixed distance to the last moving direction Fast (with high interpolate rate - Dash rate, about 4x the normal Move rate)
+    - The Interpolates are multiplied by deltaTime for smooth, constant screen-rate movements
+  - Deplete 20 Energy per Uses
+  - 2s cooldown
+  - Visual Effect: Dash Lines (Rotatable)
+  - SFX: Teleporting
+
 ### Changed
 
 - Increased the Moving speed and Shot Rate of UFOs
 - Increased the Enemy Spawn time and Spawn Rate
 - Updated Unity Version and Default Assets
 - Increased the Changing Speed of the Shop's Money Coin Text
+- Increased the player's movement Speed (acts as distance, Multiply with Input direction for the distance, then add onto current position for current position)
+  - Overload-Lerping with delta Time
 
 ### Fixed
 
 - Fixed the bug where the item still can be bought even if the money amount is insufficient (no pre-check)
+- Fixed the bug where the player can dash when out of energy
 
 ### Removed
 

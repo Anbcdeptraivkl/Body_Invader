@@ -47,27 +47,12 @@
 
 ## ENERGY SYSTEM
 
-- For using skills
-  - Deplete when activate Skills / Ship Abilities
-
-- Refill slowly with Time
-  - and Energy Pots Dropped by Enemies!
-
-- Display in Player HUB
-    - Yellow Colored Theme
-    - Fill Bar Appearance
+- Energy Pots Dropped by Enemies!
 
 ## DASH Skill
 
-- Dash and Blink A Short Distance
-    - Fast (almost Instantly)
-        - but still Damagable
-    - Coupled with Visual Particle Effects
-        - and Dash Sound
-
-- Deplete Lots of Energy (a full bar of energy can use Dash 3 consecutive Times)
-
-- Has Cooldown (about 2.5s between each Dashes)
+- Cooldown Signals:
+  - Radical Cooldown Icons (Filled)
 
 ## SHIELD Skill
 
@@ -135,7 +120,7 @@
 
 ## SHOP SYSTEM
 
-### Sub-optimal Tasks
+### Sub Tasks
 
 - The Shop Data and Prefs will later be refactored and stored in external Files (XML, JSON, etc.) for more versatility
   - Only after all the basic functions are laid out and working perfectly
