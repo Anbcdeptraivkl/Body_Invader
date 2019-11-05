@@ -32,11 +32,6 @@
 
 # DEBUGGING
 
-- Shop
-  - Reset Buying
-  - Deplete Money to Test UI
-  - Test Panels and Tabs
-
 ======================================
 
 # POLISHING
@@ -45,14 +40,29 @@
 
 # DEvELOPING FEATURES
 
-## ENERGY SYSTEM
+# UI Elements REdesign
 
-- Energy Pots Dropped by Enemies!
+<!-- - Panels
+- Filled Panels
+- Frames
+- Main BUttons
+- Navigation Buttons
+- Shop Panels -->
 
-## DASH Skill
+- Swap UI Elements for the Shop Scene
 
-- Cooldown Signals:
-  - Radical Cooldown Icons (Filled)
+# ART OVERHAULS
+
+- Change the Explosion Visuals and SFXs to more impactful and theme-fit ones
+  - Nova Drift
+  - Blue Revolver
+
+- Change the Hit SFXs to deeper, impactful ones (Enter the Gungeon)
+
+- Enemy SPrites and Animation Designs (Zero Ranger)
+
+- New Fonts
+  + 8-bit Wonder
 
 ## SHIELD Skill
 
@@ -79,12 +89,6 @@
   - HP
   - MIssile Packs
   - Energy
-
-## SPECIAL PLAYER SHIPS
-
-- Special Abilities
-
-- Special Attributes
 
 ## LEVEL SYSTEM  
 
@@ -118,6 +122,10 @@
       - Change Brightness
     - Click Effects: SFXs and Change Colors
 
+## NEW ENEMIES and ENEMY PATTERNS
+
+- 
+
 ## SHOP SYSTEM
 
 ### Sub Tasks
@@ -148,14 +156,6 @@
   - Homing
   - Receiving
 
-## HEARTS
-
-- Collecting SFXs: Healing
-  
-## MISSILES
-
-- SFX when gained new ones
-
 ## Enemy - Titan
 
 - Animator and Animations
@@ -178,14 +178,29 @@
 
 - Whiter and more Opaque Enemy Shot
 
-## UX
 
-- Design Futuristic theme GUI
+## ART THEMEs and DESIGNs
+
+### Enemy Designs
+
+- Boss Monster
+  - Super Powerful Enemies at the end of each Levels
+  - Ideas
+    - Giant Mecha Crab
+    - Giant Robo Dragon Head
+    - Giant Squid
+
+- Change the Theme to Robotic Aquatic Creatures (Fishes, Tentacles, etc.)
+
+### UI - UX Designs
+
+- Futuristic theme GUI
   - Elements
     - Buttons
     - Panels
     - Icons
-  - Layout
+
+- Rigid, Machinery Layout
 
 ## Background Arts
 
@@ -225,6 +240,23 @@
   - And uique Hazard (Meteors, Turrets, etc.)
   - Unique backgrounds, too!
 
+
+## ENERGY SYSTEM
+
+- Energy Pots Dropped by Enemies randomly!
+
+## DASH Skill
+
+- Cooldown Signals:
+  - Radical Cooldown Icons (Filled)
+
+## SPECIAL PLAYER SHIPS
+
+- Special Abilities
+
+- Special Attributes
+
+
 ## New Enemy
 
 - The Stingray
@@ -237,98 +269,48 @@
     - Energy
     - Missiles
 
-- Implement a Shop system to use COin currency!
-  - New Ships!
-  - Equipments!
-  - Skills!
-  - Cosmetic!
 
-- Laser Attack for Enemies: AOE and Straight Damaging (will be researched more later on)
+## HEARTS
 
-- Permanent Shield Skills: Buy in Shop and Use (consume high amount of Energy) in Game for a short-lived, invincible Cover ~
+- Collecting SFXs: Healing
+  
+## MISSILES
 
-- SFX Tweaks
-  - Lower the volume and pitch so the SFXs sound less irritating.
-  - Add SFX for enemies's appearance and movement.
+- SFX when gained new ones
 
-- Change the Player Status UI to a simple Flat grids just like in the Game's Model: ~
-    1. HP Bar. /f
-    2. Missiles Count. /f
-    3. Ship Equipment and Upgrades ~
-    4. Coin Counter; /f
-    5. Energy Bar  (will be use for Spark / Skills) ~
+## TINY EFFECTS
 
-1.  Enemies Types - based on difficulty:  More and More Enemies too!!! ~
-   1.  Easy: Small and Light, simple attacks (e.g UFO, Brute)
-   2.  Normal: Specialize Movements and Attacking Patterns (some are harder than other) (e.g Trackers)
-       1.  Enemies >= Normal will always Drop Coins and Upgrades (defined in their own Dropping Components) 
-   3.  Hard: Big, Bulky and Many Attacking Patterns (e.g Titan and Surfer)
-   4.  Ultimate: Formations of multiple enemy Types that are extremely hard to deal with;
-   5.  Boss: nuff said - The Most Powerful Enemies in the game, only show up at the last stages of the levels and can spawn Minions: Special Units that only spawned in Boss fight
-      1. Crabber
-      2. Quez
-      3. Big Brain
-   6.  Harder Enemies for higher Difficulty Progresses:
-	+ Bigger and Bulkier
-	+ Harder Attack Pattern 
-	+ Trickier Maneuvering
+1.  PLayer appear flashing light effects. ~
 
-16. Bosses! ~
-    1.  At Each Arc-ending Levels.
-    2.  Big, Sturdy (Hundreds of HP)
-    3.  Summon Enemies and Have Signature Attack / Defense Moves.
-    4.  Before Each Bosses, player received a random Permanent Upgrades (last for the whole battles):
-        1.  New Weapon (s) and Shot Upgrade Levels.
-        2.  HP Recovery a.
-        3.  Missiles.
-        4.  
-    
-17. PLayer appear flashing light effects. ~
-    
-18. More Music! ~
-    1.  Better BGM for Menu and Normal Rounds.
-    2.  Different BGMs for each levels.
-    3.  Boss BGMs.
+##  MOre Equipments
 
-19. More Background arts: Varied Scrolling backgrounds for different stages. ~
+1.  Ship Armor Equip: More HP and Damage Resists (represent by an energy armor bar that deplete with damage received):
+  + Change the appearances.
+  + Provided an armor bar from the start.
+2. Health Booster: Add 1 more HP.
+3. Engine Boost: Increase movement speed by a significant percent.
+4. Attack Drone: Shoot electric sparks at enemies on interval, dealing moderated damages!
+5. Support Drone: Frequently Drop COins and Energy for you to pick!
+- Enhanced Missile: Higher Dmg for Missiles
+- Weapons: (changing the Player Weapon COmponent to generate the new Weapon Types)
+  + Each has their own Appearances, Quirks and Upgrade Tiers!
+  + Laser Gun: default - Constant Fire rate and consistent damages.
+  + Buster: Fire small, fast laser beams -  Faster and fire in succession, but deal less damage per shot!
+  + Flame Thrower: Fire a Range of Fire - Broader but shorter range and can deal damage continously (at the risk of moving closer to enemies).
+  + Cannon: Fire Metal Balls - BIg and Strong, but slow Shooting Rate and slow Speed
 
-20. MOre Equipments: ~
-   1.  Ship Armor Equip: More HP and Damage Resists (represent by an energy armor bar that deplete with damage received):
-      + Change the appearances.
-      + Provided an armor bar from the start.
-   2. Health Booster: Add 1 more HP.
-   3. Engine Boost: Increase movement speed by a significant percent.
-   3. Attack Drone: Shoot electric sparks at enemies on interval, dealing moderated damages!
-   4. Support Drone: Frequently Drop COins and Energy for you to pick!
-   - Enhanced Missile: Higher Dmg for Missiles
-   - Weapons: (changing the Player Weapon COmponent to generate the new Weapon Types)
-      + Each has their own Appearances, Quirks and Upgrade Tiers!
-      + Laser Gun: default - Constant Fire rate and consistent damages.
-      + Buster: Fire small, fast laser beams -  Faster and fire in succession, but deal less damage per shot!
-      + Flame Thrower: Fire a Range of Fire - Broader but shorter range and can deal damage continously (at the risk of moving closer to enemies).
-      + Cannon: Fire Metal Balls - BIg and Strong, but slow Shooting Rate and slow Speed
-
-
-21. More In-battle Drops: (the Skills and Equipments will change player ship's appearance, while the upgrades will affect stats only)
-   - Collectibles - Coins, Energy and Missiles can drop multiple ones at time depend on the difficulty and drop setting of the enemies dropping!
-   - Weapon Tier Upgrades
-   - Coins
-    2. Homing Missiles: Stackable High Damage Bombs with Arts, UI and Functionality (will be implemented seperatedly as a kind of weapon for player to use)
-    3. HP Recovery Batteries (only drop on Normal-up Enemies)
-    4. Energy Refiller.
-    5.  >> Need to change the whole mechanics around HP Managing and Upgrades: Refactor and Modify!
-
+## Tutorials and Tooltips
 
 - Tutorial Tips to help players understand Equipments, Spark Skills and the COntrols in-game:
    + Will pop up when player receiving upgrades, equips or skills for the first time.
 
 
-21. Spark Skills: will get each as the players progress and can be equip one-per-level every level (including Endless Mode) - Consume Energy on uses:
-   1.  An invincible Dash (Cuphead styles): USe Energy per Dash.
-   2.  Laser Beam: Special Weapon: Long duration, but less damages.
-   3.  Bomb: SW: Slow, High AOE dmg.
-   4.  A Charge Shield: can be used Infinitely but consumes a lot of Energy per Uses.
-   5.  Energy are provided infinitely and very slowly recharge by itself (need to pick many Enery Filler to fully utilize the Spark Skills through out the game).
-	8. Supporting Homming Sparks: Frequently Shoot at enemies 2 Electric Sparks.
+## Spark Skills:
+
+-  will get each as the players progress and can be equip one-per-level every level (including Endless Mode) - Consume Energy on uses
+1.  Laser Beam: Special Weapon: Long duration, but less damages.
+2.  Bomb: SW: Slow, High AOE dmg.
+3.  Energy are provided infinitely and very slowly recharge by itself (need to pick many Enery Filler to fully utilize the Spark Skills through out the game).
+4. Supporting Homming Sparks: Frequently Shoot at enemies 2 Electric Sparks.
 
 

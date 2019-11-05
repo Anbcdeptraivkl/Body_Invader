@@ -4,6 +4,31 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
 
 ## [Unreleased]
 
+## [0.14.1] - 5/11/2019
+
+### Added
+
+- New Bullet's SPrites Designs
+    + Enemy's: Red Orbs
+    + Player's Bullets: Blue Orb
+
+- Overhauled UI Arts for the Level Scenes and Main Menu Scene
+    + Panels
+    + Buttons
+    + Selection Panels (Filled)
+    + Borders
+
+### Changed
+
+- Lowered the difficulty at the beginning of levels
+- Changed the Health UI Primary Icons and Arts to Battery ( more suitable for Futuristic SPace Theme)
+- Refactored all the Dash-related Properties and Behaviours into DashSkill class
+- Reduced Player's fire Rate
+
+### Removed
+
+- Removed annoying shooting SFXs
+
 ## [0.14.0] - 24/10/2019
 
 ### Added

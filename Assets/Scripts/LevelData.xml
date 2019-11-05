@@ -27,7 +27,66 @@
         <!--In each Waves, the Enemies will be spawned at the same time (remember: to not overlapping positions between enemies because of this nature!), if there are delays between the spawning, then the enemies will be put into later waves-->
         
          <!--Waves can have single enemy, or as many enemies as you want spawning simutaneously-->
-        <Wave order="1" rest="false">
+        <Wave rest="true">
+            <Enemy>
+                <Name>TriUFO</Name>
+                <!--Start from zero:-->
+                <!--0   1   2-->
+                <!--L   Mid   R-->
+                <PositionIndex>2</PositionIndex>
+                <Amount>1</Amount>
+            </Enemy>
+        </Wave>
+
+        <Wave rest="true">
+            <Enemy>
+                <Name>TriUFO</Name>
+                <!--Start from zero:-->
+                <!--0   1   2-->
+                <!--L   Mid   R-->
+                <PositionIndex>1</PositionIndex>
+                <Amount>1</Amount>
+            </Enemy>
+
+            <Enemy>
+                <Name>TriUFO</Name>
+                <!--Start from zero:-->
+                <!--0   1   2-->
+                <!--L   Mid   R-->
+                <PositionIndex>3</PositionIndex>
+                <Amount>1</Amount>
+            </Enemy>
+        </Wave>
+
+        <Wave rest="true">
+            <Enemy>
+                <Name>BruteL</Name>
+                <PositionIndex>0</PositionIndex>
+                <Amount>3</Amount>
+            </Enemy>
+
+            <Enemy>
+                <Name>BruteR</Name>
+                <PositionIndex>0</PositionIndex>
+                <Amount>3</Amount>
+            </Enemy>
+        </Wave>
+
+        <Wave rest="true">
+            <Enemy>
+                <Name>Tracker</Name>
+                <PositionIndex>0</PositionIndex>
+                <Amount>1</Amount>
+            </Enemy>
+
+            <Enemy>
+                <Name>Tracker</Name>
+                <PositionIndex>4</PositionIndex>
+                <Amount>1</Amount>
+            </Enemy>
+        </Wave>
+        
+        <Wave rest="false">
             <Enemy>
                 <Name>TriUFO</Name>
                 <!--Start from zero:-->
@@ -54,37 +113,7 @@
             </Enemy>
         </Wave>
 
-        <Wave order="2" rest="true">
-            <Enemy>
-                <Name>BruteL</Name>
-                <PositionIndex>0</PositionIndex>
-                <Amount>3</Amount>
-            </Enemy>
-
-            <Enemy>
-                <Name>BruteR</Name>
-                <PositionIndex>0</PositionIndex>
-                <Amount>3</Amount>
-            </Enemy>
-        </Wave>
-
-        <Wave order="3" rest="true">
-            <Enemy>
-                <Name>Tracker</Name>
-                <PositionIndex>0</PositionIndex>
-                <Amount>1</Amount>
-            </Enemy>
-
-            <Enemy>
-                <Name>Tracker</Name>
-                <PositionIndex>4</PositionIndex>
-                <Amount>1</Amount>
-            </Enemy>
-        </Wave>
-        
-       
-
-        <Wave order="4" rest="true">
+        <Wave rest="true">
             <Enemy>
                 <Name>Tracker</Name>
                 <PositionIndex>0</PositionIndex>
@@ -98,7 +127,7 @@
             </Enemy>
         </Wave>
 
-        <Wave order="5" rest="true">
+        <Wave rest="true">
             <Enemy>
                 <Name>Tracker</Name>
                 <PositionIndex>4</PositionIndex>
@@ -112,7 +141,7 @@
             </Enemy>
         </Wave>
 
-        <Wave order="6" rest="false">
+        <Wave rest="false">
             <Enemy>
                 <Name>TriUFO</Name>
                 <!--Start from zero:-->
@@ -139,7 +168,7 @@
             </Enemy>
         </Wave>
 
-        <Wave order="7" rest="false">
+        <Wave rest="false">
             <Enemy>
                 <Name>TriUFO</Name>
                 <PositionIndex>2</PositionIndex>
@@ -159,7 +188,7 @@
             </Enemy>
         </Wave>
 
-        <Wave order="8" rest="true">
+        <Wave rest="true">
             <Enemy>
                 <Name>Titan</Name>
                 <PositionIndex>2</PositionIndex>

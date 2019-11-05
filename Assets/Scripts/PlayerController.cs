@@ -2,31 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Boundary to CLamp Player's Position in-ranged
 [System.Serializable]
 public struct Boundary{
 	public float xMin, xMax, yMin, yMax;
 }
 
-[System.Serializable]
-public struct DashAttributes {
-	public float dashDistance;
-	public float dashCooldown;
-	public int dashCost;
 
-	DashAttributes(float distance = 50.0f, float cooldown = 2.0f, int cost = 20) {
-		dashDistance = distance;
-		dashCooldown = cooldown;
-		dashCost = cost;
+// Dash Skill's Properties
+[System.Serializable]
+public struct DashSkill {
+	public GameObject effect;
+	public float distance;
+	public float cooldown;
+	public int cost;
+	public float speedRate;
+
+	DashSkill(float l_distance = 50.0f, float l_cooldown = 2.0f, int l_cost = 20, float l_rate = 10.0f) {
+		effect = new GameObject();
+		distance = l_distance;
+		cooldown = l_cooldown;
+		cost = l_cost;
+		speedRate = l_rate;
 	}
 }
 
+[System.Serializable]
+public struct ShieldStats {
+
+}
+
+// Plyaer COntroller: Movements, Skillsets and Inputed Behaviours
 public class PlayerController : MonoBehaviour {
 	//Movement attributes:
 	public float moveSpeed = 2.0f;
 	public float moveRate = 5.0f;
-	public float dashRate = 10.0f;
-	public DashAttributes dashAttributes = new DashAttributes();
-	public GameObject dashEffect;
+
+	public DashSkill dashSkill = new DashSkill();
+
 	public Boundary bounds;
 
 	Rigidbody2D rgbd2D;
@@ -40,6 +53,7 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 		rgbd2D = gameObject.GetComponent<Rigidbody2D>();
 		energy = gameObject.GetComponent<PlayerEnergy>();
+
 		nextDashTime = 0f;
 	}
 
@@ -76,16 +90,16 @@ public class PlayerController : MonoBehaviour {
 		{
 			if (
 				// Energy Checking
-				energy.SufficientEnergy(dashAttributes.dashCost)
+				energy.SufficientEnergy(dashSkill.cost)
 				) 
 			{
 				// Reset Cooldown
-				nextDashTime = Time.time + dashAttributes.dashCooldown;
+				nextDashTime = Time.time + dashSkill.cooldown;
 				// Deplete Energy
-				energy.DepleteEnergy(dashAttributes.dashCost);
+				energy.DepleteEnergy(dashSkill.cost);
 				// Dash Positions
-				Vector2 destination = rgbd2D.position + lastMoveDir * dashAttributes.dashDistance;
-				rgbd2D.position = Vector2.Lerp(rgbd2D.position, destination, dashRate * Time.deltaTime);
+				Vector2 destination = rgbd2D.position + lastMoveDir * dashSkill.distance;
+				rgbd2D.position = Vector2.Lerp(rgbd2D.position, destination, dashSkill.speedRate * Time.deltaTime);
 				PlayDashEffects();
 			}
 		}
@@ -103,7 +117,7 @@ public class PlayerController : MonoBehaviour {
 		float angle = Mathf.Atan2(lastMoveDir.y, lastMoveDir.x) * Mathf.Rad2Deg - 90;
 
 		GameObject effect = Instantiate(
-			dashEffect,
+			dashSkill.effect,
 			transform.position,
 			Quaternion.identity,
 			transform

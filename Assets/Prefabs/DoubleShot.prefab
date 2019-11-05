@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 3899888765684407410}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3895684305360814649}
   - {fileID: 3895684306253245417}
@@ -45,7 +45,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4345370791455558, guid: 2fa8796c633ed734580b5a65cd172799, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.12
+      value: 0.126
       objectReference: {fileID: 0}
     - target: {fileID: 4345370791455558, guid: 2fa8796c633ed734580b5a65cd172799, type: 3}
       propertyPath: m_LocalPosition.y
@@ -89,7 +89,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4345370791455558, guid: 2fa8796c633ed734580b5a65cd172799, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345370791455558, guid: 2fa8796c633ed734580b5a65cd172799, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1517141243535169882, guid: 2fa8796c633ed734580b5a65cd172799,
         type: 3}
@@ -98,22 +102,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4512488476694008, guid: 2fa8796c633ed734580b5a65cd172799, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 212659156977216418, guid: 2fa8796c633ed734580b5a65cd172799,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.514151
+      value: 0.9577252
       objectReference: {fileID: 0}
     - target: {fileID: 212659156977216418, guid: 2fa8796c633ed734580b5a65cd172799,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.7528373
+      value: 0.9599581
       objectReference: {fileID: 0}
     - target: {fileID: 212659156977216418, guid: 2fa8796c633ed734580b5a65cd172799,
         type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0.9622642
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fa8796c633ed734580b5a65cd172799, type: 3}
@@ -136,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4345370791455558, guid: 2fa8796c633ed734580b5a65cd172799, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.12
+      value: -0.11399999
       objectReference: {fileID: 0}
     - target: {fileID: 4345370791455558, guid: 2fa8796c633ed734580b5a65cd172799, type: 3}
       propertyPath: m_LocalPosition.y
@@ -180,26 +184,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4345370791455558, guid: 2fa8796c633ed734580b5a65cd172799, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345370791455558, guid: 2fa8796c633ed734580b5a65cd172799, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4512488476694008, guid: 2fa8796c633ed734580b5a65cd172799, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 212659156977216418, guid: 2fa8796c633ed734580b5a65cd172799,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.514151
+      value: 0.9577252
       objectReference: {fileID: 0}
     - target: {fileID: 212659156977216418, guid: 2fa8796c633ed734580b5a65cd172799,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.7528373
+      value: 0.9599581
       objectReference: {fileID: 0}
     - target: {fileID: 212659156977216418, guid: 2fa8796c633ed734580b5a65cd172799,
         type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0.9622642
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fa8796c633ed734580b5a65cd172799, type: 3}
