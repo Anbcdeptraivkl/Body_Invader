@@ -24,32 +24,21 @@
 
 ## Intuitive and Easy UI + Display (HUB, etc.)
 
-=====================================
+==========================================================================================================================================
 
 # REFACTORING
 
-======================================
+==========================================================================================================================================
 
 # DEBUGGING
 
-======================================
+==========================================================================================================================================
 
 # POLISHING
 
-======================================
+==========================================================================================================================================
 
 # DEvELOPING FEATURES
-
-# UI Elements REdesign
-
-<!-- - Panels
-- Filled Panels
-- Frames
-- Main BUttons
-- Navigation Buttons
-- Shop Panels -->
-
-- Swap UI Elements for the Shop Scene
 
 # ART OVERHAULS
 
@@ -57,9 +46,12 @@
   - Nova Drift
   - Blue Revolver
 
-- Change the Hit SFXs to deeper, impactful ones (Enter the Gungeon)
+- Change the Hit SFXs and Shoot Effects to deeper, impactful ones
+  - Enter the Gungeon
+  - Cuphead
 
-- Enemy SPrites and Animation Designs (Zero Ranger)
+- Enemy SPrites and Animation Designs
+  - Zero Ranger
 
 - New Fonts
   + 8-bit Wonder
@@ -194,13 +186,14 @@
 
 ### UI - UX Designs
 
-- Futuristic theme GUI
-  - Elements
-    - Buttons
-    - Panels
-    - Icons
+- Futuristic and Machinery
 
-- Rigid, Machinery Layout
+<!-- - Panels
+- Filled Panels
+- Frames
+- Main BUttons
+- Navigation Buttons
+- Shop Panels -->
 
 ## Background Arts
 
@@ -231,7 +224,7 @@
   - Based on Player's Score and Health in-game (Mostly Score)
     - Completing the level with Perfect health and defeat a considerate amount of enemies for highest ranks
 
-=======================================
+===========================================================================================================
 
 # IN QUEUE
 

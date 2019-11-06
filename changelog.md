@@ -2,7 +2,25 @@
 
 All notable changes will be documented here. Made by Anbcdeptrai all rights reserved.
 
+
 ## [Unreleased]
+
+
+## [0.14.2] - 6/11/2019
+
+### Added 
+
+- Shop's UI Overhaul
+
+### Changed
+
+- Increased Player and Bullets's Size
+- Increased Dash Distance and Speed
+
+### Removed
+
+- Temporarily removed the Endless Mode feature for future maintanance
+
 
 ## [0.14.1] - 5/11/2019
 

@@ -442,7 +442,7 @@ PrefabInstance:
     - target: {fileID: 4389378713452588452, guid: 6ddbaac432df9f34c8b61827f9ff45bd,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -197
+      value: -115
       objectReference: {fileID: 0}
     - target: {fileID: 4389378713452588452, guid: 6ddbaac432df9f34c8b61827f9ff45bd,
         type: 3}
@@ -948,7 +948,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &190035619
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1271,7 +1271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &380811917
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3274,7 +3274,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 22}
+  m_AnchoredPosition: {x: 0, y: 2}
   m_SizeDelta: {x: 341.6, y: 95.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &888342049
@@ -5146,7 +5146,7 @@ PrefabInstance:
     - target: {fileID: 4389378713452588452, guid: 6ddbaac432df9f34c8b61827f9ff45bd,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -313.3
+      value: -231.29999
       objectReference: {fileID: 0}
     - target: {fileID: 4389378713452588452, guid: 6ddbaac432df9f34c8b61827f9ff45bd,
         type: 3}
@@ -6251,6 +6251,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnlessButton
       objectReference: {fileID: 0}
+    - target: {fileID: 761186757090396406, guid: 6ddbaac432df9f34c8b61827f9ff45bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4389378713452588452, guid: 6ddbaac432df9f34c8b61827f9ff45bd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6760,7 +6765,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1984251787
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7017,7 +7022,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2078136822
 RectTransform:
   m_ObjectHideFlags: 0

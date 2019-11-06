@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 7715268365818723390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3.37, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 7715268367045079978}
   - {fileID: 7715268367458214765}
@@ -103,7 +103,7 @@ MonoBehaviour:
   - shotObj: {fileID: 1600620134327404, guid: bde9185cfaa05b44ba7c6eb18af98b6c, type: 3}
     upgradeLevel: 2
   shotSpawn: {fileID: 7715268367458214765}
-  fireRate: 0.1
+  fireRate: 0.13
 --- !u!114 &7715268365818723393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,11 +118,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 20
   moveRate: 0.6
-  dashRate: 1
-  dashAttributes:
-    dashDistance: 100
-    dashCooldown: 2
-    dashCost: 20
+  dashSkill:
+    effect: {fileID: 4790126867424132844, guid: 3615dc1eb5dd16b41b5350ae3e6e49dd,
+      type: 3}
+    distance: 120
+    cooldown: 2
+    cost: 15
+    speedRate: 1.5
   bounds:
     xMin: -7.5
     xMax: 7.5
