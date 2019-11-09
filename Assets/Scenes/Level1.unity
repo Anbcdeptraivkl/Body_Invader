@@ -1875,6 +1875,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Push Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5752173155784506023, guid: 62efec9e7de77b847b703664312fb8d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5752173155624633691, guid: 62efec9e7de77b847b703664312fb8d7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2010,6 +2015,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1896891612}
+    - target: {fileID: 5752173156402194280, guid: 62efec9e7de77b847b703664312fb8d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752173156044981209, guid: 62efec9e7de77b847b703664312fb8d7,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752173156044981209, guid: 62efec9e7de77b847b703664312fb8d7,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752173156044981209, guid: 62efec9e7de77b847b703664312fb8d7,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62efec9e7de77b847b703664312fb8d7, type: 3}
 --- !u!1001 &5945937773113130386
