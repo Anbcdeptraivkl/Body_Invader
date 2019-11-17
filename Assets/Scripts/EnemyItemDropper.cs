@@ -45,17 +45,12 @@ public class EnemyItemDropper: MonoBehaviour {
     IEnumerator DropPersistenceRoutine() {
         // Checking if the List is empty:
         if (persistentDropList.Count <= 0) {
-            Debug.Log("No persistent Drops from this object");
             yield break;
         }
-
-        Debug.Log("Drop Size: " + persistentDropList.Count);
 
         for (int i = 0; i < persistentDropList.Count; i++) {
             // Get each Drop Items:
             DropItem drop = persistentDropList[i];
-
-            Debug.Log("Drop: " + drop.name);
 
             // Dropping!
             // many Different Kinds:

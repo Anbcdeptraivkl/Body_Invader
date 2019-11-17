@@ -46,18 +46,19 @@ public class Wave {
 // Reading Level-spcific data, then start spawning enemies in designed orders:
 public class LevelSpawner: MonoBehaviour {
 
+    // Text Asset Reference
+    public TextAsset levelDataText;
+    // Utility Data:
+    public float delayBetweenWaves;
+    public float delayPerEnemy;
+    public int levelIndex;
+
     // Collection of Waves Data:
     List<Wave> waveDataList = new List<Wave>();
 
     //Spawn Data References:
     // Remember to initiate:
     XmlDocument levelDataDoc = new XmlDocument();
-
-    // Utility Data:
-    public float delayBetweenWaves;
-    public float delayPerEnemy;
-
-    public int levelIndex;
 
     // Wave Clearing status (for the Restricted);
     bool waveCleared;
@@ -71,8 +72,8 @@ public class LevelSpawner: MonoBehaviour {
         // Reference the Spawn Manager to get Common Properties and Methods:
         s = GameObject.FindWithTag("GameController").GetComponent<SpawnManager>();
 
-        // Loading and Reading Data:
-        levelDataDoc.Load("Assets/Scripts/LevelData.xml");
+        // Loading and Reading Data (from Resources Folder):
+        levelDataDoc.LoadXml(levelDataText.text);
         ReadWavesData();
 
         // Start Spawning:
@@ -85,6 +86,7 @@ public class LevelSpawner: MonoBehaviour {
     }
 
     void Update() {
+        // If the Waves are fully Cleared
         waveCleared = EnemyCount.Wiped();
     }
 
@@ -102,8 +104,6 @@ public class LevelSpawner: MonoBehaviour {
             // Temp Elements:
             int waveOrder = 1;
             Wave tempWave = new Wave();
-
-            Debug.Log("Reading Wave No." + waveOrder);
             
             tempWave.SetRestricted(ExtractRestValue(wave));
 
@@ -113,8 +113,6 @@ public class LevelSpawner: MonoBehaviour {
                 string enemyName = enemy["Name"].InnerText;
                 int positionIndex = int.Parse(enemy["PositionIndex"].InnerText);
                 int amount = int.Parse(enemy["Amount"].InnerText);
-
-                Debug.Log("Enemy: " + enemyName + " at " + positionIndex + " x " + amount);
 
                 // Get Spawn Point by Direction:
                 Transform enemySpawnPoint = GetTransformByDirection(enemyName, positionIndex);
@@ -137,8 +135,6 @@ public class LevelSpawner: MonoBehaviour {
          // Reading the Restricted attribute values for rested waves:
         string restStrValue = wave.Attributes["rest"].Value;
         bool restricted = string.Equals(restStrValue, "true", System.StringComparison.OrdinalIgnoreCase);
-
-        Debug.Log("Rest: " + restStrValue);
 
         return restricted;
     }
@@ -166,8 +162,6 @@ public class LevelSpawner: MonoBehaviour {
             // Wait for the enemies to be wiped out before spawning new (if the wave is restricted):
             if (wave.GetRestricted()) {
                 yield return new WaitUntil(() => waveCleared == true);
-
-                Debug.Log("Wave Cleared: "+  waveCleared.ToString());
             }
         }
         

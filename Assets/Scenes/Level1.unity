@@ -1257,6 +1257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d989531b8c25344fa3894ffc782e552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelDataText: {fileID: 4900000, guid: b5a5a32d7941c804cb5fd20d69f069fd, type: 3}
   delayBetweenWaves: 1.5
   delayPerEnemy: 0.5
   levelIndex: 1
@@ -2258,5 +2259,11 @@ PrefabInstance:
       propertyPath: fillEnergyBar
       value: 
       objectReference: {fileID: 1971661046}
+    - target: {fileID: 7715268365818723392, guid: e20df284e3b2d5444896fad63d19c908,
+        type: 3}
+      propertyPath: shotSpark
+      value: 
+      objectReference: {fileID: 6657510354258733223, guid: 9dae2957dc31ff94bb7b9c1d6a715f79,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e20df284e3b2d5444896fad63d19c908, type: 3}

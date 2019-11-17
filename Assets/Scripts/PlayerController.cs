@@ -28,11 +28,18 @@ public struct DashSkill {
 }
 
 [System.Serializable]
-public struct ShieldStats {
-
+public struct Shield {
+	public GameObject effect;
+	public float duration;
+	public float cooldown;
+	public int cost;
 }
 
 // Plyaer COntroller: Movements, Skillsets and Inputed Behaviours
+// Move
+// Dash
+// Shielding
+// Special Weapon(s)
 public class PlayerController : MonoBehaviour {
 	//Movement attributes:
 	public float moveSpeed = 2.0f;
@@ -40,25 +47,31 @@ public class PlayerController : MonoBehaviour {
 
 	public DashSkill dashSkill = new DashSkill();
 
+	public Shield shield = new Shield();
+
 	public Boundary bounds;
 
 	Rigidbody2D rgbd2D;
 	PlayerEnergy energy;
 	Vector2 lastMoveDir;
 	float nextDashTime;
+	float nextShieldTime;
 
 	// Check if Dash Skill is available in this stage
-	bool dashEnabled;
+	bool dashUpgraded;
+	bool shieldUpgraded;
 
 	void Start () {
 		rgbd2D = gameObject.GetComponent<Rigidbody2D>();
 		energy = gameObject.GetComponent<PlayerEnergy>();
 
 		nextDashTime = 0f;
+		nextShieldTime = 0f;
 	}
 
 	void LateUpdate() {
 		MovePlayer();
+		Shield();
 		Dash();
 		ClampToBound();
 	}
@@ -105,6 +118,30 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
+	
+	void Shield() {
+		// Conditions Checking for the Dash to be able to Perform
+		if (
+			// Input
+			Input.GetKeyDown(KeyCode.X) &&
+			// Cooldown
+			Time.time > nextShieldTime
+			) 
+		{
+			if (
+				// Energy Checking
+				energy.SufficientEnergy(shield.cost)
+				) 
+			{
+				// Reset Cooldown
+				nextShieldTime = Time.time + shield.cooldown;
+				// Deplete Energy
+				energy.DepleteEnergy(shield.cost);
+				SpawnShieldWithEffs();
+			}
+		}
+	}
+
 	void ClampToBound()
 	{
 		rgbd2D.position = new Vector2(
@@ -124,6 +161,17 @@ public class PlayerController : MonoBehaviour {
 		);
 
 		effect.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+		Destroy(effect, 1.0f);
+	}
+
+	void SpawnShieldWithEffs() {
+		GameObject effect = Instantiate(
+			shield.effect,
+			transform.position,
+			Quaternion.identity,
+			transform
+		);
 
 		Destroy(effect, 1.0f);
 	}

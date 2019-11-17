@@ -10,20 +10,6 @@
 
 # DESIGNS
 
-## Fun and Varied Mechanics
-
-## Challenges
-
-## Engaging and Stylist Arts
-
-## Juicy and Responsive Effects (Both Sounds and Visual)
-
-## Dynamic and Smooth Animations
-
-## Immersive and Bumbping Sounds + Musics
-
-## Intuitive and Easy UI + Display (HUB, etc.)
-
 ==========================================================================================================================================
 
 # REFACTORING
@@ -36,51 +22,66 @@
 
 # POLISHING
 
+- Removing unnecessary Debug.Log() statements
+
 ==========================================================================================================================================
 
-# DEvELOPING FEATURES
+# ART
 
-# ART OVERHAULS
+- Enemy's VFX when Hit
+  - Hit Animations
+    - Hit Effect Particle
+    - WHite Blinking
 
-- Change the Explosion Visuals and SFXs to more impactful and theme-fit ones
-  - Nova Drift
-  - Blue Revolver
+- TItan's VFXs
+  - Hit Animations and Hit Effects as normal Enemies
+  - Distinct Explosions
+    - Small, Rapid ones on 1/3 and 2/3 HP
+    - Big, Impactful one on Destroyed
+      - Many Small Ones -> Lead to a Big One
+      - White out the Screen for a little
 
-- Change the Hit SFXs and Shoot Effects to deeper, impactful ones
-  - Enter the Gungeon
-  - Cuphead
+- UI Panels and Objects (Slight) Animations for each Items Thumbnails
+  - Sliding in when Spawning
+  - Sliding out when Transiting
+  - Couple with Electro SFXs
 
-- Enemy SPrites and Animation Designs
+- Enemy SPrites and Animation Re-Designs
   - Zero Ranger
 
-- New Fonts
-  + 8-bit Wonder
+- New BGMs and SFXs
+  - Implement Hit and Explosion SFXs
+  - Make with LMMS Samples and Instruments
+  - Need Practices!
 
-## SHIELD Skill
+==========================================================================================================================================
 
-- A Temporary Sphere that Absorb All Damages Coming
-    - for a short amount of time (about 1s)
+# MECHANICS AND FEATURES
 
-- Use little energy
-    - but long cooldown (about 15s)
+## NEW ENEMIES
+
+## ENEMY PATTERNS
 
 ## UPGRADES SYSTEM
+
+- SKill Upgrades
+  - Dash -> Invincible when Dash
+  - Shield -> Faster Cooldown and Longer Active Time
+  - Deadly -> Increase all weapon dmgs by modifier of 1
 
 - Equipments
   - New Weapons
     - Flamethrower
     - Laser Beam
-    - Spread shots
     - Homing Shots
-  - Weapon Upgrades
   - Drones
     - Attacking
     - Supporting 
 
 - Consumables
-  - HP
-  - MIssile Packs
-  - Energy
+  - HP Pack
+  - MIssile Pack
+  - Battery: Immediately refill Energy Bar
 
 ## LEVEL SYSTEM  
 
@@ -114,13 +115,7 @@
       - Change Brightness
     - Click Effects: SFXs and Change Colors
 
-## NEW ENEMIES and ENEMY PATTERNS
-
-- 
-
 ## SHOP SYSTEM
-
-### Sub Tasks
 
 - The Shop Data and Prefs will later be refactored and stored in external Files (XML, JSON, etc.) for more versatility
   - Only after all the basic functions are laid out and working perfectly
@@ -129,11 +124,6 @@
   - New Ships
   - Cosmetics
   - Special and Upgraded Skills
-  
-- Shop Scene GUI: Space Electronic Themed
-
-- Panels and Objects for Selling Targets
-  - Images and Animation for each Items Thumbnails
 
 ## COINS
 
@@ -147,29 +137,6 @@
 - Sound Effects
   - Homing
   - Receiving
-
-## Enemy - Titan
-
-- Animator and Animations
-  - Hit Effects
-    - Blinking Red - White
-    - Hit Sounds
-    - Hit Explosion Particles 
-      - Spawn Randomly on the Model
-  - Explode when Destroyed
-    - Small Explosion Particle
-      - Randomly generated among a frame
-      - Collaborative sounds
-
-- Big Explosion
-  - Exploding Sound
-  - White out the screen for a little
-  - Dramatic Explosion Particles
-
-## Graphics
-
-- Whiter and more Opaque Enemy Shot
-
 
 ## ART THEMEs and DESIGNs
 

@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: f2aaac3c623372640ab18cdfaacef171
+guid: b900cda9a50e434418d5a64fb0d51d08
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7300887603124358688
-    second: flash_explosion_sheet_0
+      213: -8706450598920198692
+    second: flash-hit-impact-red_0
   - first:
-      213: -3329399147746072674
-    second: flash_explosion_sheet_1
+      213: -7052233053069259767
+    second: flash-hit-impact-red_1
   - first:
-      213: -655871511259159710
-    second: flash_explosion_sheet_2
-  - first:
-      213: -3872075792263308418
-    second: flash_explosion_sheet_3
-  - first:
-      213: -7061291247238593217
-    second: flash_explosion_sheet_4
+      213: 3905233008433371116
+    second: flash-hit-impact-red_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -73,7 +67,7 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -84,7 +78,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -95,29 +90,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -128,7 +102,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -139,17 +114,18 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: flash_explosion_sheet_0
+      name: flash-hit-impact-red_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 512
-        width: 512
-        height: 512
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,20 +133,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e947f3308df29e54db7f2b82a327a126
-      internalID: -7300887603124358688
+      spriteID: 983845ea3c49884418a4239daffb8475
+      internalID: -8706450598920198692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flash_explosion_sheet_1
+      name: flash-hit-impact-red_1
       rect:
         serializedVersion: 2
-        x: 512
-        y: 512
-        width: 512
-        height: 512
+        x: 256
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,41 +154,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c11da482d269a2b40904d297326ac784
-      internalID: -3329399147746072674
+      spriteID: cf10b47e4ac0d65468c476ab77af957d
+      internalID: -7052233053069259767
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flash_explosion_sheet_2
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 512
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a5c3abd1d64c9f744bb99c9b713c0c2c
-      internalID: -655871511259159710
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: flash_explosion_sheet_3
+      name: flash-hit-impact-red_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 512
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,29 +175,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcaca16d0d5456f478145485b9e79aa8
-      internalID: -3872075792263308418
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: flash_explosion_sheet_4
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3719d88add1deba44ad0ccc667d82a5b
-      internalID: -7061291247238593217
+      spriteID: ab5dc4091a307cd4497bf213ad830f27
+      internalID: 3905233008433371116
       vertices: []
       indices: 
       edges: []
@@ -250,7 +184,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 64ec766ebb5093243b0683a9c66b36d0
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

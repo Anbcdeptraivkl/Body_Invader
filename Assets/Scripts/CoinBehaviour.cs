@@ -76,14 +76,9 @@ public class CoinBehaviour : MonoBehaviour
 
         // Play Special Visual + Audio Effects:
         PlayEffects();
-
-        // Log:
-        Debug.Log("Picked " + gameObject.name + "!");
     }
 
     void PlayEffects() {
 
     }
-
-    
 }

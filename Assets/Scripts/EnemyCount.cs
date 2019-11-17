@@ -3,20 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-// Manage the number of spawned enemies on-scene:
+// Enemy Component: Represent and Manage the number of spawned enemies on-scene:
 public class EnemyCount: MonoBehaviour {
     private static int enemyCount = 0;
 
     void Awake() {
         enemyCount++;
-
-        Debug.Log("Enemy Count:" + enemyCount);
     }
 
     void OnDestroy() {
         enemyCount--;
-
-        Debug.Log("Enemy Count:" + enemyCount);
     }
 
     public static bool Wiped() {

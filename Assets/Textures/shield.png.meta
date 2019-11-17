@@ -1,19 +1,13 @@
 fileFormatVersion: 2
-guid: 677bd8e32f7aa9d4f908fc6dc05ec062
+guid: 045646be2cdf69941b3dfaaf2e2f1a1e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -38662539211467040
-    second: shot-hit_0
+      213: 2389193319765324094
+    second: shield_0
   - first:
-      213: -4677873535016726288
-    second: shot-hit_1
-  - first:
-      213: 4289989183471610014
-    second: shot-hit_2
-  - first:
-      213: 8262978511740814448
-    second: shot-hit_3
+      213: 5085415284296604745
+    second: shield_1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -93,31 +87,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
@@ -129,7 +99,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
@@ -141,54 +111,12 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shot-hit_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 256
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8a4adfa9bc83e3b44a81ddc9e00b80bd
-      internalID: -38662539211467040
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shot-hit_1
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 256
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a2ebe87af54b2be4a85c5d9abbfc5928
-      internalID: -4677873535016726288
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shot-hit_2
+      name: shield_0
       rect:
         serializedVersion: 2
         x: 0
@@ -202,14 +130,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb8003ca5fe98fe49910d86c0bbadd0f
-      internalID: 4289989183471610014
+      spriteID: f27a1bc32189e764884cbd968fe75c3f
+      internalID: 2389193319765324094
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shot-hit_3
+      name: shield_1
       rect:
         serializedVersion: 2
         x: 256
@@ -223,8 +151,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db0a55b43510c3c478d0c066861a6cc0
-      internalID: 8262978511740814448
+      spriteID: a974af62853ca664ba4d7665bc02137e
+      internalID: 5085415284296604745
       vertices: []
       indices: 
       edges: []
@@ -232,7 +160,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e7f66c86a150d7b4bb287f19d0dcc650
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

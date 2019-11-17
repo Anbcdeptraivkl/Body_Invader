@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: 0cf0467aa380e274abc55346f97b7add
+guid: d7b2d43a313fac741bf70aba0fb76fab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7609486996209228562
-    second: particles_0
+      213: -3757717340476821875
+    second: small-explosion_0
   - first:
-      213: -576354014268724891
-    second: particles_1
+      213: 142589478209046883
+    second: small-explosion_1
+  - first:
+      213: -4306201562398200815
+    second: small-explosion_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -89,30 +92,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -140,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: particles_0
+      name: small-explosion_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 240
-        height: 240
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,20 +133,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26d92a40feee16840a4101d1914c7052
-      internalID: -7609486996209228562
+      spriteID: 6242d42704b01d943ba12d117dd54e86
+      internalID: -3757717340476821875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: particles_1
+      name: small-explosion_1
       rect:
         serializedVersion: 2
-        x: 240
-        y: 0
-        width: 240
-        height: 240
+        x: 256
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,8 +154,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70543c29f6bfe2147a73af483ec3f3c5
-      internalID: -576354014268724891
+      spriteID: 5915aa75d711fe04eaba4ee196cbf6b2
+      internalID: 142589478209046883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small-explosion_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4ed898098358bd4db1298fb3bd24216
+      internalID: -4306201562398200815
       vertices: []
       indices: 
       edges: []

@@ -59,7 +59,6 @@ public class TitanMovement: MonoBehaviour {
 
     void SetMovement() {
         // Changing Direction on Clamped:
-        Debug.Log(currentSideSpeed);
         if (rgbd.position.x >= bounds.xMax) {
             currentSideSpeed = leftSpeed;
         } else {
@@ -67,8 +66,6 @@ public class TitanMovement: MonoBehaviour {
                 currentSideSpeed = rightSpeed;
             }
         }
-
-        Debug.Log(currentSideSpeed);
 
         // Setting the velocity;
         float sideManeuver = Mathf.MoveTowards(

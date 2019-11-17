@@ -20,6 +20,7 @@ public class EnemyHPManager : MonoBehaviour
     ScoreManager scoreManager;
     EnemyItemDropper dropper;
     PlayerEnergy eneryManager;
+    CamShake camShaker;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,15 @@ public class EnemyHPManager : MonoBehaviour
 			{
 				Debug.Log("Failed to load <Player> Reference");
 			}
+
+        // Getting camera components:
+        GameObject mainCam = GameObject.FindWithTag("MainCamera");
+
+        if (mainCam != null) {
+            camShaker = mainCam.GetComponent<CamShake>();
+        } else {
+            Debug.Log("No camera found.");
+        }
 
         dropper = gameObject.GetComponent<EnemyItemDropper>();
 
@@ -89,6 +99,10 @@ public class EnemyHPManager : MonoBehaviour
 
     // Die and Explode:
     void Dying() {
+        // Shake Cam
+        camShaker.StartShaking(0.2f, 0.1f);
+
+        // Spawn and Control Explosions
         shotExplosion = Instantiate(
             shotExplosion, 
             transform.position, 

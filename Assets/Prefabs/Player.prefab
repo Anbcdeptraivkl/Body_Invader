@@ -125,6 +125,12 @@ MonoBehaviour:
     cooldown: 2
     cost: 15
     speedRate: 1.5
+  shield:
+    effect: {fileID: 6323157591187710404, guid: d213751e6ddaa814db450162f73d66d0,
+      type: 3}
+    duration: 1.5
+    cooldown: 5
+    cost: 20
   bounds:
     xMin: -7.5
     xMax: 7.5

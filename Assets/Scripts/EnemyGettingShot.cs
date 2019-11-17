@@ -15,8 +15,6 @@ public class EnemyGettingShot : MonoBehaviour
 
     public GameObject hitShockParticle;
     
-    CamShake camShaker;
-    
     EnemyHPManager hpManager;
 
     bool stillLiving;
@@ -28,15 +26,6 @@ public class EnemyGettingShot : MonoBehaviour
 
         objAnimator = gameObject.GetComponent<Animator>();
         hpManager = gameObject.GetComponent<EnemyHPManager>();
-
-        // Getting camera components:
-        GameObject mainCam = GameObject.FindWithTag("MainCamera");
-
-        if (mainCam != null) {
-            camShaker = mainCam.GetComponent<CamShake>();
-        } else {
-            Debug.Log("No camera found.");
-        }
 
         stillLiving = true;
     }
@@ -64,8 +53,6 @@ public class EnemyGettingShot : MonoBehaviour
     void PlayOnHitEffects(Collider2D other) {
         // If still alive: Hit Shock:
         if (stillLiving) {
-            // Cam Shake:
-            camShaker.StartShaking(0.15f, 0.05f);
 
             // BLinking animations:
             if (objAnimator)

@@ -150,8 +150,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.075, y: 0.3}
+  m_Offset: {x: 0.0005021791, y: 0.013558522}
+  m_Size: {x: 0.100108385, y: 0.32711706}
   m_Direction: 0
 --- !u!114 &114113529201588406
 MonoBehaviour:
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xSpeed: 0
-  ySpeed: 10
+  ySpeed: 15
 --- !u!82 &1517141243535169882
 AudioSource:
   m_ObjectHideFlags: 0

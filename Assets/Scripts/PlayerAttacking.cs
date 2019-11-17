@@ -19,6 +19,8 @@ public class PlayerAttacking: MonoBehaviour {
 
     public List<Shot> shotList = new List<Shot>();
 
+    // Shooting Effect
+    public GameObject shotSpark;
     public Transform shotSpawn;
     public float fireRate = 0.5f;
 
@@ -75,9 +77,13 @@ public class PlayerAttacking: MonoBehaviour {
 
     private void Fire()
     {
+        // Shooting VFX
+        GameObject spark = Instantiate(shotSpark, shotSpawn.position, Quaternion.identity);
         // Normal shooting:
         //No rotation, only speed!
         Instantiate(shot, shotSpawn.position, Quaternion.identity);
+
+        Destroy(spark, 0.1f);
     }
 
 }

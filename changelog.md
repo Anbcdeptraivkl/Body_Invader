@@ -1,9 +1,39 @@
 # Changelog
 
-All notable changes will be documented here. Made by Anbcdeptrai all rights reserved.
+All notable changes will be documented here. 
+Made by Ho Thai An - Anbcdeptrai with Love and Care. 
+All rights reserved.
 
 
 ## [Unreleased]
+
+
+## [0.14.3] - 17/11/2019
+
+### Added
+
+- Cam now Shake on Destroying enemies
+- Added Poly-like Spawn Particle VFX on Player Shooting, called Shot Spark
+
+- Shield Power
+  - Temporary Shield off Enemy's Attacks - will still take Dmgs from Colliding with Enemies
+  - COnsume Energy and Worked for a short amount of time (~ 1.5s)
+  - Moderate Cooldowns (~ 5s)
+  - Working Shield Sprites, Animations and Impact Effects
+
+### Changed
+
+- VFXs Overhaul: Poly-like Shapes with Simpler Layers and Palette
+  - Enemy SHots Sprites are now all biger, with Clearer Colors and Outlines
+  - Changed the Hit Effect: Faster and more Impactful
+  - Changed the Enemy's Explosion Effect: Bigger and Brighter
+
+### Removed
+
+- Temporarily removed the annoying explosion and impact SFXs
+- Removed unnecessary Debug Statements
+- Removed Deprecated Textures
+- Removed Cam Shaking on-hit: Cam will Shake on Impactful Effects instead of Everytime
 
 
 ## [0.14.2] - 6/11/2019
@@ -16,10 +46,16 @@ All notable changes will be documented here. Made by Anbcdeptrai all rights rese
 
 - Increased Player and Bullets's Size
 - Increased Dash Distance and Speed
+- Increased Player Shooting Speed
 
 ### Removed
 
 - Temporarily removed the Endless Mode feature for future maintanance
+
+### Fixed
+
+- Fixed the bug where Level Spawner can't access XML Data Files after Building: Level Data (XML Files) are now loaded through public TextAsset and XmlDocument.LoadXml() method
+- Fixed the inconsistent size of Player Bullets's Colliders
 
 
 ## [0.14.1] - 5/11/2019
