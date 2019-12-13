@@ -18,6 +18,6 @@ public class Shielding : MonoBehaviour
             // Cleaning up
             Destroy(other.gameObject);
             Destroy(impact, impactTick);
-        }    
+        } 
     }
 }

@@ -6,7 +6,8 @@ public class BoundBox : MonoBehaviour {
 	void OnTriggerExit2D (Collider2D other)
 	{
 		//Exclude Backgrounds:
-		if (other.gameObject.tag != "Background") {
+		if (other.gameObject.tag != "Background" ||
+			other.gameObject.tag != "DeathRay") {
 			// Destroy all the children and the game objects itself will then be removed:
 			foreach (Transform childObj in other.gameObject.transform) {
 				Destroy(childObj.gameObject, 0.5f);

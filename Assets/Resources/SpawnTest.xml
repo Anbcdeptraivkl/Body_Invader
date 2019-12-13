@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Formation>
+    <Level index="1">
+        <Wave rest="true">
+            <Enemy>
+                <Name>RayBall</Name>
+                <PositionIndex>2</PositionIndex>
+                <Amount>1</Amount>
+            </Enemy>
+        </Wave>
+    </Level>
+</Formation>

@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour {
 	Vector2 lastMoveDir;
 	float nextDashTime;
 	float nextShieldTime;
+	int originalLayer;
 
 	// Check if Dash Skill is available in this stage
 	bool dashUpgraded;
@@ -67,6 +68,7 @@ public class PlayerController : MonoBehaviour {
 
 		nextDashTime = 0f;
 		nextShieldTime = 0f;
+		originalLayer = gameObject.layer;
 	}
 
 	void LateUpdate() {
@@ -173,6 +175,14 @@ public class PlayerController : MonoBehaviour {
 			transform
 		);
 
+		// Player become incollidable when shielded (moved to ghost layer)
+		gameObject.layer = 8;
+
 		Destroy(effect, 1.0f);
+		Invoke("ToOriginalLayer", 1.0f);
+	}
+
+	void ToOriginalLayer() {
+		gameObject.layer = originalLayer;
 	}
 }

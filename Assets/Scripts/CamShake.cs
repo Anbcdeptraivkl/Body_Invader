@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class CamShake : MonoBehaviour
 {
+
+    Vector3 originalPos;
+
+    void Start() {
+        originalPos = transform.position;
+    }
+
    public void StartShaking(float shakeMagnitude = 0.5f, float shakeDuration = 0.1f) {
        StartCoroutine(Shake(shakeMagnitude, shakeDuration));
    }
 
    IEnumerator Shake(float magnitude, float duration) {
-
-        Vector3 originalPos = transform.position;
 
         // USing elasped time to implement fixed time step update:
         float elaspedTime = 0.0f;

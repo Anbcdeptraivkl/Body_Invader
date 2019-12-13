@@ -89,7 +89,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2544080164171688897}
-  - component: {fileID: 2544080164171688898}
   - component: {fileID: 6541980856957654345}
   - component: {fileID: 2447199486289875753}
   - component: {fileID: 2870435290469106197}
@@ -97,10 +96,10 @@ GameObject:
   - component: {fileID: 8514724015647638869}
   - component: {fileID: 371507722883702679}
   - component: {fileID: -1695933692683471988}
-  - component: {fileID: -8423083724016412579}
   - component: {fileID: 1506118634222365573}
   - component: {fileID: -3444367341913782471}
   - component: {fileID: -3165659544326757525}
+  - component: {fileID: 3701645702387810808}
   m_Layer: 0
   m_Name: BruteEnemy
   m_TagString: Enemy
@@ -120,29 +119,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2544080164060803989}
-  - {fileID: 5245007753579397065}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2544080164171688898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2544080164171688899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 209f40301165b3249bdf0ceda9191558, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  line: {fileID: 0}
-  movable: 1
-  moveTime: 3
-  numOfSteps: 200
-  p0: {fileID: 0}
-  p1: {fileID: 0}
-  p2: {fileID: 0}
 --- !u!50 &6541980856957654345
 Rigidbody2D:
   serializedVersion: 4
@@ -222,6 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseHP: 2
   scoreValue: 5
+  energyReward: 5
   shotExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
     type: 3}
   explodingSound: {fileID: -3165659544326757525}
@@ -257,24 +237,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-8423083724016412579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2544080164171688899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a45a613480deab4ea4120aeed63f41e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shot: {fileID: 1600620134327404, guid: f397d1a3f912a6143a17a99ec20d044c, type: 3}
-  xSpeed: 5
-  ySpeed: -8
-  shotSpawn: {fileID: 5245007753579397065}
-  fireDelay: 0.5
-  fireRate: 1
 --- !u!114 &1506118634222365573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,33 +374,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &6985242557159952536
-GameObject:
+--- !u!114 &3701645702387810808
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5245007753579397065}
-  m_Layer: 0
-  m_Name: ShotSpawn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5245007753579397065
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6985242557159952536}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2544080164171688897}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 2544080164171688899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc24ee50ab73914f8057bc2d9231b0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveRate: 4
+  rotateRate: 4
+  directionInterval: 4
+  intervalRate: 0.2
+  startMovement: {x: 3, y: 0}

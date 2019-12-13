@@ -4,14 +4,46 @@ All notable changes will be documented here.
 Made by Ho Thai An - Anbcdeptrai with Love and Care. 
 All rights reserved.
 
-
 ## [Unreleased]
+
+## [0.15.0] - 13/12/2019
+
+### Added
+- Spawning Test XML File
+- 2 more Left and Right Spawn Spots
+- Full-fledged Death Ray Ball Enemies:
+  - Complete Functions and Effects as other Enemies
+  - Added Sprite Arts for the Ball and the Death Ray (coupled with Animations)
+  - Delayed and Spaced Interval Movement with Repeated Turning Attack Patterns
+  - Custom Animations Transitions over Time Steps
+  - Medium Health: 10pts
+  - Added Death Ray with Hitbox and Colliding Behaviours
+- Added Titan's Got Hit Animation: White Blinking
+- Added Slight, Quick Cam Shake on Hitting Enemies
+- Player Shield Skill: Player now became untargetable (moved to ghost layer) when Shielded: Immune to Bullets and Lasers
+- Prolonged the Lvs with more Enemies and Waves
+
+### Changed
+- Brute Enemies Revamped
+  - The Enemy Brute Right and Left now spawn in group of 3
+  - Simpler Movement: use Values, Velocity Lerping and Timing-based Functionality to Move and Turn Smoothly Over Time
+  - Rotate following Velocity movement (with some small modifiers)
+  - Now Move Slower, and don't shoot
+
+- Player Getting Hit Animation now Blink White (Changing Sprite Material to GUI Text Shader in Animation Clip)
+- Updated the Level Spawning Data Files to represent the changes
+
+### Fixed
+- Fixed the bug where the camera fly to negative thousands on hiting Enemy Titan
+
+### Removed
+- No more complicated Bezier Movements
+- Removed Unnecessary Debug Logs
 
 
 ## [0.14.3] - 17/11/2019
 
 ### Added
-
 - Cam now Shake on Destroying enemies
 - Added Poly-like Spawn Particle VFX on Player Shooting, called Shot Spark
 
@@ -22,14 +54,12 @@ All rights reserved.
   - Working Shield Sprites, Animations and Impact Effects
 
 ### Changed
-
 - VFXs Overhaul: Poly-like Shapes with Simpler Layers and Palette
   - Enemy SHots Sprites are now all biger, with Clearer Colors and Outlines
-  - Changed the Hit Effect: Faster and more Impactful
-  - Changed the Enemy's Explosion Effect: Bigger and Brighter
+  - Changed the Hit Impact Particle Effects - Impact Blasts: Faster and Flashier
+  - Changed the Enemy's Explosion Effects: Bigger and Brighter
 
 ### Removed
-
 - Temporarily removed the annoying explosion and impact SFXs
 - Removed unnecessary Debug Statements
 - Removed Deprecated Textures

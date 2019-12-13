@@ -16,9 +16,9 @@ public class EnemyGettingShot : MonoBehaviour
     public GameObject hitShockParticle;
     
     EnemyHPManager hpManager;
+    CamShake camShaker;
 
     bool stillLiving;
-
     
     void Start() {
 
@@ -26,6 +26,14 @@ public class EnemyGettingShot : MonoBehaviour
 
         objAnimator = gameObject.GetComponent<Animator>();
         hpManager = gameObject.GetComponent<EnemyHPManager>();
+        // Getting camera components:
+        GameObject mainCam = GameObject.FindWithTag("MainCamera");
+
+        if (mainCam != null) {
+            camShaker = mainCam.GetComponent<CamShake>();
+        } else {
+            Debug.Log("No camera found.");
+        }
 
         stillLiving = true;
     }
@@ -53,12 +61,12 @@ public class EnemyGettingShot : MonoBehaviour
     void PlayOnHitEffects(Collider2D other) {
         // If still alive: Hit Shock:
         if (stillLiving) {
-
             // BLinking animations:
             if (objAnimator)
                 objAnimator.SetTrigger("Hit");
-            else
-                Debug.Log("No animator found");
+
+            // Slight Shaking
+            camShaker.StartShaking(0.1f, 0.1f);
                 
             // CHecking for the Colliding shot types, and instantiate the effects as followed:
             GameObject hitParticle;
@@ -67,7 +75,7 @@ public class EnemyGettingShot : MonoBehaviour
                 other.gameObject.transform.position,
                 other.gameObject.transform.rotation
             ) as GameObject;
-            
+
             Destroy(hitParticle, 1.0f);
         }
     }

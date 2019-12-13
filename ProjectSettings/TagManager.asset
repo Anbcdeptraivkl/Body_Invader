@@ -19,6 +19,8 @@ TagManager:
   - EnemyGroup
   - ShotGroup
   - ItemPanel
+  - DeathRay
+  - Shield
   layers:
   - Default
   - TransparentFX

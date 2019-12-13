@@ -39,14 +39,11 @@ public class PlayerEnergy : MonoBehaviour
 
     public void DepleteEnergy(int amount) {
             currentEnergy -= amount;
-            Debug.Log(currentEnergy / maxEnergy);
     }
 
     public void RefillEnergy(int amount) {
         if (currentEnergy < maxEnergy) {
             currentEnergy += amount;
-        } else {
-            Debug.Log("Full Energy already!");
         }
     }
 
