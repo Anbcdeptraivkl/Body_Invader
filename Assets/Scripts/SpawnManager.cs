@@ -24,25 +24,19 @@ public enum SpawnDirection {
  [System.Serializable]
 public struct Enemy {
     public string name;
-
     public GameObject prefab;
-
     // Spawn Rates for Random Spawning
     public float spawnRate;
-
     // Only for Endless Random Spawning:
     // Level Formation are designed in Data files:
     public Difficulty difficulty;
-
     public SpawnDirection direction;
-
 }
 
 
 public class SpawnManager : MonoBehaviour
 {
     public List<Enemy> EnemyList = new List<Enemy>();
-
 
     [SerializeField]
     public Transform[] spawnPositionRange;
@@ -55,21 +49,14 @@ public class SpawnManager : MonoBehaviour
 
     public float multiSpawnDelay;
 
-
-
     //Control Operations to stop or continue spawning:
     GameOver gameOverRef;
     bool isSpawning;
 
-
-
     // Start is called before the first frame update
-    void Start()
-    {
-
+    void Start() {
         GameObject gameControllerObj = GameObject.FindGameObjectWithTag("GameController");
         gameOverRef = gameControllerObj.GetComponent<GameOver>();
-
         isSpawning = true;
     }
 
@@ -84,21 +71,19 @@ public class SpawnManager : MonoBehaviour
         );
     }
 
+    // Preferred for Endless Spawning
     public IEnumerator SpawnMulti(string name, Transform spawnPoint, int amount) {
         // Spawn multiple enemies of the same kind in the row (in the same position and direction)
         for (int i = 0; i < amount; i++) {
             SpawnSingle(name, spawnPoint);
-
             yield return new WaitForSeconds(multiSpawnDelay);
         }
-        
         yield break;
     }
 
     public bool SpawningCheck() {
         // Check if Game over or not, and stop spawning if over:
         isSpawning = !gameOverRef.CheckGameOver();
-        
         return isSpawning;
     }
 

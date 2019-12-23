@@ -84,10 +84,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 917468a3a4e342f4e8f8a610aac381cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backRate: 5
-  ySpeed: -4
-  negYSpeed: 3
-  forwardTime: 2.5
+  backRate: 2
+  ySpeed: -2
+  negYSpeed: 2
+  forwardTime: 3
 --- !u!70 &7686118006845709844
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -111,20 +111,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6242509671218584750}
     m_Modifications:
-    - target: {fileID: 885600167462576328, guid: df0fdcaa61225554689aa96f9c4e1299,
+    - target: {fileID: 353055130489487859, guid: df0fdcaa61225554689aa96f9c4e1299,
         type: 3}
-      propertyPath: m_Name
-      value: UFOEnemy
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 885600167462576324, guid: df0fdcaa61225554689aa96f9c4e1299,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 885600167462576327, guid: df0fdcaa61225554689aa96f9c4e1299,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 885600167462576327, guid: df0fdcaa61225554689aa96f9c4e1299,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 885600167462576327, guid: df0fdcaa61225554689aa96f9c4e1299,
         type: 3}
@@ -171,6 +176,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -120
       objectReference: {fileID: 0}
+    - target: {fileID: 885600167462576328, guid: df0fdcaa61225554689aa96f9c4e1299,
+        type: 3}
+      propertyPath: m_Name
+      value: UFOEnemy
+      objectReference: {fileID: 0}
     - target: {fileID: 7474255779110777213, guid: df0fdcaa61225554689aa96f9c4e1299,
         type: 3}
       propertyPath: m_LocalRotation.z
@@ -191,16 +201,6 @@ PrefabInstance:
       propertyPath: localRoot
       value: 
       objectReference: {fileID: 6242509671218584750}
-    - target: {fileID: 353055130489487859, guid: df0fdcaa61225554689aa96f9c4e1299,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 885600167462576324, guid: df0fdcaa61225554689aa96f9c4e1299,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df0fdcaa61225554689aa96f9c4e1299, type: 3}
 --- !u!4 &6551490412240758369 stripped
@@ -216,10 +216,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6242509671218584750}
     m_Modifications:
-    - target: {fileID: 885600167462576328, guid: df0fdcaa61225554689aa96f9c4e1299,
+    - target: {fileID: 353055130489487859, guid: df0fdcaa61225554689aa96f9c4e1299,
         type: 3}
-      propertyPath: m_Name
-      value: UFOEnemy (2)
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 885600167462576324, guid: df0fdcaa61225554689aa96f9c4e1299,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 885600167462576327, guid: df0fdcaa61225554689aa96f9c4e1299,
         type: 3}
@@ -229,7 +234,7 @@ PrefabInstance:
     - target: {fileID: 885600167462576327, guid: df0fdcaa61225554689aa96f9c4e1299,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 885600167462576327, guid: df0fdcaa61225554689aa96f9c4e1299,
         type: 3}
@@ -276,21 +281,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 885600167462576328, guid: df0fdcaa61225554689aa96f9c4e1299,
+        type: 3}
+      propertyPath: m_Name
+      value: UFOEnemy (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 9098204942630932264, guid: df0fdcaa61225554689aa96f9c4e1299,
         type: 3}
       propertyPath: localRoot
       value: 
       objectReference: {fileID: 6242509671218584750}
-    - target: {fileID: 353055130489487859, guid: df0fdcaa61225554689aa96f9c4e1299,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 885600167462576324, guid: df0fdcaa61225554689aa96f9c4e1299,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df0fdcaa61225554689aa96f9c4e1299, type: 3}
 --- !u!4 &6551490412287417123 stripped
@@ -306,20 +306,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6242509671218584750}
     m_Modifications:
-    - target: {fileID: 885600167462576328, guid: df0fdcaa61225554689aa96f9c4e1299,
+    - target: {fileID: 353055130489487859, guid: df0fdcaa61225554689aa96f9c4e1299,
         type: 3}
-      propertyPath: m_Name
-      value: UFOEnemy (1)
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 885600167462576324, guid: df0fdcaa61225554689aa96f9c4e1299,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 885600167462576327, guid: df0fdcaa61225554689aa96f9c4e1299,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 885600167462576327, guid: df0fdcaa61225554689aa96f9c4e1299,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 885600167462576327, guid: df0fdcaa61225554689aa96f9c4e1299,
         type: 3}
@@ -366,6 +371,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 885600167462576328, guid: df0fdcaa61225554689aa96f9c4e1299,
+        type: 3}
+      propertyPath: m_Name
+      value: UFOEnemy (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 7474255779110777213, guid: df0fdcaa61225554689aa96f9c4e1299,
         type: 3}
       propertyPath: m_LocalRotation.z
@@ -386,16 +396,6 @@ PrefabInstance:
       propertyPath: localRoot
       value: 
       objectReference: {fileID: 6242509671218584750}
-    - target: {fileID: 353055130489487859, guid: df0fdcaa61225554689aa96f9c4e1299,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 885600167462576324, guid: df0fdcaa61225554689aa96f9c4e1299,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df0fdcaa61225554689aa96f9c4e1299, type: 3}
 --- !u!4 &6551490413872133586 stripped

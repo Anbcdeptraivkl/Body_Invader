@@ -206,7 +206,7 @@ Transform:
   m_GameObject: {fileID: 2978997418956032323}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.04, y: 6.67, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 2978997417279431470}
   - {fileID: 2978997417546104886}
@@ -252,7 +252,7 @@ MonoBehaviour:
   sideSpeed: 5
   speedSmoothLimit: 5
   startDelay: 0.2
-  downTime: 1
+  downTime: 1.2
   bounds:
     xMin: -3.5
     xMax: 3.5
@@ -368,16 +368,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4726055c43b946246b310d06359de94e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yVelocity: -6
-  xVelocity: 3
+  yVelocity: -4
+  xVelocity: 2
   shot: {fileID: 1600620134327404, guid: f397d1a3f912a6143a17a99ec20d044c, type: 3}
   shotSpawnCollection:
   - {fileID: 2978997418330013187}
   - {fileID: 2978997417651702513}
-  numOfShotWaves: 1
+  numOfShotWaves: 2
   startDelay: 1
-  turnDelay: 1.2
-  delayBtwShotWave: 0.2
+  turnDelay: 0.8
+  delayBtwShotWave: 0.3
 --- !u!114 &2978997418956032344
 MonoBehaviour:
   m_ObjectHideFlags: 0

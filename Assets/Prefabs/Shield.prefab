@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3733995779095238175}
   - component: {fileID: 8709608090514128736}
   - component: {fileID: 1860842366613589544}
-  - component: {fileID: 6217430504911296890}
   - component: {fileID: -1996836843309593182}
+  - component: {fileID: 6217430504911296890}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Shield
@@ -118,28 +118,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impactEffect: {fileID: 3627457204679153122, guid: 2a11d5113616d3f4da0fadc244a5d855,
     type: 3}
+  bigRayEffect: {fileID: 3627457204679153122, guid: 5e2632a5403b9ff4a9d604030aa4c9cc,
+    type: 3}
   impactTick: 0.15
---- !u!68 &6217430504911296890
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6323157591187710404}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 0.00002401777, y: -1.2089113}
-  - {x: -1.1733783, y: -0.01777816}
-  - {x: 0.017753907, y: 1.2266889}
-  - {x: 1.1733315, y: 0.017777994}
-  - {x: 0.017754648, y: -1.1733549}
 --- !u!50 &-1996836843309593182
 Rigidbody2D:
   serializedVersion: 4
@@ -161,3 +142,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!68 &6217430504911296890
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6323157591187710404}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.00002401777, y: -1.2089113}
+  - {x: -1.1733783, y: -0.01777816}
+  - {x: 0.017753907, y: 1.2266889}
+  - {x: 1.1733315, y: 0.017777994}
+  - {x: 0.017754648, y: -1.1733549}

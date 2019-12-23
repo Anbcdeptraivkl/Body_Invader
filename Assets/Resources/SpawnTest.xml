@@ -1,11 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Formation>
     <Level index="1">
-        <Wave rest="true">
+        <!--Sync Waves must always have Same Amounts in All Enemies Groups-->
+        <Wave rest="true" sync="true">
             <Enemy>
-                <Name>RayBall</Name>
+                <Name>BruteL</Name>
+                <PositionIndex>0</PositionIndex>
+                <Amount>5</Amount>
+            </Enemy>
+            <Enemy>
+                <Name>BruteR</Name>
+                <PositionIndex>1</PositionIndex>
+                <Amount>5</Amount>
+            </Enemy>
+            <Enemy>
+                <Name>BruteL</Name>
                 <PositionIndex>2</PositionIndex>
-                <Amount>1</Amount>
+                <Amount>5</Amount>
+            </Enemy>
+            <Enemy>
+                <Name>BruteR</Name>
+                <PositionIndex>3</PositionIndex>
+                <Amount>5</Amount>
+            </Enemy>
+        </Wave>
+        <Wave rest="true" sync="true">
+            <Enemy>
+                <Name>BruteTurnL</Name>
+                <PositionIndex>3</PositionIndex>
+                <Amount>3</Amount>
+            </Enemy>
+            <Enemy>
+                <Name>BruteTurnR</Name>
+                <PositionIndex>3</PositionIndex>
+                <Amount>3</Amount>
             </Enemy>
         </Wave>
     </Level>

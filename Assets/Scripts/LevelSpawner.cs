@@ -37,9 +37,18 @@ public class Wave {
         return restricted;
     }
 
+    public void SetSyncStatus(bool sync) {
+        syncing = sync;
+    }
+
+    public bool GetSyncStatus() {
+        return syncing;
+    }
+
     public List<SingleEnemyData> enemyDataList = new List<SingleEnemyData>();
 
     bool restricted;
+    bool syncing;
 }
 
 
@@ -102,11 +111,10 @@ public class LevelSpawner: MonoBehaviour {
         // Waves:
         foreach (XmlElement wave in wavesNodeList) {
             // Temp Elements:
-            int waveOrder = 1;
             Wave tempWave = new Wave();
             
             tempWave.SetRestricted(ExtractRestValue(wave));
-
+            tempWave.SetSyncStatus(SetSyncWave(wave));
             // Enemies:
             foreach (XmlElement enemy in wave.ChildNodes) {
                 // Getting the CHildren elements Data:
@@ -119,13 +127,10 @@ public class LevelSpawner: MonoBehaviour {
 
                 //Add Enemy Node, then continure iterating through the remaining Nodes:
                 tempWave.AddEnemyDataNode(enemyName, enemySpawnPoint, amount);
-                
             }
 
             // Adding the wave node into the Waves List after reading all enemy Data, then repeat for the nex wave node til the end of the level node:
             waveDataList.Add(tempWave);
-
-            waveOrder++;
 
             //After this loop statement, you Get the fully iterated waveDataList with full Enemy Data per Waves
         }
@@ -135,8 +140,13 @@ public class LevelSpawner: MonoBehaviour {
          // Reading the Restricted attribute values for rested waves:
         string restStrValue = wave.Attributes["rest"].Value;
         bool restricted = string.Equals(restStrValue, "true", System.StringComparison.OrdinalIgnoreCase);
-
         return restricted;
+    }
+
+    bool SetSyncWave(XmlElement wave) {
+        string syncStr = wave.Attributes["sync"].Value;
+        bool sync = string.Equals(syncStr, "true", System.StringComparison.OrdinalIgnoreCase);
+        return sync;
     }
 
     // Lv Spawn: The Father Spawn Fuction that call all other Functions to spawn the whole Level, waves by waves:
@@ -147,15 +157,29 @@ public class LevelSpawner: MonoBehaviour {
                 break;
             }
 
-            // Delay, then continue to iterate through the next Waves:
+            // Delay, then continue to iterate through the next Waves
             yield return new WaitForSeconds(delayBetweenWaves);
-            
-            // Spawn current Wave's enemies:
-            foreach (SingleEnemyData enemyData in wave.enemyDataList) {
-                // Spawn 'amount' of enemies:
-                for (int i = 0; i < enemyData.amount; i++) {
-                    s.SpawnSingle(enemyData.name, enemyData.spawnTransform);
+
+            // Sync Waves or not
+            // Sync Symmetrical multi-Spawn
+            if (wave.GetSyncStatus()) {
+                // Loo[ by amount: in SYnc Waves, all Enemy groups are spawned with the same amount
+                int syncAmount = wave.enemyDataList[0].amount;
+                for (int i = 0; i < syncAmount; i++) {
+                    // Spawn 1 of each Enemy Types
+                    foreach (SingleEnemyData enemyData in wave.enemyDataList) {
+                        s.SpawnSingle(enemyData.name, enemyData.spawnTransform);
+                    }
                     yield return new WaitForSeconds(delayPerEnemy);
+                }
+            } else {
+                // Spawn current Wave's enemies:
+                foreach (SingleEnemyData enemyData in wave.enemyDataList) {
+                    // Spawn 'amount' of enemies:
+                    for (int i = 0; i < enemyData.amount; i++) {
+                        s.SpawnSingle(enemyData.name, enemyData.spawnTransform);
+                        yield return new WaitForSeconds(delayPerEnemy);
+                    }
                 }
             }
 
@@ -170,7 +194,6 @@ public class LevelSpawner: MonoBehaviour {
         Debug.Log("Level Complete");
         
         yield break;
-        
     }
 
     public bool LevelCompleteCheck() {

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/*Moving a short time, then stop (and start acting)*/
+/*For Red Tracking Enemy: Move for a short time, then stop (and start acting and attacking)*/
 
-public class ShortMovement : MonoBehaviour
+public class TrackerShortMovement : MonoBehaviour
 {
     public float startDelay;
     public float moveSpeed;
@@ -38,7 +38,7 @@ public class ShortMovement : MonoBehaviour
     }
 
     void StartTracking() {
-        gameObject.GetComponent<EnemyTracking>().enabled = true;
+        gameObject.GetComponent<TrackerTracking>().enabled = true;
     }
     
 

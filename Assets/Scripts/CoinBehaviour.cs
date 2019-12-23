@@ -60,14 +60,9 @@ public class CoinBehaviour : MonoBehaviour
 
 
         if (playerObj) {
-
             playerTransform = playerObj.transform;
             transform.position = Vector3.Lerp(transform.position, playerTransform.position, Time.deltaTime * movingRate);
         }
-        else {
-            Debug.Log("Player not found or destroyed");
-        }
-
     }
 
     void PlayerReceive(Collider2D player) {

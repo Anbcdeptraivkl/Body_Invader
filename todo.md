@@ -7,12 +7,17 @@
 
 # Prototype and Make things Work! Seperate Mechanics and Appearances! The Arts and Effects will be saved for later
 
+==================================================================================================================
 
 # DESIGNS
 
 ==================================================================================================================
 
 # REFACTORING
+
+==================================================================================================================
+
+- Rename the Files to more Accurately Describe the Reusability and Modularity of the Script Components
 
 ==================================================================================================================
 
@@ -28,15 +33,15 @@
 
 ==================================================================================================================
 
-## Enemies
+## ENEMIES
 - Enemies's Blinking White When Hit
 - TItan's VFXs -> Titan Hammerhead
   - Big Explosion on Destroyed
     - Following by Many Small Ones
     - White out the Screen for a little
 - Enemy SPrites and Animation Re-Designs
-  - Zero Ranger and other Sh'mup Arts + Designs
-  - Brute Visual -> Stingray
+  - Zero Ranger, Air Force and other Sh'mup Arts + Designs
+  - Brute Visual -> Tuna
       + Tail-wagging animations
       + More Menacing SFXs!
   - UFOs Visual -> Snail Orbs
@@ -46,9 +51,9 @@
       + With Tentacles
       + Swimming and Squigling Animations
 
-## Player
+## PLAYER
 
-## UI - UX Designs
+## UI - UX DESIGNS
 - Futuristic and Machinery: Clean and Flashy
 - Filled Panels
 - Frames
@@ -61,7 +66,7 @@
   - Sliding out when Transiting
   - Couple with Electro SFXs
 
-## Background Arts
+## BACKGROUND ARTS
 - Themed
   - Space
   - Space Station
@@ -72,7 +77,7 @@
 - Parallax Scrolling
 - Infinite Scrolling
 
-## More Music
+## MUSIC
 - New BGMs and SFXs
   - Implement Hit and Explosion SFXs
   - Make with LMMS Samples and Instruments
@@ -82,7 +87,9 @@
 - Boss Musics
 - Level COmplete Music
 
-## Coins
+## MISC.
+
+### Coins
 - Dropping Effects
   - Sparkling Particles 
   - Shining SFX (Coin Dropping Sound)
@@ -94,9 +101,11 @@
   - Homing
   - Receiving
 
-## Tutorials and Tooltips
+### Tutorials and Tooltips
 - Tutorial Tips to help players understand Equipments, Spark Skills and the COntrols in-game
    + Will pop up when player receiving upgrades, equips or skills for the first time.
+
+### Level Starting and Complete Pop-ups
 
 ==================================================================================================================
 
@@ -104,55 +113,76 @@
 
 ==================================================================================================================
 
-## ENEMIES
+## RE-BALANCE THE SPAWN DATA
+- Changed the Level Spawning Data files to fit the Refactored Spawning Mechanics and Rules
+- Correct Names
+- Correct Orders
+- From Easy -> Difficult
 
-### Shielding Laser
-- Play Spark Effects on Interacting with Shield
+## MORE BULLET HELL-Y
 
-### NEW ENEMY - DEATH BALL
-
-### BULKIER and MORE BULLET HELL-Y
-- Added more HP to Enemies
-- Enemies Move Slower (aside Tracking and Homing ones)
+### Shot Patterns
 - Enemies shoot more Bullets
-- Bullets Move Slower
+- Bullets fly in Shaped Patterns
+- Player Bullets are longer and thinner, emulating a feeling of speed and piercing forces
 
-### BETTER ENEMY - STING RAY
-- Replace the Left and Right Brute
-- A lil Bigger
-- Has Tail Animations 
+### Spawn Patterns
 
-### NEW ENEMY - STARFISH
-- Stationery: Spawn and SLide down with the Background
-- Shoot in Star 5 x 5 Bullets Pattern (Based on Sky Force Anniversary)
-- Medium Health and Size
+### Snail Discs / UFOs
 
-### NEW ENEMY - CRAWLFISH
-- Spawn x2 at Left and Right
-- No Shooting
-- Home toward Player position Continously
-- Small Size and Small Health
-- Moderate Speed (Dodgable)
+### Track Turtles
 
-### NEW ENEMY
+### Brute Tunas
+- Spawn in many Form of Shaped Groups and Patterns
+  - Rectangles
+  - Triangles
+  - Lines
+- Dropping Bullets toward the middle of the field
 
-### BETTER ENEMY - SNAIL ORBS
-- Replace the UFOs: Still SPawn in Tripple and Spin to the Bottom of the Screen
-- Now Bigger and Bulkier
-- Move Slower
+## LEVEL SYSTEM
+* Futuristic Space UIs
 
-### BETTER ENEMY - OCTOPUS
-- Replace the Tracker: Still Track the Player Shoot
-- Bulkier
-- Shoot more: 4 bullets in SPread Pattern
-- Swimming and Squigling Animations
+### LV Lock/Unlocking System 
+- PlayerPrefs on Level Canvas and Level Complete
+  - Level COmplete will Update Prefs bases on Lv Index value set in the Script COmponent
+- Check Prefs to change Interactable status and Lock Effects
 
-### ENEMY PATTERNS
+### Level Completion Screen
+- Icons
+    + Money
+    + Score
+- Values
+- Highscores
+- New Highscore! Flasher
+- Options
+    + Next Level
+    + Return (to Level Selection)
 
+### Preparation Screens
+- Open and Transition right when Selecting a Level
+- Picking Skills and Equipment
+    + Previews
+    + Show Stats Modifyings and Benefits
+
+### Lv Selection UI
+- Functions
+    + Select Level(s)
+    + Shop
+    + Return to Menu
+- Unlocking New Levels Mechanic
+    + After Completing a Level
+    + With Effects: 
+        + Lock and Breaking
+        + Light Flashing
+- Transition Effects
+    + Sliding Down
+    + Button Flashing
+- Hover Effects
+    + Change Brightness
+    + Bubling Visual
 
 ## SHOP SYSTEM
 - For Buying and Upgrading: All using in-game Currency (Coins)
-
 - The Shop Data and Prefs will later be refactored and stored in external Files (XML, JSON, etc.) for more versatility
   - Only after all the basic functions are laid out and working perfectly
 
@@ -177,18 +207,15 @@
         + Home Toward Nearest Enemies
         + x2 Homing Missiles
         + A little Tricky to control
-
 - Ship
     + Extra Health
     + Extra Armor Layer: Add 2 Bar of Armor that will take Dmgs for the Player from the Beginning of each Stages
-
 - Drones
     + Can buy 1 - 2
     - Attacking: Shoot at enemies
         + Slow Shooting Rate
         + x3 Bullets, Spread Patterns
     - Supporting: Dropping Energy and Heart Occasionally 
-
 - Consumables
   - HP Pack: Heal when Dying
   - MIssile Pack: Free 2 Missiles at the Start
@@ -200,7 +227,6 @@
     + Only Melee Attacks: Chargable and Spammable
         * Headbutt: Butting straight ahead, dealing High Dmg - then knock the player back
         * Sawblade: Slash forward in a wide Arc, dealing High Dmgs
-
 - UFO
     + Low HP
     + Extreme Attacker: x10 Bullets Circle Spread
@@ -212,49 +238,43 @@
     + Different Equipment Appearances
     + 2 for each SHips
 
+## ENEMIES
 
-## LEVEL SYSTEM
+### Better Enemy - Tuna
+- Replace the Left and Right Brute
+- A lil Bigger
+- Has Tail Animations 
 
-### Futuristic Space UIs
+### New Enemy - Starfish
+- Stationery Turrets: Spawn and SLide down with the Background
+- Shoot and Circling in Star 5 x 5 Bullets Pattern (Based on Sky Force Anniversary)
+- Medium Health and Size
 
-### Level Completion Screen
-- Icons
-    + Money
-    + Score
+### New Enemy - Stingray
+- Spawn x2 at Left and Right
+- No Shooting
+- Home toward Player position for a short time, then start moving straight out off the screen
+- Small Size and Small Health
+- Fast but Dodgable
 
-- Values
-- Highscores
-- New Highscore! Flasher
-- Options
-    + Next Level
-    + Return (to Level Selection)
+### New Enemy
 
-### LEVEL PREPARATION SCREENS
-- Open and Transition right when Selecting a Level
-- Picking Skills and Equipment
-    + Previews
-    + Show Stats Modifyings and Benefits
+### Better Enemy - Snail Orbs * 3
+- Replace the UFOs: Still SPawn in Tripple and Spin to the Bottom of the Screen
+- Now Bigger and Bulkier
+- Move Slower
 
-### LEVEL SELECTION UI
-- Functions
-    + Select Level(s)
-    + Shop
-    + Return to Menu
+### Better Enemy - Octopus
+- Replace the Tracker: Still Track the Player Shoot
+- Bulkier
+- Shoot more: 4 bullets in SPread Pattern
+- Swimming and Squigling Animations
 
-- Unlocking New Levels Mechanic
-    + After Completing a Level
-    + With Effects: 
-        + Lock and Breaking
-        + Light Flashing
+### Better Enemy - Titan Hammer Head
+- Replace the Titan
+- Nothing differ much but the Arts
 
-- Transition Effects
-    + Sliding Down
-    + Button Flashing
-
-- Hover Effects
-    + Change Brightness
-    + Bubling Visual
-
+### Enemy Patterns
 
 ## STAGES
 - Every Levels is a distinct Stages with Special
@@ -264,10 +284,9 @@
     + Unique Bonuses and Drop Powers
     + Bosses (every 2nd Levels)
 
-### STAGE 1 + 2
+### 1 + 2
 - Theme: Aquatic
 - Unique Hazard: Bubble
-
 - Enemies
     + Snails
     + Sting Rays
@@ -276,14 +295,13 @@
     + Death Balls
     + Starfishes
 
-### STAGE 3 + 4
+### 3 + 4
 - Theme: Rocky Mountain
 - Unique Hazard: Volcano
 
-### STAGE 5 + %
+### 5 + 6
 - Theme: Outer Space
 - Unique Hazard: Meteors
-
 
 ## HAZARDS
 

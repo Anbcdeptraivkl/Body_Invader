@@ -36,7 +36,7 @@ Transform:
   m_GameObject: {fileID: 885600167462576328}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7175, y: 0.7, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 885600168907314353}
   - {fileID: 7474255779110777213}
@@ -133,8 +133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e78897178026a4c42811ccf3fddd0cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHP: 2
-  scoreValue: 5
+  baseHP: 3
+  scoreValue: 10
+  energyReward: 5
   shotExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
     type: 3}
   explodingSound: {fileID: -1953506870229746499}
@@ -172,10 +173,10 @@ MonoBehaviour:
   enemyShot: {fileID: 1600620134327404, guid: f397d1a3f912a6143a17a99ec20d044c, type: 3}
   localRoot: {fileID: 0}
   shotSpawn: {fileID: 7474255779110777213}
-  shotXSpeed: 6
-  shotYSpeed: 6
+  shotXSpeed: 4
+  shotYSpeed: 4
   startDelay: 0.75
-  timeShoot: 0.75
+  timeShoot: 0.15
 --- !u!114 &6113130403148686373
 MonoBehaviour:
   m_ObjectHideFlags: 0

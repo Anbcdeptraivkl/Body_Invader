@@ -5,26 +5,23 @@ using UnityEngine;
 
 /* The Enemy Object will slowly rotate toward player (including the shot spawns and direction vectors)*/
 /* After each rotating routine, the enemy will begin shooting */
-
-public class EnemyTracking: MonoBehaviour 
+public class TrackerTracking: MonoBehaviour 
 {
-
     public float rotateRate;
     public float rotateDelay;
     public float startDelay;
 
     public GameObject trackShot;
-    public Transform shotSpawn;
+    [SerializeField]
+    public Transform[] shotSpawns;
     public float shotSpeed;
     public float shootingDelay;
-
-
 
     Quaternion targetRotation;
 
     Transform playerTransform;
 
-    float rate;
+    float lerpRate;
 
 
     void Start () {
@@ -32,9 +29,9 @@ public class EnemyTracking: MonoBehaviour
     }
 
     IEnumerator Track() {
-
+        // Wait for the initial movement to finish
         yield return new WaitForSeconds(startDelay);
-
+        // When Alive
         while (true) {
 
             
@@ -64,7 +61,7 @@ public class EnemyTracking: MonoBehaviour
             targetRotation.y = 0.0f;
 
             //Fixed Time rotate strength, limited at 1 max:
-            rate = Mathf.Min(rotateRate*Time.deltaTime, 1);
+            lerpRate = Mathf.Min(rotateRate*Time.deltaTime, 1);
 
             yield return new WaitForSeconds(rotateDelay);
         }
@@ -72,7 +69,7 @@ public class EnemyTracking: MonoBehaviour
     }
 
     void LateUpdate() {
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rate);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, lerpRate);
     }
 
     IEnumerator SpawnDoubleShot() {
@@ -80,23 +77,19 @@ public class EnemyTracking: MonoBehaviour
         // Suverted y axis for directions:
         Vector3 velocityDirection = -transform.up;
         Vector3 shotVelocity = velocityDirection * shotSpeed;
-
-        // Set velocity:
         
         // Instantiate with adopted position and rotation + velocity:
         for (int i = 0; i < 2; ++i) {
-            GameObject spawnedShot = Instantiate(
-                trackShot,
-                shotSpawn.position,
-                transform.rotation
-            ) as GameObject;
-
-            spawnedShot.GetComponent<Rigidbody2D>().velocity = shotVelocity;       
-
+            foreach(Transform spawn in shotSpawns) {
+                GameObject spawnedShot = Instantiate(
+                    trackShot,
+                    spawn.position,
+                    transform.rotation
+                ) as GameObject;
+                spawnedShot.GetComponent<Rigidbody2D>().velocity = shotVelocity;       
+            }
             yield return new WaitForSeconds(shootingDelay);
         }
-
-        
         yield break;
     }
 }

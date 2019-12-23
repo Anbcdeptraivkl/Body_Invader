@@ -1,10 +1,43 @@
 # Changelog
 
-All notable changes will be documented here. 
-Made by Ho Thai An - Anbcdeptrai with Love and Care. 
+All notable changes will be documented here.
+Made by Ho Thai An - Anbcdeptrai with Love and Care.
 All rights reserved.
 
 ## [Unreleased]
+
+### Added
+- Added the Level Selection's Lock Sprite
+- Added Cam Shake and Impact effects on Shield - Ray
+- Added 2 more Left - RIght Spawn Points
+- Added Variations to the Brute Enemies
+  - Straight movements Ahead + Spawned in Groups
+  - Straight, then Turning movement + Spawned in Lines
+- Added Symmetrical Synchronous Spawning Mechanics
+  - Some Waves (Synced Waves) will have Enemy Groups with the same amount of Units
+  - Spawn 1 each for each Groups, then Iterate til the target amounts for each Groups
+
+### Changed
+- Reduced the size scale of all in-game Entities, including
+  - Bullets
+  - Enemies
+  - UI ELements
+- Bulky: Add more HP (about 20%) to Enemies
+- Changed the Spawn Orders in Spawn Data
+- UFOs now are harder to deal with
+  - Now Shoot Repeatedly in Circular Spread Patterns
+  - Move Slower: to the middle of the screen then turn back
+- Brutes
+  - Renamed
+  - Changed the movement Script to Simplified Straight movement and Rotating (Distance-based + Direction-based)
+- Trackers 
+  - Now have 2 Shot SPawns: Double Shoots
+  - Rotate and Shoot Faster
+- Titan
+  - Shoot 2 waves of spread shots instead of 1 now
+
+### Fixed
+- Fixed the Collision bug where Ray and Bullets can still pass the Shield (changed the Collision all into 2D-based Trigger Test)
 
 ## [0.15.0] - 13/12/2019
 
