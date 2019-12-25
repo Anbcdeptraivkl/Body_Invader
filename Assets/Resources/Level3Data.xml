@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Formation>
     <!--Main Levels-->
-    <Level index="1">
+    <Level index="3">
         <!--In each Waves, the Enemies will be spawned at the same time (remember: to not overlapping positions between enemies because of this nature!), if there are delays between the spawning, then the enemies will be put into later waves-->
         
          <!--Waves can have single enemy, or as many enemies as you want spawning simutaneously-->

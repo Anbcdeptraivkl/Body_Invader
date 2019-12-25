@@ -6,8 +6,15 @@ All rights reserved.
 
 ## [Unreleased]
 
+## [0.16.0] - 25/12/2019
+
 ### Added
-- Added the Level Selection's Lock Sprite
+- Added the Level Selection's Lock / Unlocking Mechanic
+  - Level Panels are Locked (with Sprite and Color Effects) by Default
+  - Levels will be unlock by checking the Level Completion Prefs everytime the Level Selection Activates
+  - Level Completion Prefs will be updated each time you completed a new Level (higher index than the Completed Prefs)
+  - Added Level Progress Reset (by Reset the Level Prefs and Re-lock the Panels)
+- Added Level 2 and Level 3 Scene
 - Added Cam Shake and Impact effects on Shield - Ray
 - Added 2 more Left - RIght Spawn Points
 - Added Variations to the Brute Enemies
@@ -18,6 +25,7 @@ All rights reserved.
   - Spawn 1 each for each Groups, then Iterate til the target amounts for each Groups
 
 ### Changed
+- Updated the Level(s) Spawn Data files: Correct namings and attributes
 - Reduced the size scale of all in-game Entities, including
   - Bullets
   - Enemies

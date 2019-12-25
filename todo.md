@@ -61,6 +61,9 @@
 - Animations
 - Particle Effects
 
+### High Score Level COmpletion Effects
+
+### Shop Effects
 - UI Panels and Objects (Slight) Animations for each Items Thumbnails
   - Sliding in when Spawning
   - Sliding out when Transiting
@@ -113,39 +116,19 @@
 
 ==================================================================================================================
 
-## RE-BALANCE THE SPAWN DATA
-- Changed the Level Spawning Data files to fit the Refactored Spawning Mechanics and Rules
-- Correct Names
-- Correct Orders
-- From Easy -> Difficult
-
-## MORE BULLET HELL-Y
-
-### Shot Patterns
-- Enemies shoot more Bullets
-- Bullets fly in Shaped Patterns
-- Player Bullets are longer and thinner, emulating a feeling of speed and piercing forces
-
-### Spawn Patterns
-
-### Snail Discs / UFOs
-
-### Track Turtles
-
-### Brute Tunas
-- Spawn in many Form of Shaped Groups and Patterns
-  - Rectangles
-  - Triangles
-  - Lines
-- Dropping Bullets toward the middle of the field
-
 ## LEVEL SYSTEM
 * Futuristic Space UIs
 
+### Adding Levels
+- Adding Dup Level Scenes (with their own Spawn Data files that are also Dup)
+
 ### LV Lock/Unlocking System 
 - PlayerPrefs on Level Canvas and Level Complete
-  - Level COmplete will Update Prefs bases on Lv Index value set in the Script COmponent
-- Check Prefs to change Interactable status and Lock Effects
+  - Level COmplete will Update Prefs bases on Lv Index value set in the Script COmponent (only if the COmpleting level is New (index higher than the Level Prefs))
+- Level Canvas Init: Check Prefs to change Interactable status and Lock Effects
+- Level Lock Effects
+  - Lock Sprites
+  - Grey-out Faded
 
 ### Level Completion Screen
 - Icons
@@ -180,6 +163,26 @@
 - Hover Effects
     + Change Brightness
     + Bubling Visual
+
+## MORE BULLET HELL-Y
+
+### Shot Patterns
+- Enemies shoot more Bullets
+- Bullets fly in Shaped Patterns
+- Player Bullets are longer and thinner, emulating a feeling of speed and piercing forces
+
+### Spawn Patterns
+
+### Snail Discs / UFOs
+
+### Track Turtles
+
+### Brute Tunas
+- Spawn in many Form of Shaped Groups and Patterns
+  - Rectangles
+  - Triangles
+  - Lines
+- Dropping Bullets toward the middle of the field
 
 ## SHOP SYSTEM
 - For Buying and Upgrading: All using in-game Currency (Coins)

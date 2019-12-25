@@ -9,13 +9,11 @@ public class LevelComplete : MonoBehaviour
 {
     // Properties:
     public GameObject completePanel;
-
     public GameObject playerCanvas;
 
-    
     public Text scoreText;
-
     public Text coinText;
+    public int levelIndex = 1;
 
     // References:
     LevelSpawner levelSpawner;
@@ -30,10 +28,8 @@ public class LevelComplete : MonoBehaviour
 
     void Update() {
         if (levelSpawner.LevelCompleteCheck() && EnemyCount.Wiped()) {
-            
             // Delay so the player has enough time to collect the last coins:
-            Invoke("FinishLevel", 5);
-
+            Invoke("FinishLevel", 2.5f);
             // Stop updating when the level is finished:
             enabled = false;
         }
@@ -42,18 +38,17 @@ public class LevelComplete : MonoBehaviour
     void FinishLevel() {
         completePanel.SetActive(true);
         playerCanvas.SetActive(false);
-
         // Intuitive Effects:
         PlayEffects();
-
         // Print Results:
         scoreText.text = "Score: " + scoreManager.GetScore() + " (" + scoreManager.GetHighScore() + ")";
         coinText.text = "Coin: " + MoneyManager.GetTotalMoney() + " + " + moneyManager.GetStageMoney();
-
         // Updating Preferences:
         scoreManager.HighScoreUpdate();
         moneyManager.UpdateMoney();
-
+        // If completed a new levels, update the Level COmplettion Pref
+        if (levelIndex > PlayerPrefs.GetInt("LevelsDone", 0))
+            PlayerPrefs.SetInt("LevelsDone", levelIndex);
         Debug.Log("Level Completed!");
     }
 
