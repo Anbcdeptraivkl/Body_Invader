@@ -21,6 +21,10 @@ TagManager:
   - ItemPanel
   - DeathRay
   - Shield
+  - PrepItem
+  - GoalLine
+  - ActivateBox
+  - EnemySpawn
   layers:
   - Default
   - TransparentFX

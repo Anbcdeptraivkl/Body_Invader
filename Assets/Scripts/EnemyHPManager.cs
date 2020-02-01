@@ -68,13 +68,11 @@ public class EnemyHPManager : MonoBehaviour
     public bool DecreaseHP(float value = 1) {
         currentHP -= value;
 
-        if (value >= 3)
+        if (value >= 10) //Rocket Dmg
             gotMissiled = true;
 
         bool alive = Alive();
-
         gotMissiled = false;
-
         return alive; 
     }
 
@@ -101,18 +99,8 @@ public class EnemyHPManager : MonoBehaviour
     void Dying() {
         // Shake Cam
         camShaker.StartShaking(0.2f, 0.1f);
-
-        // Spawn and Control Explosions
-        shotExplosion = Instantiate(
-            shotExplosion, 
-            transform.position, 
-            transform.rotation) as GameObject;
-
-        if (!gotMissiled) {
-            explodingSound.Play();
-        }
         
-        Destroy(shotExplosion, 1.0f);
+        
 
         // Refill Energy
         if (eneryManager)
@@ -124,7 +112,18 @@ public class EnemyHPManager : MonoBehaviour
         dropper.DropPersistences();
 
         // Increase Score
-        scoreManager.UpdateScore(scoreValue);	
+        scoreManager.UpdateScore(scoreValue);
+
+        // Spawn and Control Explosions
+        shotExplosion = Instantiate(
+            shotExplosion, 
+            transform.position, 
+            transform.rotation) as GameObject;
+        Destroy(shotExplosion, 0.5f);
+
+        if (!gotMissiled) {
+            explodingSound.Play();
+        }
 
         Destroy(gameObject);
     }

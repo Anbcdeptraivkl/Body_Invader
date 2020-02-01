@@ -6,6 +6,45 @@ All rights reserved.
 
 ## [Unreleased]
 
+## [0.17.0] - 1/2/2020
+
+### Added
+- Art Overhaul: Re-draw + Update all the UI, Player and Enemy Sprites
+  - Neat Electro Theme
+  - Soft Colors
+  - Fitter Sizings
+  - Leaner
+  - Straighter
+  - New Models
+  - New Animation Sheets
+- Level Preparation system
+  - Item Panels: with Ticks and Highlight Effects
+  - Basic UI Layouts and Elements
+  - Selectable and Swappable
+- Added Highlight Effects to UI Elements (Level Selection, Shop, Level Prep, etc.)
+- Added Player Movement Animations Sheets: Left - Right
+- Added Player Activate Box for Triggering Enemy SPawnings
+  - Bigger than the Playing Field by 2 Unity Units per Sides
+  - Has its own Tag
+- Added Enemy Spawn Points: SPawn Points are now placed manually accross the level (with Kinematic Rigidbody + Collider)
+- Added Scrolling Background
+
+### Changed
+- Trackers now move continously to the end of the Screen, but with slower speed
+- Reduced the Brute Brute HPs for faster battle paces
+- Increased the Brute Tuna Speed
+- Changed the Enemy's Shot Prefabs: 3 Shots, each with their own Collider
+  - Consequently Increase the Player Dmg per Attack to 3
+- Increased the Missile's Dmg to 10
+- Changed the UFO's Behaviours: they now spawned in group of 3, moving in an arc horizontally (implemented with animations) while tracking + shooting at the player's position
+- Brutes won't attack but instead move in a straight line to the bottom as soon as spawned
+
+### Fixed
+- Fixed the Un-called Coroutines Bug
+- Fixed the Unlimited Attacks from the Brutes
+- Fixed the Delay Bug on Player's Movement Animations
+- Bound Box no longer destroys Parents
+
 ## [0.16.0] - 25/12/2019
 
 ### Added

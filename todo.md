@@ -1,15 +1,48 @@
 
-# Checking and Teesting Each Components
-
-
-# Modular Design
-
-
-# Prototype and Make things Work! Seperate Mechanics and Appearances! The Arts and Effects will be saved for later
+- Placing Enemies into the background with your own Design and Timing
+  - Brutes spawn in 2 / 3 Lines simultaneously / consecutively
+  - UFOs spawn in 2: 1L, 1R right next to each others
+  - Toad Trackers spawn with their platforms, sticking to the background scroll
+  - Manta Titan is now the final Boss, will be more Powerful -> defeat to win!
+- New Enemies
+  - Swordfish: flies straight to the player
+    - Super Fast flying speed
+    - Fragile (1 - 2 HP - can be killed in 1 hit, but you must be quick)
+  - Softshell Turret
+    - Attack in a Rotating Strings Pattern
+    - Stationary like the Trackers
+- Manta's Powers
+  - Shoot Laser from the middle
+  - 2 more Turrets shooting Flowering Pattern Bullets
 
 ==================================================================================================================
 
-# DESIGNS
+# PRINCIPLES
+
+==================================================================================================================
+
+## Checking and Teesting Each Components
+
+## Modular Design
+
+## Prototype!
+- A Lot of Iterations!
+- Cheap + Fast
+  - Focus on the Main Features / Systems before designing smaller Composite Functions
+  - You don't need to make everything, just Implement some of them and leave the rest for later Immersion Updates
+  - Use Placeholders and Primitive Arts to Implement + Iterate the Mechanics + Programming Functionalities First
+- Make things Fully Work + Check if things are Viable + Fun enough
+- Aim to Emulate the Full Functional Loop (Game Loop)
+  - Ex: Go to Menu -> Select Power-ups -> Select Lvs -> Play -> Go to Shop -> Buy Power-ups -> Rinse and Repeat for the Next Lvs
+- After fully tested and fixed -> Consider Adding your Arts 
+
+## Seperate Mechanics and Appearances! The Arts and Effects will be saved for later
+
+==================================================================================================================
+
+# CODE DESIGNS + ARCHITECTURES
+
+==================================================================================================================
 
 ==================================================================================================================
 
@@ -17,118 +50,38 @@
 
 ==================================================================================================================
 
+## POLISHING
 - Rename the Files to more Accurately Describe the Reusability and Modularity of the Script Components
 
-==================================================================================================================
-
-# DEBUGGING
+## DEBUGGING
 
 ==================================================================================================================
 
-# POLISHING
+# MECHANICS + FEATURES
 
 ==================================================================================================================
 
-# ART
+## LEVEL DESIGNS
 
-==================================================================================================================
+### Backgrounds
+- Unique BG Images for each Levels
+  - Big + Long
+  - Scrolling
+  - Simple, but still got some Feels
+  - Enemies + Spawn points are children of the Scrolling Background -> when Activated when entering Activate Box surrounding the player will become Independent / Spawn Independent Units (out of the Hierachy, etc.+ won't move with the background anymore)
+  - The Background will Stop scrolling / Repeat a Blank Segment when facing Bosses / the Last Waves of each Levels
 
-## ENEMIES
-- Enemies's Blinking White When Hit
-- TItan's VFXs -> Titan Hammerhead
-  - Big Explosion on Destroyed
-    - Following by Many Small Ones
-    - White out the Screen for a little
-- Enemy SPrites and Animation Re-Designs
-  - Zero Ranger, Air Force and other Sh'mup Arts + Designs
-  - Brute Visual -> Tuna
-      + Tail-wagging animations
-      + More Menacing SFXs!
-  - UFOs Visual -> Snail Orbs
-      + Light Flashing
-      + Menacing SFXs
-  - Tracker Visual -> Octopus
-      + With Tentacles
-      + Swimming and Squigling Animations
+### Hazards
+- Unique for each Levels
+- Deal Constant Amount of Dmgs
+- Have Build-ups + Effects and can easily be Avoided on their own (Not so much when surrounded by enemies though!)
 
-## PLAYER
-
-## UI - UX DESIGNS
-- Futuristic and Machinery: Clean and Flashy
-- Filled Panels
-- Frames
-- Buttons
-- Animations
-- Particle Effects
-
-### High Score Level COmpletion Effects
-
-### Shop Effects
-- UI Panels and Objects (Slight) Animations for each Items Thumbnails
-  - Sliding in when Spawning
-  - Sliding out when Transiting
-  - Couple with Electro SFXs
-
-## BACKGROUND ARTS
-- Themed
-  - Space
-  - Space Station
-  - On The Moon
-  - Mars
-  - ... and many more
-
-- Parallax Scrolling
-- Infinite Scrolling
-
-## MUSIC
-- New BGMs and SFXs
-  - Implement Hit and Explosion SFXs
-  - Make with LMMS Samples and Instruments
-  - Need Practices!
-
-- Background Musics for each Stages
-- Boss Musics
-- Level COmplete Music
-
-## MISC.
-
-### Coins
-- Dropping Effects
-  - Sparkling Particles 
-  - Shining SFX (Coin Dropping Sound)
-
-- Collecting
-  - Sprakles Particles Visual
-
-- Sound Effects
-  - Homing
-  - Receiving
-
-### Tutorials and Tooltips
-- Tutorial Tips to help players understand Equipments, Spark Skills and the COntrols in-game
-   + Will pop up when player receiving upgrades, equips or skills for the first time.
-
-### Level Starting and Complete Pop-ups
-
-==================================================================================================================
-
-# MECHANICS AND FEATURES
-
-==================================================================================================================
-
-## LEVEL SYSTEM
+## LEVELS SELECTION SYSTEM
 * Futuristic Space UIs
+* Testing and Updating the Entities to the new Level Prep + Selection System
 
 ### Adding Levels
 - Adding Dup Level Scenes (with their own Spawn Data files that are also Dup)
-
-### LV Lock/Unlocking System 
-- PlayerPrefs on Level Canvas and Level Complete
-  - Level COmplete will Update Prefs bases on Lv Index value set in the Script COmponent (only if the COmpleting level is New (index higher than the Level Prefs))
-- Level Canvas Init: Check Prefs to change Interactable status and Lock Effects
-- Level Lock Effects
-  - Lock Sprites
-  - Grey-out Faded
 
 ### Level Completion Screen
 - Icons
@@ -141,99 +94,116 @@
     + Next Level
     + Return (to Level Selection)
 
-### Preparation Screens
-- Open and Transition right when Selecting a Level
-- Picking Skills and Equipment
-    + Previews
-    + Show Stats Modifyings and Benefits
+## BULLET HELL MECHANICS
 
-### Lv Selection UI
-- Functions
-    + Select Level(s)
-    + Shop
-    + Return to Menu
-- Unlocking New Levels Mechanic
-    + After Completing a Level
-    + With Effects: 
-        + Lock and Breaking
-        + Light Flashing
-- Transition Effects
-    + Sliding Down
-    + Button Flashing
-- Hover Effects
-    + Change Brightness
-    + Bubling Visual
-
-## MORE BULLET HELL-Y
+### Bullets
+- SMaller
+- Faster
+- More!
 
 ### Shot Patterns
-- Enemies shoot more Bullets
 - Bullets fly in Shaped Patterns
 - Player Bullets are longer and thinner, emulating a feeling of speed and piercing forces
 
-### Spawn Patterns
-
-### Snail Discs / UFOs
-
-### Track Turtles
+### Track Cannons
+- The Tracker Toad now Slowly move to the end of the screen (like a stationary turret that keeps on while you move)
+- Spawn on Background Platforms
+  - The Platforms Sprites are attached to the Toads itself
+  - Move at the Constant Speed the same as the Background: Create an Illusion of Stationery!
+- Shoot the Fastest Bullets
 
 ### Brute Tunas
 - Spawn in many Form of Shaped Groups and Patterns
   - Rectangles
   - Triangles
   - Lines
+- Can spawned from side and from top
 - Dropping Bullets toward the middle of the field
+  - Velocity update with current position
+- Less HPs
 
 ## SHOP SYSTEM
-- For Buying and Upgrading: All using in-game Currency (Coins)
 - The Shop Data and Prefs will later be refactored and stored in external Files (XML, JSON, etc.) for more versatility
   - Only after all the basic functions are laid out and working perfectly
 
-### SKill Upgrades
-- Multi-tiers: Cheap -> Expensive
-+ The Stronger the Skills, the Higher the Prices
-- Dash -> Invincible when Dash -> Deal 1 Dmg on Dash
-- Shield -> Longer Active Duration -> Faster Cooldown -> Reflect
-- Weapon Upgrades -> Increase all weapon dmgs by modifier of 1
-- Charge Shot: Can Charge a Powerful Shot
-    + Deal High Dmgs
-    + Pierce through Multiple Regular Enemies (not Bosses)
+* With these Items You have to choose in your collections which one to bring with you into the Battle(s) (In Tab Groups coupled with Screen Transitions)
+  - Ships + Cosmetics
+  - Weapons 
+  - Equipments
+  - Consumables
+
+### Effects
+- Tab Transitions
+  - with Panels
+- Highlights
+
+### Shop Items
+- Implement Real Items
+- Setting Prefs - Documentations
+
+### Debugs
+- Reset Money
+- Reset Payment History alongside Bought Prefs
+   
+## PLAYER SKILLS + POWER-UPS
+* Including
+  - Equipments
+  - COnsumables
+  - Skills
+  - Upgrades
+  - SHips
+  - Cosmetics
+
+### GUn
+- Updating Bullets
+  - Smaller Impact Shockwave
+  - Tri-shot
+
+### Item Managements
+- Based on Prefs to Activate / Deactivate Weapons + Equipments + Consumables
+- Using Bool COntrol States in Player Controller + Player Attacker
+- Using Components: Setting and Resetting
+
+### Flamethrower
+- Short Range attack, wide Cone
+- Damage over Time: High
+- Constant Fire-rate
+- Activate with Prefs (Reset after level completed)
 
 ### Equipments
-- New Weapons
-    - Flamethrower: High Dmgs, Limited Ranges
-    - Laser Beam: 
-        - Piercing Effects
-        - Low Dmgs
-        + Can be Hold down
-    - Homing Shots
-        + Home Toward Nearest Enemies
-        + x2 Homing Missiles
-        + A little Tricky to control
-- Ship
-    + Extra Health
-    + Extra Armor Layer: Add 2 Bar of Armor that will take Dmgs for the Player from the Beginning of each Stages
-- Drones
-    + Can buy 1 - 2
-    - Attacking: Shoot at enemies
-        + Slow Shooting Rate
-        + x3 Bullets, Spread Patterns
-    - Supporting: Dropping Energy and Heart Occasionally 
-- Consumables
-  - HP Pack: Heal when Dying
-  - MIssile Pack: Free 2 Missiles at the Start
-  - Battery: Immediately refill Energy Bar on Out of Mana
+- Dash - Booster -> Invincible when Dash -> Deal 1 Dmg on Dash
+- Shield - Gravity Layer-> Longer Active Duration -> Faster Cooldown -> Reflect
+- Support Drones
+  - Hovering around player
+  - Dropping Energies + HP occasionally
+
+### Weapons
+- Normal Guns
+  - Straight 
+- Flamethrower
+- Spark Beam
+  - Weapon
+  - Piercing Effects
+  - Low Dmgs
+  - Hold to Fire COntinously
+
+### Consumables
+- MIssile Pack: Free 2 Missiles at the Start
+- HP Pack: Heal to 1 HP when Dying
+- Battery: Immediately refill Energy Bar on Out of Mana
 
 ### New Playable Ships
 - The Orca
     + High HP
     + Only Melee Attacks: Chargable and Spammable
-        * Headbutt: Butting straight ahead, dealing High Dmg - then knock the player back
+        * Headbutt: Butting straight ahead, dealing High Dmg and knock the player back a little
         * Sawblade: Slash forward in a wide Arc, dealing High Dmgs
 - UFO
     + Low HP
     + Extreme Attacker: x10 Bullets Circle Spread
     + Become Invincible for many seconds (~2s) everytime took dmgs
+
+* Customed Ships have their own Special Weapons and Cannot choose any others
 
 ### Cosmetics
 - SKins for the Player
@@ -241,16 +211,16 @@
     + Different Equipment Appearances
     + 2 for each SHips
 
-## ENEMIES
-
-### Better Enemy - Tuna
-- Replace the Left and Right Brute
-- A lil Bigger
-- Has Tail Animations 
+## ENEMIES DESIGNS
 
 ### New Enemy - Starfish
 - Stationery Turrets: Spawn and SLide down with the Background
 - Shoot and Circling in Star 5 x 5 Bullets Pattern (Based on Sky Force Anniversary)
+- Medium Health and Size
+
+### New Enemy - Octopus
+- Stationery Turrets: Spread out a Groups of Mines moving at different Speed
+- TUrning around while shooting
 - Medium Health and Size
 
 ### New Enemy - Stingray
@@ -262,24 +232,20 @@
 
 ### New Enemy
 
-### Better Enemy - Snail Orbs * 3
-- Replace the UFOs: Still SPawn in Tripple and Spin to the Bottom of the Screen
-- Now Bigger and Bulkier
-- Move Slower
+### Better Enemy - Tuna
+- Removed the Unnecessary Turnings
+- Adding Shooting Patterns
 
-### Better Enemy - Octopus
-- Replace the Tracker: Still Track the Player Shoot
-- Bulkier
-- Shoot more: 4 bullets in SPread Pattern
-- Swimming and Squigling Animations
+### Better Enemy - Tracker Toad
+- Swimming down continously
 
-### Better Enemy - Titan Hammer Head
-- Replace the Titan
-- Nothing differ much but the Arts
+### Better Enemy - Titan Manta
+
+### Better Enemy
 
 ### Enemy Patterns
 
-## STAGES
+## DETAILED STAGES DESIGNS
 - Every Levels is a distinct Stages with Special
     + Themes and Backgrounds
     + Unique Enemies
@@ -306,14 +272,15 @@
 - Theme: Outer Space
 - Unique Hazard: Meteors
 
-## HAZARDS
-
 ### Bubbles
 - Have Signal: Small, Bubling Areas
 - If the Player passes by: Spawn and Immobilize for short amount of time
 
+### Volcanos
 
-## BOSSES
+### Asteroids
+
+## BOSSES DESIGNS
 - Super Powerful Enemies at the end of each Levels
 - Attacks dealing 2 dmgs
     + Some can even Instant-kill!
@@ -324,77 +291,120 @@
 
 ### SHOCK BRAINY
 
-
-## STAR RANKING System
+## RANKING + REWARD SYSTEM
 
 - 1 - 2 - 3 Stars Rating when Level Complete
   - Based on Player's Score and Health in-game (Mostly Score)
     - Completing the level with Perfect health and defeat a considerate amount of enemies for highest ranks
 
-===========================================================================================================
+==================================================================================================================
 
-# IN QUEUE
+# ART
 
-- 4 Beginning Levels with Hard-scripted, pre-Designed and pre-Determined Spawn Patterns and Spawn Routines:
-  - Some Levels will have Bosses
-  - And uique Hazard (Meteors, Turrets, etc.)
-  - Unique backgrounds, too!
+==================================================================================================================
 
+## ENEMIES
+- TItan's VFXs -> Titan Manta
+  - Big Explosion on Destroyed
+    - Following by Many Small Ones
+    - White out the Screen for a little
+- Enemy SPrites and Animation Re-Designs Based Loosly on other Sh'mup Arts and Designs
+    - Zero Ranger
+    - Blue Revolver
+    - Sky Force series
 
-## ENERGY SYSTEM
+## PLAYER
+- Redesign Plyaer's Main Ship: More Rigid Looking and Cooler Style
 
-- Energy Pots Dropped by Enemies randomly!
+### Animations
+- Sliding Sides (Left - Right)
+- Charging Animations
+  + Light
+  + Burst Particle
 
-## DASH Skill
+### Flamethrower
+- Plasma (Blue)
+- Sharp Animations
 
-- Cooldown Signals:
-  - Radical Cooldown Icons (Filled)
+## UI - UX DESIGNS
 
-## SPECIAL PLAYER SHIPS
+### Customized Elements
+- Filled Panels
+- Frames
+- Text Labels
+- Buttons
+  + Shape Buttons
+  + Covers
+  + Icons
+- Animations + Effects
+  + Selection + Marking
+  + Tooltips
+  + Sliding
+  + Changing
 
-- Special Abilities
+### Transition Effects
 
-- Special Attributes
+### Panel Sliding Effects
 
+### Hover Effects
 
-## New Enemy
+### Tick Effects
 
-- The Stingray
-  - Fast, but Fragile
-  - Fly Down the Screen
-  - Shoot Side way in Cross Patterns (4 shots)
-  - Drop:
-    - Coins
-    - Hearts
-    - Energy
-    - Missiles
+### High Score Level COmpletion Effects
 
+### Level UIs
 
-## HEARTS
+### Shop UI
+- UI Panels and Objects (Slight) Animations for each Items Thumbnails
+  - Sliding in when Spawning
+  - Sliding out when Transiting
+  - Couple with Electro SFXs
 
-- Collecting SFXs: Healing
-  
-## MISSILES
+## BACKGROUND ARTS
+- Self-Designed and Draw
+  + using References
+  + using COnsistent Colors
+- Themed
+  + Sea Bed
+    * Sand
+    * Underwater
+    * Lively with Creatures
+  - Space
+    + Precise
+    + Round
+    + Clear
+  - Space Station
+  - On Mars
+  - ...and many more
+- Parallax Scrolling
+- Infinite Scrolling
 
-- SFX when gained new ones
+## MUSICs
+- New BGMs and SFXs
+  - Implement Hit and Explosion SFXs
+  - Make with LMMS Samples and Instruments
+  - Need Practices!
 
-## TINY EFFECTS
+- Background Musics for each Stages
+- Boss Musics
+- Level COmplete Music
 
-1.  PLayer appear flashing light effects. ~
+## MISC.
 
-##  More Equipments
+### Coins
+- Dropping Effects
+  - Sparkling Particles 
+  - Shining Radiant SFX (Coin Dropping Sound)
 
-1.  Ship Armor Equip: More HP and Damage Resists (represent by an energy armor bar that deplete with damage received):
-  + Change the appearances.
-  + Provided an armor bar from the start.
-2. Health Booster: Add 1 more HP.
-3. Engine Boost: Increase movement speed by a significant percent.
-4. Attack Drone: Shoot electric sparks at enemies on interval, dealing moderated damages!
-5. Support Drone: Frequently Drop COins and Energy for you to pick!
-- Enhanced Missile: Higher Dmg for Missiles
-- Weapons: (changing the Player Weapon COmponent to generate the new Weapon Types)
-  + Each has their own Appearances, Quirks and Upgrade Tiers!
-  + Laser Gun: default - Constant Fire rate and consistent damages.
-  + Buster: Fire small, fast laser beams -  Faster and fire in succession, but deal less damage per shot!
-  + Flame Thrower: Fire a Range of Fire - Broader but shorter range and can deal damage continously (at the risk of moving closer to enemies).
-  + Cannon: Fire Metal Balls - BIg and Strong, but slow Shooting Rate and slow Speed
+- Collecting
+  - Sprakles Particles Visual
+
+- Sound Effects
+  - Homing
+  - Receiving
+
+### Tutorials and Tooltips
+- Tutorial Tips to help players understand Equipments, Spark Skills and the COntrols in-game
+   + Will pop up when player receiving upgrades, equips or skills for the first time.
+
+### Level Starting and Complete Pop-ups

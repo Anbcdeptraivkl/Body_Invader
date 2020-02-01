@@ -5,15 +5,12 @@ using UnityEngine;
 /* UFO in Tri-UFO Weapon Attacks */
 public class UFOAttacking: MonoBehaviour {
     public GameObject enemyShot;
-
-    public Transform localRoot;
     public Transform shotSpawn;
 
-    public float shotXSpeed = 5;
-    public float shotYSpeed = 8;
-
+    public float shotSpeed = 5;
     public float startDelay = 0.5f;
-    public float timeShoot  = 1.2f;
+    public float timeShoot  = 1.5f;
+    GameObject playerRef;
 
     void Start() {
         StartCoroutine("AutoShoot");
@@ -21,25 +18,25 @@ public class UFOAttacking: MonoBehaviour {
 
     IEnumerator AutoShoot() {
         yield return new WaitForSeconds(startDelay);
-        
-        while (true) {
+        while (gameObject.activeInHierarchy) {
+            playerRef = GameObject.FindWithTag("Player");
+            if (!playerRef) {
+                Debug.Log("Player not found");
+                yield break;
+            }
             GenerateShot();
-
             yield return new WaitForSeconds(timeShoot);
         }
     }
 
     void GenerateShot() {
+        // Get Player Directions
+        Vector2 shootingDir = (playerRef.transform.position - transform.position).normalized;
+
         // Instantiate and set Velocity:
         GameObject shot = Instantiate(enemyShot, shotSpawn.position, Quaternion.identity);
-
         // Velocitu:
-        Vector2 headingVector = shotSpawn.position - localRoot.position;
-        Vector2 distance = headingVector / headingVector.magnitude;
-
-        Vector2 shotVelocity = new Vector2(
-            distance.x * shotXSpeed,
-            distance.y * shotYSpeed);
+        Vector2 shotVelocity = new Vector2(shootingDir.x * shotSpeed, shootingDir.y * shotSpeed);
 
         shot.gameObject.GetComponent<Rigidbody2D>().velocity = shotVelocity;
     }

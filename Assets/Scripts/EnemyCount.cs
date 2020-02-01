@@ -15,6 +15,7 @@ public class EnemyCount: MonoBehaviour {
         enemyCount--;
     }
 
+    // Continously checking if there is no more enemies on the screen
     public static bool Wiped() {
         return enemyCount == 0;
     }

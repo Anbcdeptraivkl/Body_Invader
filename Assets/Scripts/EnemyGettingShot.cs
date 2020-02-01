@@ -21,9 +21,6 @@ public class EnemyGettingShot : MonoBehaviour
     bool stillLiving;
     
     void Start() {
-
-        
-
         objAnimator = gameObject.GetComponent<Animator>();
         hpManager = gameObject.GetComponent<EnemyHPManager>();
         // Getting camera components:
@@ -77,6 +74,7 @@ public class EnemyGettingShot : MonoBehaviour
             ) as GameObject;
 
             Destroy(hitParticle, 1.0f);
+            objAnimator.ResetTrigger("Hit");
         }
     }
 

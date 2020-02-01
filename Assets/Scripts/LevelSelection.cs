@@ -10,6 +10,9 @@ using UnityEngine.SceneManagement;
 public class LevelSelection : MonoBehaviour
 {
     public GameObject[] levelPanels;
+    public GameObject prepareScreen;
+
+    static int openingLevel = 0;
 
     void Start() {
         int levels = PlayerPrefs.GetInt("LevelsDone", 0);
@@ -20,16 +23,22 @@ public class LevelSelection : MonoBehaviour
         }
     }
 
-    public void LoadLevel1() {
-        SceneManager.LoadScene("Level1");
+    // Open Pre-battle Preparation UI and setting the Level to open
+    public void Prepare(int index) {
+        openingLevel = index;
+        prepareScreen.SetActive(true);
     }
 
-    public void LoadLevel2() {
-        SceneManager.LoadScene("Level2");
+    public void ReturnToSelect() {
+        prepareScreen.SetActive(false);
+        openingLevel = 0;
     }
 
-    public void LoadLevel3() {
-        SceneManager.LoadScene("Level3");
+    // Load Scenes (index-based)
+    public static void LoadLevel() {
+        string levelName = "Level" + openingLevel.ToString();
+        SceneManager.LoadScene(levelName);
+        Debug.Log("Loaded " + levelName);
     }
 
     // Go to Shop Scene Additively
@@ -51,8 +60,11 @@ public class LevelSelection : MonoBehaviour
     }
 
     void UnlockLevel(int lvIndex) {
+        // Lock Sprite
         levelPanels[lvIndex].transform.Find("Lock").gameObject.SetActive(false);
+        // Fade COlor Cover
         levelPanels[lvIndex].transform.Find("LockCover").gameObject.SetActive(false);
+        // Interactable
         levelPanels[lvIndex].GetComponent<Button>().interactable = true;
     }
 

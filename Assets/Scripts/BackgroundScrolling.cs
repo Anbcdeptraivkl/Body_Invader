@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BackgroundScrolling : MonoBehaviour
 {
-    public float scrollSpeed;
+    public float scrollSpeed = -1;
 
     //Referenes:
 
@@ -14,10 +14,9 @@ public class BackgroundScrolling : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        Vector2 offset = new Vector2(0, scrollSpeed * Time.time);
-        GetComponent<Renderer>().material.mainTextureOffset = offset;
+        transform.Translate(new Vector2(0, scrollSpeed * Time.deltaTime));
     }
 }
 

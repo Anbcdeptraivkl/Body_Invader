@@ -16,40 +16,68 @@ public class LevelComplete : MonoBehaviour
     public int levelIndex = 1;
 
     // References:
-    LevelSpawner levelSpawner;
+    CompleteLine completeLineBehaviour;
     MoneyManager moneyManager;
     ScoreManager scoreManager;
 
     void Start() {
-        levelSpawner = gameObject.GetComponent<LevelSpawner>();
+        GameObject comLine = GameObject.FindWithTag("GoalLine");
+        if (comLine) {
+            completeLineBehaviour = comLine.GetComponent<CompleteLine>();
+        } else 
+            Debug.Log("No Goal Line Found!");
         moneyManager = gameObject.GetComponent<MoneyManager>();
         scoreManager = gameObject.GetComponent<ScoreManager>();
     }
 
     void Update() {
-        if (levelSpawner.LevelCompleteCheck() && EnemyCount.Wiped()) {
+        if (completeLineBehaviour.CheckLevelComplete() && EnemyCount.Wiped()) {
             // Delay so the player has enough time to collect the last coins:
-            Invoke("FinishLevel", 2.5f);
+            Invoke("FinishLevel", 2f);
             // Stop updating when the level is finished:
             enabled = false;
         }
     }
 
     void FinishLevel() {
-        completePanel.SetActive(true);
-        playerCanvas.SetActive(false);
+        // UIs
+        ActivateUIs();
         // Intuitive Effects:
         PlayEffects();
-        // Print Results:
+        // Print level's results on screen
+        Results();
+        // Prefs Updating + Reseting for next Stage
+        UpdatePrefs();
+        ResetUsingItemsPrefs();
+        Debug.Log("Level Completed!");
+    }
+
+    void ActivateUIs() {
+        completePanel.SetActive(true);
+        playerCanvas.SetActive(false);
+    }
+
+    void Results() {
+         // Print Results:
         scoreText.text = "Score: " + scoreManager.GetScore() + " (" + scoreManager.GetHighScore() + ")";
         coinText.text = "Coin: " + MoneyManager.GetTotalMoney() + " + " + moneyManager.GetStageMoney();
+        
+    }
+
+    void UpdatePrefs() {
         // Updating Preferences:
         scoreManager.HighScoreUpdate();
         moneyManager.UpdateMoney();
-        // If completed a new levels, update the Level COmplettion Pref
+    }
+
+    // Reset Preparation Data after completing levels
+    void ResetUsingItemsPrefs() {
+        PlayerPrefs.SetInt("UsingWeapon", 0);
+        PlayerPrefs.SetInt("UsingEquip", 0);
+        PlayerPrefs.SetInt("UsingConsume", 0);
+         // If completed a new levels, update the Level COmplettion Pref
         if (levelIndex > PlayerPrefs.GetInt("LevelsDone", 0))
             PlayerPrefs.SetInt("LevelsDone", levelIndex);
-        Debug.Log("Level Completed!");
     }
 
     void PlayEffects() {

@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 7715268365818723390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3.37, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7715268367045079978}
   - {fileID: 7715268367458214765}
@@ -79,8 +79,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0031043887, y: -0.052444607}
-  m_Size: {x: 0.3622538, y: 0.5298906}
+  m_Offset: {x: -0.022062272, y: -0.038226128}
+  m_Size: {x: 0.62766415, y: 0.80478}
   m_Direction: 0
 --- !u!114 &7715268365818723392
 MonoBehaviour:
@@ -97,11 +97,7 @@ MonoBehaviour:
   shotList:
   - shotObj: {fileID: 1600620134327404, guid: 2fa8796c633ed734580b5a65cd172799, type: 3}
     upgradeLevel: 0
-  - shotObj: {fileID: 3899888765684407410, guid: 48be4a95e53193849ad26e86ae3a8235,
-      type: 3}
-    upgradeLevel: 1
-  - shotObj: {fileID: 1600620134327404, guid: bde9185cfaa05b44ba7c6eb18af98b6c, type: 3}
-    upgradeLevel: 2
+  shotSpark: {fileID: 0}
   shotSpawn: {fileID: 7715268367458214765}
   fireRate: 0.13
 --- !u!114 &7715268365818723393
@@ -131,6 +127,7 @@ MonoBehaviour:
     duration: 1.5
     cooldown: 5
     cost: 20
+  playerAnimator: {fileID: 0}
   bounds:
     xMin: -7.5
     xMax: 7.5
@@ -559,7 +556,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7715268366580100956}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -5, z: 0}
+  m_LocalPosition: {x: 0, y: -4.5, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 7715268367045079978}
@@ -5373,7 +5370,7 @@ Transform:
   m_GameObject: {fileID: 7715268367045079979}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.08248183, y: 0.08918889, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children:
   - {fileID: 7715268366580100959}
   m_Father: {fileID: 7715268365818723395}
@@ -5417,12 +5414,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 1e102dc891c0a9845bcb5938a79e0cee, type: 3}
+  m_Sprite: {fileID: -1953600933099070376, guid: 1e102dc891c0a9845bcb5938a79e0cee,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6.35, y: 6.5}
+  m_Size: {x: 5.15, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5452,7 +5450,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7715268367458214762}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.005000019, y: 0.301, z: 0}
+  m_LocalPosition: {x: -0.005000019, y: 0.547, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 7715268365818723395}

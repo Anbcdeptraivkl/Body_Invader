@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Items Names Table
-// Will be used to Setting and Getting Prefs, and as references to check for available Upgrades before going into the stage
+// Will be used to Setting and Getting Prefs, and as references to check for available Upgrades in Level Prepare UIs
 public enum ItemID {
-    Dash,
-    Shield,
-    Bomb,
-    Beam,
-    ExtraHealth,
+    Dash, Drone, Shield,
+    Gun, Flame, Beam,
+    Missile, HPPack, ENPack,
     Default = -1
 }
 

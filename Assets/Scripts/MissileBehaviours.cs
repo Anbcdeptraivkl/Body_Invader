@@ -8,8 +8,8 @@ public class MissileBehaviours: MonoBehaviour {
     public float timeBtwSteps = 0.25f;
 
     public GameObject rocketExplosion;
-
     public AudioSource rocketExplodeSound;
+    public float rocketDmg = 10;
 
     CamShake camShaker;
     // Center point of the Screen in 2D Viewport:
@@ -80,7 +80,7 @@ public class MissileBehaviours: MonoBehaviour {
         foreach (GameObject enemy in enemiesArray) {
             // Deal 5 dmgs to all visible enemies:
             EnemyHPManager enemyHP = enemy.gameObject.GetComponent<EnemyHPManager>(); 
-            enemyHP.DecreaseHP(3);
+            enemyHP.DecreaseHP(rocketDmg);
         }     
     }
 

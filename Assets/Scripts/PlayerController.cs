@@ -48,19 +48,22 @@ public class PlayerController : MonoBehaviour {
 	public DashSkill dashSkill = new DashSkill();
 
 	public Shield shield = new Shield();
+	public Animator playerAnimator;
 
 	public Boundary bounds;
 
 	Rigidbody2D rgbd2D;
 	PlayerEnergy energy;
 	Vector2 lastMoveDir;
+	float lastXMove = 0;
 	float nextDashTime;
 	float nextShieldTime;
 	int originalLayer;
 
-	// Check if Dash Skill is available in this stage
-	bool dashUpgraded;
-	bool shieldUpgraded;
+	// Check what Items can be Used (by checking Prefs)
+	bool usingGun, usingFlame, usingBeam;
+	bool gotDash, gotShield, gotDrone;
+	bool gotMissile, gotHP, gotEN;
 
 	void Start () {
 		rgbd2D = gameObject.GetComponent<Rigidbody2D>();
@@ -69,6 +72,7 @@ public class PlayerController : MonoBehaviour {
 		nextDashTime = 0f;
 		nextShieldTime = 0f;
 		originalLayer = gameObject.layer;
+		// Activate / Set up the Using Prep Items
 	}
 
 	void LateUpdate() {
@@ -83,10 +87,18 @@ public class PlayerController : MonoBehaviour {
 	{
 		// Constant Axis Directions
 		float horiMove = Input.GetAxis("Horizontal");
+		//Player Animations Updating when changing Left-Right Move Direction
+		if (Input.GetKey(KeyCode.LeftArrow)) {
+			lastXMove = -1;
+		} else if (Input.GetKey(KeyCode.RightArrow)) {
+			lastXMove = 1;
+		} else {
+			lastXMove = 0;
+		}
+		playerAnimator.SetFloat("XSpeed", lastXMove);
+		// Vertical Move
 		float vertiMove = Input.GetAxis("Vertical");
-
 		lastMoveDir = new Vector2(horiMove, vertiMove).normalized;
-
 		Vector2 destination = new Vector2(
 			rgbd2D.position.x + horiMove * moveSpeed, 
 			rgbd2D.position.y + vertiMove * moveSpeed);

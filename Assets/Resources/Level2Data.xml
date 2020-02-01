@@ -5,7 +5,7 @@
         <!--In each Waves, the Enemies will be spawned at the same time (remember: to not overlapping positions between enemies because of this nature!), if there are delays between the spawning, then the enemies will be put into later waves-->
         
          <!--Waves can have single enemy, or as many enemies as you want spawning simutaneously-->
-        <Wave rest="true">
+        <Wave rest="true" sync="false">
             <Enemy>
                 <Name>TriUFO</Name>
                 <!--Start from zero:-->
@@ -39,7 +39,7 @@
             </Enemy>
         </Wave>
 
-        <Wave rest="true">
+        <Wave rest="true" sync="false">
             <Enemy>
                 <Name>TriUFO</Name>
                 <PositionIndex>1</PositionIndex>
@@ -47,7 +47,7 @@
             </Enemy>
         </Wave>
 
-        <Wave rest="true">
+        <Wave rest="true" sync="false">
             <Enemy>
                 <Name>TriUFO</Name>
                 <PositionIndex>3</PositionIndex>
@@ -55,7 +55,7 @@
             </Enemy>
         </Wave>
         
-        <Wave rest="true">
+        <Wave rest="true" sync="false">
             <Enemy>
                 <Name>RayBall</Name>
                 <PositionIndex>2</PositionIndex>
@@ -63,7 +63,7 @@
             </Enemy>
         </Wave>
 
-        <Wave rest="true">
+        <Wave rest="true" sync="true">
             <Enemy>
                 <Name>Tracker</Name>
                 <PositionIndex>0</PositionIndex>
@@ -77,7 +77,7 @@
             </Enemy>
         </Wave>
         
-        <Wave rest="false">
+        <Wave rest="false" sync="true">
             <Enemy>
                 <Name>TriUFO</Name>
                 <!--Start from zero:-->
@@ -94,7 +94,7 @@
             </Enemy>
         </Wave>
 
-        <Wave rest="true">
+        <Wave rest="true" sync="false">
             <Enemy>
                 <Name>Tracker</Name>
                 <PositionIndex>0</PositionIndex>
@@ -108,7 +108,7 @@
             </Enemy>
         </Wave>
 
-        <Wave rest="true">
+        <Wave rest="true" sync="false">
             <Enemy>
                 <Name>Tracker</Name>
                 <PositionIndex>4</PositionIndex>
@@ -122,7 +122,7 @@
             </Enemy>
         </Wave>
 
-        <Wave rest="true">
+        <Wave rest="true" sync="true">
             <Enemy>
                 <Name>TriUFO</Name>
                 <PositionIndex>0</PositionIndex>
@@ -135,7 +135,7 @@
             </Enemy>
         </Wave>
 
-        <Wave rest="true">
+        <Wave rest="true" sync="false">
             <Enemy>
                 <Name>Titan</Name>
                 <PositionIndex>2</PositionIndex>
@@ -143,7 +143,7 @@
             </Enemy>
         </Wave>
 
-        <Wave rest="true">
+        <Wave rest="true" sync="false">
             <Enemy>
                 <Name>RayBall</Name>
                 <PositionIndex>2</PositionIndex>
@@ -151,7 +151,7 @@
             </Enemy>
         </Wave>
 
-        <Wave rest="false">
+        <Wave rest="false" sync="false">
             <Enemy>
                 <Name>TriUFO</Name>
                 <PositionIndex>2</PositionIndex>
@@ -162,17 +162,27 @@
         <Wave rest="true" sync="true">
             <Enemy>
                 <Name>BruteTurnL</Name>
-                <PositionIndex>3</PositionIndex>
+                <PositionIndex>2</PositionIndex>
                 <Amount>5</Amount>
             </Enemy>
             <Enemy>
                 <Name>BruteTurnR</Name>
+                <PositionIndex>2</PositionIndex>
+                <Amount>5</Amount>
+            </Enemy>
+            <Enemy>
+                <Name>BruteL</Name>
+                <PositionIndex>3</PositionIndex>
+                <Amount>5</Amount>
+            </Enemy>
+            <Enemy>
+                <Name>BruteR</Name>
                 <PositionIndex>3</PositionIndex>
                 <Amount>5</Amount>
             </Enemy>
         </Wave>
 
-        <Wave rest="true">
+        <Wave rest="true" sync="true">
             <Enemy>
                 <Name>TriUFO</Name>
                 <PositionIndex>1</PositionIndex>

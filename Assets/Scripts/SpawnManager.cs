@@ -52,12 +52,14 @@ public class SpawnManager : MonoBehaviour
     //Control Operations to stop or continue spawning:
     GameOver gameOverRef;
     bool isSpawning;
+    bool completed;
 
     // Start is called before the first frame update
     void Start() {
         GameObject gameControllerObj = GameObject.FindGameObjectWithTag("GameController");
         gameOverRef = gameControllerObj.GetComponent<GameOver>();
         isSpawning = true;
+        completed = false;
     }
 
     public void SpawnSingle(string name, Transform spawnPoint) {
@@ -69,6 +71,10 @@ public class SpawnManager : MonoBehaviour
             spawnPoint.position,
             Quaternion.identity
         );
+    }
+
+    public void SpawnMultiCall(string name, Transform spawnPoint, int amount) {
+        StartCoroutine(SpawnMulti(name, spawnPoint, amount));
     }
 
     // Preferred for Endless Spawning
@@ -85,6 +91,14 @@ public class SpawnManager : MonoBehaviour
         // Check if Game over or not, and stop spawning if over:
         isSpawning = !gameOverRef.CheckGameOver();
         return isSpawning;
+    }
+
+    public void SpawningComplete() {
+        completed = true;
+    }
+
+    public bool LevelCompleteCheck() {
+        return completed;
     }
 
 }
