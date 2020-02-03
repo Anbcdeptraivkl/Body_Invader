@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2993165659180167043}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8, y: 7.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 165405500380810613}
@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 7552158045451347415}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children:
   - {fileID: 2792556480785088771}
   - {fileID: 501655766001228073}
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e78897178026a4c42811ccf3fddd0cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHP: 3
+  baseHP: 2
   scoreValue: 10
   energyReward: 5
   shotExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,

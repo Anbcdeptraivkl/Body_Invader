@@ -3,24 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*For Red Tracking Enemy: Move for a short time, then Track Attack (while continue Moving)*/
-public class TrackerShortMovement : MonoBehaviour
+public class TrackerMovement : MonoBehaviour
 {
     public float startDelay;
     public float moveSpeed;
-    public Vector2 timeRange;
+    public float moveTime;
 
     Rigidbody2D rgbd;
 
     void Start() {
         rgbd = GetComponent<Rigidbody2D>();
-        StartCoroutine("MoveShort");
+        StartCoroutine("Move");
     }
 
     //Move for a set amount of time then start tracking:
-    IEnumerator MoveShort() {
+    IEnumerator Move() {
         yield return new WaitForSeconds(startDelay);
-
-        float moveTime = Random.Range(timeRange.x, timeRange.y);
 
         rgbd.velocity = new Vector2(0, moveSpeed);
 
@@ -33,7 +31,7 @@ public class TrackerShortMovement : MonoBehaviour
     }
 
     void StartTracking() {
-        gameObject.GetComponent<TrackerTracking>().enabled = true;
+        gameObject.transform.Find("Toad").gameObject.GetComponent<TrackerTracking>().enabled = true;
     }
     
 
