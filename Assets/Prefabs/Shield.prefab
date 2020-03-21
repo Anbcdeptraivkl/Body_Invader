@@ -49,6 +49,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -113,13 +114,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6323157591187710404}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b8fe019408d940448064bc8a8892d8a, type: 3}
+  m_Script: {fileID: 11500000, guid: 29534770e6fe52740a79c17aec1fa1b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impactEffect: {fileID: 3627457204679153122, guid: 2a11d5113616d3f4da0fadc244a5d855,
-    type: 3}
-  bigRayEffect: {fileID: 3627457204679153122, guid: 5e2632a5403b9ff4a9d604030aa4c9cc,
-    type: 3}
+  impactEffect: {fileID: 0}
+  bigRayEffect: {fileID: 0}
   impactTick: 0.15
 --- !u!50 &-1996836843309593182
 Rigidbody2D:

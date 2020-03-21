@@ -45,11 +45,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1600620134327404}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdcef05fa9e30374db9e7ee398945e00, type: 3}
+  m_Script: {fileID: 11500000, guid: c7f469c46014e7d4e820a400eb728a9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   xSpeed: 0
-  ySpeed: 15
+  ySpeed: 10
 --- !u!50 &418196248386623086
 Rigidbody2D:
   serializedVersion: 4
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1600620134327404}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7785ebc6ca949de439a75bde9372b058, type: 3}
+  m_Script: {fileID: 11500000, guid: d9fcc135a99cfc149ac69ba853807350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &969849616493959068
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 6549792367093525329}
   - component: {fileID: 49587199884991478}
   - component: {fileID: 6653375731762448130}
-  - component: {fileID: 1804919972143343450}
+  - component: {fileID: 4145974832083883124}
   m_Layer: 0
   m_Name: Shot (2)
   m_TagString: Shot
@@ -154,7 +154,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0030472279, y: -0.0030471683}
   m_Size: {x: 0.1907945, y: 0.19639438}
   m_Direction: 0
---- !u!114 &1804919972143343450
+--- !u!114 &4145974832083883124
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 969849616493959068}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24b0386b857e28f4cb16a08fbbcb6d69, type: 3}
+  m_Script: {fileID: 11500000, guid: db24096a684c33e48b888450d31c6d2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 4193192065685417727}
   - component: {fileID: 1875982066244177062}
   - component: {fileID: 4958957089654379200}
-  - component: {fileID: 6163366839293330071}
+  - component: {fileID: 4825504575574857295}
   m_Layer: 0
   m_Name: Shot
   m_TagString: Shot
@@ -238,7 +238,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0030472279, y: -0.0030471683}
   m_Size: {x: 0.1907945, y: 0.19639438}
   m_Direction: 0
---- !u!114 &6163366839293330071
+--- !u!114 &4825504575574857295
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1703029769265180125}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24b0386b857e28f4cb16a08fbbcb6d69, type: 3}
+  m_Script: {fileID: 11500000, guid: db24096a684c33e48b888450d31c6d2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
@@ -296,6 +296,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -376,6 +377,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -456,6 +458,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -502,7 +505,7 @@ GameObject:
   - component: {fileID: 26085533490490024}
   - component: {fileID: 8579887843077168032}
   - component: {fileID: 2166840527698362362}
-  - component: {fileID: 4223462329859231732}
+  - component: {fileID: 6542250637069380956}
   m_Layer: 0
   m_Name: Shot (1)
   m_TagString: Shot
@@ -562,7 +565,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0030472279, y: -0.0030471683}
   m_Size: {x: 0.1907945, y: 0.19639438}
   m_Direction: 0
---- !u!114 &4223462329859231732
+--- !u!114 &6542250637069380956
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -571,7 +574,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4690341537105630318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24b0386b857e28f4cb16a08fbbcb6d69, type: 3}
+  m_Script: {fileID: 11500000, guid: db24096a684c33e48b888450d31c6d2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1

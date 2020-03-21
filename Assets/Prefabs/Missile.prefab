@@ -45,6 +45,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4785,6 +4786,7 @@ ParticleSystemRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4876,14 +4878,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8316452839832698599}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43270fda31ca9c641a8531f864eb5579, type: 3}
+  m_Script: {fileID: 11500000, guid: 5013cfe231684ac4a81a558be00e1577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingTime: 0.6
-  timeBtwSteps: 1.5
+  movingTime: 1.5
+  timeBtwSteps: 0.25
   rocketExplosion: {fileID: 1985179322171870046, guid: 70b1a675f33d77d45835201fefa0f393,
     type: 3}
   rocketExplodeSound: {fileID: 2445961553439489352}
+  rocketDmg: 5
 --- !u!82 &2445961553439489352
 AudioSource:
   m_ObjectHideFlags: 0

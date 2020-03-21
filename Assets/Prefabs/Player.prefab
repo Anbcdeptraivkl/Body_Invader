@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 7715268365818723390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3.37, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 7715268367045079978}
   - {fileID: 7715268367458214765}
@@ -91,15 +91,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7715268365818723390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d8c728e55d6a2048b6ae0f229da096b, type: 3}
+  m_Script: {fileID: 11500000, guid: 549ca669930fd7047a62613815418d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shotList:
   - shotObj: {fileID: 1600620134327404, guid: 2fa8796c633ed734580b5a65cd172799, type: 3}
     upgradeLevel: 0
-  shotSpark: {fileID: 0}
   shotSpawn: {fileID: 7715268367458214765}
-  fireRate: 0.13
+  fireRate: 0.15
 --- !u!114 &7715268365818723393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,30 +108,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 7715268365818723390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e37d762975e9e3144a307f4d81d425a1, type: 3}
+  m_Script: {fileID: 11500000, guid: be8ec92e1256dbd48a3c5f7d4f3b7aec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
-  moveRate: 0.6
+  moveSpeed: 2
+  moveRate: 5
   dashSkill:
     effect: {fileID: 4790126867424132844, guid: 3615dc1eb5dd16b41b5350ae3e6e49dd,
       type: 3}
-    distance: 120
-    cooldown: 2
+    distance: 2
+    cooldown: 3
     cost: 15
-    speedRate: 1.5
+    speedRate: 10
   shield:
     effect: {fileID: 6323157591187710404, guid: d213751e6ddaa814db450162f73d66d0,
       type: 3}
-    duration: 1.5
-    cooldown: 5
+    duration: 2
+    cooldown: 10
     cost: 20
-  playerAnimator: {fileID: 0}
+  playerAnimator: {fileID: 7715268365818723401}
   bounds:
-    xMin: -7.5
-    xMax: 7.5
-    yMin: -4
-    yMax: 4
+    xMin: -8
+    xMax: 8
+    yMin: -4.2
+    yMax: 4.2
 --- !u!114 &7715268365818723394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,29 +141,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7715268365818723390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3f64478fdbfde044adb15cb6ca01416, type: 3}
+  m_Script: {fileID: 11500000, guid: c1dcaa4c1a634a24c8b84e7b2cb3212a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerHpUi:
-    HeartsCollection:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    fullHPSprite: {fileID: 2681429535466103228, guid: 128d8a88d8f34c9439d6e44c3de91c9a,
-      type: 3}
-    lostHPSprite: {fileID: -9185184514948751403, guid: 128d8a88d8f34c9439d6e44c3de91c9a,
-      type: 3}
-  maxHp: 3
-  currentHp: 3
-  invinTime: 0.75
-  playerExplosion: {fileID: 5903513841248052773, guid: f378928e77eb593418a8b059e959ad48,
-    type: 3}
-  hpLostParticle: {fileID: 7067735033427012354, guid: 1374f7fe96f667045a50286a2836ec1f,
-    type: 3}
-  hpLocation: {fileID: 0}
-  hitSound: {fileID: 7715268365818723400}
-  hpUpSound: {fileID: 7715268365818723402}
+  fillEnergyBar: {fileID: 0}
+  maxEnergy: 100
+  depleteRate: 1
+  nextRate: 0.1
 --- !u!114 &7715268365818723399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,7 +157,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7715268365818723390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06be77c772b2028409e5104a0ce4cc15, type: 3}
+  m_Script: {fileID: 11500000, guid: 458848e30e65d6848a71b4a2a8b02ddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &7715268365818723398
@@ -186,12 +169,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7715268365818723390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01919c4ab93074c40b1f78bd08edc212, type: 3}
+  m_Script: {fileID: 11500000, guid: 8eb415352bb25c04095d716d219d3b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strongShootTime: 5
-  upScore: 30
-  upgReceivingSfx: {fileID: 7715268365818723403}
+  missileCount: {fileID: 0}
+  missileObj: {fileID: 8316452839832698599, guid: c462de378e4ac774c8c012d02305693e,
+    type: 3}
 --- !u!82 &7715268365818723400
 AudioSource:
   m_ObjectHideFlags: 0
@@ -508,12 +491,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 7715268365818723390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12da8f25cfa02ec4e9b2419d690e7d89, type: 3}
+  m_Script: {fileID: 11500000, guid: 58676f2ac24357e48bdfaa01c8dbffc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missileCount: {fileID: 0}
-  missileObj: {fileID: 8316452839832698599, guid: c462de378e4ac774c8c012d02305693e,
+  PlayerHpUi:
+    HeartsCollection:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    fullHPSprite: {fileID: 2681429535466103228, guid: 128d8a88d8f34c9439d6e44c3de91c9a,
+      type: 3}
+    lostHPSprite: {fileID: -9185184514948751403, guid: 128d8a88d8f34c9439d6e44c3de91c9a,
+      type: 3}
+  maxHp: 3
+  currentHp: 0
+  invinTime: 0.75
+  playerExplosion: {fileID: 5903513841248052773, guid: f378928e77eb593418a8b059e959ad48,
     type: 3}
+  hitSound: {fileID: 7715268365818723400}
+  hpUpSound: {fileID: 7715268365818723402}
 --- !u!114 &8181625682228309793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,13 +520,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7715268365818723390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47b48525a2606c44fbd807f5ebb5e888, type: 3}
+  m_Script: {fileID: 11500000, guid: cabf68cf9261b1249a422f1b6002877d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillEnergyBar: {fileID: 0}
-  maxEnergy: 100
-  depleteRate: 5
-  nextRate: 0.2
+  upgReceivingSfx: {fileID: 7715268365818723403}
 --- !u!1 &7715268366580100956
 GameObject:
   m_ObjectHideFlags: 0
@@ -5296,6 +5290,7 @@ ParticleSystemRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5390,6 +5385,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5450,7 +5446,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7715268367458214762}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.005000019, y: 0.547, z: 0}
+  m_LocalPosition: {x: 0, y: 0.7, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 7715268365818723395}

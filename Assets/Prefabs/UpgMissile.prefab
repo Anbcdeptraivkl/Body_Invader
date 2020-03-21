@@ -45,6 +45,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -93,8 +94,8 @@ GameObject:
   - component: {fileID: 2350566152220825706}
   - component: {fileID: 2350566152220825707}
   - component: {fileID: 2350566152220825621}
-  - component: {fileID: 2447008154069939730}
   - component: {fileID: 8473975837844444247}
+  - component: {fileID: 2075197753740267657}
   m_Layer: 0
   m_Name: UpgMissile
   m_TagString: Upgrade
@@ -164,25 +165,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2350566152220825622}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e472cd49b27950243b8f7865398b2291, type: 3}
+  m_Script: {fileID: 11500000, guid: abf3af87dcd9e77458a08533b2ba7868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeType: 2
---- !u!114 &2447008154069939730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2350566152220825622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 730b878467750ab429e69b3c863c0cd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  burstSpeed: {x: 3, y: 3}
-  burstTime: 0.5
-  stillTime: 0.25
 --- !u!114 &8473975837844444247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,12 +178,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 2350566152220825622}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f042c61136a77054b93b3f6064ed76dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ea33c32491cb7545a14fcc56b2a831c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   xSpeed: 0
   ySpeed: -5
   delayFirst: 1
+--- !u!114 &2075197753740267657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2350566152220825622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99c5cb322eb145049ac73026dca7d4a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burstSpeed: {x: 3, y: 3}
+  burstTime: 0.5
+  stillTime: 0.5
 --- !u!1001 &2350566152108850505
 PrefabInstance:
   m_ObjectHideFlags: 0

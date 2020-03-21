@@ -45,6 +45,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -125,6 +126,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -206,6 +208,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -353,7 +356,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7884686147648403744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 032cc7699beac3b4a925524526075e7c, type: 3}
+  m_Script: {fileID: 11500000, guid: f3ad8514d2333ee43945b8616a35a9a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 1
@@ -434,6 +437,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -522,14 +526,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7884686148464857674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67478dabbad8d1e43b10c15243b52e6d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fc7bcfc1285d7548bffae5118b20989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathRay: {fileID: 7884686147648403744}
-  ySpeedMod: -10
-  moveTime: 0.4
-  rotateTime: 0.5
-  targetRotatingAngle: -90
 --- !u!50 &7884686148464857670
 Rigidbody2D:
   serializedVersion: 4
@@ -560,9 +559,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7884686148464857674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5982fdac306456a43b033fb2d825add8, type: 3}
+  m_Script: {fileID: 11500000, guid: 1913596edac61474db45e22607bdfe1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitShockParticle: {fileID: 6421501278146835262, guid: 1e321729e17282346ae072d1b19c6ca9,
+    type: 3}
 --- !u!114 &7884686148464857724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -572,11 +573,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7884686148464857674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20adb52ac8c3e19489269c362911b715, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e25b88aae1c7a643ba1742caca79b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitShockParticle: {fileID: 1713355028149410088, guid: 77deca45be6d3d144aa89be336f31b26,
+  baseHP: 10
+  scoreValue: 0
+  energyReward: 10
+  shotExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
     type: 3}
+  explodingSound: {fileID: 7884686148464857726}
 --- !u!114 &7884686148464857725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,11 +591,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7884686148464857674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ff54bc747538bb45aa063dae30a9812, type: 3}
+  m_Script: {fileID: 11500000, guid: 9258c3067a121ce479b0f617a95eec40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selfExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
-    type: 3}
+  timer: 0.25
 --- !u!114 &7884686148464857666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -600,15 +604,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 7884686148464857674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e78897178026a4c42811ccf3fddd0cb2, type: 3}
+  m_Script: {fileID: 11500000, guid: b5fe19fe1b469284b98a8dea95b443c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHP: 15
-  scoreValue: 40
-  energyReward: 10
-  shotExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
-    type: 3}
-  explodingSound: {fileID: 7884686148464857726}
+  randomDropList: []
+  persistentDropList:
+  - name: Coin
+    obj: {fileID: 2590032200894953485, guid: 40287ae6dc4966145b1fff12eec5573c, type: 3}
+    rarity: 1
+    amount: 5
+  dropChance: 0
+  delayBtwItems: 0
+  delayBtwnPieces: 0.1
 --- !u!114 &7884686148464857667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,10 +625,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7884686148464857674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ba683ea23b91774fb01da539ef158d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 53ba033f368b32346abcb007b7a6a282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0.25
 --- !u!114 &7884686148464857664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -631,30 +637,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7884686148464857674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f71eb514ca9aa94c8aca2a18e9482a2, type: 3}
+  m_Script: {fileID: 11500000, guid: c8d980860e293e944aff4d2fd5576eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomDropList:
-  - name: Heart
-    obj: {fileID: 2509610958581847553, guid: 9eaa4f66409158446a9099f982613a7c, type: 3}
-    rarity: 30
-    amount: 1
-  - name: Missile
-    obj: {fileID: 0}
-    rarity: 30
-    amount: 1
-  - name: Shot
-    obj: {fileID: 2148248754928969093, guid: cc8f423a879000144bbf885af45209c9, type: 3}
-    rarity: 30
-    amount: 1
-  persistentDropList:
-  - name: Coin
-    obj: {fileID: 2590032200894953485, guid: 40287ae6dc4966145b1fff12eec5573c, type: 3}
-    rarity: 100
-    amount: 10
-  dropChance: 25
-  delayBtwItems: 0
-  delayBtwnPieces: 0.1
+  deathRay: {fileID: 7884686147648403744}
+  ySpeedMod: 5
+  moveTime: 1
+  rotateTime: 1
+  targetRotatingAngle: 90
 --- !u!95 &7884686148464857665
 Animator:
   serializedVersion: 3

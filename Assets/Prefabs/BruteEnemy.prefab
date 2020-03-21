@@ -45,6 +45,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -68,7 +69,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a2db94146ce60a140aea844324417b4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -168,10 +169,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2544080164171688899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20adb52ac8c3e19489269c362911b715, type: 3}
+  m_Script: {fileID: 11500000, guid: 1913596edac61474db45e22607bdfe1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitShockParticle: {fileID: 6421501278146835262, guid: 1e321729e17282346ae072d1b19c6ca9,
+  hitShockParticle: {fileID: 1713355028149410088, guid: 77deca45be6d3d144aa89be336f31b26,
     type: 3}
 --- !u!114 &8402703027354957720
 MonoBehaviour:
@@ -182,11 +183,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2544080164171688899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ff54bc747538bb45aa063dae30a9812, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e25b88aae1c7a643ba1742caca79b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selfExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
+  baseHP: 2
+  energyReward: 5
+  shotExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
     type: 3}
+  explodingSound: {fileID: -3165659544326757525}
 --- !u!114 &8514724015647638869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,15 +200,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2544080164171688899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e78897178026a4c42811ccf3fddd0cb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 9258c3067a121ce479b0f617a95eec40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHP: 3
-  scoreValue: 5
-  energyReward: 5
-  shotExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
-    type: 3}
-  explodingSound: {fileID: -3165659544326757525}
+  timer: 0.25
 --- !u!114 &371507722883702679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,10 +213,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2544080164171688899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ba683ea23b91774fb01da539ef158d1, type: 3}
+  m_Script: {fileID: 11500000, guid: b5fe19fe1b469284b98a8dea95b443c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0.25
+  randomDropList: []
+  persistentDropList:
+  - name: Coin
+    obj: {fileID: 2590032200894953485, guid: 40287ae6dc4966145b1fff12eec5573c, type: 3}
+    rarity: 100
+    amount: 3
+  dropChance: 5
+  delayBtwItems: 0
+  delayBtwnPieces: 0.1
 --- !u!95 &-1695933692683471988
 Animator:
   serializedVersion: 3
@@ -246,7 +253,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2544080164171688899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5982fdac306456a43b033fb2d825add8, type: 3}
+  m_Script: {fileID: 11500000, guid: 53ba033f368b32346abcb007b7a6a282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &-3444367341913782471
@@ -258,26 +265,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2544080164171688899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f71eb514ca9aa94c8aca2a18e9482a2, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d8c14ec04a9403469b6c81d5d0286d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomDropList:
-  - name: Heart
-    obj: {fileID: 2509610958581847553, guid: 9eaa4f66409158446a9099f982613a7c, type: 3}
-    rarity: 40
-    amount: 1
-  - name: Missile
-    obj: {fileID: 2350566152220825622, guid: 7b47f37ce62541d418a48c2b0c75b77c, type: 3}
-    rarity: 60
-    amount: 1
-  persistentDropList:
-  - name: Coin
-    obj: {fileID: 2590032200894953485, guid: 40287ae6dc4966145b1fff12eec5573c, type: 3}
-    rarity: 100
-    amount: 2
-  dropChance: 5
-  delayBtwItems: 0.5
-  delayBtwnPieces: 0.1
+  xSpeed: 0
+  ySpeed: -4
 --- !u!82 &-3165659544326757525
 AudioSource:
   m_ObjectHideFlags: 0
@@ -383,8 +375,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2544080164171688899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8763eb91862293b4ab9a5a1733a3f06b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fc7bcfc1285d7548bffae5118b20989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedX: 0
-  speedY: -3

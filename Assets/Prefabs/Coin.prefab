@@ -46,6 +46,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -69,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2689188995945475364, guid: 14f99c246568d914a9e15bf80f5569b9,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -114,7 +115,6 @@ GameObject:
   - component: {fileID: 2945300113121393042}
   - component: {fileID: -6829302321202006278}
   - component: {fileID: -8289466599931025915}
-  - component: {fileID: 1268026357202880459}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Coin
@@ -162,11 +162,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2590032200894953485}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75944aa70314f834f879928aacd2a49b, type: 3}
+  m_Script: {fileID: 11500000, guid: 61a52f0cce6725144814961ef06eca84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 1
-  movingRate: 5
+  speed: 10
 --- !u!50 &-6829302321202006278
 Rigidbody2D:
   serializedVersion: 4
@@ -197,23 +197,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2590032200894953485}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 730b878467750ab429e69b3c863c0cd2, type: 3}
+  m_Script: {fileID: 11500000, guid: 99c5cb322eb145049ac73026dca7d4a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   burstSpeed: {x: 3, y: 3}
-  burstTime: 0.5
-  stillTime: 0.25
---- !u!114 &1268026357202880459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2590032200894953485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75944aa70314f834f879928aacd2a49b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinValue: 1
-  movingRate: 1.2
+  burstTime: 0.2
+  stillTime: 0.2

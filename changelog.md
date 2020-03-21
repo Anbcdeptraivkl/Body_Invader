@@ -6,6 +6,40 @@ All rights reserved.
 
 ## [Unreleased]
 
+### Added
+- Enemy Spawn points
+- Sea background sprites + basic movements
+- Swordfish Prototype - Stabbing Enemy
+  - Behaviours: Rotate then Charge at Player (old) Positions
+  - Spawn in Groups of 3, one by one
+
+### Changed
+- Re-located all scripts into approriate Groups and Folders
+- Added Parents Object to some Enemies for Positionings, Movements and Animations Relativity
+- Tweaked the Enemies Movements, SPeed and HP
+- Toad Trackers Changes
+  - Now have Stationery Platform (left out on the background on Toads Destroyed)
+  - Move with the same Speed as the Background Sliding
+- Enemy's Cam Shake: Cam now only shake on Shot Down, not every time getting shot
+- Updated the Movement scripts
+  - Replaced wrong Lerpings in Update functions with MoveTowards(), Rigidbody.velocity overriding and RotateTowards so the movements are smoother and faster
+  - Tweaked the numbers
+
+### Removed
+- Removed Shop System
+- Removed Level Preparations -> Levels now Loaded organically right from the Level Selection Screen
+- Removed redundant Dummy Levels
+- Removed some redundant Properties in Enemy Scripts
+- Removed Score system and Increase Missile with Score Feature
+- Removed Hp Break Effect
+
+### Fixed
+- Tracker Tracking in Sync: now Toad Trackers will Finish Rotating before Shooting
+- Game Over functionalities
+  - Background now stopped scrolling on Game Over
+  - Disabling the Player HUD
+  - Activating the Game Over canvas
+
 ## [0.17.0] - 1/2/2020
 
 ### Added

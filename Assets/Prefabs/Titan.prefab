@@ -45,6 +45,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -187,9 +188,9 @@ GameObject:
   - component: {fileID: 2978997418956032345}
   - component: {fileID: 2978997418956032350}
   - component: {fileID: 2978997418956032341}
-  - component: {fileID: 2978997418956032344}
   - component: {fileID: -1947527847756643652}
   - component: {fileID: 1962674607319449273}
+  - component: {fileID: 2413459447522813527}
   m_Layer: 0
   m_Name: Titan
   m_TagString: Enemy
@@ -245,19 +246,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2978997418956032323}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07e5479e6a576f341bb997e23e81b21a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fc7bcfc1285d7548bffae5118b20989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ySpeed: -3
-  sideSpeed: 5
-  speedSmoothLimit: 5
-  startDelay: 0.2
-  downTime: 1.2
-  bounds:
-    xMin: -3.5
-    xMax: 3.5
-    yMin: -2.5
-    yMax: 7
 --- !u!60 &2978997418956032340
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -308,9 +299,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2978997418956032323}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5982fdac306456a43b033fb2d825add8, type: 3}
+  m_Script: {fileID: 11500000, guid: 1913596edac61474db45e22607bdfe1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitShockParticle: {fileID: 6421501278146835262, guid: 1e321729e17282346ae072d1b19c6ca9,
+    type: 3}
 --- !u!114 &2978997418956032346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,11 +313,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2978997418956032323}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20adb52ac8c3e19489269c362911b715, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e25b88aae1c7a643ba1742caca79b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitShockParticle: {fileID: 6421501278146835262, guid: 1e321729e17282346ae072d1b19c6ca9,
+  baseHP: 61
+  scoreValue: 0
+  energyReward: 20
+  shotExplosion: {fileID: 5903513841248052773, guid: f378928e77eb593418a8b059e959ad48,
     type: 3}
+  explodingSound: {fileID: -1947527847756643652}
 --- !u!114 &2978997418956032345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,10 +331,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2978997418956032323}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ba683ea23b91774fb01da539ef158d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 9258c3067a121ce479b0f617a95eec40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0.5
+  timer: 0.25
 --- !u!114 &2978997418956032350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,15 +344,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 2978997418956032323}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e78897178026a4c42811ccf3fddd0cb2, type: 3}
+  m_Script: {fileID: 11500000, guid: b5fe19fe1b469284b98a8dea95b443c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHP: 50
-  scoreValue: 100
-  energyReward: 20
-  shotExplosion: {fileID: 5903513841248052773, guid: f378928e77eb593418a8b059e959ad48,
-    type: 3}
-  explodingSound: {fileID: -1947527847756643652}
+  randomDropList:
+  - name: Missile
+    obj: {fileID: 2350566152220825622, guid: 7b47f37ce62541d418a48c2b0c75b77c, type: 3}
+    rarity: 10
+    amount: 1
+  - name: Heart
+    obj: {fileID: 2509610958581847553, guid: 9eaa4f66409158446a9099f982613a7c, type: 3}
+    rarity: 10
+    amount: 1
+  persistentDropList:
+  - name: Coin
+    obj: {fileID: 2590032200894953485, guid: 40287ae6dc4966145b1fff12eec5573c, type: 3}
+    rarity: 1
+    amount: 10
+  dropChance: 0
+  delayBtwItems: 0
+  delayBtwnPieces: 0.1
 --- !u!114 &2978997418956032341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,52 +373,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2978997418956032323}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4726055c43b946246b310d06359de94e, type: 3}
+  m_Script: {fileID: 11500000, guid: 53ba033f368b32346abcb007b7a6a282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yVelocity: -4
-  xVelocity: 2
-  shot: {fileID: 1600620134327404, guid: f397d1a3f912a6143a17a99ec20d044c, type: 3}
-  shotSpawnCollection:
-  - {fileID: 2978997418330013187}
-  - {fileID: 2978997417651702513}
-  numOfShotWaves: 2
-  startDelay: 1
-  turnDelay: 0.8
-  delayBtwShotWave: 0.3
---- !u!114 &2978997418956032344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2978997418956032323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f71eb514ca9aa94c8aca2a18e9482a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  randomDropList:
-  - name: Shot
-    obj: {fileID: 2148248754928969093, guid: cc8f423a879000144bbf885af45209c9, type: 3}
-    rarity: 100
-    amount: 1
-  persistentDropList:
-  - name: Coin
-    obj: {fileID: 2590032200894953485, guid: 40287ae6dc4966145b1fff12eec5573c, type: 3}
-    rarity: 100
-    amount: 10
-  - name: Heart
-    obj: {fileID: 2509610958581847553, guid: 9eaa4f66409158446a9099f982613a7c, type: 3}
-    rarity: 100
-    amount: 1
-  - name: Missile
-    obj: {fileID: 2350566152220825622, guid: 7b47f37ce62541d418a48c2b0c75b77c, type: 3}
-    rarity: 100
-    amount: 1
-  dropChance: 100
-  delayBtwItems: 0.5
-  delayBtwnPieces: 0.1
 --- !u!82 &-1947527847756643652
 AudioSource:
   m_ObjectHideFlags: 0
@@ -526,3 +491,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2413459447522813527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2978997418956032323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d47292ffe4ad4546955690049608ae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ySpeed: -5
+  sideSpeed: 5
+  speedSmoothLimit: 10
+  startDelay: 1
+  downTime: 1
+  bounds:
+    xMin: -6
+    xMax: 6
+    yMin: -1
+    yMax: 3

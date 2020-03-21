@@ -45,6 +45,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -110,7 +111,7 @@ Transform:
   m_GameObject: {fileID: 1600620134327404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4512488476694008}
   m_Father: {fileID: 0}
@@ -162,7 +163,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1600620134327404}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24b0386b857e28f4cb16a08fbbcb6d69, type: 3}
+  m_Script: {fileID: 11500000, guid: db24096a684c33e48b888450d31c6d2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
@@ -180,6 +181,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
