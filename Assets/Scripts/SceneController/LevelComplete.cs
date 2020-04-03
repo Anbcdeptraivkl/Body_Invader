@@ -15,21 +15,19 @@ public class LevelComplete : MonoBehaviour
     public Text coinText;
     public int levelIndex = 1;
 
+    // Sessions
+    // Complete the game Flag
+    static bool win;
     // References:
-    CompleteLine completeLineBehaviour;
     MoneyManager moneyManager;
 
     void Start() {
-        GameObject comLine = GameObject.FindWithTag("GoalLine");
-        if (comLine) {
-            completeLineBehaviour = comLine.GetComponent<CompleteLine>();
-        } else 
-            Debug.Log("No Goal Line Found!");
+        win = false;
         moneyManager = gameObject.GetComponent<MoneyManager>();
     }
 
     void Update() {
-        if (completeLineBehaviour.CheckLevelComplete() && EnemyCount.Wiped()) {
+        if (win && EnemyCount.Wiped()) {
             // Delay so the player has enough time to collect the last coins:
             Invoke("FinishLevel", 2f);
             // Stop updating when the level is finished:
@@ -37,43 +35,34 @@ public class LevelComplete : MonoBehaviour
         }
     }
 
+    public static void Win() {
+        win = true;
+    }
+
     void FinishLevel() {
+        Debug.Log("Level Completed!");
         // UIs
         ActivateUIs();
         // Intuitive Effects:
         PlayEffects();
-        // Print level's results on screen
-        Results();
         // Prefs Updating + Reseting for next Stage
         UpdatePrefs();
-        ResetUsingItemsPrefs();
-        Debug.Log("Level Completed!");
     }
 
     void ActivateUIs() {
-        completePanel.SetActive(true);
         playerCanvas.SetActive(false);
+        completePanel.SetActive(true);
+        Results();
     }
 
     void Results() {
-         // Print Results:
+        // Print level's results on screen
         coinText.text = "Coin: " + MoneyManager.GetTotalMoney() + " + " + moneyManager.GetStageMoney();
-        
     }
 
     void UpdatePrefs() {
         // Updating Preferences:
         moneyManager.UpdateMoney();
-    }
-
-    // Reset Preparation Data after completing levels
-    void ResetUsingItemsPrefs() {
-        PlayerPrefs.SetInt("UsingWeapon", 0);
-        PlayerPrefs.SetInt("UsingEquip", 0);
-        PlayerPrefs.SetInt("UsingConsume", 0);
-         // If completed a new levels, update the Level COmplettion Pref
-        if (levelIndex > PlayerPrefs.GetInt("LevelsDone", 0))
-            PlayerPrefs.SetInt("LevelsDone", levelIndex);
     }
 
     void PlayEffects() {

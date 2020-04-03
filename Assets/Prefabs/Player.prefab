@@ -116,7 +116,7 @@ MonoBehaviour:
   dashSkill:
     effect: {fileID: 4790126867424132844, guid: 3615dc1eb5dd16b41b5350ae3e6e49dd,
       type: 3}
-    distance: 2
+    distance: 7.5
     cooldown: 3
     cost: 15
     speedRate: 10

@@ -1,0 +1,679 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"but",
+				"butterflywings"
+			],
+			[
+				"bee",
+				"beepostinit"
+			],
+			[
+				"Add",
+				"AddPrefabPostInit"
+			],
+			[
+				"Set",
+				"SetSharedLootTable"
+			],
+			[
+				"lo",
+				"lootdropper"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Spark Invader.sublime-project",
+			"settings":
+			{
+				"buffer_size": 164,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Scripts/todo.md",
+			"settings":
+			{
+				"buffer_size": 943,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"int",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/ANBC/Projects/Games/Spark Invader/Assets/Scripts"
+	],
+	"file_history":
+	[
+		"/D/ANBC/Projects/Games/Spark Invader/Assets/Scripts/todo.md",
+		"/D/ANBC/Projects/Games/Spark Invader/todo.md",
+		"/D/ANBC/Projects/Games/AlphaPrime/alphaPrime Prototype/changelog.md",
+		"/D/ANBC/Projects/Games/Primal/Assets/Scripts/Data/ItemData.cs",
+		"/D/ANBC/Projects/Games/Primal/Assets/Scripts/Playable/PlayerCharacter.cs",
+		"/D/ANBC/Storage/Progress/Quotes.md",
+		"/D/ANBC/Storage/Progress/Goals.md",
+		"/D/ANBC/Storage/Progress/Routines.md",
+		"/D/ANBC/Storage/Progress/Library.md",
+		"/D/ANBC/Projects/Games/AlphaPrime/alphaPrime Prototype/.gitattributes",
+		"/D/ANBC/Projects/Games/Primal/.gitattributes",
+		"/D/ANBC/Projects/Games/AlphaPrime/changelog.md",
+		"/D/ANBC/Projects/Games/Primal/.gitignore",
+		"/D/ANBC/Projects/Games/Primal/gitignore.txt",
+		"/D/ANBC/Projects/Web/e-shop/include/cart.php",
+		"/C/xampp/apache/conf/httpd.conf",
+		"/D/ANBC/Storage/Progress/Personal TODO.md",
+		"/D/ANBC/Projects/Web/Product-Gallery/DBController.php",
+		"/D/ANBC/Projects/Web/Product-Gallery/index.php",
+		"/D/ANBC/Projects/Web/Product-Gallery/tbl_products.sql",
+		"/D/ANBC/Projects/Web/Product-Gallery/style.css",
+		"/D/ANBC/Projects/Web/Product-Gallery/prdt-gallery.php",
+		"/D/ANBC/Storage/Progress/English Notes.md",
+		"/D/ANBC/Projects/Games/Spark Invader/Assets/Scripts/LevelController.cs",
+		"/D/ANBC/Projects/Games/Spark Invader/Assets/Scripts/DropBehaviour.cs",
+		"/D/ANBC/Storage/Progress/Random Ideas.md",
+		"/D/ANBC/Storage/Progress/Ideas.md",
+		"/D/ANBC/Storage/Progress/Reading.md",
+		"/D/ANBC/Storage/Progress/Masterpiece Games.md",
+		"/D/ANBC/Storage/Progress/Dev - Game Notes.md",
+		"/D/ANBC/Storage/Progress/Great Manga and Novels.md",
+		"/D/ANBC/Storage/Progress/Dev - Web Notes.md",
+		"/D/ANBC/Storage/Progress/Great Anime.md",
+		"/D/ANBC/Storage/Progress/Art Skills.md",
+		"/D/ANBC/Storage/Progress/Playing.md",
+		"/D/ANBC/Storage/Progress/Game Dev Notes.md",
+		"/D/ANBC/Storage/Progress/Web Dev Notes.md",
+		"/D/ANBC/Storage/Progress/Essential Programs.txt",
+		"/D/ANBC/Storage/Progress/Soft Skills/General Skills.md",
+		"/D/ANBC/Storage/Progress/Arts/Art Skills.md",
+		"/D/ANBC/Storage/Progress/Software Development/Dev Notes.md",
+		"/D/ANBC/Storage/Progress/Languages/Japanese Notes.md",
+		"/D/ANBC/Download/Programs/KMSAuto-Net/Password for Archive - windows.txt",
+		"/D/ANBC/Storage/Progress/Software Development/Game Dev Notes.md",
+		"/C/Users/HT/Desktop/Junks.md",
+		"/D/Games/ROMs/NDS/Pokemon Blaze Black/Pokemon Blaze Black v3.1 - Vanilla Randomized.nds.log",
+		"/D/ANBC/Download/Games/Pokemon/Pokemon Blaze Black v3.1 - Vanilla/Documentation/Action Replay Codes.rtf",
+		"/D/ANBC/Download/Games/Pokemon/Pokemon Blaze Black v3.1 - Vanilla/National PokeDex Equipment/Guide.txt",
+		"/D/ANBC/Storage/Progress/Software Development/Office Skills.md",
+		"/D/Games/ROMs/NDS/Pokemon Blaze Black 2/Pokemon Blaze Black 2 Vanila Randomized.nds.log",
+		"/D/ANBC/Storage/Documents/Personal/Great Manga and Novels.md",
+		"/D/ANBC/Storage/Documents/Personal/Great Anime.md",
+		"/D/ANBC/Storage/Documents/Personal/Masterpiece Games.md",
+		"/D/ANBC/Storage/Progress/General Skills.md",
+		"/D/ANBC/Storage/Progress/Languages/Language Learning Notes.md",
+		"/D/ANBC/Storage/Progress/Languages/English Notes.txt",
+		"/D/Games/Darkest Dungeon The Color of Madness/campaign/quest/quest.types.json",
+		"/D/Games/Darkest Dungeon The Color of Madness/heroes/abomination/abomination.info.darkest",
+		"/D/ANBC/Projects/Games/Spark Invader/Assets/Resources/LevelData.xml",
+		"/D/ANBC/Download/Games/Pokemon/BlazeBlack 2 VoltWhite 2/Patches/Patching Notes.txt",
+		"/D/ANBC/Download/Games/Pokemon/BlazeBlack 2 VoltWhite 2/Patches/xdeltaUI/readme.txt",
+		"/D/ANBC/Download/Games/Pokemon/Theta Emerald EX 2-27-2017/NUPS PATCHER/README.txt",
+		"/D/ANBC/Download/Games/Pokemon/BlazeBlack VoltWhite 2/Patches/xdeltaUI/readme.txt",
+		"/D/ANBC/Download/Games/Pokemon/BlazeBlack VoltWhite 2/Patches/Patching Notes.txt",
+		"/D/ANBC/Download/Programs/Installed/KMSAuto-Net-Portable/Password for Archive - windows.txt",
+		"/D/ANBC/Download/Programs/Installed/KMSpico 10.2.0 Install/KMSpico Install/Readme.txt",
+		"/D/ANBC/Storage/Documents/Personal/Great Music.txt",
+		"/C/xampp/htdocs/practices/index.php",
+		"/C/xampp/xampp-control.ini",
+		"/D/ANBC/Projects/Games/Spark Invader/changelog.md",
+		"/C/Program Files (x86)/Resource Hacker/ReadMe.txt",
+		"/D/ANBC/Download/Games/BLUE.REVOLVER/love.dll",
+		"/D/ANBC/Download/Games/BLUE.REVOLVER/README.txt",
+		"/D/Games/Salt.and.Sanctuary.v1.0.0.8/config/config.ini",
+		"/D/ANBC/Download/Games/Pillars.Of.Eternity.Definitive.Edition.GOG/README.txt",
+		"/C/Users/HT/Desktop/Junks.txt",
+		"/D/ANBC/Storage/Progress/Notes.md",
+		"/C/Users/HT/AppData/Roaming/SumatraPDF/SumatraPDF-settings.txt",
+		"/D/ANBC/Storage/Documents/Personal/Great Entertainments.md",
+		"/D/ANBC/Storage/Documents/Personal/GreatMusic.txt",
+		"/D/ANBC/Storage/Documents/Personal/MasterpieceGames.md",
+		"/D/ANBC/Storage/Documents/Personal/GreatEntertainments.md",
+		"/D/ANBC/Projects/Web/Refined-Blog/src/main.css",
+		"/C/Users/HT/Desktop/New Text Document.txt",
+		"/C/Users/HT/Documents/My Games/Grim Dawn/Settings/options.txt",
+		"/C/Users/HT/Documents/My Games/Grim Dawn/Settings/keybindings.txt",
+		"/D/ANBC/Projects/Web/Practices/random-excersises.htm",
+		"/D/ANBC/Projects/Web/Practices/src/objects.js",
+		"/D/ANBC/Projects/Softwares/React-Practice/test-app/src/App.js",
+		"/D/Games/Dont.Starve.v269653/data/scripts/components/stackable.lua",
+		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/tallbirdegg.lua",
+		"/D/Games/Dont.Starve.v269653/mods/99 Stack Items/modmain.lua",
+		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/egg.lua",
+		"/D/Anbc.Download/Compressed/Tumble Weed/modinfo.lua",
+		"/D/Anbc.Download/Compressed/Tumble Weed/modmain.lua",
+		"/D/Anbc.Download/Compressed/Tumble Weed/scripts/prefabs/tumbleweeds.lua",
+		"/D/Games/Dont.Starve.v269653/mods/Mod Storage/Creature Tutor 2/modmain.lua",
+		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/beefalo.lua",
+		"/D/Games/Dont.Starve.v269653/mods/Mod Storage/Creature Tutor 1/modmain.lua",
+		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/birdcage.lua",
+		"/D/Games/Dont.Starve.v269653/mods/Realistic Yield/modinfo.lua",
+		"/D/Games/Dont.Starve.v269653/mods/Realistic Yield/scripts/prefabs/beefalo.lua",
+		"/D/Games/Dont.Starve.v269653/mods/Realistic Yield/scripts/prefabs/tentacle.lua",
+		"/D/Games/Dont.Starve.v269653/mods/Realistic Yield/scripts/prefabs/hound.lua",
+		"/D/Games/Dont.Starve.v269653/mods/Realistic Yield/scripts/prefabs/bat.lua",
+		"/D/Games/Dont.Starve.v269653/mods/Realistic Yield/modmain.lua",
+		"/D/Games/Dont.Starve.v269653/data/scripts/components/lootdropper.lua",
+		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/tentacle.lua",
+		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/spider.lua",
+		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/tallbird.lua",
+		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/rabbit.lua",
+		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/merm.lua",
+		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/krampus.lua",
+		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/butterfly.lua",
+		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/birds.lua",
+		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/berrybush.lua",
+		"/D/Games/Dont.Starve.v269653/mods/Realistic Meat Yield/modmain.lua",
+		"/D/Games/Dont.Starve.v269653/mods/Realistic Meat Yield/modinfo.lua",
+		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/bee.lua",
+		"/D/Games/Dont.Starve.v269653/mods/Realistic Meat Yield/scripts/prefabs/bat.lua",
+		"/D/Games/Dont.Starve.v269653/mods/Realistic Meat Yield/scripts/prefabs/hound.lua",
+		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/hound.lua",
+		"/D/Games/Dont.Starve.v269653/mods/Boomerang Enhancement/modmain.lua",
+		"/D/Games/Dont.Starve.v269653/mods/Don't farm/modmain.lua",
+		"/D/Games/Dont.Starve.v269653/mods/Don't farm/scripts/prefabs/bamboo.lua",
+		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/penguin.lua",
+		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/meats.lua",
+		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/bat.lua"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"alias",
+			"directory",
+			"documentroot",
+			"final",
+			"mario",
+			"build",
+			"fire em",
+			"rpg",
+			"mark of ",
+			"puzzle",
+			"thinking",
+			"art",
+			"design",
+			"mmo",
+			"rogue",
+			"SALT",
+			"Mahoutsukai no Yome",
+			"advanced war",
+			"final",
+			"turn",
+			"fire em",
+			"strate",
+			"yome",
+			"D",
+			"read",
+			"abyss",
+			"mari",
+			"slug",
+			"advance",
+			"mario",
+			"advance",
+			"heroes",
+			"might",
+			"language",
+			"katana",
+			"SHips",
+			"ninja",
+			"stra",
+			"adve",
+			"adventure",
+			"elect",
+			"electer",
+			"sora",
+			"sora no",
+			"fps",
+			"castleva",
+			"steamworld",
+			"forager",
+			"hyper light",
+			"ahare",
+			"rune",
+			"pokemon",
+			"mato",
+			"mega",
+			"dead",
+			"turn-based",
+			"stra",
+			"rts",
+			"advanced",
+			"perso",
+			"radiant",
+			"learning",
+			"castleva",
+			"advanced",
+			"shoot",
+			"code complete",
+			"animation",
+			"english",
+			"castle",
+			"practice",
+			"drawing",
+			"css",
+			"CHUNKING MEMORIZING",
+			"taisen",
+			"MECHANICS and GAMEPLAY",
+			"dark",
+			"fallout",
+			"darkes",
+			"action",
+			"japanese",
+			"action",
+			"casual",
+			"rim",
+			"mario",
+			"legend",
+			"zelda",
+			"python",
+			"quotes",
+			"programming",
+			"python",
+			"japanese",
+			"jap",
+			"japanese",
+			"PYTHON",
+			"python",
+			"ueno",
+			"unity"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Spark Invader.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 164,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								108,
+								108
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										107,
+										108
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/double_quote.png",
+										"region.greenish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										100,
+										101
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Assets/Scripts/todo.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 943,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10,
+								10
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"syntax": "Packages/MarkdownEditing/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Spark Invader.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 180.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

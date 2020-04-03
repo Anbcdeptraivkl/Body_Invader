@@ -117,8 +117,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29534770e6fe52740a79c17aec1fa1b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impactEffect: {fileID: 0}
-  bigRayEffect: {fileID: 0}
+  impactEffect: {fileID: 3627457204679153122, guid: 2a11d5113616d3f4da0fadc244a5d855,
+    type: 3}
+  bigRayEffect: {fileID: 3627457204679153122, guid: 2a11d5113616d3f4da0fadc244a5d855,
+    type: 3}
   impactTick: 0.15
 --- !u!50 &-1996836843309593182
 Rigidbody2D:

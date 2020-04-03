@@ -12,7 +12,7 @@ public class EnemyHPManager : MonoBehaviour
     public AudioSource explodingSound;
 
     bool gotMissiled;
-
+    bool dying = false;
     float currentHP;
     
     // Script References
@@ -77,7 +77,10 @@ public class EnemyHPManager : MonoBehaviour
         }
         else
         {
-            Dying();
+            // Die if not dying already
+            if (!dying) {
+                Dying();
+            }
             return false;
         }
     }
@@ -94,17 +97,42 @@ public class EnemyHPManager : MonoBehaviour
         dropper.CalculateRandomDrop();
         // Loot Drop:
         dropper.DropPersistences();
+        dying = true;
+        // Dying Mode Branching
+        if (GetComponent<Boss>() != null)
+            StartCoroutine(BossDying());
+        else 
+            NormalDying();
+    }
+
+    void NormalDying() {
         // Spawn and Control Explosions
         shotExplosion = Instantiate(
             shotExplosion, 
             transform.position, 
             transform.rotation) as GameObject;
         Destroy(shotExplosion, 0.5f);
-
+        // Playing Sounds
         if (!gotMissiled) {
             explodingSound.Play();
         }
+        // Destroyed after finish
+        Destroy(gameObject);
+    }
 
+    // Special Dying effects for Boss Monsters (Enemies containing Boss Component)
+    IEnumerator BossDying() {
+        // Disable all Scripts except this one and the Boss Component
+        MonoBehaviour[] scripts = GetComponents<MonoBehaviour>();
+        EnemyHPManager hPManager = GetComponent<EnemyHPManager>();
+        Boss bossComponent = GetComponent<Boss>();
+        foreach (MonoBehaviour script in scripts) {
+            if (script != hPManager && script != bossComponent) {
+                script.enabled = false;
+            }
+        }
+        Debug.Log("Execute Boss Dying Sequence");
+        yield return new WaitForSeconds(2f);
         Destroy(gameObject);
     }
 }

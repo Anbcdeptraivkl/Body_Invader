@@ -81,36 +81,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &2978997417546104885
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2978997417546104886}
-  m_Layer: 0
-  m_Name: LaserSpawn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2978997417546104886
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2978997417546104885}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2978997418956032348}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2978997417651702512
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +109,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2978997418956032348}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2978997418330013186
 GameObject:
@@ -169,7 +139,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2978997418956032348}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2978997418956032323
 GameObject:
@@ -191,6 +161,8 @@ GameObject:
   - component: {fileID: -1947527847756643652}
   - component: {fileID: 1962674607319449273}
   - component: {fileID: 2413459447522813527}
+  - component: {fileID: 5889599286100631353}
+  - component: {fileID: -2413489841418881573}
   m_Layer: 0
   m_Name: Titan
   m_TagString: Enemy
@@ -210,7 +182,6 @@ Transform:
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 2978997417279431470}
-  - {fileID: 2978997417546104886}
   - {fileID: 2978997418330013187}
   - {fileID: 2978997417651702513}
   m_Father: {fileID: 0}
@@ -316,8 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e25b88aae1c7a643ba1742caca79b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHP: 61
-  scoreValue: 0
+  baseHP: 30
   energyReward: 20
   shotExplosion: {fileID: 5903513841248052773, guid: f378928e77eb593418a8b059e959ad48,
     type: 3}
@@ -347,20 +317,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5fe19fe1b469284b98a8dea95b443c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomDropList:
-  - name: Missile
-    obj: {fileID: 2350566152220825622, guid: 7b47f37ce62541d418a48c2b0c75b77c, type: 3}
-    rarity: 10
-    amount: 1
-  - name: Heart
-    obj: {fileID: 2509610958581847553, guid: 9eaa4f66409158446a9099f982613a7c, type: 3}
-    rarity: 10
-    amount: 1
+  randomDropList: []
   persistentDropList:
   - name: Coin
     obj: {fileID: 2590032200894953485, guid: 40287ae6dc4966145b1fff12eec5573c, type: 3}
     rarity: 1
-    amount: 10
+    amount: 20
   dropChance: 0
   delayBtwItems: 0
   delayBtwnPieces: 0.1
@@ -503,13 +465,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d47292ffe4ad4546955690049608ae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ySpeed: -5
-  sideSpeed: 5
+  ySpeed: -4
+  sideSpeed: 3
   speedSmoothLimit: 10
   startDelay: 1
-  downTime: 1
+  downTime: 0.5
   bounds:
     xMin: -6
     xMax: 6
     yMin: -1
     yMax: 3
+--- !u!114 &5889599286100631353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2978997418956032323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c59c3c7411c134a4a8e7e688acc70f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yVelocity: -4
+  xVelocity: 2
+  shot: {fileID: 1600620134327404, guid: f397d1a3f912a6143a17a99ec20d044c, type: 3}
+  shotSpawnCollection:
+  - {fileID: 2978997418330013187}
+  - {fileID: 2978997417651702513}
+  numOfShotWaves: 2
+  startDelay: 0.25
+  turnDelay: 0.75
+  delayBtwShotWave: 0.075
+--- !u!114 &-2413489841418881573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2978997418956032323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d9e075d8e88564589bcc1a50e1666a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
