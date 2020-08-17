@@ -9271,7 +9271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d55e63a360dd0cd4d9292d208b3a0d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  configsJson: {fileID: 4900000, guid: 48330d9c8ca7e0348b44d521de1afbba, type: 3}
+  configsJson: {fileID: 4900000, guid: 11d70e46c8549e041ad633092887cdea, type: 3}
   shotList:
   - shotObj: {fileID: 1600620134327404, guid: 2fa8796c633ed734580b5a65cd172799, type: 3}
     upgradeLevel: 0

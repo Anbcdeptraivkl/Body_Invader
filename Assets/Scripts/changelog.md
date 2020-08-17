@@ -8,6 +8,8 @@
 
 ### Added
 - JSON files for storing and Reading Configs (with JsonUtility Library)
+  - Player
+  - Enemy COnfigs (for all Types of Enemies)
 - Config Objects for Storing and Assigning JSON Data
 
 ### Changed

@@ -40,3 +40,10 @@ public class PlayerConfigs {
 }
 
 /* ENEMIES CONFIGS */
+[System.Serializable]
+public class EnemyConfigs {
+    public int baseHp;
+    public int enReward;
+    public float invincibleTimer;
+    public int dropChance;
+}

@@ -2,13 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//  - Struct storing Upgrade Prefabs data:
+[System.Serializable]
+public struct DropItem {
+    public string name;
+    public GameObject obj;
+    public float rarity;
+
+    public int amount;
+}
+
 public class Enemy: MonoBehaviour {
+    public TextAsset configsJson;
+    EnemyConfigs configs;
 	
 	[Header("Status")]
-	public int baseHP;
-    public int energyReward = 5;
+    [SerializeField]
+	int baseHP = 1;
+    [SerializeField]
+
+    int energyReward = 1;
     // A Short Invicible time on first Spawning
-    public float timer = 0.25f;
+    [SerializeField]
+    float invincibleTimer = 0.1f;
 	// The Number of all the enemies inside the scene
 	static int count = 0;
 	float currentHP;
@@ -18,23 +34,11 @@ public class Enemy: MonoBehaviour {
 	// Every Enemies on Death will Drop Rewards one way or another
 	//  - Boss Dropping and Dying will be handled seperatedly in the Boss Component
 	[Header("Dropper")]
-	PlayerEnergy eneryManager;
-	//  - Struct storing Upgrade Prefabs data:
-    [System.Serializable]
-    public struct DropItem {
-        public string name;
-        public GameObject obj;
-        public float rarity;
-
-        public int amount;
-    }
     //  - Collections:
     public List<DropItem> randomDropList = new List<DropItem>();
     public List<DropItem> persistentDropList = new List<DropItem>();
     //  - Properties:
     public float dropChance;
-    public float delayBtwItems;
-    public float delayBtwnPieces = 0.1f;
 
 	// Visual Effects and Animations
 	[Header("Effects")]
@@ -45,23 +49,6 @@ public class Enemy: MonoBehaviour {
 
 	Animator animator;
     CamShake camShaker;
-
-	// Checking for Enemies remaining on the Screen
-	static public bool Wiped() {
-		return (count <= 0);
-	}
-
-	public int GetCount() {
-        return count;
-    }
-	
-	 public float GetCurrentHP() {
-        return currentHP;
-    }
-
-	public bool Living() {
-		return stillLiving;
-	}
 
 	void Awake() {
 		count++;
@@ -81,26 +68,17 @@ public class Enemy: MonoBehaviour {
         } else {
             Debug.Log("No camera found.");
         }
-		// Getting Player's Components
-        GameObject player = GameObject.FindWithTag("Player");
-        if (player != null) 
-		{
-			
-			eneryManager = player.GetComponent<PlayerEnergy>();
-		}
-			else
-			{
-				Debug.Log("Failed to load <Player> Reference");
-			}
         // HP Setting
 		currentHP = Mathf.Abs(baseHP);
         // Attacked Flags
         gotMissiled = false;
         stillLiving = true;
+        // Setting up Configurations
+        SetConfigs();
         // Operations
         //*  - Invincibility
         Invincible();
-        Invoke("StopInvin", timer);
+        Invoke("StopInvin", invincibleTimer);
 	}
 
 	void OnTriggerEnter2D (Collider2D other) {
@@ -113,24 +91,46 @@ public class Enemy: MonoBehaviour {
 				// Decreasing HP and Checking if Dying
                 DecreaseHP(shotDmg);
 				stillLiving = Alive();
-
                 // On hit Animations and Effects:
                 PlayOnHitEffects(other);
-
                 // Destroy the shot objects after colliding:
                 Destroy(other.gameObject);
             } else if (other.gameObject.tag == "Player") // Colliding with the player themselves
             {
 				Player playerScript = other.gameObject.GetComponent<Player>();
 				if (!playerScript.CheckInvin()) {
-
 					playerScript.DecreaseHp();
-
 				}
             }
 		}
 	}
+    
+    #region Public APIs
+    // Checking for Enemies remaining on the Screen
+	static public bool Wiped() {
+		return (count <= 0);
+	}
 
+	public int GetCount() {
+        return count;
+    }
+	
+	 public float GetCurrentHP() {
+        return currentHP;
+    }
+
+	public bool Living() {
+		return stillLiving;
+	}
+    #endregion
+
+    void SetConfigs() {
+        configs = JsonUtility.FromJson<EnemyConfigs>(configsJson.text);
+        baseHP = configs.baseHp;
+        energyReward = configs.enReward;
+        invincibleTimer = configs.invincibleTimer;
+        dropChance = configs.dropChance;
+    }
 	void DecreaseHP(float value = 1) {
         currentHP -= value;
 
@@ -180,9 +180,10 @@ public class Enemy: MonoBehaviour {
         // Shake Cam
         camShaker.StartShaking(0.2f, 0.1f);
 
-        // Refill Energy
-        if (eneryManager)
-            eneryManager.RefillEnergy(energyReward);
+        // Refill Energy (by living Player)
+        Player player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        if (player != null)
+            player.RefillEnergy(energyReward);
         // Item Drop:
         CalculateRandomDrop();
         // Loot Drop:
