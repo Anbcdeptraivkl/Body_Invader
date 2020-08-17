@@ -5,29 +5,16 @@ using UnityEngine;
 /*When Contact with player, Deplete player HP */
 public class EnemyPlayerContact : MonoBehaviour
 {
-	PlayerHPManager playerHp;
-	
-    // Start is called before the first frame update
-    void Start()
-	{
-		GameObject playerObj = GameObject.FindWithTag("Player");
-
-		if (playerObj) {	
-			playerHp = playerObj.GetComponent<PlayerHPManager>();
-		} else {
-			Debug.Log("Player not found");
-		}
-	}
-
     void OnTriggerEnter2D (Collider2D other)
 	{
 		if (other.gameObject.tag != "Boundary" )
 		{
 			if (other.gameObject.tag == "Player")
             {
-				if (!playerHp.CheckInvin()) {
+				Player playerScript = other.gameObject.GetComponent<Player>();
+				if (!playerScript.CheckInvin()) {
 
-					playerHp.DecreaseHp();
+					playerScript.DecreaseHp();
 
 				}
             }

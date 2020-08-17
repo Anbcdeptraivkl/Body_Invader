@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"scrol",
+				"scrollSpeed\tabc"
+			],
+			[
+				"main",
+				"mainTextureOffset\tVector2"
+			],
+			[
+				"GetC",
+				"GetComponent\t(EnemyHPManager.cs)"
+			],
+			[
+				"for",
+				"foreach\tforeach"
+			],
+			[
+				"Enem",
+				"EnemyHPManager"
+			],
+			[
+				"Get",
+				"GetComponent\tabc"
+			],
+			[
+				"Sop",
+				"StopScrolling()\tvoid"
+			],
+			[
+				"Back",
+				"BackgroundScrolling\tabc"
+			],
+			[
+				"back",
+				"backScroll\tabc"
+			],
+			[
 				"but",
 				"butterflywings"
 			],
@@ -32,15 +68,15 @@
 			"settings":
 			{
 				"buffer_size": 164,
-				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "Assets/Scripts/todo.md",
+			"file": "Assets/Scripts/Enemies/Enemy.cs",
 			"settings":
 			{
-				"buffer_size": 943,
+				"buffer_size": 367,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		}
@@ -58,7 +94,7 @@
 		[
 			[
 				"Package Control: ",
-				"Package Control: Install Package"
+				"Package Control: Remove Package"
 			],
 			[
 				"packa",
@@ -85,7 +121,7 @@
 	},
 	"console":
 	{
-		"height": 0.0,
+		"height": 157.0,
 		"history":
 		[
 		]
@@ -101,11 +137,27 @@
 	},
 	"expanded_folders":
 	[
-		"/D/ANBC/Projects/Games/Spark Invader/Assets/Scripts"
+		"/D/ANBC/Projects/Games/Spark Invader/Assets/Scripts",
+		"/D/ANBC/Projects/Games/Spark Invader/Assets/Scripts/Enemies",
+		"/D/ANBC/Projects/Games/Spark Invader/Assets/Scripts/SceneController"
 	],
 	"file_history":
 	[
 		"/D/ANBC/Projects/Games/Spark Invader/Assets/Scripts/todo.md",
+		"/D/ANBC/Projects/Games/AlphaPrime/alphaPrime Prototype/todo.md",
+		"/D/ANBC/Projects/Games/AlphaPrime Prototype.code-workspace",
+		"/D/ANBC/Storage/Personal/Routines.md",
+		"/D/ANBC/Projects/Games/Spark Invader/Assets/Scripts/Enemies/EnemyHPManager.cs",
+		"/D/ANBC/Projects/Games/Spark Invader/Assets/Scripts/SceneController/BackgroundScrolling.cs",
+		"/D/ANBC/Projects/Games/Spark Invader/Assets/Scripts/SceneController/RepeatedBackground.cs",
+		"/D/ANBC/Projects/Games/Spark Invader/Assets/Scripts/changelog.md",
+		"/D/ANBC/Storage/Personal/Goals.md",
+		"/D/ANBC/Projects/Games/Spark Invader/Assets/Scripts/SceneController/LevelComplete.cs",
+		"/D/ANBC/Projects/Games/Spark Invader/Assets/Scripts/Enemies/Boss.cs",
+		"/D/ANBC/Projects/Games/Spark Invader/Assets/Scripts/Enemies/EnemyItemDropper.cs",
+		"/D/ANBC/Projects/Games/Spark Invader/Spark Invader.sublime-project",
+		"/D/ANBC/Projects/Games/Spark Invader/Assets/Scripts/Enemies/EnemyCount.cs",
+		"/D/ANBC/Projects/Games/Spark Invader/Assets/Scripts/Enemies/Enemy.cs",
 		"/D/ANBC/Projects/Games/Spark Invader/todo.md",
 		"/D/ANBC/Projects/Games/AlphaPrime/alphaPrime Prototype/changelog.md",
 		"/D/ANBC/Projects/Games/Primal/Assets/Scripts/Data/ItemData.cs",
@@ -218,21 +270,7 @@
 		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/rabbit.lua",
 		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/merm.lua",
 		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/krampus.lua",
-		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/butterfly.lua",
-		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/birds.lua",
-		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/berrybush.lua",
-		"/D/Games/Dont.Starve.v269653/mods/Realistic Meat Yield/modmain.lua",
-		"/D/Games/Dont.Starve.v269653/mods/Realistic Meat Yield/modinfo.lua",
-		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/bee.lua",
-		"/D/Games/Dont.Starve.v269653/mods/Realistic Meat Yield/scripts/prefabs/bat.lua",
-		"/D/Games/Dont.Starve.v269653/mods/Realistic Meat Yield/scripts/prefabs/hound.lua",
-		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/hound.lua",
-		"/D/Games/Dont.Starve.v269653/mods/Boomerang Enhancement/modmain.lua",
-		"/D/Games/Dont.Starve.v269653/mods/Don't farm/modmain.lua",
-		"/D/Games/Dont.Starve.v269653/mods/Don't farm/scripts/prefabs/bamboo.lua",
-		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/penguin.lua",
-		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/meats.lua",
-		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/bat.lua"
+		"/D/Games/Dont.Starve.v269653/data/scripts/prefabs/butterfly.lua"
 	],
 	"find":
 	{
@@ -419,31 +457,51 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
@@ -453,29 +511,9 @@
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content"
+								"bh_unmatched_content"
 							],
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"syntax": "Packages/zzz A File Icon zzz/aliases/JSON (Sublime).sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -487,19 +525,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "Assets/Scripts/todo.md",
+					"file": "Assets/Scripts/Enemies/Enemy.cs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 943,
+						"buffer_size": 367,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10,
-								10
+								189,
+								189
 							]
 						],
 						"settings":
@@ -509,12 +547,27 @@
 							{
 								"close":
 								{
+									"1":
+									[
+										366,
+										367
+									]
 								},
 								"icon":
 								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
 								},
 								"open":
 								{
+									"1":
+									[
+										114,
+										115
+									]
 								},
 								"unmatched":
 								{
@@ -522,63 +575,63 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content"
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
 							],
-							"syntax": "Packages/MarkdownEditing/Markdown.sublime-syntax"
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -621,6 +674,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 126.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0
@@ -628,6 +685,10 @@
 	"output.mdpopups":
 	{
 		"height": 0.0
+	},
+	"output.variable_get":
+	{
+		"height": 126.0
 	},
 	"pinned_build_system": "",
 	"project": "Spark Invader.sublime-project",
@@ -671,7 +732,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 180.0,
+	"side_bar_width": 217.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

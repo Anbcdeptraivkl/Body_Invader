@@ -2,39 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Boundary to CLamp Player's Position in-ranged
-[System.Serializable]
-public struct Boundary{
-	public float xMin, xMax, yMin, yMax;
-}
-
-
-// Dash Skill's Properties
-[System.Serializable]
-public struct DashSkill {
-	public GameObject effect;
-	public float distance;
-	public float cooldown;
-	public int cost;
-	public float speedRate;
-
-	DashSkill(float l_distance = 50.0f, float l_cooldown = 2.0f, int l_cost = 20, float l_rate = 10.0f) {
-		effect = new GameObject();
-		distance = l_distance;
-		cooldown = l_cooldown;
-		cost = l_cost;
-		speedRate = l_rate;
-	}
-}
-
-[System.Serializable]
-public struct Shield {
-	public GameObject effect;
-	public float duration;
-	public float cooldown;
-	public int cost;
-}
-
 // Plyaer COntroller: Movements, Skillsets and Inputed Behaviours
 // Move
 // Dash

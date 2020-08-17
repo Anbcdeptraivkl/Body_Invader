@@ -3,28 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-
-
-
-
 //Control the HP data + Visual and audio effects responds on HP: (including invin frames and low-hp warnings)
 public class PlayerHPManager : MonoBehaviour
 {
-    // HP Ui Struct:
-    [System.Serializable]
-    public struct HpUi {
 
-        // The Images are disabled by Default and will be enabled when initiated by the main Functions:
-        [SerializeField]
-        public Image[] HeartsCollection;
-
-        public Sprite fullHPSprite;
-        public Sprite lostHPSprite;
-
-    }
-
-    // The UI Struct in action:
+    // The Structure for HP UI in action:
     public HpUi PlayerHpUi;
 
     [SerializeField]
@@ -129,7 +112,6 @@ public class PlayerHPManager : MonoBehaviour
 
     }
 
-    
     void OnLosingHpUi() {
         // Update the Player and UI state based on the current HP:
         for (int i = 0; i < PlayerHpUi.HeartsCollection.Length; i++) {

@@ -1,10 +1,21 @@
-# Changelog
+# CHANGELOG
 
-All notable changes in the code base will be documented here.
-Made by Ho Thai An - Anbcdeptrai with Love and Care.
-All rights reserved.
+* All notable changes in the code base will be documented here.
+* Made by Ho Thai An - Anbcdeptrai with Love and Care. All the Arts and Scripts are Self-made by Me. If you ever have the chance to obtain them please do not use them for commercial purpose without my Consents.
+* All rights reserved.
 
 ## [Unreleased]
+
+### Added
+- JSON files for storing and Reading Configs (with JsonUtility Library)
+- Config Objects for Storing and Assigning JSON Data
+
+### Changed
+- Overhauled Scripts Structures
+  - Merging Enemy COmponent into a Single Concentrated Component shared between all Types of Enemies for easier creating Processes (excluding the Unique Movements and Behaviours of each Types: they got their own Unique Components)
+  - Same for the Player COmponents (excluding the Missile Launcher since it is a standalone Upgrades and should not be merged into the Main Component)
+- COnfigurations and Stats for Shared Components are Serialized and Parsed as JSON files for each types of Players and Enemies
+
 
 ## [Playable: 1.0.0] - 3/4/2020
 

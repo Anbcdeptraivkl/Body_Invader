@@ -1,0 +1,24 @@
+{
+    "fireRate": 0.15,
+    "moveSpeed": 2,
+    "moveRate": 5,
+    "movementBounds": {
+        "x": 8,
+        "y": 4.2
+    },
+    "dash": {
+        "distance": 7.5,
+        "cooldown": 2,
+        "cost": 15,
+        "speed": 11
+    },
+    "shield": {
+        "duration": 2.5,
+        "cooldown": 7,
+        "cost": 20
+    },
+    "enDepleteRate": 1,
+    "enNextRate": 0.1,
+    "invincibleTime": 0.75,
+    "maxHp": 3
+}

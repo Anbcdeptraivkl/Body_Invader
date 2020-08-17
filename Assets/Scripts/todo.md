@@ -1,27 +1,17 @@
-# REMOVE
+# Personal Todo
+* Keeping track and future plan for Improving and Maintaining this Project (Be it Prototyping or Publishing)
+* Please do not altering this file contents, even if you had my approval for Collaborations.
+* For Ho Thai An and Ho Thai An only.
 
-## SCORE
+# MECHANICS
+- ..
 
-- Remove Score and Highscore system
-- Reset Score now Reset Money earned
+# ARCHITECTURE
+- JSON Data for Variants of COmponents
 
-# ADDING
-
-## LEVEL COMPLETE
-
-- Button Function to return to Level Select Screen
-
-## NEW LEVELS
-
-- New Sea Level
-  - Rayball spawns
-  - Making new Enemies
-
-# CHANGED
-
-## ARTS
-
-- Update the arts into pixel style
-
-
-
+# ARTS
+- Overhauling the Pixel Arts: All Sprites, Effects and UIs
+- Making Boss Explosion Effects
+- Update Sea background into a milder, cooler one
+- Group all Related Components into Groups of one Component per Concepts
+- Updating the SOund Effects and OSTs

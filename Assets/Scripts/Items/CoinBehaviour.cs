@@ -46,10 +46,13 @@ public class CoinBehaviour : MonoBehaviour
 
     void MoveTowardPlayer() {
         // Homing toward player using Transform
-        target = GameObject.FindWithTag("Player").transform;
-        if (target) {
-            Vector2 direction = (target.position - transform.position).normalized;
-            transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * speed);
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player) {
+            target = player.transform;
+            if (target) {
+                Vector2 direction = (target.position - transform.position).normalized;
+                transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * speed);
+            }   
         }
     }
 
