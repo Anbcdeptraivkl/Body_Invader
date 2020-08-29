@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2978997417279431469}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2978997418956032348}
   m_RootOrder: 0
@@ -70,12 +70,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 0a33197594dccb14da17e9424a7b4ab6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b5fc9d13f25c1d45a02d61e4f1e242c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 16.8, y: 9.38}
+  m_Size: {x: 4, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -151,18 +151,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2978997418956032348}
   - component: {fileID: 2978997418956032351}
-  - component: {fileID: 2978997418956032349}
-  - component: {fileID: 2978997418956032340}
-  - component: {fileID: 2978997418956032347}
-  - component: {fileID: 2978997418956032346}
-  - component: {fileID: 2978997418956032345}
-  - component: {fileID: 2978997418956032350}
-  - component: {fileID: 2978997418956032341}
   - component: {fileID: -1947527847756643652}
   - component: {fileID: 1962674607319449273}
   - component: {fileID: 2413459447522813527}
   - component: {fileID: 5889599286100631353}
   - component: {fileID: -2413489841418881573}
+  - component: {fileID: 5659345011279446920}
   m_Layer: 0
   m_Name: Titan
   m_TagString: Enemy
@@ -179,7 +173,7 @@ Transform:
   m_GameObject: {fileID: 2978997418956032323}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.04, y: 6.67, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2978997417279431470}
   - {fileID: 2978997418330013187}
@@ -202,142 +196,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2978997418956032349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2978997418956032323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fc7bcfc1285d7548bffae5118b20989, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!60 &2978997418956032340
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2978997418956032323}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.012826979, y: 1.1026158}
-      - {x: -2.3363698, y: 0.6938267}
-      - {x: -2.3450809, y: -1.1938262}
-      - {x: -2.0378332, y: -1.2521267}
-      - {x: -1.7225629, y: -1.1689372}
-      - {x: -1.6780187, y: -0.9108062}
-      - {x: -0.6115847, y: -0.9509578}
-      - {x: -0.5758604, y: -1.2105546}
-      - {x: 0.00092627853, y: -1.2915492}
-      - {x: 0.59035176, y: -1.2133808}
-      - {x: 0.61481714, y: -0.9363222}
-      - {x: 1.6524246, y: -0.93728685}
-      - {x: 1.6856698, y: -1.1208038}
-      - {x: 2.0429385, y: -1.2269535}
-      - {x: 2.3625808, y: -1.1201658}
-      - {x: 2.3363698, y: 0.5655565}
---- !u!114 &2978997418956032347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2978997418956032323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1913596edac61474db45e22607bdfe1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitShockParticle: {fileID: 6421501278146835262, guid: 1e321729e17282346ae072d1b19c6ca9,
-    type: 3}
---- !u!114 &2978997418956032346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2978997418956032323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e25b88aae1c7a643ba1742caca79b0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseHP: 30
-  energyReward: 20
-  shotExplosion: {fileID: 5903513841248052773, guid: f378928e77eb593418a8b059e959ad48,
-    type: 3}
-  explodingSound: {fileID: -1947527847756643652}
---- !u!114 &2978997418956032345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2978997418956032323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9258c3067a121ce479b0f617a95eec40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 0.25
---- !u!114 &2978997418956032350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2978997418956032323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5fe19fe1b469284b98a8dea95b443c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  randomDropList: []
-  persistentDropList:
-  - name: Coin
-    obj: {fileID: 2590032200894953485, guid: 40287ae6dc4966145b1fff12eec5573c, type: 3}
-    rarity: 1
-    amount: 20
-  dropChance: 0
-  delayBtwItems: 0
-  delayBtwnPieces: 0.1
---- !u!114 &2978997418956032341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2978997418956032323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53ba033f368b32346abcb007b7a6a282, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &-1947527847756643652
 AudioSource:
   m_ObjectHideFlags: 0
@@ -465,16 +329,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d47292ffe4ad4546955690049608ae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ySpeed: -4
-  sideSpeed: 3
+  ySpeed: -10
+  sideSpeed: 4
   speedSmoothLimit: 10
   startDelay: 1
-  downTime: 0.5
+  downTime: 0.75
   bounds:
     xMin: -6
     xMax: 6
-    yMin: -1
-    yMax: 3
+    yMin: -7
+    yMax: 7
 --- !u!114 &5889599286100631353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,7 +360,7 @@ MonoBehaviour:
   numOfShotWaves: 2
   startDelay: 0.25
   turnDelay: 0.75
-  delayBtwShotWave: 0.075
+  delayBtwShotWave: 0.2
 --- !u!114 &-2413489841418881573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -509,3 +373,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d9e075d8e88564589bcc1a50e1666a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  configsJson: {fileID: 4900000, guid: 0744a95802c56834e8ced9301ce591d4, type: 3}
+  baseHP: 1
+  energyReward: 1
+  invincibleTimer: 0.1
+  randomDropList: []
+  persistentDropList:
+  - name: 
+    obj: {fileID: 2590032200894953485, guid: 40287ae6dc4966145b1fff12eec5573c, type: 3}
+    rarity: 1
+    amount: 20
+  dropChance: 5
+  hitShockParticle: {fileID: 6421501278146835262, guid: 1e321729e17282346ae072d1b19c6ca9,
+    type: 3}
+  shotExplosion: {fileID: 0}
+  explodingSound: {fileID: 0}
+  bang: {fileID: 2442976895002668426, guid: a237c08172861d44a88eeacb9bcd8616, type: 3}
+  bangDuration: 0.35
+  pauseBetweenBangs: 0.3
+  explosionsCount: 5
+--- !u!61 &5659345011279446920
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2978997418956032323}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.010187626, y: 0.00000047683716}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.565772, y: 1.815033}
+  m_EdgeRadius: 0

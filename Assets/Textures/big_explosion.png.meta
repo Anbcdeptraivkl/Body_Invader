@@ -1,51 +1,93 @@
 fileFormatVersion: 2
-guid: 4b78c360a75ab5f42843a721c68d5eb7
+guid: ebe86518b7a8b7c498f9358659f78783
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7367849827588639106
-    second: explosion_sheet_0
+      213: 3859935702779329687
+    second: big_explosion_0
   - first:
-      213: -7968120752722352147
-    second: explosion_sheet_1
+      213: 930023178748156600
+    second: big_explosion_1
   - first:
-      213: 4876026040502959147
-    second: explosion_sheet_2
+      213: 7818555380375300299
+    second: big_explosion_2
   - first:
-      213: 4890091796858534335
-    second: explosion_sheet_3
+      213: -4134004067429492220
+    second: big_explosion_3
   - first:
-      213: 5331523067950048150
-    second: explosion_sheet_4
+      213: 6818787674207680208
+    second: big_explosion_4
   - first:
-      213: -2094242379625732028
-    second: explosion_sheet_5
+      213: -3168503482319990281
+    second: big_explosion_5
   - first:
-      213: -2158113787802692481
-    second: explosion_sheet_6
+      213: 2836247079698565653
+    second: big_explosion_6
   - first:
-      213: 4864132329807378100
-    second: big_explosion_sheet_0
+      213: -8304221322796737451
+    second: big_explosion_7
   - first:
-      213: -7840186777148058875
-    second: big_explosion_sheet_1
+      213: 3148148025906053811
+    second: big_explosion_8
   - first:
-      213: -5779820844216634264
-    second: big_explosion_sheet_2
+      213: 6544986400245119186
+    second: big_explosion_9
   - first:
-      213: 4647761079126002210
-    second: big_explosion_sheet_3
+      213: -8367148804459888296
+    second: big_explosion_10
   - first:
-      213: 122970182122904760
-    second: big_explosion_sheet_4
+      213: 5371476628481831951
+    second: big_explosion_11
   - first:
-      213: 761025998462838135
-    second: big_explosion_sheet_5
+      213: -6054950094373950934
+    second: big_explosion_12
   - first:
-      213: 1041575280796561017
-    second: big_explosion_sheet_6
+      213: -1826593212648370727
+    second: big_explosion_13
+  - first:
+      213: 6550821717810899232
+    second: big_explosion_14
+  - first:
+      213: 9037758364620981599
+    second: big_explosion_15
+  - first:
+      213: 3111453442739177584
+    second: big_explosion_16
+  - first:
+      213: -4054459330389269353
+    second: big_explosion_17
+  - first:
+      213: 5567732608743849455
+    second: big_explosion_18
+  - first:
+      213: -349373973284868819
+    second: big_explosion_19
+  - first:
+      213: 4543732661272859735
+    second: big_explosion_20
+  - first:
+      213: -835050357672413465
+    second: big_explosion_21
+  - first:
+      213: 2843621666994129265
+    second: big_explosion_22
+  - first:
+      213: 1736166106727160293
+    second: big_explosion_23
+  - first:
+      213: -4677510783536299226
+    second: big_explosion_24
+  - first:
+      213: 1629774668805111095
+    second: big_explosion_25
+  - first:
+      213: -5829941275150762598
+    second: big_explosion_26
+  - first:
+      213: -4291129708693137018
+    second: big_explosion_27
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -73,7 +115,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -87,7 +129,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -99,15 +141,16 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 3
+    textureCompression: 0
     compressionQuality: 50
-    crunchedCompression: 1
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
@@ -117,33 +160,9 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 3
+    textureCompression: 0
     compressionQuality: 50
-    crunchedCompression: 1
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 3
-    compressionQuality: 50
-    crunchedCompression: 1
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 3
-    compressionQuality: 50
-    crunchedCompression: 1
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
@@ -153,9 +172,9 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 3
+    textureCompression: 0
     compressionQuality: 50
-    crunchedCompression: 1
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
@@ -165,9 +184,9 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 3
+    textureCompression: 0
     compressionQuality: 50
-    crunchedCompression: 1
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
@@ -176,13 +195,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: big_explosion_sheet_0
+      name: big_explosion_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1024
-        width: 512
-        height: 512
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,20 +209,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58b59dc9557b56d4f8c78da1137cd74a
-      internalID: 4864132329807378100
+      spriteID: 79c7204221f319530800000000000000
+      internalID: 3859935702779329687
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: big_explosion_sheet_1
+      name: big_explosion_1
       rect:
         serializedVersion: 2
-        x: 512
-        y: 1024
-        width: 512
-        height: 512
+        x: 64
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,20 +230,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc9944a267a724c4d9b4cd7a8b68eebc
-      internalID: -7840186777148058875
+      spriteID: 8bad922572b18ec00800000000000000
+      internalID: 930023178748156600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: big_explosion_sheet_2
+      name: big_explosion_2
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 1024
-        width: 512
-        height: 512
+        x: 128
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,20 +251,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4167cbe19171fa94584f48567ba8ff1b
-      internalID: -5779820844216634264
+      spriteID: bc82df7a1b6118c60800000000000000
+      internalID: 7818555380375300299
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: big_explosion_sheet_3
+      name: big_explosion_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 512
-        width: 512
-        height: 512
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,20 +272,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ca9e03da9d2c4341945875e94ef05d8
-      internalID: 4647761079126002210
+      spriteID: 40a58dc143111a6c0800000000000000
+      internalID: -4134004067429492220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: big_explosion_sheet_4
+      name: big_explosion_4
       rect:
         serializedVersion: 2
-        x: 512
-        y: 512
-        width: 512
-        height: 512
+        x: 64
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,20 +293,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2db8079327a331241bff05e3af710acd
-      internalID: 122970182122904760
+      spriteID: 0d6f5ff134331ae50800000000000000
+      internalID: 6818787674207680208
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: big_explosion_sheet_5
+      name: big_explosion_5
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 512
-        width: 512
-        height: 512
+        x: 128
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -295,20 +314,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10db3481ee83aeb4fa8c9f54a6645fa9
-      internalID: 761025998462838135
+      spriteID: 7f19abaced63704d0800000000000000
+      internalID: -3168503482319990281
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: big_explosion_sheet_6
+      name: big_explosion_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 512
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -316,8 +335,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f53e4e18156b72a4ca248ee37a5b1713
-      internalID: 1041575280796561017
+      spriteID: 51a0ca021bf5c5720800000000000000
+      internalID: 2836247079698565653
       vertices: []
       indices: 
       edges: []
@@ -325,7 +344,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 39c97c35586db2844b1d004a42161c00
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

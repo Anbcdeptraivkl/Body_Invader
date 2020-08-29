@@ -12,13 +12,13 @@ public class Pausing : MonoBehaviour
     public GameObject confirmMessage;
 
     //Reference:
-    private PlayerController playerController;
+    Player playerController;
 
     void Start()
     {
         isPausing = false;
         //Get player controller reference:
-        playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        playerController = GameObject.FindWithTag("Player").GetComponent<Player>();
     }
     // Update is called once per frame
     void Update()
@@ -41,7 +41,7 @@ public class Pausing : MonoBehaviour
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0.0f;
-        playerController.enabled = false;
+        playerController.NoMoreControls();
         isPausing = true;
     }
 
@@ -49,7 +49,7 @@ public class Pausing : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
-        playerController.enabled = true;
+        playerController.Controllable();
         isPausing = false;
     }
 

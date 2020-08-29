@@ -35,7 +35,7 @@ TagManager:
   - 
   - 
   - Background
-  - 
+  - Hollow
   - 
   - 
   - 
@@ -61,6 +61,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 4190989973
+    locked: 0
+  - name: Hollow
+    uniqueID: 180612263
     locked: 0
   - name: Default
     uniqueID: 0

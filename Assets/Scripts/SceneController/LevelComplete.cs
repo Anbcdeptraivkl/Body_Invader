@@ -19,17 +19,20 @@ public class LevelComplete : MonoBehaviour
     // Complete the game Flag
     static bool win;
     // References:
+    Player player;
+    Animator playerAnimator;
     MoneyManager moneyManager;
 
     void Start() {
         win = false;
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        playerAnimator = GameObject.FindWithTag("Player").GetComponent<Animator>();
         moneyManager = gameObject.GetComponent<MoneyManager>();
     }
 
     void Update() {
         if (win && EnemyCount.Wiped()) {
-            // Delay so the player has enough time to collect the last coins:
-            Invoke("FinishLevel", 2f);
+            StartCoroutine(FinishLevel());
             // Stop updating when the level is finished:
             enabled = false;
         }
@@ -39,8 +42,15 @@ public class LevelComplete : MonoBehaviour
         win = true;
     }
 
-    void FinishLevel() {
+    // Coroutine for Finishing the Level
+    IEnumerator FinishLevel() {
+        // Delay so the player has enough time to collect the last coins + for the Sequence of SPecial Effects finished playing
+        yield return new WaitForSeconds(1.5f);
         Debug.Log("Level Completed!");
+        // Player Fly Away
+        player.NoMoreControls();
+        playerAnimator.SetTrigger("Win");
+        yield return new WaitForSeconds(1f);
         // UIs
         ActivateUIs();
         // Intuitive Effects:

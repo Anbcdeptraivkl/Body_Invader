@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 793341227336792311}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 7214076258543327209}
   m_RootOrder: 0
@@ -70,12 +70,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 394a4eb2a34d0dc43a90dc4af9450c58, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 821cf8310b8b5a24dbe045c90d73e144, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.31, y: 5.23}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -91,16 +91,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7214076258543327209}
   - component: {fileID: 7287005841614442371}
-  - component: {fileID: 7776726587579451668}
-  - component: {fileID: 167690420924516589}
   - component: {fileID: 2409654434961779357}
-  - component: {fileID: 372689857482738660}
-  - component: {fileID: 5455713130091515129}
   - component: {fileID: 4936016410086922341}
-  - component: {fileID: 3277128605783264567}
   - component: {fileID: 7368279089037626303}
   - component: {fileID: 3152250306943804005}
-  - component: {fileID: 5386561129598984097}
+  - component: {fileID: 2482040571114816218}
   m_Layer: 0
   m_Name: UFO
   m_TagString: Enemy
@@ -145,32 +140,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7776726587579451668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051741099001495371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fc7bcfc1285d7548bffae5118b20989, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &167690420924516589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051741099001495371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1913596edac61474db45e22607bdfe1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitShockParticle: {fileID: 1713355028149410088, guid: 77deca45be6d3d144aa89be336f31b26,
-    type: 3}
 --- !u!70 &2409654434961779357
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -187,45 +156,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.5, y: 1}
   m_Direction: 1
---- !u!114 &372689857482738660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051741099001495371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e25b88aae1c7a643ba1742caca79b0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseHP: 3
-  scoreValue: 10
-  energyReward: 5
-  shotExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
-    type: 3}
-  explodingSound: {fileID: 3152250306943804005}
---- !u!114 &5455713130091515129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051741099001495371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5fe19fe1b469284b98a8dea95b443c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  randomDropList: []
-  persistentDropList:
-  - name: Coin
-    obj: {fileID: 2590032200894953485, guid: 40287ae6dc4966145b1fff12eec5573c, type: 3}
-    rarity: 100
-    amount: 4
-  dropChance: 0
-  delayBtwItems: 0
-  delayBtwnPieces: 0.1
 --- !u!95 &4936016410086922341
 Animator:
   serializedVersion: 3
@@ -245,19 +175,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3277128605783264567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051741099001495371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9258c3067a121ce479b0f617a95eec40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 0.25
 --- !u!114 &7368279089037626303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,7 +288,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5386561129598984097
+--- !u!114 &2482040571114816218
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -380,9 +297,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1051741099001495371}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53ba033f368b32346abcb007b7a6a282, type: 3}
+  m_Script: {fileID: 11500000, guid: 508d08864b2bbeb40aea572be5d21a3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  configsJson: {fileID: 4900000, guid: a430ede857ad04a489efea560f8ef4f6, type: 3}
+  baseHP: 1
+  energyReward: 1
+  invincibleTimer: 0.1
+  randomDropList: []
+  persistentDropList:
+  - name: Coin
+    obj: {fileID: 2590032200894953485, guid: 40287ae6dc4966145b1fff12eec5573c, type: 3}
+    rarity: 100
+    amount: 2
+  dropChance: 5
+  hitShockParticle: {fileID: 1713355028149410088, guid: 77deca45be6d3d144aa89be336f31b26,
+    type: 3}
+  shotExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
+    type: 3}
+  explodingSound: {fileID: 3152250306943804005}
 --- !u!1 &8550597698412039323
 GameObject:
   m_ObjectHideFlags: 0

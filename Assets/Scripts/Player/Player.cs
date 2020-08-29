@@ -69,6 +69,8 @@ public class Player : MonoBehaviour {
     [Header("Configs")]
     public TextAsset configsJson;
     PlayerConfigs playerConfigs;
+    // Player will not be Controllable on Winning Sequence, this flag is solely for that Purpose
+    bool controllable = true;
 
     [Header("Attacks")]
     public List<Shot> shotList = new List<Shot>();
@@ -90,6 +92,7 @@ public class Player : MonoBehaviour {
 	Boundary bounds;
 	Vector2 lastMoveDir;
 	float lastXMove = 0;
+    bool hittable = true;
 
 
     [Header("Skills")]
@@ -177,21 +180,27 @@ public class Player : MonoBehaviour {
     // Input: 
     //  - Hold Space to fire
     void Update() {
-        ShootingUpdate();
+        if (controllable)
+            ShootingUpdate();
         SetEnergyBarFill();
     }
 
     void LateUpdate() {
-		MovePlayer();
-		Shield();
-		Dash();
-		ClampToBound();
+        if (controllable) {
+            MovePlayer();
+            Shield();
+            Dash();
+            ClampToBound();
+        }
 	}
 
 	 void OnTriggerEnter2D(Collider2D other)
     {
-		CheckOnGettingShot(other);
-		CheckOnGettingUpgrades(other);
+        // After the Boss is defeated, the Player can no longer get hit
+        if (hittable) {
+		    CheckOnGettingShot(other);
+        }
+        CheckOnGettingUpgrades(other);
     }
 
 	/* PUBLIC APIs */
@@ -280,6 +289,18 @@ public class Player : MonoBehaviour {
 
     public bool CheckAlive() {
         return currentHp > 0 ? true : false;
+    }
+    public void BeInvincible() {
+        hittable = false;
+    }
+    public bool CanGetHit() {
+        return hittable;
+    }
+    public void NoMoreControls() {
+        controllable = false;
+    }
+    public void Controllable() {
+        controllable = true;
     }
     #endregion
 

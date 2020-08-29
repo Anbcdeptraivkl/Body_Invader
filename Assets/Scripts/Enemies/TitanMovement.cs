@@ -25,6 +25,7 @@ public class TitanMovement: MonoBehaviour {
 
 
     private Rigidbody2D rgbd;
+    Boss self;
 
     void Start() {
         // Reference:
@@ -36,20 +37,20 @@ public class TitanMovement: MonoBehaviour {
 
         leftSpeed = -sideSpeed;
         rightSpeed = sideSpeed;
-
+        self = gameObject.GetComponent<Boss>();
         StartCoroutine("Move");
     }
 
     void FixedUpdate() {
-        SetMovement();
-        // ClampToBound();
+        if (!self.IsDying())
+            SetMovement();
     }
 
     IEnumerator Move() {
         yield return new WaitForSeconds(startDelay);
 
         // Moving Down:
-        currentDownSpeed = ySpeed;
+        Debug.Log("Down speed: " + currentDownSpeed);
         yield return new WaitForSeconds(downTime);
         // Stop moving down and start side-stepping:
         // SImple Movement first!:
@@ -71,7 +72,8 @@ public class TitanMovement: MonoBehaviour {
         float sideManeuver = Mathf.MoveTowards(
             rgbd.velocity.x,
             currentSideSpeed,
-            Time.deltaTime * speedSmoothLimit);
+            Time.deltaTime * speedSmoothLimit
+        );
 
         rgbd.velocity = new Vector2(sideManeuver, currentDownSpeed);
     }

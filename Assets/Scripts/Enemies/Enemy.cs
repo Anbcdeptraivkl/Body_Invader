@@ -14,22 +14,21 @@ public struct DropItem {
 
 public class Enemy: MonoBehaviour {
     public TextAsset configsJson;
-    EnemyConfigs configs;
+    protected EnemyConfigs configs;
 	
 	[Header("Status")]
     [SerializeField]
-	int baseHP = 1;
+	protected int baseHP = 1;
     [SerializeField]
-
-    int energyReward = 1;
+    protected int energyReward = 1;
     // A Short Invicible time on first Spawning
     [SerializeField]
-    float invincibleTimer = 0.1f;
+    protected float invincibleTimer = 0.1f;
 	// The Number of all the enemies inside the scene
-	static int count = 0;
-	float currentHP;
-    bool stillLiving;
-	bool gotMissiled;
+	protected static int count = 0;
+	protected float currentHP;
+    protected bool stillLiving;
+	protected bool gotMissiled;
 
 	// Every Enemies on Death will Drop Rewards one way or another
 	//  - Boss Dropping and Dying will be handled seperatedly in the Boss Component
@@ -44,8 +43,10 @@ public class Enemy: MonoBehaviour {
 	[Header("Effects")]
 	[SerializeField]
 	protected GameObject hitShockParticle;
-    public GameObject shotExplosion;
-    public AudioSource explodingSound;
+    [SerializeField]
+	GameObject shotExplosion;
+    [SerializeField]
+	AudioSource explodingSound;
 
 	Animator animator;
     CamShake camShaker;
@@ -58,7 +59,7 @@ public class Enemy: MonoBehaviour {
 		count--;
 	}
 
-	void Start() {
+	protected void Start() {
 		// Main Animator for All Animations
 		animator = gameObject.GetComponent<Animator>();
         // Getting Cam Shaker component:
@@ -81,11 +82,12 @@ public class Enemy: MonoBehaviour {
         Invoke("StopInvin", invincibleTimer);
 	}
 
-	void OnTriggerEnter2D (Collider2D other) {
+	protected void OnTriggerEnter2D (Collider2D other) {
 		// On Getting Shot
 		if (other.gameObject.tag != "Boundary" ) {
             // Getting shot by Player
 			if (other.gameObject.tag == "Shot") {
+                Debug.Log("Got shotted!");
                 // Check the Shot Damage,then Decrease Hp and Destroy the SHot:
                 float shotDmg = other.gameObject.GetComponent<ShotDamage>().GetDamage();
 				// Decreasing HP and Checking if Dying
@@ -98,7 +100,7 @@ public class Enemy: MonoBehaviour {
             } else if (other.gameObject.tag == "Player") // Colliding with the player themselves
             {
 				Player playerScript = other.gameObject.GetComponent<Player>();
-				if (!playerScript.CheckInvin()) {
+				if (!playerScript.CheckInvin() && playerScript.CanGetHit()) {
 					playerScript.DecreaseHp();
 				}
             }
@@ -163,7 +165,8 @@ public class Enemy: MonoBehaviour {
         }
     }
 
-	bool Alive () {
+    // Bosses have different Dying mechanics
+	virtual protected bool Alive () {
         if (currentHP > 0) {
             return true;
         }
@@ -203,7 +206,7 @@ public class Enemy: MonoBehaviour {
         Destroy(gameObject);
     }
 
-    void CalculateRandomDrop() {
+    protected void CalculateRandomDrop() {
 
         float chance = Random.Range(0, 100) + 1; //the 0 is inclusive, while 100 is excluded
 
@@ -212,7 +215,7 @@ public class Enemy: MonoBehaviour {
         }
     }
 
-    void DropUpgrade() {
+    protected void DropUpgrade() {
 
         // The total Drop Weight:
         float dropWeight = 0;
@@ -240,7 +243,7 @@ public class Enemy: MonoBehaviour {
         }
     }
 
-    void DropPersistences() {
+    protected void DropPersistences() {
         StartCoroutine("DropPersistenceRoutine");
     }
 

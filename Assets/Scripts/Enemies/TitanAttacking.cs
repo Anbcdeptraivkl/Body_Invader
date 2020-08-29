@@ -17,9 +17,12 @@ public class TitanAttacking: MonoBehaviour {
     public float startDelay;
     public float turnDelay;
     public float delayBtwShotWave;
+    // Boss Reference
+    Boss self;
 
 
     void Start() {
+        self = gameObject.GetComponent<Boss>();
         StartCoroutine("Attack");
     }
 
@@ -28,7 +31,7 @@ public class TitanAttacking: MonoBehaviour {
         yield return new WaitForSeconds(startDelay);
 
         // Continously Attack while alive:
-        while (true) {
+        while (!self.IsDying()) {
             // Waves of Shots:
             for (int i = 0; i < numOfShotWaves; i++) {
                 TripleShoot();
