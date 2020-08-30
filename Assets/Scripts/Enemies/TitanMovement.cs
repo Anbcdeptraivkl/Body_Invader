@@ -6,7 +6,7 @@ using UnityEngine;
 // Movement of the Titan Enemy, from start to loop:
 public class TitanMovement: MonoBehaviour {
     // Speed Values:
-    public float ySpeed;
+    public float downSpeed;
     public float sideSpeed;
     public float speedSmoothLimit;
 
@@ -48,7 +48,7 @@ public class TitanMovement: MonoBehaviour {
 
     IEnumerator Move() {
         yield return new WaitForSeconds(startDelay);
-
+        currentDownSpeed = -downSpeed;
         // Moving Down:
         Debug.Log("Down speed: " + currentDownSpeed);
         yield return new WaitForSeconds(downTime);

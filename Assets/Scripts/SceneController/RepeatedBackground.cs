@@ -17,7 +17,7 @@ public class RepeatedBackground: MonoBehaviour {
 
 	void FixedUpdate() {
 		if (scrollable) {
-			rgbd.velocity = new Vector2(0, -(scrollSpeed * Time.deltaTime));
+			rgbd.velocity = new Vector2(0, -scrollSpeed);
 		}
 	}
 

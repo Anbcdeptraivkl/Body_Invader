@@ -40,6 +40,31 @@ public class Boss: Enemy {
         InvokeBossBehaviours();
     }
 
+    override protected void OnTriggerEnter2D(Collider2D other) {
+        // Ignore Bounds
+		if (other.gameObject.tag != "Boundary" ) {
+            // Getting shot by Player
+			if (other.gameObject.tag == "Shot") {
+                Debug.Log("Got shotted!");
+                // Check the Shot Damage,then Decrease Hp and Destroy the SHot:
+                float shotDmg = other.gameObject.GetComponent<ShotDamage>().GetDamage();
+				// Decreasing HP and Checking if Dying
+                DecreaseHP(shotDmg);
+				stillLiving = Alive();
+                // On hit Animations and Effects:
+                PlayOnHitEffects(other);
+                // Destroy the shot objects after colliding:
+                Destroy(other.gameObject);
+            } else if (other.gameObject.tag == "Player") // Colliding with the player themselves
+            {
+				Player playerScript = other.gameObject.GetComponent<Player>();
+				if (!playerScript.CheckInvin() && playerScript.CanGetHit()) {
+					playerScript.DecreaseHp();
+				}
+            }
+		}
+    }
+
     void OnDestroy() {
         // Win when the Boss is destroyed
         Debug.Log("Boss defeated!");
@@ -50,7 +75,8 @@ public class Boss: Enemy {
         return bossDying;
     }
 
-    override protected bool Alive() {
+    // The Boss Dying behaviours are nothing like normal enemies and will be defined separatedly
+    bool Alive() {
         if (currentHP > 0) {
             return true;
         }

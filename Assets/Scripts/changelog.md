@@ -11,12 +11,21 @@
   - Player 
   - Enemy COnfigs (for all Types of Enemies)
 - Config Objects for Storing and Assigning JSON Data
+- Boss Manta
+  + Movements
+  + Attacks
+- Boss Dying Explosions Effects and Winning Sequences
+- Better Controlled Repeated Scrolling, more Pleasing Sea Background
 
 ### Changed
 - Overhauled Scripts Structures
   - Merging Enemy COmponent into a Single Concentrated Component shared between all Types of Enemies for easier creating Processes (excluding the Unique Movements and Behaviours of each Types: they got their own Unique Components)
   - Same for the Player COmponents (excluding the Missile Launcher since it is a standalone Upgrades and should not be merged into the Main Component)
 - COnfigurations and Stats for Shared Components are Serialized and Parsed as JSON files for each types of Players and Enemies
+- Removed Random Drops
+
+### Fixed
+- Fixed Boss Manta Movements and Collisions Detecting
 
 
 ## [Playable: 1.0.0] - 3/4/2020

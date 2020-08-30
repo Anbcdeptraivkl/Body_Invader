@@ -13,6 +13,7 @@ public struct DropItem {
 }
 
 public class Enemy: MonoBehaviour {
+    // Remember to Set Configs before Assigning any Permanent Data Variables or else they will received the default values
     public TextAsset configsJson;
     protected EnemyConfigs configs;
 	
@@ -69,20 +70,20 @@ public class Enemy: MonoBehaviour {
         } else {
             Debug.Log("No camera found.");
         }
+        // Setting up Configurations
+        SetConfigs();
         // HP Setting
 		currentHP = Mathf.Abs(baseHP);
         // Attacked Flags
         gotMissiled = false;
         stillLiving = true;
-        // Setting up Configurations
-        SetConfigs();
         // Operations
         //*  - Invincibility
         Invincible();
         Invoke("StopInvin", invincibleTimer);
 	}
 
-	protected void OnTriggerEnter2D (Collider2D other) {
+	virtual protected void OnTriggerEnter2D (Collider2D other) {
 		// On Getting Shot
 		if (other.gameObject.tag != "Boundary" ) {
             // Getting shot by Player
@@ -133,7 +134,8 @@ public class Enemy: MonoBehaviour {
         invincibleTimer = configs.invincibleTimer;
         dropChance = configs.dropChance;
     }
-	void DecreaseHP(float value = 1) {
+
+	protected void DecreaseHP(float value = 1) {
         currentHP -= value;
 
         if (value >= 10) //Rocket Dmg
@@ -145,7 +147,7 @@ public class Enemy: MonoBehaviour {
         currentHP += value;
     }
 
-	void PlayOnHitEffects(Collider2D other) {
+	protected void PlayOnHitEffects(Collider2D other) {
         // If still alive: Hit Shock:
         if (stillLiving) {
             // BLinking animations:
@@ -166,7 +168,7 @@ public class Enemy: MonoBehaviour {
     }
 
     // Bosses have different Dying mechanics
-	virtual protected bool Alive () {
+	bool Alive () {
         if (currentHP > 0) {
             return true;
         }
