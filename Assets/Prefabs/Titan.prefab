@@ -376,6 +376,7 @@ MonoBehaviour:
   configsJson: {fileID: 4900000, guid: 0744a95802c56834e8ced9301ce591d4, type: 3}
   baseHP: 1
   energyReward: 1
+  chargeReward: 1
   invincibleTimer: 0.1
   randomDropList: []
   persistentDropList:
@@ -390,8 +391,8 @@ MonoBehaviour:
   explodingSound: {fileID: 0}
   bang: {fileID: 2442976895002668426, guid: a237c08172861d44a88eeacb9bcd8616, type: 3}
   bangDuration: 0.35
-  pauseBetweenBangs: 0.3
-  explosionsCount: 5
+  pauseBetweenBangs: 0.27
+  explosionsCount: 8
 --- !u!61 &5659345011279446920
 BoxCollider2D:
   m_ObjectHideFlags: 0

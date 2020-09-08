@@ -16,7 +16,7 @@ public class DeathRay: MonoBehaviour {
         }
 
         if (other.CompareTag("Player") && !shielded) {
-            other.gameObject.GetComponent<PlayerHPManager>().DecreaseHp(dmg);
+            other.gameObject.GetComponent<Player>().DecreaseHp(dmg);
             RayEffects();
         } else if (other.CompareTag("Player") && shielded) {
             ShieldedEffects();

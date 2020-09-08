@@ -42,7 +42,8 @@ public class Boss: Enemy {
 
     override protected void OnTriggerEnter2D(Collider2D other) {
         // Ignore Bounds
-		if (other.gameObject.tag != "Boundary" ) {
+        // No detecting when dying
+		if (other.gameObject.tag != "Boundary" && !bossDying) {
             // Getting shot by Player
 			if (other.gameObject.tag == "Shot") {
                 Debug.Log("Got shotted!");
@@ -63,12 +64,6 @@ public class Boss: Enemy {
 				}
             }
 		}
-    }
-
-    void OnDestroy() {
-        // Win when the Boss is destroyed
-        Debug.Log("Boss defeated!");
-        LevelComplete.Win();
     }
 
     public bool IsDying() {
@@ -102,6 +97,7 @@ public class Boss: Enemy {
         if (player != null) {
             // Invincible so the player won't be shotted or collided harmfully after the Boss is killed
             player.BeInvincible();
+            player.NoMoreControls();
             // Refill Energy (for when there would be Extra Bosses in the Level)
             player.RefillEnergy(energyReward);
         }
@@ -126,6 +122,9 @@ public class Boss: Enemy {
             yield return new WaitForSeconds(pauseBetweenBangs);
         }
         //  - Destroyed dying enemies after finish dying hehaviours
+         // Win when the Boss is destroyed
+        Debug.Log("Boss defeated!");
+        LevelComplete.Win();
         Destroy(gameObject);
     }
 

@@ -72,15 +72,6 @@ public class Player : MonoBehaviour {
     // Player will not be Controllable on Winning Sequence, this flag is solely for that Purpose
     bool controllable = true;
 
-    [Header("Attacks")]
-    public List<Shot> shotList = new List<Shot>();
-    public Transform shotSpawn;
-    [SerializeField]
-    float fireRate = 0.5f;
-    float shootDelayTime = 0.0f;
-    GameObject shot;
-    int shotLevel;
-
 
     [Header("Movements")]
     //Movement attributes:
@@ -154,9 +145,7 @@ public class Player : MonoBehaviour {
         // Components
         rgbd2D = gameObject.GetComponent<Rigidbody2D>();
 		// Activate / Set up the Using Prep Items
-        // Initiate the Starting weapons:
-        shotLevel = 0;
-        shot = shotList[shotLevel].shotObj;
+
         // Skills Setup
 		nextDashTime = 0f;
 		nextShieldTime = 0f;
@@ -180,8 +169,6 @@ public class Player : MonoBehaviour {
     // Input: 
     //  - Hold Space to fire
     void Update() {
-        if (controllable)
-            ShootingUpdate();
         SetEnergyBarFill();
     }
 
@@ -205,24 +192,7 @@ public class Player : MonoBehaviour {
 
 	/* PUBLIC APIs */
     #region Public APIs
-	/* ATTACKS API */
-    public void ShotUpgrade() {
-        // Increase shot level and re-assign the weapons when receiving upgrades:
-        if (shotLevel + 1 < shotList.Count) {
-            shotLevel++;
-            shot = shotList[shotLevel].shotObj;
-        }
-    }
 
-    public void ShotDowngrade() {
-        // Decrease Shot Levels on Negative Effects of Enemies:
-        shotLevel--;
-        shot = shotList[shotLevel].shotObj;
-    }
-
-    public int GetWeaponLevel() {
-        return shotLevel;
-    }
 	/* ENERGY API */
     public bool SufficientEnergy(int amount) {
         if (currentEnergy >= amount)
@@ -299,8 +269,11 @@ public class Player : MonoBehaviour {
     public void NoMoreControls() {
         controllable = false;
     }
-    public void Controllable() {
+    public void LetControllable() {
         controllable = true;
+    }
+    public bool Controllable() {
+        return controllable;
     }
     #endregion
 
@@ -339,8 +312,6 @@ public class Player : MonoBehaviour {
         // Reading Data
         playerConfigs = JsonUtility.FromJson<PlayerConfigs>(configsJson.text);
         // Assigning Fields
-        // Attacks
-        fireRate = playerConfigs.fireRate;
         // Movements
         moveSpeed = playerConfigs.moveSpeed;
         moveRate = playerConfigs.moveRate;
@@ -361,25 +332,6 @@ public class Player : MonoBehaviour {
         enDepleteRate = playerConfigs.enDepleteRate;
         enNextRate = playerConfigs.enNextRate;
         maxHp = playerConfigs.maxHp;
-    }
-
-	/* ATTACKING MECHANICS AND CONTROLLERS */
-    private void Fire()
-    {
-        // Normal shooting:
-        //No rotation, only speed!
-        Instantiate(shot, shotSpawn.position, Quaternion.identity);
-    }
-
-    // Shooting Loop
-    void ShootingUpdate() {
-        // Fixed time Step Mechanics: Delay and Frie Rate contribute to the overall firing speed:
-        shootDelayTime += Time.deltaTime;
-        if (Input.GetKey(KeyCode.Space) && shootDelayTime > fireRate) {
-            Fire();
-            // Reset the time step and start the new iteration:
-            shootDelayTime = 0.0f;
-        }
     }
 
     /* MOVEMENTS AND SKILLS OPERATIONS */
@@ -624,12 +576,6 @@ public class Player : MonoBehaviour {
 			// Dealing with each Upgrade Type Approriately
             if (identifier) {
                 switch (identifier.GetUpgradeType()) {
-                    case UpgradeType.StrongShot:
-                    {
-                        ShotUpgrade();
-                    }
-                    break;
-
                     case UpgradeType.Heart:
                     {
                         IncreaseHp();

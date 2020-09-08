@@ -22,6 +22,8 @@ public class Enemy: MonoBehaviour {
 	protected int baseHP = 1;
     [SerializeField]
     protected int energyReward = 1;
+    [SerializeField]
+    protected int chargeReward = 1;
     // A Short Invicible time on first Spawning
     [SerializeField]
     protected float invincibleTimer = 0.1f;
@@ -88,7 +90,6 @@ public class Enemy: MonoBehaviour {
 		if (other.gameObject.tag != "Boundary" ) {
             // Getting shot by Player
 			if (other.gameObject.tag == "Shot") {
-                Debug.Log("Got shotted!");
                 // Check the Shot Damage,then Decrease Hp and Destroy the SHot:
                 float shotDmg = other.gameObject.GetComponent<ShotDamage>().GetDamage();
 				// Decreasing HP and Checking if Dying
@@ -135,7 +136,7 @@ public class Enemy: MonoBehaviour {
         dropChance = configs.dropChance;
     }
 
-	protected void DecreaseHP(float value = 1) {
+	public void DecreaseHP(float value = 1) {
         currentHP -= value;
 
         if (value >= 10) //Rocket Dmg
@@ -184,11 +185,20 @@ public class Enemy: MonoBehaviour {
     void Dying() {
         // Shake Cam
         camShaker.StartShaking(0.2f, 0.1f);
-
-        // Refill Energy (by living Player)
-        Player player = GameObject.FindWithTag("Player").GetComponent<Player>();
-        if (player != null)
-            player.RefillEnergy(energyReward);
+        // Refill Energy (by living Player) and Charge Up Weapon for Upgrading
+        GameObject playerObj = GameObject.FindWithTag("Player");
+        if (playerObj != null) {
+            Player player = playerObj.GetComponent<Player>();
+            PlayerChargeWeapon playerWeapon = playerObj.GetComponent<PlayerChargeWeapon>();
+            if (player != null) {
+                player.RefillEnergy(energyReward);
+            }
+            if (playerWeapon != null) {
+                playerWeapon.Charge(chargeReward);
+            }
+        } else {
+            Debug.Log("Player not found: Lost or Destroyed");
+        }
         // Item Drop:
         CalculateRandomDrop();
         // Loot Drop:

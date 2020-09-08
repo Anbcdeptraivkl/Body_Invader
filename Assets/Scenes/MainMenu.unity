@@ -353,6 +353,27 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3680563010233109189, guid: 6ddbaac432df9f34c8b61827f9ff45bd,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7155845793027857161, guid: a92c873f8cecfb746bb4046727098e7e,
+        type: 3}
+    - target: {fileID: 3680563010233109189, guid: 6ddbaac432df9f34c8b61827f9ff45bd,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3680563010233109189, guid: 6ddbaac432df9f34c8b61827f9ff45bd,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3680563010233109189, guid: 6ddbaac432df9f34c8b61827f9ff45bd,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4051517750488776879, guid: 6ddbaac432df9f34c8b61827f9ff45bd,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -877,7 +898,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &190035619
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1200,7 +1221,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &380811917
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1318,51 +1339,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 832707656}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: f747b47bca47b7e45a7a97a03bec3141,
-        type: 3}
-    - target: {fileID: 0}
-      propertyPath: m_Type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1759308864}
-    - target: {fileID: 0}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Colors.m_NormalColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Colors.m_NormalColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Colors.m_NormalColor.b
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2897079345741308652, guid: f2c522bee4d3fbb4f8984e40137adacc,
         type: 3}
       propertyPath: m_Name
@@ -1727,7 +1703,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -103977323
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 528f8361f66988341b8a071258639a9b, type: 3}
   m_Color: {r: 0.2264151, g: 0.22321111, b: 0.22321111, a: 1}
@@ -3012,7 +2988,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1539608767081625985, guid: 029366f42db5de94aa03c808a185a912,
+  m_Sprite: {fileID: -7155845793027857161, guid: a92c873f8cecfb746bb4046727098e7e,
     type: 3}
   m_Type: 1
   m_PreserveAspect: 0
@@ -3142,7 +3118,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f747b47bca47b7e45a7a97a03bec3141, type: 3}
+  m_Sprite: {fileID: -7155845793027857161, guid: a92c873f8cecfb746bb4046727098e7e,
+    type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4668,6 +4645,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3680563010233109189, guid: 6ddbaac432df9f34c8b61827f9ff45bd,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7155845793027857161, guid: a92c873f8cecfb746bb4046727098e7e,
+        type: 3}
+    - target: {fileID: 3680563010233109189, guid: 6ddbaac432df9f34c8b61827f9ff45bd,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3680563010233109189, guid: 6ddbaac432df9f34c8b61827f9ff45bd,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3680563010233109189, guid: 6ddbaac432df9f34c8b61827f9ff45bd,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4389378713452588452, guid: 6ddbaac432df9f34c8b61827f9ff45bd,
         type: 3}

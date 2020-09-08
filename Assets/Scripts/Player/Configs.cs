@@ -26,7 +26,6 @@ public struct ShieldConfigs {
 
 [System.Serializable]
 public class PlayerConfigs {
-    public float fireRate;
     public float moveSpeed;
     public float moveRate;
 

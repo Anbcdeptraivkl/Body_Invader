@@ -10,16 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7321478178399130842}
   - component: {fileID: 7330118880943523172}
-  - component: {fileID: 7553876006852401064}
-  - component: {fileID: 2577082569751926416}
-  - component: {fileID: 8212931479148160626}
-  - component: {fileID: 7263888930620259192}
-  - component: {fileID: 5498798054181613479}
-  - component: {fileID: 2232862885286867762}
   - component: {fileID: 7713107417559565610}
   - component: {fileID: 7713107417559565616}
   - component: {fileID: 7713107417559565617}
   - component: {fileID: 7713107417559565611}
+  - component: {fileID: 3357606658682707964}
   m_Layer: 0
   m_Name: Stabber
   m_TagString: Enemy
@@ -63,95 +58,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7553876006852401064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5518268202695286119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fc7bcfc1285d7548bffae5118b20989, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2577082569751926416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5518268202695286119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e25b88aae1c7a643ba1742caca79b0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseHP: 3
-  energyReward: 5
-  shotExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
-    type: 3}
-  explodingSound: {fileID: 7713107417559565616}
---- !u!114 &8212931479148160626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5518268202695286119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1913596edac61474db45e22607bdfe1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitShockParticle: {fileID: 1713355028149410088, guid: 77deca45be6d3d144aa89be336f31b26,
-    type: 3}
---- !u!114 &7263888930620259192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5518268202695286119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9258c3067a121ce479b0f617a95eec40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 0.25
---- !u!114 &5498798054181613479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5518268202695286119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5fe19fe1b469284b98a8dea95b443c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  randomDropList: []
-  persistentDropList:
-  - name: Coin
-    obj: {fileID: 2590032200894953485, guid: 40287ae6dc4966145b1fff12eec5573c, type: 3}
-    rarity: 100
-    amount: 3
-  dropChance: 0
-  delayBtwItems: 0
-  delayBtwnPieces: 0.1
---- !u!114 &2232862885286867762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5518268202695286119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53ba033f368b32346abcb007b7a6a282, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &7713107417559565610
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -309,6 +215,36 @@ MonoBehaviour:
   slideTime: 0.2
   homeSpeed: 10
   rotateRate: 500
+--- !u!114 &3357606658682707964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5518268202695286119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 508d08864b2bbeb40aea572be5d21a3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  configsJson: {fileID: 4900000, guid: bdd896d86f732cb409d3b6be2358b340, type: 3}
+  baseHP: 1
+  energyReward: 1
+  chargeReward: 1
+  invincibleTimer: 0.1
+  randomDropList: []
+  persistentDropList:
+  - name: Coin
+    obj: {fileID: 2590032200894953485, guid: 40287ae6dc4966145b1fff12eec5573c, type: 3}
+    rarity: 100
+    amount: 3
+  dropChance: 5
+  hitShockParticle: {fileID: 1713355028149410088, guid: 77deca45be6d3d144aa89be336f31b26,
+    type: 3}
+  shotExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
+    type: 3}
+  explodingSound: {fileID: -3165659544326757525, guid: c589de34decd33947a1c6ce974ed7286,
+    type: 3}
 --- !u!1 &6980753945476809663
 GameObject:
   m_ObjectHideFlags: 0

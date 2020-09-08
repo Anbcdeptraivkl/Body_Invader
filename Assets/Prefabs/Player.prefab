@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7715268365818723403}
   - component: {fileID: 7715268365818723402}
   - component: {fileID: 7715268367411548039}
+  - component: {fileID: 1557577890340693391}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -412,11 +413,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   configsJson: {fileID: 4900000, guid: 11d70e46c8549e041ad633092887cdea, type: 3}
-  shotList:
-  - shotObj: {fileID: 1600620134327404, guid: 2fa8796c633ed734580b5a65cd172799, type: 3}
-    upgradeLevel: 0
-  shotSpawn: {fileID: 7715268367458214765}
-  fireRate: 0.5
   moveSpeed: 2
   moveRate: 5
   bounds:
@@ -447,9 +443,9 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-    fullHPSprite: {fileID: 2681429535466103228, guid: 128d8a88d8f34c9439d6e44c3de91c9a,
+    fullHPSprite: {fileID: -6677393244156574708, guid: a92c873f8cecfb746bb4046727098e7e,
       type: 3}
-    lostHPSprite: {fileID: -9185184514948751403, guid: 128d8a88d8f34c9439d6e44c3de91c9a,
+    lostHPSprite: {fileID: -3214517842806935808, guid: a92c873f8cecfb746bb4046727098e7e,
       type: 3}
   invinTime: 0.75
   maxHp: 3
@@ -459,6 +455,27 @@ MonoBehaviour:
   hitSound: {fileID: 7715268365818723400}
   hpUpSound: {fileID: 7715268365818723402}
   upgReceivingSfx: {fileID: 7715268365818723403}
+--- !u!114 &1557577890340693391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7715268365818723390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bd4afb89caa05a4ba8c66f0b29ca035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotList:
+  - {fileID: 1600620134327404, guid: 2fa8796c633ed734580b5a65cd172799, type: 3}
+  - {fileID: 1600620134327404, guid: d664b27ff4cbc5f4c85b05d70e7582d6, type: 3}
+  shotSpawn: {fileID: 7715268367458214765}
+  fireRate: 0.22
+  chargeBar: {fileID: 0}
+  chargingValue: 0
+  nextChargeGoal: 10
+  nextChargeStep: 10
 --- !u!1 &7715268366580100956
 GameObject:
   m_ObjectHideFlags: 0

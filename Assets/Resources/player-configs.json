@@ -1,5 +1,4 @@
 {
-    "fireRate": 0.15,
     "moveSpeed": 2,
     "moveRate": 5,
     "movementBounds": {

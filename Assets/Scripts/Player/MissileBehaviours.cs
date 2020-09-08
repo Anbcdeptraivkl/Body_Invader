@@ -79,8 +79,7 @@ public class MissileBehaviours: MonoBehaviour {
 
         foreach (GameObject enemy in enemiesArray) {
             // Deal 5 dmgs to all visible enemies:
-            EnemyHPManager enemyHP = enemy.gameObject.GetComponent<EnemyHPManager>(); 
-            enemyHP.DecreaseHP(rocketDmg);
+            enemy.gameObject.GetComponent<Enemy>().DecreaseHP(rocketDmg);
         }     
     }
 

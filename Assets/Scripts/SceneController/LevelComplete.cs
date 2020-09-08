@@ -31,7 +31,7 @@ public class LevelComplete : MonoBehaviour
     }
 
     void Update() {
-        if (win && EnemyCount.Wiped()) {
+        if (win && Enemy.Wiped()) {
             StartCoroutine(FinishLevel());
             // Stop updating when the level is finished:
             enabled = false;

@@ -4,7 +4,11 @@
 * Made by Ho Thai An - Anbcdeptrai with Love and Care. All the Arts and Scripts are Self-made by Me. If you ever have the chance to obtain them please do not use them for commercial purpose without my Consents.
 * All rights reserved.
 
+
 ## [Unreleased]
+
+
+## [1.1.0] - 8/9/2020
 
 ### Added
 - JSON files for storing and Reading Configs (with JsonUtility Library)
@@ -16,16 +20,37 @@
   + Attacks
 - Boss Dying Explosions Effects and Winning Sequences
 - Better Controlled Repeated Scrolling, more Pleasing Sea Background
+- Charge Weapon and Weapon Upgrades Mechanics (by gaining charges with defeating Enemies)
+  - New Weapon Upgrades: Double Shots
+  - Charge Bar representing Weapon Upgrade Progress
+- Updated In-game Effects for Enemies
+- Updated Menu UIs and Elements into Puxel Arts
 
 ### Changed
 - Overhauled Scripts Structures
   - Merging Enemy COmponent into a Single Concentrated Component shared between all Types of Enemies for easier creating Processes (excluding the Unique Movements and Behaviours of each Types: they got their own Unique Components)
   - Same for the Player COmponents (excluding the Missile Launcher since it is a standalone Upgrades and should not be merged into the Main Component)
 - COnfigurations and Stats for Shared Components are Serialized and Parsed as JSON files for each types of Players and Enemies
-- Removed Random Drops
+- Changed In-game Menu Elements into Self-made Pixel Arts that are better for the theme of the game
+- Changed Entities and Effects to Pixel Arts
 
 ### Fixed
 - Fixed Boss Manta Movements and Collisions Detecting
+  - No more detecting collisions when destructing
+- Player no longer can be controlled during Winning Sequences (Boss destructing)
+- Fixed Overflow Layouts for Longer Devices (adxing Black Boxes the SIde of the Screen)
+- New Layout for Stages and Enemy Spawns
+- Fixed Enemies Stats to be more Balanced
+  - Basic Enemies now have 2 HP by default
+  - Fast Moving, Dangerous Enemies will now have less HP
+  - Slow but Strong Enemies will have from double to tripple the Player's Estimate Firepower
+- Fixed Audio Import Settings for better Loading Time
+
+### Removed
+- Removed Merged Scripts COmponents
+- Removed Random Drops and Random Upgrades
+- Removed and Replaced Obsolete Scenes
+
 
 
 ## [Playable: 1.0.0] - 3/4/2020

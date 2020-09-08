@@ -4,19 +4,16 @@
 * For Ho Thai An and Ho Thai An only.
 
 # TESTING..
+- New Musics and Audios - preferrably Self-made
 
 # FIXING..
-- Dropping Collectibles only ONce per Death: Won't Detect Collision when in Dying Sequences
-- Player cannot be contrlled after the boss Died (avoiding shooting the dying boss and moving randomly)
+- Fixing the Uresponsive Loading Scene
+- Fix the Score: Remove the Unnecessary Scoring SYstem from the Game
 
 # IMPLEMENTING..
 
-## Weapons
-- Single Shots for Default weapon
-- Shots Upgrade Bar: Kill Enemies Continously to Upgrades your Weapon Levels
-  - Each Weapons have their own different kind of Progression
-  - Couple with Visual Effects
-  - Cannot be Downgrade, but will be Reverted when the Level ended
+## Weapon
+- New Levels of Weapon Upgrades
 
 ## Shop
 
@@ -25,13 +22,7 @@
 ## New Enemies
 
 # ARTS
-- Overhauling the Pixel Arts: All Sprites, Effects and UIs
-    + More Pleasing
-    + Hard Outlines
-    + Clearer and more Defined Colors
-    + Scaled
-- Update Sea background into a milder, cooler one
-- Updating the SOund Effects and making new OSTs
+
 
 # MECHANICS
 - ..
