@@ -17,8 +17,6 @@ public class Shielding : MonoBehaviour
 
         if (mainCam != null) {
             camShaker = mainCam.GetComponent<CamShake>();
-        } else {
-            Debug.Log("No camera found.");
         }
     }
 
@@ -36,7 +34,6 @@ public class Shielding : MonoBehaviour
         }
         // On Contacting Ray Attack
         if (other.gameObject.tag == "DeathRay") {
-            Debug.Log("Ray Touched!");
             GameObject rayImpact = Instantiate(
                 bigRayEffect,
                 other.bounds.ClosestPoint(gameObject.transform.position),

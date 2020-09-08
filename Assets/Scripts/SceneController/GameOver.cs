@@ -23,10 +23,6 @@ public class GameOver : MonoBehaviour
 		{
             moneyManager = gameControllerObject.GetComponent<MoneyManager>();	
 		}
-        else
-        {
-            Debug.Log("Failed to load <GameController> component.");
-        }
     }
 
     public void Over()

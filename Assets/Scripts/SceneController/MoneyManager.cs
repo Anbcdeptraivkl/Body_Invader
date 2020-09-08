@@ -58,7 +58,6 @@ public class MoneyManager : MonoBehaviour
     public static int GetTotalMoney() {
         int total = PlayerPrefs.GetInt("Money", 0);
         if (total < 0) {
-            Debug.Log("Inapproriated data value. Return 0 in substitution");
             return 0;
         }
 

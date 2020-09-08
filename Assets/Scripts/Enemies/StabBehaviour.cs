@@ -24,8 +24,6 @@ public class StabBehaviour : MonoBehaviour
         if (player) {
             playerTrans = player.GetComponent<Transform>();
             StartCoroutine(Move());
-        } else {
-            Debug.Log("Player not found or dead");
         }
     }
 

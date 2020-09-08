@@ -47,7 +47,6 @@ public class TrackerTracking: MonoBehaviour
             playerTransform = playerObj.transform;
         }
         else {
-            Debug.Log("Player not found or destroyed");
             yield break;
         }
 

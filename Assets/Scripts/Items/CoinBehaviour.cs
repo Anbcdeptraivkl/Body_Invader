@@ -24,8 +24,6 @@ public class CoinBehaviour : MonoBehaviour
         GameObject gameControllerObj = GameObject.FindWithTag("GameController");
         if (gameControllerObj) {
             moneyManager = gameControllerObj.GetComponent<MoneyManager>();
-        } else {
-            Debug.Log("Game Controller not found");
         }
     }
 

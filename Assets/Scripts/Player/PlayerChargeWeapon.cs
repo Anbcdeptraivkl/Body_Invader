@@ -44,7 +44,6 @@ public class PlayerChargeWeapon: MonoBehaviour {
     // Charge Everytime you destroy an Enemy (including Mini-bosses)
     public void Charge(int charge = 1) {
         chargingValue += charge;
-        Debug.Log("Charge: " + chargingValue);
         if (chargingValue >= nextChargeGoal) {
             Upgrade();
         }
@@ -75,20 +74,16 @@ public class PlayerChargeWeapon: MonoBehaviour {
     }
 
     void Upgrade() {
-        Debug.Log("Charge Gun Upgraded!");
         // Only Upgrades if there are sufficient new Levels
         if (shotLevel < (shotList.Count - 1)) {
             shotLevel++;
         }
         chargingValue = 0;
         nextChargeGoal += nextChargeStep;
-        Debug.Log("Next Upgrade Level in " + nextChargeGoal + " charges!");
     }
 
     void ChargeBarUpdate() {
         float currentFill = (float)Math.Round((float)chargingValue / nextChargeGoal, 1);
-        Debug.Log("Estimated Charge bar Fill: " + currentFill);
         chargeBar.fillAmount = currentFill;
-        Debug.Log("Real Charge Bar Fill: " + chargeBar.fillAmount);
     }
 }

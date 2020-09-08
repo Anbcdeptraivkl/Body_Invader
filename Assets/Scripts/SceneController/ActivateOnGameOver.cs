@@ -17,10 +17,6 @@ public class ActivateOnGameOver : MonoBehaviour
         {
             gameOverController = gameControllerObject.GetComponent<GameOver>();
         }
-        else
-        {
-            Debug.Log("Failed to load <GameController> script component.");
-        }
         gameOverAnimator = gameObject.GetComponent<Animator>();
     }
 

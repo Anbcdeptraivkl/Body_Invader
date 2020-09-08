@@ -21,7 +21,6 @@ public class UFOAttacking: MonoBehaviour {
         while (gameObject.activeInHierarchy) {
             playerRef = GameObject.FindWithTag("Player");
             if (!playerRef) {
-                Debug.Log("Player not found");
                 yield break;
             }
             GenerateShot();

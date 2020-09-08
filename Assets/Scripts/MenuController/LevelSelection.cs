@@ -26,7 +26,6 @@ public class LevelSelection : MonoBehaviour
     public void LoadLevel(int index) {
         string levelName = "Level" + index.ToString();
         SceneManager.LoadScene(levelName);
-        Debug.Log("Loaded " + levelName);
     }
 
     // Reset Level COmpletion Pref to Default 0

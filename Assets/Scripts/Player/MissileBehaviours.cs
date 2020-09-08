@@ -21,8 +21,6 @@ public class MissileBehaviours: MonoBehaviour {
 
         if (mainCam != null) {
             camShaker = mainCam.GetComponent<CamShake>();
-        } else {
-            Debug.Log("No camera found.");
         }
 
         // Rotate:

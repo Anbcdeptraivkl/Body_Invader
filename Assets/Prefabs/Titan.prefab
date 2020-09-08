@@ -385,7 +385,7 @@ MonoBehaviour:
     rarity: 1
     amount: 20
   dropChance: 5
-  hitShockParticle: {fileID: 6421501278146835262, guid: 1e321729e17282346ae072d1b19c6ca9,
+  hitShockParticle: {fileID: 1713355028149410088, guid: 77deca45be6d3d144aa89be336f31b26,
     type: 3}
   shotExplosion: {fileID: 0}
   explodingSound: {fileID: 0}

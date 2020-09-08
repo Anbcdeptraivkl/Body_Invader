@@ -40,7 +40,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713355028149410088}
   serializedVersion: 6
-  lengthInSec: 0.15
+  lengthInSec: 0.2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.15
+      scalar: 0.2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1029,11 +1029,11 @@ ParticleSystem:
       repeatInterval: 0.01
       probability: 1
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       serializedVersion: 2
       minMaxState: 1
-      scalar: 1
+      scalar: 1.3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1048,8 +1048,8 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.2794283
-          value: 0.79729825
+          time: 0.32687765
+          value: 1
           inSlope: 1
           outSlope: 1
           tangentMode: 0
@@ -1058,7 +1058,7 @@ ParticleSystem:
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 0.82720715
-          value: 0.17567298
+          value: 0.59459543
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1443,21 +1443,21 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0
           value: 0
-          inSlope: 0
+          inSlope: 1
           outSlope: 1
-          tangentMode: 0
+          tangentMode: 34
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          inWeight: 0
+          outWeight: 0
         - serializedVersion: 3
           time: 1
           value: 1
           inSlope: 1
-          outSlope: 0
-          tangentMode: 0
+          outSlope: 1
+          tangentMode: 34
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
@@ -1547,11 +1547,11 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: -8706450598920198692, guid: b900cda9a50e434418d5a64fb0d51d08,
+    - sprite: {fileID: 8562531665157084682, guid: 13ae1d2abca0825489ac13527c438eb5,
         type: 3}
-    - sprite: {fileID: -7052233053069259767, guid: b900cda9a50e434418d5a64fb0d51d08,
+    - sprite: {fileID: 5932340387139673307, guid: 13ae1d2abca0825489ac13527c438eb5,
         type: 3}
-    - sprite: {fileID: 3905233008433371116, guid: b900cda9a50e434418d5a64fb0d51d08,
+    - sprite: {fileID: 8562531665157084682, guid: 13ae1d2abca0825489ac13527c438eb5,
         type: 3}
     flipU: 0
     flipV: 0
@@ -4777,6 +4777,7 @@ ParticleSystemRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

@@ -10,8 +10,6 @@ public class LevelComplete : MonoBehaviour
     // Properties:
     public GameObject completePanel;
     public GameObject playerCanvas;
-
-    public Text scoreText;
     public Text coinText;
     public int levelIndex = 1;
 
@@ -46,7 +44,6 @@ public class LevelComplete : MonoBehaviour
     IEnumerator FinishLevel() {
         // Delay so the player has enough time to collect the last coins + for the Sequence of SPecial Effects finished playing
         yield return new WaitForSeconds(1.5f);
-        Debug.Log("Level Completed!");
         // Player Fly Away
         player.NoMoreControls();
         playerAnimator.SetTrigger("Win");

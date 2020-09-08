@@ -13,8 +13,6 @@ public class StraightMovement: MonoBehaviour {
         rgbd = gameObject.GetComponent<Rigidbody2D>();
         if (rgbd) {
             rgbd.velocity = new Vector2(speedX, speedY);
-        } else {
-            Debug.Log("No Rigidbody found");
         }
     }
 }

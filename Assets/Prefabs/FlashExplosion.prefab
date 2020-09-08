@@ -1435,16 +1435,25 @@ ParticleSystem:
           time: 0
           value: 0
           inSlope: 0
-          outSlope: 1
+          outSlope: 0
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 1
-          value: 1
+          time: 0.7789426
+          value: 0.97297275
+          inSlope: -0.53439444
+          outSlope: -0.53439444
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.25971144
+          outWeight: 0.25404984
+        - serializedVersion: 3
+          time: 0.9853821
+          value: 0.74324226
           inSlope: 1
-          outSlope: 0
+          outSlope: 1
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
@@ -1538,13 +1547,11 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: -6501096089864884467, guid: ef80e2b14cdd45740b74e3bb378d8ffc,
+    - sprite: {fileID: 8562531665157084682, guid: 13ae1d2abca0825489ac13527c438eb5,
         type: 3}
-    - sprite: {fileID: -1532281714382408711, guid: ef80e2b14cdd45740b74e3bb378d8ffc,
+    - sprite: {fileID: 1900104272935076857, guid: 13ae1d2abca0825489ac13527c438eb5,
         type: 3}
-    - sprite: {fileID: -8289025093920193856, guid: ef80e2b14cdd45740b74e3bb378d8ffc,
-        type: 3}
-    - sprite: {fileID: -444531496325176333, guid: ef80e2b14cdd45740b74e3bb378d8ffc,
+    - sprite: {fileID: 8562531665157084682, guid: 13ae1d2abca0825489ac13527c438eb5,
         type: 3}
     flipU: 0
     flipV: 0
@@ -4795,7 +4802,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0

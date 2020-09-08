@@ -313,6 +313,7 @@ MonoBehaviour:
   configsJson: {fileID: 4900000, guid: 1e4dffe54e550714eb1903ac33eb5d61, type: 3}
   baseHP: 1
   energyReward: 1
+  chargeReward: 1
   invincibleTimer: 0.1
   randomDropList: []
   persistentDropList:
@@ -321,7 +322,7 @@ MonoBehaviour:
     rarity: 100
     amount: 5
   dropChance: 10
-  hitShockParticle: {fileID: 6421501278146835262, guid: 1e321729e17282346ae072d1b19c6ca9,
+  hitShockParticle: {fileID: 1713355028149410088, guid: 77deca45be6d3d144aa89be336f31b26,
     type: 3}
   shotExplosion: {fileID: 5986082048310409190, guid: baab6fd55549c9b44bbfa509cb0df04b,
     type: 3}

@@ -4,11 +4,11 @@
 * For Ho Thai An and Ho Thai An only.
 
 # TESTING..
-- New Musics and Audios - preferrably Self-made
 
 # FIXING..
-- Fixing the Uresponsive Loading Scene
-- Fix the Score: Remove the Unnecessary Scoring SYstem from the Game
+- Fixing the First Slow Load
+- Fixing the Titan Movement Range
+- Fixing the Level UI Panels
 
 # IMPLEMENTING..
 

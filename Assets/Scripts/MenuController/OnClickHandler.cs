@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class OnClickHandler : MonoBehaviour
 {
     public void QuitGame() {
-        Debug.Log("Quitting");
         Application.Quit();
     }
 
@@ -26,7 +25,6 @@ public class OnClickHandler : MonoBehaviour
 
     public void Debug_MenuMoneyReset() {
         MoneyManager.ResetMoney();
-        Debug.Log("Money Reset!");
     }
 
     public void Debug_MenuLogMoneyTotal() {

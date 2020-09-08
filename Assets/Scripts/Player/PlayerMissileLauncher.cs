@@ -43,7 +43,6 @@ public class PlayerMissileLauncher: MonoBehaviour {
             missileAmount > 0) 
         {
             Launch();
-            Debug.Log("Shot a Missile!");
         }
     }
 

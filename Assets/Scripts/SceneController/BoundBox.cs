@@ -12,7 +12,6 @@ public class BoundBox : MonoBehaviour {
 			// Destroy all the children and the game objects itself will then be removed:
 			foreach (Transform childObj in other.gameObject.transform) {
 				Destroy(childObj.gameObject, 0.5f);
-				// Debug.Log(childObj.name + " destroyed");
 			}
 
 			Destroy(other.gameObject, 0.5f);

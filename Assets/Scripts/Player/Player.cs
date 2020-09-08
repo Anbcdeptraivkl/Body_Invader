@@ -288,18 +288,11 @@ public class Player : MonoBehaviour {
 		{
 			gameOverController = gameControllerObject.GetComponent<GameOver>();
 		}
-			else
-			{
-				Debug.Log("Failed to load <GameController> script component.");
-			}
-
         // Getting camera components:
         GameObject mainCam = GameObject.FindWithTag("MainCamera");
 
         if (mainCam != null) {
             camShaker = mainCam.GetComponent<CamShake>();
-        } else {
-            Debug.Log("No camera found.");
         }
 
         // Host components:
@@ -471,7 +464,6 @@ public class Player : MonoBehaviour {
 
     void ResponseWhenInsufficientEnergy() {
         // 
-        Debug.Log("Insufficient Energy!");
     }
 
 	/* HP AND HP UI INNNER CONTROLLERS */
@@ -588,7 +580,6 @@ public class Player : MonoBehaviour {
                     }
                     break;
                 }
-				Debug.Log("Applied Upgrade!");
 				// Destroy the Upgrade orbs after collisions:
 				Destroy(upgrade.gameObject);
             }

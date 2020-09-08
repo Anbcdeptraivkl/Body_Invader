@@ -50,7 +50,6 @@ public class TitanMovement: MonoBehaviour {
         yield return new WaitForSeconds(startDelay);
         currentDownSpeed = -downSpeed;
         // Moving Down:
-        Debug.Log("Down speed: " + currentDownSpeed);
         yield return new WaitForSeconds(downTime);
         // Stop moving down and start side-stepping:
         // SImple Movement first!:

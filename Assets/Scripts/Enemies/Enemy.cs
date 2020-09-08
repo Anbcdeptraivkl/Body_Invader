@@ -69,8 +69,6 @@ public class Enemy: MonoBehaviour {
         GameObject mainCam = GameObject.FindWithTag("MainCamera");
         if (mainCam != null) {
             camShaker = mainCam.GetComponent<CamShake>();
-        } else {
-            Debug.Log("No camera found.");
         }
         // Setting up Configurations
         SetConfigs();
@@ -196,8 +194,6 @@ public class Enemy: MonoBehaviour {
             if (playerWeapon != null) {
                 playerWeapon.Charge(chargeReward);
             }
-        } else {
-            Debug.Log("Player not found: Lost or Destroyed");
         }
         // Item Drop:
         CalculateRandomDrop();

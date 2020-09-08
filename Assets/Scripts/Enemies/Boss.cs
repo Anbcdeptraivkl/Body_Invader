@@ -46,7 +46,6 @@ public class Boss: Enemy {
 		if (other.gameObject.tag != "Boundary" && !bossDying) {
             // Getting shot by Player
 			if (other.gameObject.tag == "Shot") {
-                Debug.Log("Got shotted!");
                 // Check the Shot Damage,then Decrease Hp and Destroy the SHot:
                 float shotDmg = other.gameObject.GetComponent<ShotDamage>().GetDamage();
 				// Decreasing HP and Checking if Dying
@@ -123,7 +122,6 @@ public class Boss: Enemy {
         }
         //  - Destroyed dying enemies after finish dying hehaviours
          // Win when the Boss is destroyed
-        Debug.Log("Boss defeated!");
         LevelComplete.Win();
         Destroy(gameObject);
     }

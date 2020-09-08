@@ -7,6 +7,13 @@
 
 ## [Unreleased]
 
+### Changed
+- Swapped more Sprites and Animations with Pixel Arts
+
+### Fixed
+- Fixed the Audio Import Settings
+- Removed Obsolete Elements and Scripts
+
 
 ## [1.1.0] - 8/9/2020
 
