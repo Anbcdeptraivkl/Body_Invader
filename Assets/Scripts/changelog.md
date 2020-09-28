@@ -7,12 +7,23 @@
 
 ## [Unreleased]
 
+### Added
+- How-to Play Tutorials
+- Shop UI
+  - Shop Items Data and UIs
+  - Hovering and Selecting Effects
+  - Buying Selecting Items
+  - Access from Level Selection Screen (or right after you Complete a Level => Move on to the Next Level to Fight Immediately, Roguelike Style!)
+
 ### Changed
 - Swapped more Sprites and Animations with Pixel Arts
+- Shop data is now JSON format and will be saved on the Client Computer
 
 ### Fixed
 - Fixed the Audio Import Settings
 - Removed Obsolete Elements and Scripts
+- Fixed the Level Panel UIs
+- Fixed the Titan Over-movement
 
 
 ## [1.1.0] - 8/9/2020

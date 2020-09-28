@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00000073016, y: 0}
-  m_SizeDelta: {x: 84.72, y: 20.12}
+  m_AnchoredPosition: {x: -1.25, y: -1.4899998}
+  m_SizeDelta: {x: 132.93, y: 31.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8892316353806534628
 CanvasRenderer:
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 884422847422072190}
   - component: {fileID: 7923338210405318824}
   m_Layer: 5
-  m_Name: Energy
+  m_Name: Energy UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

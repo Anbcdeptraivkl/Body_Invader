@@ -333,7 +333,7 @@ MonoBehaviour:
   sideSpeed: 4
   speedSmoothLimit: 10
   startDelay: 1
-  downTime: 0.75
+  downTime: 1
   bounds:
     xMin: -6
     xMax: 6
@@ -391,8 +391,8 @@ MonoBehaviour:
   explodingSound: {fileID: 0}
   bang: {fileID: 2442976895002668426, guid: a237c08172861d44a88eeacb9bcd8616, type: 3}
   bangDuration: 0.35
-  pauseBetweenBangs: 0.27
-  explosionsCount: 8
+  pauseBetweenBangs: 0.25
+  explosionsCount: 6
 --- !u!61 &5659345011279446920
 BoxCollider2D:
   m_ObjectHideFlags: 0
